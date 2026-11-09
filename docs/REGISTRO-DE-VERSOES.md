@@ -1,5 +1,11 @@
 # Urbana — registro de versões
 
+## 2.30 — 09/11/2026
+
+- **Aviso "Vire o aparelho":** desenho refeito; agora o celular gira inteiro ao lado de uma seta fixa (no iPhone a seta girava fora do lugar).
+- **Janelas no celular deitado:** não passam mais da borda da tela no Safari do iPhone; topo, corpo e rodapé mais compactos (botões cabem).
+- **HUD menor no celular deitado:** perfil, latas, Black Book, Menu, missões, mini-mapa, joystick e botão A cerca de 30% menores.
+
 ## 2.29 — 09/11/2026
 
 - **Personagens do bairro com missões (quests):** personagens parados pelo mapa que dão missões especiais. De longe aparece

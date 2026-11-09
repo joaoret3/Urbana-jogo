@@ -906,14 +906,17 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 #aviso-girar h2 { margin: 0; font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 2rem; text-transform: uppercase; color: var(--amarelo); }
 #aviso-girar p { margin: 0; max-width: 28ch; font-size: 1.15rem; }
 #aviso-girar small { max-width: 34ch; opacity: .75; font-size: .85rem; }
-.girar-celular { width: 120px; height: 120px; fill: none; stroke: var(--lima); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.girar-celular rect { fill: var(--painel-2); }
-.girar-celular .girar-seta { stroke: var(--rosa); transform-origin: 32px 32px; animation: girar-aparelho 2.4s ease-in-out infinite; }
-@keyframes girar-aparelho { 0%, 15% { transform: rotate(0); } 60%, 100% { transform: rotate(-90deg); } }
+.girar-icone { position: relative; width: 120px; height: 120px; }
+.girar-icone svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.girar-aparelho { stroke: var(--lima); animation: girar-aparelho 2.4s ease-in-out infinite; }
+.girar-aparelho rect { fill: var(--painel-2); }
+.girar-seta { stroke: var(--rosa); }
+/* gira o desenho inteiro (elemento HTML) — funciona igual no Safari do iPhone */
+@keyframes girar-aparelho { 0%, 15% { transform: rotate(0); } 55%, 85% { transform: rotate(90deg); } 100% { transform: rotate(0); } }
 @media (hover: none) and (pointer: coarse) and (orientation: portrait) {
   #aviso-girar { display: flex; }
 }
-@media (prefers-reduced-motion: reduce) { .girar-celular .girar-seta { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .girar-aparelho { animation: none; } }
 
 /* ---------- História de abertura (v2.20) ---------- */
 .fundo-historia {
@@ -958,3 +961,35 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 .missao-personagem { margin: 2px 0 6px; font-size: .9rem; opacity: .85; }
 @media (max-height: 520px) { .npc-retrato { width: 64px; height: 64px; } .npc-conversa { margin-bottom: 6px; } }
 .painel-npc .missoes-lista { grid-template-columns: 1fr; }
+
+/* ---------- v2.30: celular deitado — HUD mais compacto e janelas sempre dentro da tela ---------- */
+/* (Safari do iPhone: o item da grade podia ficar mais largo que a tela) */
+.fundo-painel { grid-template-columns: minmax(0, 1fr); }
+.painel { max-width: 100%; justify-self: center; }
+@media (max-height: 500px) and (orientation: landscape) {
+  .hud-perfil { top: 6px; left: 6px; gap: 8px; padding: 3px 10px 3px 3px; border-width: 2px; box-shadow: 3px 3px 0 var(--tinta); }
+  .hud-retrato { width: 34px; height: 34px; }
+  .hud-perfil-info { min-width: 84px; gap: 2px; }
+  .hud-nivel { font-size: .9rem; }
+  .hud-xp { height: 14px; }
+  .hud-xp-texto { font-size: .6rem; }
+  .hud-direita { top: 6px; right: 6px; gap: 6px; }
+  .hud-direita-linha { gap: 6px; }
+  .hud-latas { min-height: 38px; padding: 2px 10px 2px 6px; font-size: 1rem; border-width: 2px; box-shadow: 3px 3px 0 var(--tinta); }
+  .hud-latas .icone-lata { width: 18px; height: 24px; }
+  .hud-icone { width: 40px; height: 38px; font-size: 1rem; border-width: 2px; border-radius: 12px; box-shadow: 3px 3px 0 var(--tinta); }
+  .hud-aba-missoes { min-height: 30px; padding: 2px 8px 2px 4px; font-size: .75rem; }
+  .hud-missoes-icone { width: 20px; height: 20px; }
+  .hud-minimapa { top: 52px; left: 6px; width: 78px; }
+  .joystick { --tam: 100px; }
+  .hud-joystick { left: 10px; bottom: 10px; }
+  .hud-acao { right: 10px; bottom: 10px; gap: 6px; }
+  .hud-botao-a { width: 62px; height: 62px; font-size: 1.6rem; }
+  .hud-acao > :not(.hud-botao-a) { font-size: .8rem; padding: 3px 8px; max-width: 42vw; }
+  /* janelas: margens mínimas e rodapé compacto */
+  .painel-topo { padding: 8px 10px 4px 14px; }
+  .painel-topo .titulo-grafite { font-size: 1.3rem; }
+  .painel-corpo { padding: 4px 14px 8px; }
+  .painel-rodape { gap: 8px; padding: 6px 12px 8px; }
+  .painel-rodape .botao { min-height: 38px; padding: 4px 12px; font-size: .9rem; }
+}
