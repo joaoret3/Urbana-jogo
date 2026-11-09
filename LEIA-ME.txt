@@ -1,14 +1,14 @@
 URBANA · JOGO EDUCATIVO DO BAIRRO GOIÂNIA (PHASER 3)
 Escola Municipal Carolina Maria de Jesus · Belo Horizonte/MG
-Versão 2.28 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
+Versão 2.29 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
 latas e missões, Black Book, muros virtuais, perfil, tutorial, sons, acessibilidade)
 + Editor de conteúdo para professores.
 Avatares, artes, fotos, textos e sons ainda são RASCUNHOS de exemplo, para trocar pelo material real.
 
 DUAS PASTAS: PROFESSOR E ALUNOS (desde a versão 2.16)
-- Urbana_v2.28_professor: pasta de trabalho completa (jogo + Editor de conteúdo + originais/ +
+- Urbana_v2.29_professor: pasta de trabalho completa (jogo + Editor de conteúdo + originais/ +
   cópias de segurança). É nela que o professor edita o conteúdo.
-- Urbana_v2.28_alunos: só o jogo, mais leve, para copiar nos computadores dos alunos ou publicar
+- Urbana_v2.29_alunos: só o jogo, mais leve, para copiar nos computadores dos alunos ou publicar
   na web. Não tem o editor, os originais nem as cópias de segurança.
   Depois de editar o conteúdo na pasta do professor, para atualizar a dos alunos basta copiar por
   cima as pastas dados/ e assets/.

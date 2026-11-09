@@ -61,6 +61,7 @@ const Salvamento = {
       artes_desbloqueadas: [],
       muros_pintados: {},           // muro_id → arte_id
       missoes_concluidas: [],
+      personagens_encontrados: {},  // npc_id → { data, bases: { missao_id: quanto já tinha feito ao conversar } }
       avatares_desbloqueados: (nivel1.avatares || []).slice(),
       molduras_desbloqueadas: (nivel1.molduras || []).slice(),
       tutorial_visto: false
@@ -79,7 +80,7 @@ const Salvamento = {
     const listas = ['murais_visitados', 'fichas_lidas', 'quizzes_concluidos', 'itens_coletados', 'artes_desbloqueadas',
       'missoes_concluidas', 'avatares_desbloqueados', 'molduras_desbloqueadas'];
     for (const k of listas) if (!Array.isArray(p[k])) p[k] = [];
-    for (const k of ['muros_pintados', 'perguntas_acertadas']) if (!p[k] || typeof p[k] !== 'object' || Array.isArray(p[k])) p[k] = {};
+    for (const k of ['muros_pintados', 'perguntas_acertadas', 'personagens_encontrados']) if (!p[k] || typeof p[k] !== 'object' || Array.isArray(p[k])) p[k] = {};
     const j = p.jogador;
     j.xp = Math.max(0, Math.floor(Number(j.xp) || 0));
     j.latas = Math.max(0, Math.floor(Number(j.latas) || 0));     // saldo nunca negativo

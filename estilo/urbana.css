@@ -947,3 +947,14 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
   .fundo-historia, .fundo-historia .historia-img, .fundo-historia .historia-botao, .tela-avatar { animation: none; }
   .fundo-historia.saindo, .fundo-historia.saindo .historia-img { transition: none; transform: none; }
 }
+
+/* ---------- Conversa com personagens do bairro (missões especiais, v2.29) ---------- */
+.painel-npc { width: min(560px, 94vw); }
+.npc-conversa { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; }
+.npc-retrato { width: 96px; height: 96px; flex: none; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,.08); border: 3px solid var(--lima, #a0eb28); }
+.npc-fala { position: relative; margin: 0; padding: 12px 16px; background: #fff; color: #1d1530; border-radius: 16px; font-size: 1.1rem; line-height: 1.35; }
+.npc-fala::before { content: ''; position: absolute; left: -10px; top: 26px; border: 10px solid transparent; border-left: 0; border-right-color: #fff; }
+.npc-missoes-titulo { margin: 8px 0 6px; font-size: 1.1rem; }
+.missao-personagem { margin: 2px 0 6px; font-size: .9rem; opacity: .85; }
+@media (max-height: 520px) { .npc-retrato { width: 64px; height: 64px; } .npc-conversa { margin-bottom: 6px; } }
+.painel-npc .missoes-lista { grid-template-columns: 1fr; }

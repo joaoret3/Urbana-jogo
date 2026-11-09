@@ -7,21 +7,26 @@ const TelaMissoes = {
   abrir() {
     const E = Interface.el.bind(Interface);
     const lista = Missoes.lista();
-    const ordem = { andamento: 0, concluida: 1, indisponivel: 2 };
+    const ordem = { andamento: 0, trancada: 1, concluida: 2, indisponivel: 3 };
     lista.sort((a, b) => ordem[a.estado] - ordem[b.estado]);
     const rotulos = {
       concluida: Interface.comIcone('ok', 'Concluída'),
       andamento: Interface.comIcone('play', 'Em andamento'),
-      indisponivel: Interface.comIcone('cadeado', 'Indisponível')
+      indisponivel: Interface.comIcone('cadeado', 'Indisponível'),
+      trancada: Interface.comIcone('pessoa', 'Encontre no bairro')
     };
+    const nomeNpc = (m) => (Conteudo.npc(m.personagem) || {}).nome || 'um personagem';
     const itens = lista.map(s => E('li', { class: 'missao missao-' + s.estado },
       E('div', { class: 'missao-topo' },
         E('h3', {}, s.missao.titulo),
         E('span', { class: 'missao-selo' }, rotulos[s.estado])
       ),
-      E('p', { class: 'missao-descricao' }, s.missao.descricao),
+      s.missao.personagem ? E('p', { class: 'missao-personagem' }, Interface.comIcone('pessoa', 'Missão de ' + nomeNpc(s.missao))) : null,
+      s.estado === 'trancada' ? null : E('p', { class: 'missao-descricao' }, s.missao.descricao),
       s.estado === 'indisponivel'
         ? E('p', { class: 'missao-nota' }, 'Ainda não há conteúdo suficiente no jogo para esta missão.')
+        : s.estado === 'trancada'
+        ? E('p', { class: 'missao-nota' }, `Encontre ${nomeNpc(s.missao)} pelo bairro e converse para começar esta missão.`)
         : E('div', { class: 'missao-progresso' },
             E('div', { class: 'barra', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(s.meta), 'aria-valuenow': String(s.feito) },
               E('div', { class: 'barra-preenchimento', style: { width: Math.round(100 * s.feito / s.meta) + '%' } })),

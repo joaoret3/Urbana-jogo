@@ -26,6 +26,7 @@ class CenaMapa extends Phaser.Scene {
     if (!this.textures.exists(this.chaveAvatar)) {
       this.load.spritesheet(this.chaveAvatar, s.arquivo, { frameWidth: s.largura_quadro, frameHeight: s.altura_quadro });
     }
+    Npcs.carregar(this);             // personagens que dão missões (sistemas/Npcs.js)
   }
 
   create() {
@@ -129,6 +130,7 @@ class CenaMapa extends Phaser.Scene {
     this.jogador.setCollideWorldBounds(true);
     this.physics.add.collider(this.jogador, this.camadaColisao);
     Carros.criar(this);              // carros estacionados (sistemas/Carros.js)
+    Npcs.criar(this);                // personagens que dão missões (sistemas/Npcs.js)
     this.direcao = 'baixo';
     this.jogador.anims.play(this.chaveAvatar + '_parado_baixo');
     // sombra suave nos pés (o sol vem do alto à esquerda, como as sombras do mapa)
@@ -298,6 +300,7 @@ class CenaMapa extends Phaser.Scene {
     if (n.tipo === 'nivel') { Efeitos.subiuNivel(this, this.jogador); Sons.tocar('nivel'); }
     if (n.tipo === 'descoberta') { Efeitos.estouro(this, this.jogador.x, this.jogador.y - 60, 30); Sons.tocar('descoberta'); }
     if (n.tipo === 'missao') Sons.tocar('missao');
+    Npcs.atualizarSinais(this);
   }
 
   pararJogador() {

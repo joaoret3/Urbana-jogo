@@ -83,7 +83,8 @@ const Conteudo = {
       muros: camada('muros_livres'),
       latas: camada('coletaveis'),
       faixas: camada('faixas_pedestre'),    // faixas de pedestre (retângulos girados, como os muros)
-      carros: camada('carros')              // carros estacionados (Carros.js)
+      carros: camada('carros'),             // carros estacionados (Carros.js)
+      npcs: camada('npcs')                  // personagens que dão missões (Npcs.js)
     };
   },
 
@@ -226,6 +227,19 @@ const Conteudo = {
       if (this.TIPOS_MISSAO.includes(m.tipo) && !this.missaoPossivel(m)) {
         this.aviso(onde, `Ficará desativada: pede ${m.meta}, mas o jogo ainda não tem conteúdo suficiente.`);
       }
+      if (m.personagem && !this.npc(m.personagem)) this.erro(onde, `O personagem "${m.personagem}" não existe em npcs.js.`);
+    });
+
+    // Personagens que dão missões (npcs.js)
+    this.npcs().forEach(n => {
+      const onde = `dados/npcs.js → ${n.id}`;
+      if (!n.nome) this.erro(onde, 'Falta o "nome".');
+      const s = n.sprite || {};
+      if (!s.arquivo) this.erro(onde, 'Falta a folha de sprites ("sprite.arquivo").');
+      else imagens.push([onde, s.arquivo]);
+      if (n.retrato) imagens.push([onde, n.retrato]);
+      if (!(Number(s.largura_quadro) > 0 && Number(s.altura_quadro) > 0)) this.erro(onde, 'Tamanho do quadro inválido.');
+      if (this.mapa && !this.mapa.npcs.some(o => o.name === n.id)) this.aviso(onde, 'Ainda não foi colocado no mapa (Editor > Mapa > Colocar personagem): suas missões não aparecem.');
     });
 
     // Mapa: início, pins, muros, latas — dentro do mapa e alcançáveis a partir da escola
@@ -379,6 +393,8 @@ const Conteudo = {
   avatar(id) { return (this.dados.avatares.avatares || []).find(a => a.id === id); },
   moldura(id) { return (this.dados.molduras.molduras || []).find(m => m.id === id); },
   avatares() { return this.dados.avatares.avatares || []; },
+  npcs() { return (this.dados.npcs && this.dados.npcs.npcs) || []; },
+  npc(id) { return this.npcs().find(n => n.id === id); },
   niveis() { return this.dados.niveis.niveis || []; },
   jogo() { return this.dados.jogo || {}; },
 
@@ -388,6 +404,10 @@ const Conteudo = {
 
   // Uma missão só vale se o jogo tiver conteúdo suficiente para completá-la
   missaoPossivel(m) {
+    return this.quantoExiste(m.tipo) >= m.meta;
+  },
+  // Quanto conteúdo o jogo tem para cada tipo de missão
+  quantoExiste(tipo) {
     const nGrafites = this.grafitesPublicados().length;
     const nQuizzes = this.grafitesPublicados().filter(g => this.quiz(g.quiz_id)).length;
     const disponivel = {
@@ -398,6 +418,6 @@ const Conteudo = {
       coletar_latas: this.mapa ? this.mapa.latas.length : 0,
       visitar_todos: nGrafites > 0 ? 1 : 0
     };
-    return (disponivel[m.tipo] || 0) >= m.meta;
+    return disponivel[tipo] || 0;
   }
 };

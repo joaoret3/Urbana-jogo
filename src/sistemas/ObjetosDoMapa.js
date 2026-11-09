@@ -136,6 +136,10 @@ const ObjetosDoMapa = {
       if (d <= (inter.distancia_muro || 130) && d < menor) { menor = d; alvo = { tipo: 'muro', obj: m }; }
     });
 
+    // personagens que dão missões (Npcs.js): ao lado de um deles, conversar tem prioridade
+    const npc = Npcs.atualizar(cena);
+    if (npc) alvo = { tipo: 'npc', obj: npc };
+
     // destaque visual de proximidade (RF-MAP-014)
     cena.pins.forEach(pin => {
       const ativo = alvo && alvo.obj === pin;
@@ -145,7 +149,9 @@ const ObjetosDoMapa = {
     cena.muros.forEach(m => m.contorno.setVisible(!!alvo && alvo.obj === m));
 
     if (!alvo) { HUD.definirAcao(null); return; }
-    if (alvo.tipo === 'pin') {
+    if (alvo.tipo === 'npc') {
+      HUD.definirAcao('Conversar com ' + (alvo.obj.npc.nome || 'personagem'), () => Npcs.conversar(cena, alvo.obj));
+    } else if (alvo.tipo === 'pin') {
       HUD.definirAcao('Ver grafite: ' + alvo.obj.grafite.titulo, () => cena.abrirFicha(alvo.obj.id, true));
     } else {
       const arteId = Salvamento.atual.muros_pintados[alvo.obj.id], arte = arteId && Conteudo.arte(arteId);

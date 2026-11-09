@@ -57,5 +57,8 @@ Marque com X cada item testado. Teste também num computador da escola, com a in
 | 49 | Lata nova | Veja as latas no mapa e no editor (Mapa > latas) | Lata colorida nova, sem fundo branco |
 | 50 | Veículos e direções | Jogo: veja os veículos nas ruas; Editor > Mapa > Novo carro, troque modelo e direção (8 botões) | O desenho vira conforme a direção; esquerda/diagonais usam o desenho espelhado |
 | 51 | Trocar veículos | Editor: Duplicar, Apagar e arrastar um veículo; salve e abra o jogo | As mudanças aparecem no jogo; o personagem não atravessa o veículo (baú incluso) |
+| 52 | Personagem com missão | Jogo: ande até a Alexandra (perto da escola) | De longe: "!" em cima dela; de perto: balão e botão A "Conversar com Alexandra" |
+| 53 | Missão só depois do encontro | Antes de conversar, abra Missões; depois converse e pinte 2 muros | Antes: "Encontre Alexandra"; depois da conversa a missão começa em 0 e conclui com 2 muros pintados |
+| 54 | Editor de personagens | Editor > Personagens do bairro: crie um, ponha no mapa e dê uma missão; salve e abra o jogo | O personagem aparece no lugar escolhido com a missão |
 
 Anote também: tempo de carregamento, travamentos e dúvidas dos alunos.

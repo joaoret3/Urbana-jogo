@@ -153,3 +153,12 @@ Em `dados/missoes.js`, cada missão tem `tipo`, `meta` (quantas vezes) e `recomp
 
 Uma missão que pede mais do que o jogo tem (ex.: 5 fichas com só 3 grafites) aparece como
 **Indisponível** e é liberada sozinha quando o conteúdo for cadastrado.
+
+
+## Personagens do bairro (missões especiais) — desde a v2.29
+
+1. **Editor > Personagens do bairro > Novo personagem do bairro:** nome, falas (chamada, primeira conversa, andamento,
+   concluída), retrato e folha de sprites (mesmo formato dos personagens jogáveis: quadros de 96×96, 5 linhas).
+2. **Nova missão para este personagem** (ou, em Missões, o campo "Personagem que dá a missão").
+3. **Mapa > Colocar personagem:** escolha o personagem e clique na calçada onde ele deve ficar.
+4. Salve. A missão só aparece para o aluno depois que ele conversa com o personagem.

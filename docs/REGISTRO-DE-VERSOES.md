@@ -1,5 +1,20 @@
 # Urbana — registro de versões
 
+## 2.29 — 09/11/2026
+
+- **Personagens do bairro com missões (quests):** personagens parados pelo mapa que dão missões especiais. De longe aparece
+  um sinal em cima da cabeça ("!" missão nova, "…" em andamento); de perto abre um balão de fala e o botão A vira
+  "Conversar com <nome>". A conversa mostra a fala, o retrato e a missão com progresso e recompensa.
+- A missão de um personagem fica **trancada** até o jogador conversar com ele, e só conta o que for feito **depois** da conversa
+  (se o jogo não tiver mais conteúdo suficiente, conta o necessário para continuar possível). Na tela de Missões aparece
+  "Encontre <nome> pelo bairro".
+- Primeira personagem: **Alexandra** (folha de sprites enviada pelo professor), perto da escola, com uma missão de EXEMPLO
+  (pintar 2 muros livres). Textos e missão marcados como EXEMPLO para o professor trocar.
+- Novo arquivo `dados/npcs.js` e nova camada `npcs` no mapa. A partida guarda os personagens encontrados (partidas antigas continuam funcionando).
+- **Editor:** nova aba "Personagens do bairro" (nome, falas, retrato, folha de sprites com prévia, missões do personagem);
+  em Missões, o campo "Personagem que dá a missão"; no Mapa, "Colocar personagem" (mover, apagar, conferir alcance).
+- O personagem não pode ser atravessado (como o jogador, só os pés bloqueiam).
+
 ## 2.28 — 09/11/2026
 
 - **Veículos novos:** os 10 modelos antigos foram removidos e entraram os 10 desenhos novos (SVG enviados pelo professor):
