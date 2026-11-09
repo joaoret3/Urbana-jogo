@@ -1,0 +1,81 @@
+URBANA · JOGO EDUCATIVO DO BAIRRO GOIÂNIA (PHASER 3)
+Escola Municipal Carolina Maria de Jesus · Belo Horizonte/MG
+Versão 2.28 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
+latas e missões, Black Book, muros virtuais, perfil, tutorial, sons, acessibilidade)
++ Editor de conteúdo para professores.
+Avatares, artes, fotos, textos e sons ainda são RASCUNHOS de exemplo, para trocar pelo material real.
+
+DUAS PASTAS: PROFESSOR E ALUNOS (desde a versão 2.16)
+- Urbana_v2.28_professor: pasta de trabalho completa (jogo + Editor de conteúdo + originais/ +
+  cópias de segurança). É nela que o professor edita o conteúdo.
+- Urbana_v2.28_alunos: só o jogo, mais leve, para copiar nos computadores dos alunos ou publicar
+  na web. Não tem o editor, os originais nem as cópias de segurança.
+  Depois de editar o conteúdo na pasta do professor, para atualizar a dos alunos basta copiar por
+  cima as pastas dados/ e assets/.
+
+CONTA DE TESTE (desligada nesta pasta)
+- Em Novo Jogo, use o apelido TESTE: a partida começa no nível máximo com 9999 latas, para
+  experimentar o Black Book, as artes e os muros. Na pasta dos alunos o apelido TESTE é comum
+  (ajuste CONTA_TESTE em src/config.js).
+
+COMO ABRIR O JOGO (sem internet, sem instalar nada)
+- Celular e tablet: o jogo precisa estar num endereço da web (veja docs/COMO-PUBLICAR-NA-WEB.md).
+- Dois cliques em index.html. Use Google Chrome ou Microsoft Edge (atualizados).
+- Opcional, para computadores lentos: "Abrir Urbana (Windows).bat" abre o jogo por um
+  servidor local, num modo de desenho mais rápido (precisa do Python instalado).
+  Atenção: as partidas salvas num modo não aparecem no outro; use Exportar/Importar.
+
+CONTROLES NO MAPA
+WASD, setas, joystick (canto inferior esquerdo) ou clique/toque para andar;
+E / Espaço / Enter = botão A; B = Black Book; M = missões; P = perfil; N = amplia o mini-mapa; Esc = pausa;
+roda do mouse = zoom; C mostra/esconde a colisão (ajuda para quem edita o mapa).
+
+COMO CADASTRAR CONTEÚDO (professores)
+Dois cliques em editor.html (o menu do jogo dos alunos não tem link para o editor).
+Nele dá para cadastrar grafites e quizzes, artes do Black Book, personagens, missões, níveis e
+preços, tutorial e créditos, e posicionar pins, latas, muros, faixas de pedestre e carros no mapa, sem programar. Veja docs/GUIA-DE-CONTEUDO.md.
+
+ONDE FICA CADA COISA
+index.html            página do jogo
+editor.html           Editor de conteúdo (professores)
+estilo/               aparência (urbana.css = jogo, editor.css = editor, fontes.css = fontes)
+src/config.js         ajustes técnicos (versão, qualidade padrão do mapa, velocidade, zoom)
+src/cenas/            cenas do Phaser: CenaCarga, CenaMenu, CenaAvatar, CenaMapa
+src/sistemas/         regras: Icones (desenhos SVG de todos os ícones; o jogo não usa emojis), Orientacao (celular sempre deitado), Conteudo (lê e confere os dados), Salvamento, Progresso, Missoes,
+                      ObjetosDoMapa (pins, latas, muros), Efeitos, Sons, Joystick, Preferencias...
+src/telas/            janelas do jogo: HUD, ficha, quiz, Black Book, pintar muro, missões, perfil...
+src/editor/           partes do Editor de conteúdo
+dados/                TODO O CONTEÚDO DO JOGO (grafites, quizzes, artes, avatares, missões, níveis,
+                      créditos, tutorial). São arquivos .js com conteúdo em formato JSON.
+assets/mapa/          mapa em peças WebP (alta/ e leve/), mapa.json (Tiled) e mapa.js (o mesmo
+                      conteúdo, lido pelo jogo sem servidor), pecas.json / pecas.js,
+                      minimapa.jpg (cópia reduzida do mapa inteiro, usada no mini-mapa),
+                      detalhes.js / detalhes.json (posições dos postes de luz)
+assets/grafites/      fotos dos grafites reais
+assets/artes/         artes dos estudantes para o Black Book (WebP, até 1000 px)
+assets/avatares/      imagens dos personagens (retrato e folha de sprites)
+assets/ui/            logo, pins, lata, muros e outros elementos de interface
+assets/audio/         música e efeitos sonoros (mp3; lista em dados/jogo.js)
+assets/fontes/        fontes usadas pelo jogo (já embutidas em estilo/fontes.css); veja LEIA-ME-FONTES.txt
+copias_de_seguranca/  criada pelo editor: cópia dos arquivos antes de cada gravação
+originais/            arquivos originais em tamanho cheio (mapa em JPG, artes e retratos em PNG,
+                      fontes, materiais de exemplo). O jogo NÃO usa esta pasta; veja originais/LEIA-ME.txt
+docs/                 GUIA-DO-PROFESSOR.md, GUIA-DE-CONTEUDO.md, PLANO-DE-TESTES.md,
+                      COMO-PUBLICAR-NA-WEB.md (jogar no celular/tablet),
+                      REGISTRO-DE-VERSOES.md
+
+CONTEÚDO DE EXEMPLO
+Tudo que tem "EXEMPLO" no texto ou "exemplo_" no nome do arquivo é provisório.
+
+CONFERÊNCIA DO CONTEÚDO
+Fica só no Editor de conteúdo (aba Conferência): confere ids repetidos, imagens que faltam,
+perguntas sem 4 alternativas, preços inválidos, pins, latas e muros fora do mapa ou que não podem
+ser alcançados andando a partir da escola, etc. O jogo dos alunos não mostra a conferência.
+
+SALVAMENTO
+- Cada computador guarda várias partidas, uma por apelido (máximo em dados/jogo.js).
+- O progresso fica no navegador deste computador e é salvo automaticamente.
+  Limpar os dados do navegador apaga as partidas: use "Exportar" (em Continuar ou na Pausa)
+  para guardar uma cópia em arquivo, e "Importar partida" para trazê-la de volta
+  (serve também para levar a partida para outro computador ou para uma nova versão do jogo).
+- O jogo guarda a gravação anterior de cada partida; se a atual estragar, ele recupera a anterior.

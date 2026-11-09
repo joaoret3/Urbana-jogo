@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#17141d">
+<title>Urbana · Bairro Goiânia</title>
+<link rel="icon" href="assets/ui/logo_urbana.webp">
+<link rel="stylesheet" href="estilo/fontes.css">
+<link rel="stylesheet" href="estilo/urbana.css">
+</head>
+<body>
+<!-- Aviso caso falte o Phaser (o jogo não usa internet) -->
+<div id="erro">Não encontrei <b>lib/phaser.min.js</b>. Copie de novo a pasta completa do Urbana (o arquivo vem junto). Veja LEIA-ME.txt.</div>
+
+<!-- O Phaser desenha o mapa aqui -->
+<div id="jogo"></div>
+<!-- Menus, fichas, quiz e Black Book (HTML por cima do jogo) -->
+<div id="ui"></div>
+
+<!-- Celular/tablet em pé: pede para virar o aparelho (aparece só com a tela em pé; veja estilo/urbana.css) -->
+<div id="aviso-girar" role="alert" aria-live="assertive">
+  <svg class="girar-celular" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+    <rect x="20" y="6" width="24" height="46" rx="5"/><path d="M29 46h6"/>
+    <path class="girar-seta" d="M10 40a24 24 0 0 0 38 14M48 54l-1-9M48 54l-9-1"/>
+  </svg>
+  <h2>Vire o aparelho</h2>
+  <p>O Urbana é jogado com o celular ou tablet <strong>deitado</strong>. Gire a tela para continuar.</p>
+  <small>Se a tela não girar, desligue o bloqueio de rotação nas configurações do aparelho.</small>
+</div>
+
+<script src="lib/phaser.min.js"></script>
+<script>if (!window.Phaser) document.getElementById('erro').style.display = 'block';</script>
+
+<!-- Configuração -->
+<script src="src/config.js"></script>
+<!-- Mapa do bairro (mesmo conteúdo de assets/mapa/mapa.json e pecas.json) -->
+<script src="assets/mapa/pecas.js"></script>
+<script src="assets/mapa/mapa.js"></script>
+<script src="assets/mapa/detalhes.js"></script>
+<!-- Sistemas (regras e dados) -->
+<script src="src/sistemas/Icones.js"></script>
+<script src="src/sistemas/Carros.js"></script>
+<script src="src/sistemas/Interface.js"></script>
+<script src="src/sistemas/Orientacao.js"></script>
+<script src="src/sistemas/Preferencias.js"></script>
+<script src="src/sistemas/Conteudo.js"></script>
+<script src="src/sistemas/Progresso.js"></script>
+<script src="src/sistemas/Salvamento.js"></script>
+<script src="src/sistemas/FundoBairro.js"></script>
+<script src="src/sistemas/Joystick.js"></script>
+<script src="src/sistemas/Missoes.js"></script>
+<script src="src/sistemas/Sons.js"></script>
+<script src="src/sistemas/Efeitos.js"></script>
+<script src="src/sistemas/ObjetosDoMapa.js"></script>
+<script src="src/sistemas/Detalhes.js"></script>
+<!-- Telas (janelas em HTML) -->
+<script src="src/telas/TelaCreditos.js"></script>
+<script src="src/telas/TelaConfiguracoes.js"></script>
+<script src="src/telas/TelaNovaPartida.js"></script>
+<script src="src/telas/TelaHistoria.js"></script>
+<script src="src/telas/TelaPartidas.js"></script>
+<script src="src/telas/TelaAvatar.js"></script>
+<script src="src/telas/TelaPausa.js"></script>
+<script src="src/telas/HUD.js"></script>
+<script src="src/telas/MiniMapa.js"></script>
+<script src="src/telas/TelaFicha.js"></script>
+<script src="src/telas/TelaQuiz.js"></script>
+<script src="src/telas/TelaMissoes.js"></script>
+<script src="src/telas/TelaBlackBook.js"></script>
+<script src="src/telas/TelaPintarMuro.js"></script>
+<script src="src/telas/TelaPerfil.js"></script>
+<script src="src/telas/TelaTutorial.js"></script>
+<!-- Cenas do Phaser -->
+<script src="src/cenas/CenaCarga.js"></script>
+<script src="src/cenas/CenaMenu.js"></script>
+<script src="src/cenas/CenaAvatar.js"></script>
+<script src="src/cenas/CenaMapa.js"></script>
+<!-- Começa o jogo -->
+<script src="src/main.js"></script>
+</body>
+</html>

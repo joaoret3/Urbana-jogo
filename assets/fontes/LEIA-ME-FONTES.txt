@@ -1,0 +1,25 @@
+FONTES DO URBANA (desde a v2.27 — todas com licença livre, podem ser publicadas)
+
+LondrinaSolid-Regular.ttf ....... "Londrina Solid" © 2011 The Londrina Solid Authors
+                                  (https://github.com/marcelommp/Londrina-Typeface).
+                                  Licença SIL Open Font License 1.1. Usada em TODOS os textos do jogo
+                                  (letras maiúsculas e minúsculas).
+SedgwickAveDisplay-Regular.ttf .. "Sedgwick Ave Display" © 2017 The Sedgwick Ave Project Authors
+                                  (https://github.com/googlefonts/sedgwickave).
+                                  Licença SIL Open Font License 1.1. Usada nos TÍTULOS.
+Inter (Inter-*.woff) ............ licença OFL, ver LICENCA-Inter-OFL.txt.
+                                  Usada só no Editor de conteúdo e como reserva para símbolos.
+
+Sobre a licença OFL 1.1 (resumo, não substitui o texto oficial): pode usar, copiar, publicar e
+distribuir as fontes junto com o jogo, inclusive em escola/comunidade/internet, desde que os avisos de
+direitos autorais sejam mantidos e as fontes não sejam vendidas sozinhas. Texto oficial e perguntas
+frequentes: https://openfontlicense.org (também citado dentro dos próprios arquivos .ttf).
+Textos completos da licença (OFL.txt de cada fonte, enviados pelo professor): OFL-LondrinaSolid.txt e
+OFL-SedgwickAveDisplay.txt, nesta pasta. Mantenha-os junto das fontes ao publicar.
+Nome reservado: a Londrina Solid declara "Londrina Solid" como nome reservado; por isso a cópia reduzida embutida no jogo
+(estilo/fontes.css) tem o nome interno trocado para "Urbana Texto". O .ttf original, sem alteração, continua aqui.
+
+As fontes antigas (Highsens, Aerosoldier Drip, Grime Slime) NÃO são mais usadas e saíram do jogo;
+os arquivos ficaram guardados só na pasta do professor (originais/nao_usados/fontes_antigas/).
+O jogo não lê os .ttf desta pasta: cópias reduzidas estão embutidas em estilo/fontes.css (assim
+funciona abrindo o index.html com dois cliques, sem servidor).
