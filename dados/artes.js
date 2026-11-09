@@ -33,7 +33,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_001",
       "titulo": "Nana TAG",
-      "autoria": "ANA (?)",
+      "autoria": "Ana",
       "imagem": "assets/artes/arte_001.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -57,7 +57,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_003",
       "titulo": "Mts TAG",
-      "autoria": "Pedro Henrique",
+      "autoria": "Pedro",
       "imagem": "assets/artes/arte_003.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -81,7 +81,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_005",
       "titulo": "Radioative STICKER",
-      "autoria": "Eloa Martins",
+      "autoria": "Eloa",
       "imagem": "assets/artes/arte_005.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -93,7 +93,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_006",
       "titulo": "Lala TAG",
-      "autoria": "Lara Figueiredo",
+      "autoria": "Lara",
       "imagem": "assets/artes/arte_006.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -105,7 +105,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_008",
       "titulo": "Samy TAG",
-      "autoria": "Samira dos Santos",
+      "autoria": "Samira",
       "imagem": "assets/artes/arte_008.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -143,7 +143,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_012",
       "titulo": "Loki TAG",
-      "autoria": "Pedro Arthur",
+      "autoria": "Pedro",
       "imagem": "assets/artes/arte_012.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -155,7 +155,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_013",
       "titulo": "Boss Tag",
-      "autoria": "Thiago Ferraz",
+      "autoria": "Thiago",
       "imagem": "assets/artes/arte_013.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -179,7 +179,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_015",
       "titulo": "Boos TAG",
-      "autoria": "Thiago Ferraz",
+      "autoria": "Thiago",
       "imagem": "assets/artes/arte_015.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -205,7 +205,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_017",
       "titulo": "Fantasma Boss TAG",
-      "autoria": "Thiago Ferraz",
+      "autoria": "Thiago",
       "imagem": "assets/artes/arte_017.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -229,7 +229,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_019",
       "titulo": "Pol TAG",
-      "autoria": "Paulo ",
+      "autoria": "Paulo",
       "imagem": "assets/artes/arte_019.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -241,7 +241,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_020",
       "titulo": "Bryan TAG",
-      "autoria": "Bryan ",
+      "autoria": "Bryan",
       "imagem": "assets/artes/arte_020.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -277,7 +277,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_023",
       "titulo": "Flor STICKER",
-      "autoria": "Laura Souza",
+      "autoria": "Laura",
       "imagem": "assets/artes/arte_023.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -313,7 +313,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_026",
       "titulo": "Souza TAG",
-      "autoria": "Laura Souza",
+      "autoria": "Laura",
       "imagem": "assets/artes/arte_026.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -337,7 +337,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_028",
       "titulo": "Maju TAG",
-      "autoria": "Maria Júlia Falcão",
+      "autoria": "Maria",
       "imagem": "assets/artes/arte_028.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -361,7 +361,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_030",
       "titulo": "Mts TAG",
-      "autoria": "Pedro Henrique",
+      "autoria": "Pedro",
       "imagem": "assets/artes/arte_030.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -409,7 +409,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_034",
       "titulo": "Leles TAG",
-      "autoria": "Heytor Leles",
+      "autoria": "Heytor",
       "imagem": "assets/artes/arte_034.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -445,7 +445,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_037",
       "titulo": "Flecha TAG",
-      "autoria": "Vitória Flecha",
+      "autoria": "Vitória",
       "imagem": "assets/artes/arte_037.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -457,7 +457,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_038",
       "titulo": "Seg TAG",
-      "autoria": "Samuel Goecking",
+      "autoria": "Samuel",
       "imagem": "assets/artes/arte_038.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -493,7 +493,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_041",
       "titulo": "Nana TAG",
-      "autoria": "",
+      "autoria": "Ana",
       "imagem": "assets/artes/arte_041.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -505,7 +505,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_042",
       "titulo": "Sorvete STICKER",
-      "autoria": "Laura Souza",
+      "autoria": "Laura",
       "imagem": "assets/artes/arte_042.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -517,7 +517,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_043",
       "titulo": "Loki TAG",
-      "autoria": "Pedro Arthur",
+      "autoria": "Pedro",
       "imagem": "assets/artes/arte_043.webp",
       "categoria": "basica",
       "autorizacao": {
