@@ -423,7 +423,7 @@ URBANA_DADOS["artes"] = {
       "titulo": "Wand TAG",
       "autoria": "Wanderlan",
       "imagem": "assets/artes/arte_035.webp",
-      "categoria": "basica",
+      "categoria": "intermediaria",
       "autorizacao": {
         "autorizado": true,
         "observacao": ""
