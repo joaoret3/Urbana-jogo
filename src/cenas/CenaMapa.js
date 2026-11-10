@@ -120,7 +120,9 @@ class CenaMapa extends Phaser.Scene {
     this.criarAnimacoes();
     this.jogador = this.physics.add.sprite(pos.x, pos.y, this.chaveAvatar, 0);
     // o "pé" do personagem fica na posição do jogador (90% da altura do quadro)
-    this.jogador.setOrigin(0.5, 0.9).setScale(cfg.AVATAR_ESCALA);
+    // folhas com quadros maiores que 96 px (ex.: 192) ficam do mesmo tamanho no mapa (v2.31)
+    const escala = cfg.AVATAR_ESCALA * 96 / (Number(s.altura_quadro) || 96);
+    this.jogador.setOrigin(0.5, 0.9).setScale(escala);
     // área de colisão: só os pés (assim a cabeça pode passar "na frente" das casas)
     // o desenho pode crescer (AVATAR_ESCALA) sem a área dos pés crescer junto (AVATAR_ESCALA_PES)
     const ajustePe = (cfg.AVATAR_ESCALA_PES || cfg.AVATAR_ESCALA) / cfg.AVATAR_ESCALA;
@@ -134,7 +136,7 @@ class CenaMapa extends Phaser.Scene {
     this.direcao = 'baixo';
     this.jogador.anims.play(this.chaveAvatar + '_parado_baixo');
     // sombra suave nos pés (o sol vem do alto à esquerda, como as sombras do mapa)
-    this.sombraJogador = this.add.ellipse(pos.x, pos.y, s.largura_quadro * 0.42 * cfg.AVATAR_ESCALA, s.altura_quadro * 0.12 * cfg.AVATAR_ESCALA, 0x0f0c14, 0.32).setDepth(9);
+    this.sombraJogador = this.add.ellipse(pos.x, pos.y, s.largura_quadro * 0.42 * escala, s.altura_quadro * 0.12 * escala, 0x0f0c14, 0.32).setDepth(9);
   }
 
   // Cria as animações a partir da folha de sprites:

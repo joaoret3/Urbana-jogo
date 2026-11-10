@@ -1,5 +1,10 @@
 # Urbana — registro de versões
 
+## 2.31 — 10/11/2026
+
+- **Folhas de sprites maiores (ex.: 192×192 por quadro):** o personagem fica do mesmo tamanho no mapa que os de 96 px, só com
+  mais detalhe. Vale para personagens jogáveis, personagens do bairro e o desenho no editor. A área dos pés (colisão) também não muda.
+
 ## 2.30 — 09/11/2026
 
 - **Aviso "Vire o aparelho":** desenho refeito; agora o celular gira inteiro ao lado de uma seta fixa (no iPhone a seta girava fora do lugar).

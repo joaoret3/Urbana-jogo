@@ -46,12 +46,12 @@ const Npcs = {
         cena.anims.create({ key: anim, frameRate: Number(s.quadros_por_segundo) || 5, repeat: -1, yoyo: true,
           frames: cena.anims.generateFrameNumbers(k, { start: linha * colunas, end: linha * colunas + quadros - 1 }) });
       }
-      const escala = cfg.AVATAR_ESCALA;
+      const prop = 96 / aq, escala = cfg.AVATAR_ESCALA * prop;   // quadros maiores que 96 px ficam do mesmo tamanho
       cena.add.ellipse(o.x, o.y, lq * 0.42 * escala, aq * 0.12 * escala, 0x0f0c14, 0.32).setDepth(9);
       const sprite = cena.add.sprite(o.x, o.y, k, linha * colunas).setOrigin(0.5, 0.9).setScale(escala).setDepth(10 + o.y / 100000);
       sprite.anims.play(anim);
       // não dá para atravessar o personagem (só os pés bloqueiam, como no jogador)
-      const pe = cena.add.zone(o.x, o.y - aq * 0.05, lq * 0.34 * (cfg.AVATAR_ESCALA_PES || escala), aq * 0.14 * (cfg.AVATAR_ESCALA_PES || escala));
+      const pe = cena.add.zone(o.x, o.y - aq * 0.05 * prop, lq * 0.34 * (cfg.AVATAR_ESCALA_PES || cfg.AVATAR_ESCALA) * prop, aq * 0.14 * (cfg.AVATAR_ESCALA_PES || cfg.AVATAR_ESCALA) * prop);
       cena.physics.add.existing(pe, true);
       if (cena.jogador) cena.physics.add.collider(cena.jogador, pe);
       // sinal em cima da cabeça e balão de fala
