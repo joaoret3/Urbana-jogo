@@ -33,14 +33,14 @@ URBANA_DADOS["avatares"] = {
     },
     {
       "id": "avatar_03",
-      "nome": "Cauã",
+      "nome": "ONE",
       "descricao": "",
       "retrato": "assets/avatares/avatar_03/retrato.webp",
       "nivel_minimo": 1,
       "sprite": {
         "arquivo": "assets/avatares/avatar_03/sprite.png",
-        "largura_quadro": 96,
-        "altura_quadro": 96,
+        "largura_quadro": 192,
+        "altura_quadro": 192,
         "quadros_caminhada": 6,
         "quadros_por_segundo": 11
       }
