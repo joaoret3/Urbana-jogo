@@ -5,7 +5,7 @@ URBANA_DADOS["npcs"] = {
   "npcs": [
     {
       "id": "npc_alexandra",
-      "nome": "Alexandra",
+      "nome": "Dr. Alexandra",
       "retrato": "assets/npcs/npc_alexandra/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
       "fala_inicial": "EXEMPLO – Oi! Eu sou a Alexandra. Tem tanto muro cinza aqui no bairro... Me ajuda a deixar tudo mais colorido?",
