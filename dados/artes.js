@@ -217,7 +217,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_018",
       "titulo": "Smok TAG",
-      "autoria": "",
+      "autoria": "Não sei",
       "imagem": "assets/artes/arte_018.webp",
       "categoria": "intermediaria",
       "autorizacao": {
@@ -349,7 +349,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_029",
       "titulo": "Lacoste TAG",
-      "autoria": "",
+      "autoria": "Não sei",
       "imagem": "assets/artes/arte_029.webp",
       "categoria": "basica",
       "autorizacao": {
