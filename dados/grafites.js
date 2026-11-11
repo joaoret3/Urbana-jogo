@@ -4,42 +4,6 @@ URBANA_DADOS["grafites"] = {
   "_leia": "Fichas dos grafites REAIS catalogados na pesquisa de campo. O 'id' deve ser igual ao nome do ponto na camada 'grafites' do mapa (Tiled). Use status_publicacao 'publicado' só depois de revisar texto e autorizações. Todos abaixo são EXEMPLO.",
   "grafites": [
     {
-      "id": "grafite_001",
-      "titulo": "EXEMPLO – Mural da Vida",
-      "artista": "Artista de exemplo",
-      "data_registro": "2026-09-15",
-      "descricao": "TEXTO DE EXEMPLO. Aqui entra o texto histórico escrito pelos estudantes sobre este grafite: quando foi pintado, o que representa e por que é importante para o bairro Goiânia.",
-      "curiosidades": "EXEMPLO. Curiosidade sobre a obra ou sobre a rua onde ela está.",
-      "imagem": "assets/grafites/exemplo_grafite_001.jpg",
-      "quiz_id": "quiz_001",
-      "creditos_fotografia": "Turma de exemplo",
-      "status_publicacao": "publicado"
-    },
-    {
-      "id": "grafite_002",
-      "titulo": "EXEMPLO – Bairro em Cores",
-      "artista": null,
-      "data_registro": "2026-09-22",
-      "descricao": "TEXTO DE EXEMPLO. Quando a autoria não é conhecida, deixe \"artista\": null. O jogo mostra \"Autoria não identificada\".",
-      "curiosidades": "",
-      "imagem": "assets/grafites/exemplo_grafite_002.jpg",
-      "quiz_id": "quiz_002",
-      "creditos_fotografia": "Turma de exemplo",
-      "status_publicacao": "publicado"
-    },
-    {
-      "id": "grafite_003",
-      "titulo": "EXEMPLO – Raízes",
-      "artista": "Coletivo de exemplo",
-      "data_registro": "2026-10-01",
-      "descricao": "TEXTO DE EXEMPLO. Este grafite tem um quiz com duas perguntas, para mostrar que um mural pode ter mais de uma.",
-      "curiosidades": "EXEMPLO. As cores verde e laranja lembram a terra e as plantas da região.",
-      "imagem": "assets/grafites/exemplo_grafite_003.jpg",
-      "quiz_id": "quiz_003",
-      "creditos_fotografia": "Turma de exemplo",
-      "status_publicacao": "publicado"
-    },
-    {
       "id": "grafite_004",
       "titulo": "EXEMPLO – Grafite 004",
       "artista": null,
@@ -49,7 +13,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_004.jpg",
       "quiz_id": "quiz_004",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_005",
@@ -61,7 +25,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_005.jpg",
       "quiz_id": "quiz_005",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_006",
@@ -73,7 +37,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_006.jpg",
       "quiz_id": "quiz_006",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_007",
@@ -85,7 +49,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_007.jpg",
       "quiz_id": "quiz_007",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_008",
@@ -97,7 +61,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_008.jpg",
       "quiz_id": "quiz_008",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_009",
@@ -121,7 +85,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_010.jpg",
       "quiz_id": "quiz_010",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_011",
@@ -133,7 +97,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_011.jpg",
       "quiz_id": "quiz_011",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_012",
@@ -145,7 +109,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_012.jpg",
       "quiz_id": "quiz_012",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_013",
@@ -157,7 +121,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_013.jpg",
       "quiz_id": "quiz_013",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_014",
@@ -169,7 +133,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_014.jpg",
       "quiz_id": "quiz_014",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_015",
@@ -181,7 +145,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_015.jpg",
       "quiz_id": "quiz_015",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_016",
@@ -193,7 +157,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_016.jpg",
       "quiz_id": "quiz_016",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_017",
@@ -205,7 +169,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_017.jpg",
       "quiz_id": "quiz_017",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_018",
@@ -217,7 +181,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_018.jpg",
       "quiz_id": "quiz_018",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_019",
@@ -229,7 +193,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_019.jpg",
       "quiz_id": "quiz_019",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_020",
@@ -241,7 +205,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_020.jpg",
       "quiz_id": "quiz_020",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_021",
@@ -253,7 +217,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_021.jpg",
       "quiz_id": "quiz_021",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_022",
@@ -265,7 +229,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_022.jpg",
       "quiz_id": "quiz_022",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_023",
@@ -277,7 +241,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_023.jpg",
       "quiz_id": "quiz_023",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_024",
@@ -289,7 +253,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_024.jpg",
       "quiz_id": "quiz_024",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_025",
@@ -301,7 +265,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_025.jpg",
       "quiz_id": "quiz_025",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_026",
@@ -313,7 +277,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_026.jpg",
       "quiz_id": "quiz_026",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_027",
@@ -325,7 +289,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_027.jpg",
       "quiz_id": "quiz_027",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_028",
@@ -337,7 +301,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_028.jpg",
       "quiz_id": "quiz_028",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_029",
@@ -349,7 +313,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_029.jpg",
       "quiz_id": "quiz_029",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_030",
@@ -361,7 +325,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_030.jpg",
       "quiz_id": "quiz_030",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_031",
@@ -373,7 +337,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_031.jpg",
       "quiz_id": "quiz_031",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_032",
@@ -385,7 +349,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_032.jpg",
       "quiz_id": "quiz_032",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_033",
@@ -397,7 +361,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_033.jpg",
       "quiz_id": "quiz_033",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_034",
@@ -409,7 +373,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_034.jpg",
       "quiz_id": "quiz_034",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_035",
@@ -421,7 +385,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_035.jpg",
       "quiz_id": "quiz_035",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_036",
@@ -433,7 +397,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_036.jpg",
       "quiz_id": "quiz_036",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_037",
@@ -445,7 +409,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_037.jpg",
       "quiz_id": "quiz_037",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_038",
@@ -457,7 +421,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_038.jpg",
       "quiz_id": "quiz_038",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_039",
@@ -469,7 +433,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_039.jpg",
       "quiz_id": "quiz_039",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_040",
@@ -481,7 +445,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_040.jpg",
       "quiz_id": "quiz_040",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     }
   ]
 };
