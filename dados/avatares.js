@@ -11,8 +11,8 @@ URBANA_DADOS["avatares"] = {
       "nivel_minimo": 1,
       "sprite": {
         "arquivo": "assets/avatares/avatar_01/sprite.png",
-        "largura_quadro": 96,
-        "altura_quadro": 96,
+        "largura_quadro": 192,
+        "altura_quadro": 192,
         "quadros_caminhada": 6,
         "quadros_por_segundo": 11
       }
@@ -25,8 +25,8 @@ URBANA_DADOS["avatares"] = {
       "nivel_minimo": 2,
       "sprite": {
         "arquivo": "assets/avatares/avatar_02/sprite.png",
-        "largura_quadro": 96,
-        "altura_quadro": 96,
+        "largura_quadro": 192,
+        "altura_quadro": 192,
         "quadros_caminhada": 6,
         "quadros_por_segundo": 11
       }
@@ -67,8 +67,8 @@ URBANA_DADOS["avatares"] = {
       "nivel_minimo": 1,
       "sprite": {
         "arquivo": "assets/avatares/avatar_05/sprite.png",
-        "largura_quadro": 96,
-        "altura_quadro": 96,
+        "largura_quadro": 192,
+        "altura_quadro": 192,
         "quadros_caminhada": 4,
         "quadros_por_segundo": 8
       }
@@ -81,8 +81,8 @@ URBANA_DADOS["avatares"] = {
       "nivel_minimo": 1,
       "sprite": {
         "arquivo": "assets/avatares/avatar_06/sprite.png",
-        "largura_quadro": 96,
-        "altura_quadro": 96,
+        "largura_quadro": 192,
+        "altura_quadro": 192,
         "quadros_caminhada": 4,
         "quadros_por_segundo": 8
       }
