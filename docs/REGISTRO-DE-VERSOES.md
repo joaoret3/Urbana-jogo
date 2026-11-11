@@ -1,5 +1,14 @@
 # Urbana — registro de versões
 
+## 2.32 — 11/11/2026
+
+- **37 grafites do bairro** (fotos enviadas pelo professor) cadastrados como rascunho: grafite_004 a grafite_040, cada um com
+  um quiz de EXEMPLO (quiz_004 a quiz_040). Título, texto, artista, crédito e perguntas são de exemplo; a data é a da foto;
+  a descrição cita o nome do arquivo original (IMG_xxxx). Fotos giradas na posição certa, reduzidas para 1600 px e sem
+  localização GPS. Fotos grandes (2400 px) guardadas em `originais/grafites/` (só na pasta do professor).
+- **Recortar foto (editor):** na ficha do grafite, botão "Recortar foto": arrastar o quadro, mudar pelos cantos, proporção
+  (livre, 4:3, 3:2, 16:9, quadrado, em pé), girar 90° e "foto inteira". Sempre recorta a partir da foto original inteira.
+
 ## 2.31 — 10/11/2026
 
 - **Folhas de sprites maiores (ex.: 192×192 por quadro):** o personagem fica do mesmo tamanho no mapa que os de 96 px, só com
