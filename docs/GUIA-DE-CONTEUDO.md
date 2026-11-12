@@ -53,7 +53,7 @@ O que tiver **EXEMPLO** no texto ou **`exemplo_`** no nome do arquivo é provis�
 | `dados/quizzes.js` | Perguntas de cada grafite |
 | `dados/artes.js` | Artes dos estudantes para o Black Book (expressão artística) |
 | `dados/avatares.js` | Personagens |
-| `dados/molduras.js` | Molduras do retrato do jogador |
+| `dados/molduras.js` | Molduras do retrato do jogador (cor do contorno e, opcional, `imagem` da moldura vazada em `assets/molduras/`) |
 | `dados/missoes.js` | Missões |
 | `dados/creditos.js` | Créditos (só nomes autorizados) |
 
@@ -162,3 +162,17 @@ Uma missão que pede mais do que o jogo tem (ex.: 5 fichas com só 3 grafites) a
 2. **Nova missão para este personagem** (ou, em Missões, o campo "Personagem que dá a missão").
 3. **Mapa > Colocar personagem:** escolha o personagem e clique na calçada onde ele deve ficar.
 4. Salve. A missão só aparece para o aluno depois que ele conversa com o personagem.
+
+
+## Molduras vazadas (desde a v2.36)
+
+Uma moldura pode ter, além da cor, uma **imagem vazada**: PNG quadrado com fundo transparente, com o meio vazio
+(onde fica o retrato) e enfeites em volta (coroa, estrelas, pingos...). No jogo ela fica por cima do retrato, com
+150% do tamanho do anel de XP, e aparece na barra do jogador, no perfil e na lista de partidas.
+
+- Desenhe no gabarito `originais/molduras/GABARITO_moldura_vazada_1200px.png` (1200 × 1200 px): não desenhe no
+  círculo do retrato, deixe o anel de XP e o selo do nível livres; enfeites só na área em volta.
+- Contorno preto grosso e poucos elementos grandes: no celular a moldura aparece com uns 80 px.
+- No editor: aba **Níveis, preços e recompensas** > Molduras do retrato > "Imagem vazada (PNG transparente)".
+  O editor reduz para 600 px e salva em `assets/molduras/<id>.webp`. "Tirar imagem" volta a ser só a cor.
+- Exemplo para testar: `originais/molduras/EXEMPLO_moldura_coroa.png`.

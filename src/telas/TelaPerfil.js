@@ -33,8 +33,10 @@ const TelaPerfil = {
 
       corpo.replaceChildren(
         E('section', { class: 'perfil-topo' },
-          E('div', { class: 'retrato-redondo perfil-retrato', style: { '--moldura': moldura ? moldura.cor : 'var(--lima)' } },
-            avatar ? E('img', { src: avatar.retrato, alt: '' }) : null),
+          E('div', { class: 'com-moldura' + (moldura && moldura.imagem ? ' vazada' : '') },
+            E('div', { class: 'retrato-redondo perfil-retrato', style: { '--moldura': moldura ? moldura.cor : 'var(--lima)' } },
+              avatar ? E('img', { src: avatar.retrato, alt: '' }) : null),
+            Interface.molduraVazada(moldura)),
           E('div', { class: 'perfil-nome' },
             E('h3', {}, p.apelido),
             E('p', {}, `Nível ${info.nivel} · ${j.xp} XP` + (info.xpProximo !== null ? ` (faltam ${info.xpProximo - j.xp} para o nível ${info.nivel + 1})` : ' · nível máximo')),
@@ -66,7 +68,9 @@ const TelaPerfil = {
             type: 'button', class: 'perfil-opcao perfil-moldura' + (livre ? '' : ' bloqueado') + (atual ? ' ativo' : ''),
             disabled: !livre || atual,
             onclick: () => { j.moldura_id = m.id; Salvamento.salvar(); HUD.atualizar(); desenhar(); }
-          }, E('span', { class: 'amostra-moldura', style: { borderColor: m.cor } }),
+          }, m.imagem
+            ? E('span', { class: 'amostra-moldura amostra-vazada', style: { borderColor: m.cor } }, Interface.molduraVazada(m))
+            : E('span', { class: 'amostra-moldura', style: { borderColor: m.cor } }),
             E('span', {}, atual ? Interface.comIcone('ok', m.nome) : livre ? m.nome : Interface.comIcone('cadeado', comoLiberar(m.id))));
         }))
       );

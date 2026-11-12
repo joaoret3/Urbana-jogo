@@ -123,6 +123,7 @@ const Conteudo = {
     };
     const idsAvatares = conferirIds(avatares, 'dados/avatares.js');
     const idsMolduras = conferirIds(molduras, 'dados/molduras.js');
+    molduras.forEach(m => { if (m.imagem) imagens.push([`dados/molduras.js → ${m.id}`, m.imagem]); });   // v2.36: moldura vazada
     const idsGrafites = conferirIds(grafites, 'dados/grafites.js');
     const idsQuizzes = conferirIds(quizzes, 'dados/quizzes.js');
     conferirIds(artes, 'dados/artes.js');

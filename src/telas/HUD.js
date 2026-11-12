@@ -37,7 +37,8 @@ const HUD = {
     el.retrato = E('img', { alt: '' });
     el.moldura = E('div', { class: 'retrato-redondo hud-retrato' }, el.retrato);
     el.anel = E('div', { class: 'hud-xp-anel', role: 'progressbar', 'aria-label': 'Experiência (XP) até o próximo nível', 'aria-valuemin': '0', 'aria-valuemax': '100' }, el.moldura);
-    el.botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.anel);
+    el.molduraVazada = E('img', { class: 'moldura-vazada', alt: '', draggable: 'false', hidden: true });   // v2.36
+    el.botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.anel, el.molduraVazada);
     el.nivel = E('span', { class: 'hud-nivel', 'aria-hidden': 'true' });
     el.xpTexto = E('span', { class: 'sr-only' });
     el.apelido = E('span', { class: 'sr-only' });
@@ -82,6 +83,10 @@ const HUD = {
     const info = Progresso.infoNivel(p.jogador.xp);
     if (avatar) el.retrato.src = avatar.retrato;
     el.moldura.style.setProperty('--moldura', moldura ? moldura.cor : 'var(--lima)');
+    const vazada = !!(moldura && moldura.imagem);
+    if (vazada && el.molduraVazada.getAttribute('src') !== moldura.imagem) el.molduraVazada.src = moldura.imagem;
+    el.molduraVazada.hidden = !vazada;
+    el.botaoPerfil.parentElement.classList.toggle('vazada', vazada);
     const pct = Math.round(info.fracao * 100);
     const xpTexto = info.xpProximo !== null ? `${info.xp} / ${info.xpProximo} XP · faltam ${info.xpProximo - info.xp} XP para o nível ${info.nivel + 1}` : `${info.xp} XP · nível máximo`;
     el.nivel.textContent = 'NV ' + info.nivel;

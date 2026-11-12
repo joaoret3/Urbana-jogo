@@ -25,8 +25,10 @@ const TelaPartidas = {
         const avatar = Conteudo.avatar(r.avatar_id);
         const moldura = Conteudo.moldura(r.moldura_id);
         return E('li', { class: 'partida-cartao' },
-          E('div', { class: 'retrato-redondo', style: { '--moldura': moldura ? moldura.cor : 'var(--lima)' } },
-            avatar ? E('img', { src: avatar.retrato, alt: '' }) : null),
+          E('div', { class: 'com-moldura' + (moldura && moldura.imagem ? ' vazada' : '') },
+            E('div', { class: 'retrato-redondo', style: { '--moldura': moldura ? moldura.cor : 'var(--lima)' } },
+              avatar ? E('img', { src: avatar.retrato, alt: '' }) : null),
+            Interface.molduraVazada(moldura)),
           E('div', { class: 'partida-info' },
             E('strong', { class: 'partida-apelido' }, r.apelido),
             E('span', {}, `Nível ${r.nivel} · ${r.latas} latas · ${r.murais} de ${total} murais`),

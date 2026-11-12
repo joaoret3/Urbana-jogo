@@ -148,7 +148,7 @@ const MiniMapa = {
     };
     ajustar();
     requestAnimationFrame(ajustar);                    // depois das fontes e do retrato carregarem
-    if (window.ResizeObserver) { this._obs = new ResizeObserver(ajustar); this._obs.observe(perfil); }
+    if (window.ResizeObserver) { this._obs = new ResizeObserver(ajustar); this._obs.observe(perfil, { box: 'border-box' }); }
     this._aoRedimensionar = ajustar;
     window.addEventListener('resize', ajustar);
   },

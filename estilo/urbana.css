@@ -1026,3 +1026,39 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 @media (max-width: 520px) { .hud-perfil.hud-anel { --anel: 58px; padding: 0; } }
 @media (max-height: 500px) and (orientation: landscape) { .hud-perfil.hud-anel { --anel: 54px; padding: 0; } }
 @media (prefers-reduced-motion: reduce) { .hud-xp-anel { transition: none; } }
+
+/* ---------- v2.36: molduras vazadas (imagem com o meio transparente por cima do retrato) ----------
+   A imagem tem 150% do tamanho do anel/retrato e fica centralizada: os enfeites saem do círculo.
+   Gabarito: 1200 × 1200 px; retrato no meio, anel de XP e selo do nível livres. */
+.moldura-vazada { position: absolute; left: 50%; top: 50%; width: 150%; height: 150%; max-width: none; transform: translate(-50%, -50%); pointer-events: none; z-index: 2; }
+.hud-anel .hud-botao-perfil { position: relative; }
+.hud-anel .hud-nivel { z-index: 3; }
+/* espaço para os enfeites não saírem da tela nem encostarem no mini-mapa */
+.hud-perfil.hud-anel.vazada { padding: calc(var(--anel) * .2) calc(var(--anel) * .2) calc(var(--anel) * .1); }
+.com-moldura { position: relative; flex: none; display: inline-block; }
+.com-moldura.vazada { margin: 16px 18px; }
+.amostra-moldura.amostra-vazada { position: relative; overflow: visible; }
+.amostra-moldura.amostra-vazada .moldura-vazada { width: 135%; height: 135%; }
+
+/* ---------- v2.36: avisos de conquista translúcidos e menores (pedido do professor) ---------- */
+.conquista {
+  width: min(290px, calc(100vw - 32px)); gap: 10px; padding: 7px 14px 7px 7px; border-radius: 14px;
+  background: rgba(15, 12, 20, .58); border-width: 2px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.conquista strong { font-size: 1.02rem; line-height: 1.1; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.conquista p { font-size: .88rem; line-height: 1.2; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.conquista-icone { width: 34px; height: 34px; font-size: 1.1rem; border-width: 2px; }
+.conquista-nivel .conquista-icone { width: 42px; height: 42px; font-size: 1.4rem; }
+.conquista-nivel strong { font-size: 1.3rem; }
+.conquista { border-color: rgba(155, 226, 27, .75); }
+.conquista-nivel { border-color: rgba(255, 225, 77, .8); }
+.conquista-missao { border-color: rgba(34, 211, 238, .75); }
+.conquista-descoberta { border-color: rgba(255, 63, 191, .75); }
+@media (max-width: 700px), (max-height: 520px) {
+  .conquista { width: min(240px, calc(100vw - 16px)); padding: 5px 10px 5px 5px; }
+  .conquista strong { font-size: .9rem; }
+  .conquista p { font-size: .78rem; }
+  .conquista-icone { width: 28px; height: 28px; font-size: .95rem; }
+  .conquista-nivel .conquista-icone { width: 34px; height: 34px; font-size: 1.15rem; }
+}

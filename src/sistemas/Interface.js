@@ -38,7 +38,7 @@ const Interface = {
       if (k === 'class') e.className = v;
       else if (k === 'texto') e.textContent = v;
       else if (k.startsWith('on') && typeof v === 'function') e.addEventListener(k.slice(2), v);
-      else if (k === 'style' && typeof v === 'object') Object.assign(e.style, v);
+      else if (k === 'style' && typeof v === 'object') Object.entries(v).forEach(([p, x]) => p.startsWith('--') ? e.style.setProperty(p, x) : (e.style[p] = x));   // v2.36: variáveis CSS (--moldura) também
       else e.setAttribute(k, v === true ? '' : v);
     }
     for (const f of filhos.flat()) {
@@ -149,6 +149,13 @@ const Interface = {
     this.raiz.append(caixa);
     setTimeout(() => caixa.classList.add('saindo'), 2600);
     setTimeout(() => caixa.remove(), 3100);
+  },
+
+  // v2.36: moldura vazada (imagem quadrada com o meio transparente, ver dados/molduras.js "imagem").
+  // Vai por cima do retrato com 150% do tamanho dele, centralizada; os enfeites saem do círculo.
+  // Uso: dentro de um elemento com position: relative do tamanho do retrato (ou do anel de XP).
+  molduraVazada(moldura) {
+    return moldura && moldura.imagem ? this.el('img', { class: 'moldura-vazada', src: moldura.imagem, alt: '', draggable: 'false' }) : null;
   },
 
   // Faixa de conquista no alto da tela (recompensa, nível, missão, descoberta).

@@ -1,5 +1,20 @@
 # Urbana — registro de versões
 
+## 2.36 — 12/11/2026
+
+- **Molduras vazadas (solução B escolhida pelo professor):** cada moldura pode ter uma imagem PNG transparente com
+  enfeites em volta do retrato (campo opcional `imagem` em dados/molduras.js). Ela fica por cima do retrato com 150% do
+  tamanho do anel de XP, sem esconder o anel nem o selo do nível. Aparece na barra do jogador, no perfil (retrato grande e
+  miniaturas da lista de molduras) e na lista de partidas. Na barra, o perfil ganha uma margem para os enfeites não saírem
+  da tela, e o mini-mapa desce junto.
+- **Editor:** em "Níveis, preços e recompensas" > Molduras, botão "Imagem vazada (PNG transparente)" com prévia igual à do
+  jogo (anel, retrato, moldura e selo) e "Tirar imagem". A imagem é reduzida para 600 px e salva em assets/molduras/.
+- **Gabarito** para desenhar (1200 × 1200 px) e uma moldura de exemplo em `originais/molduras/` (só na pasta do professor).
+- **Avisos de conquista** (missão concluída, muro pintado, nível, descoberta) translúcidos, com fundo desfocado,
+  borda mais fina e menores (cerca de 290 × 60 px no computador e 240 × 50 px no celular).
+- **Correção:** no perfil e na lista de partidas a cor da moldura não aparecia (o contorno ficava sempre verde);
+  agora aparece a cor da moldura escolhida.
+
 ## 2.35 — 12/11/2026
 
 - **Nova barra do jogador ("anel de XP", modelo B2 escolhido pelo professor):** o XP do nível virou um anel verde em volta
