@@ -993,3 +993,6 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
   .painel-rodape { gap: 8px; padding: 6px 12px 8px; }
   .painel-rodape .botao { min-height: 38px; padding: 4px 12px; font-size: .9rem; }
 }
+
+/* ---------- v2.34: mini-mapa sempre abaixo da barra do jogador (posição calculada pelo MiniMapa.posicionar) ---------- */
+.hud-minimapa.posicionado:not(.ampliado) { top: var(--topo-minimapa); }

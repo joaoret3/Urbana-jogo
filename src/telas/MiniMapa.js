@@ -4,7 +4,7 @@
 // Mostra, sobre uma imagem reduzida do mapa (assets/mapa/minimapa.jpg):
 //   - os grafites já visitados (azul) e os que têm o quiz concluído (verde);
 //     os que ainda não foram descobertos NÃO aparecem (o aluno precisa explorar);
-//   - os muros livres;
+//   (v2.34: os muros livres não aparecem mais no mini-mapa, a pedido do professor)
 //   - o jogador (ponto rosa) e a escola (ponto de partida).
 // Clicar/tocar no mini-mapa (ou apertar N) amplia; clicar de novo diminui.
 // O botão "–" esconde o mini-mapa (fica guardado nas preferências deste computador).
@@ -46,7 +46,6 @@ const MiniMapa = {
     const legenda = E('div', { class: 'minimapa-legenda' },
       this.itemLegenda('visitado', 'Grafite visitado'),
       this.itemLegenda('concluido', 'Quiz concluído'),
-      this.itemLegenda('muro', 'Muro livre', 'quadrado'),
       this.itemLegenda('jogador', 'Você'),
       this.itemLegenda('escola', 'Escola', 'losango')
     );
@@ -58,6 +57,7 @@ const MiniMapa = {
     this.el = { bloco, quadro, tela, img };
     this._tam = null;
     this.esconder(this.lerEscondido(), true);
+    this.posicionar();
     this.atualizar(cena);
   },
 
@@ -112,21 +112,6 @@ const MiniMapa = {
       ctx.lineWidth = Math.max(1, raio * 0.35); ctx.strokeStyle = C.contorno; ctx.stroke();
     };
 
-    // muros livres (retângulos, girados como no Tiled)
-    (Conteudo.mapa.muros || []).forEach(o => {
-      if (!(o.width > 0 && o.height > 0)) return;
-      ctx.beginPath();
-      Conteudo.cantosMuro(o).forEach(([cx, cy], i) => (i ? ctx.lineTo(cx * e, cy * e) : ctx.moveTo(cx * e, cy * e)));
-      ctx.closePath();
-      ctx.fillStyle = C.muro; ctx.fill();
-      ctx.lineWidth = Math.max(1, dpr); ctx.strokeStyle = C.contorno; ctx.stroke();
-      // muro pequeno demais para enxergar: marca o centro com um quadradinho
-      if (o.width * e < 4 * dpr) {
-        const c = Conteudo.centroMuro(o), q = r * 0.7;
-        ctx.fillRect(c.x * e - q, c.y * e - q, q * 2, q * 2); ctx.strokeRect(c.x * e - q, c.y * e - q, q * 2, q * 2);
-      }
-    });
-
     // grafites já visitados ou com quiz concluído (os não descobertos ficam escondidos)
     (cena.pins || []).forEach(pin => {
       const estado = ObjetosDoMapa.estadoPin(pin.grafite);
@@ -148,7 +133,29 @@ const MiniMapa = {
     bolinha(j.x, j.y, r * 1.1, C.jogador);
   },
 
+  // v2.34: o mini-mapa fica sempre um pouco ABAIXO da barra do jogador, qualquer que seja o tamanho
+  // dela (celular, celular deitado, computador) — antes a posição era fixa e no celular eles encostavam.
+  ESPACO: 12,
+  posicionar() {
+    const perfil = document.querySelector('.hud-perfil');
+    if (!perfil || !this.el) return;
+    const ajustar = () => {
+      if (!this.el) return;
+      const raiz = this.el.bloco.offsetParent || document.body;
+      const fim = perfil.getBoundingClientRect().bottom - raiz.getBoundingClientRect().top;
+      this.el.bloco.style.setProperty('--topo-minimapa', Math.round(fim + this.ESPACO) + 'px');
+      this.el.bloco.classList.add('posicionado');
+    };
+    ajustar();
+    requestAnimationFrame(ajustar);                    // depois das fontes e do retrato carregarem
+    if (window.ResizeObserver) { this._obs = new ResizeObserver(ajustar); this._obs.observe(perfil); }
+    this._aoRedimensionar = ajustar;
+    window.addEventListener('resize', ajustar);
+  },
+
   destruir() {
+    if (this._obs) { this._obs.disconnect(); this._obs = null; }
+    if (this._aoRedimensionar) { window.removeEventListener('resize', this._aoRedimensionar); this._aoRedimensionar = null; }
     if (this.el && this.el.bloco) this.el.bloco.remove();
     this.el = null; this._tam = null;
   }

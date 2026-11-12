@@ -1,5 +1,12 @@
 # Urbana — registro de versões
 
+## 2.34 — 12/11/2026
+
+- **Mini-mapa afastado da barra do jogador:** a posição do mini-mapa (e do botão "Mapa" quando ele está escondido) agora é
+  calculada pela altura real da barra do jogador, sempre com 12 px de espaço. Antes era fixa e no celular os dois encostavam.
+- **Mini-mapa sem os muros livres:** ficam só os grafites visitados, os quizzes concluídos, o jogador e a escola
+  (a legenda do mapa ampliado também perdeu o item "Muro livre"). Os muros continuam no jogo, só não aparecem no mini-mapa.
+
 ## 2.33 — 12/11/2026
 
 - **Fotos dos grafites em WebP:** as 37 fotos (grafite_004 a 040) passaram de JPEG para WebP, reduzidas para 1280 px:
