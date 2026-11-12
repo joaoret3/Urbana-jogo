@@ -166,8 +166,6 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
   padding: 12px 16px 16px; font-size: .85rem; color: var(--texto-suave); text-align: center;
 }
 .menu-versao { opacity: .7; }
-.menu-editor { color: var(--texto-suave); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.menu-editor:hover { color: var(--lima); }
 
 /* Telas baixas (celular deitado): menu em duas colunas */
 @media (max-height: 560px) and (min-width: 640px) {
@@ -184,7 +182,6 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
    CONFERÊNCIA DO CONTEÚDO
    ============================================================================= */
 .conf-resumo { font-weight: 700; margin-top: 0; }
-.conf-dica { color: var(--texto-suave); font-size: .95rem; }
 .conf-lista { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .conf-item { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; background: var(--painel-2); border-radius: 10px; padding: 10px 14px; border-left: 6px solid var(--amarelo); }
 .conf-item.conf-erro { border-left-color: var(--erro); }
@@ -334,19 +331,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 #ui > .hud { position: absolute; inset: 0; pointer-events: none; }
 .hud-bloco { position: absolute; pointer-events: auto; }
 
-.hud-perfil {
-  top: 12px; left: 12px; display: flex; align-items: center; gap: 12px;
-  background: rgba(15, 12, 20, .82); border: 3px solid var(--tinta); border-radius: 999px; padding: 6px 18px 6px 6px;
-  box-shadow: 4px 4px 0 var(--tinta);
-}
-.hud-retrato { width: 58px; height: 58px; }
-.hud-perfil-info { display: grid; gap: 4px; min-width: 150px; }
-.hud-linha { display: flex; align-items: baseline; gap: 8px; }
-.hud-nivel { font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 1.25rem; color: var(--amarelo); -webkit-text-stroke: 1px var(--tinta); }
-.hud-apelido { font-weight: 700; font-size: .95rem; max-width: 12ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.hud-xp { position: relative; height: 20px; border-radius: 999px; background: #3a3446; border: 2px solid var(--tinta); overflow: hidden; }
-.hud-xp-preenchimento { height: 100%; background: linear-gradient(90deg, var(--ciano), var(--lima)); transition: width .6s cubic-bezier(.2,.9,.3,1); }
-.hud-xp-texto { position: absolute; inset: 0; display: grid; place-items: center; font-size: .75rem; font-weight: 900; color: #fff; text-shadow: 0 1px 2px #000, 0 0 3px #000; }
+.hud-perfil { top: 12px; left: 12px; }   /* aparência da barra do jogador (anel de XP): ver o bloco v2.35 no fim do arquivo */
 
 .hud-direita { top: 12px; right: 12px; display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
 .hud-direita-linha { display: flex; align-items: center; gap: 10px; }
@@ -418,7 +403,6 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 }
 .minimapa-legenda span { display: inline-flex; align-items: center; gap: 6px; }
 .minimapa-legenda i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--tinta); display: inline-block; }
-.minimapa-legenda i.quadrado { border-radius: 2px; }
 .minimapa-legenda i.losango { border-radius: 2px; transform: rotate(45deg) scale(.85); }
 
 /* Joystick */
@@ -462,10 +446,6 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 
 /* Telas pequenas: HUD mais compacto */
 @media (max-width: 700px), (max-height: 520px) {
-  .hud-perfil { padding-right: 12px; }
-  .hud-retrato { width: 46px; height: 46px; }
-  .hud-perfil-info { min-width: 110px; }
-  .hud-apelido { display: none; }
   .hud-icone { width: 52px; height: 52px; }
   .hud-icone small { display: none; }
   .hud-latas { min-height: 52px; font-size: 1.2rem; }
@@ -734,12 +714,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 
 /* Celular em pé: topo mais compacto (perfil e latas/menus lado a lado sem encostar) */
 @media (max-width: 520px) {
-  .hud-perfil { top: 8px; left: 8px; gap: 8px; padding: 4px 10px 4px 4px; }
-  .hud-retrato { width: 40px; height: 40px; }
-  .hud-perfil-info { min-width: 78px; }
-  .hud-nivel { font-size: 1rem; }
-  .hud-xp { height: 16px; }
-  .hud-xp-texto { font-size: .62rem; }
+  .hud-perfil { top: 8px; left: 8px; }
   .hud-direita { top: 8px; right: 8px; gap: 8px; }
   .hud-direita-linha { gap: 6px; }
   .hud-latas { min-height: 44px; padding: 2px 10px 2px 6px; font-size: 1rem; gap: 4px; }
@@ -967,12 +942,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 .fundo-painel { grid-template-columns: minmax(0, 1fr); }
 .painel { max-width: 100%; justify-self: center; }
 @media (max-height: 500px) and (orientation: landscape) {
-  .hud-perfil { top: 6px; left: 6px; gap: 8px; padding: 3px 10px 3px 3px; border-width: 2px; box-shadow: 3px 3px 0 var(--tinta); }
-  .hud-retrato { width: 34px; height: 34px; }
-  .hud-perfil-info { min-width: 84px; gap: 2px; }
-  .hud-nivel { font-size: .9rem; }
-  .hud-xp { height: 14px; }
-  .hud-xp-texto { font-size: .6rem; }
+  .hud-perfil { top: 6px; left: 6px; }
   .hud-direita { top: 6px; right: 6px; gap: 6px; }
   .hud-direita-linha { gap: 6px; }
   .hud-latas { min-height: 38px; padding: 2px 10px 2px 6px; font-size: 1rem; border-width: 2px; box-shadow: 3px 3px 0 var(--tinta); }

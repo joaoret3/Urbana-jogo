@@ -24,7 +24,7 @@ const MiniMapa = {
   CORES: {
     jogador: '#ff3fbf', escola: '#ffffff',
     visitado: '#22d3ee', concluido: '#9be21b',
-    muro: '#ffffff', contorno: '#0f0c14'
+    contorno: '#0f0c14'
   },
   el: null,
 

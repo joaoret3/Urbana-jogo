@@ -1,17 +1,18 @@
 URBANA · JOGO EDUCATIVO DO BAIRRO GOIÂNIA (PHASER 3)
 Escola Municipal Carolina Maria de Jesus · Belo Horizonte/MG
-Versão 2.38 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
+Versão 2.39 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
 latas e missões, Black Book, muros virtuais, perfil, tutorial, sons, acessibilidade)
 + Editor de conteúdo para professores.
 Avatares, artes, fotos, textos e sons ainda são RASCUNHOS de exemplo, para trocar pelo material real.
 
-DUAS PASTAS: PROFESSOR E ALUNOS (desde a versão 2.16)
-- Urbana_v2.38_professor: pasta de trabalho completa (jogo + Editor de conteúdo + originais/ +
-  cópias de segurança). É nela que o professor edita o conteúdo.
-- Urbana_v2.38_alunos: só o jogo, mais leve, para copiar nos computadores dos alunos ou publicar
-  na web. Não tem o editor, os originais nem as cópias de segurança.
-  Depois de editar o conteúdo na pasta do professor, para atualizar a dos alunos basta copiar por
-  cima as pastas dados/ e assets/.
+PASTA DO PROFESSOR, GITHUB E SITE DOS ALUNOS (desde a versão 2.28)
+- Esta pasta é a do professor (jogo + Editor de conteúdo + originais/ + cópias de segurança),
+  guardada no repositório privado Urbana do GitHub. Antes de editar: Fetch/Pull no GitHub Desktop;
+  depois: Commit e Push.
+- A cada Push, o GitHub gera sozinho a versão dos alunos (sem editor, originais e cópias de
+  segurança) e publica em https://joaoret3.github.io/Urbana-jogo/ (veja docs/COMO-TRABALHAR-COM-GITHUB.md).
+- Para computadores sem internet: a versão dos alunos também pode ser baixada do repositório
+  Urbana-jogo (botão Code > Download ZIP) e aberta com dois cliques no index.html.
 
 CONTA DE TESTE (desligada nesta pasta)
 - Em Novo Jogo, use o apelido TESTE: a partida começa no nível máximo com 9999 latas, para
@@ -61,11 +62,12 @@ copias_de_seguranca/  criada pelo editor: cópia dos arquivos antes de cada grav
 originais/            arquivos originais em tamanho cheio (mapa em JPG, artes e retratos em PNG,
                       fontes, materiais de exemplo). O jogo NÃO usa esta pasta; veja originais/LEIA-ME.txt
 docs/                 GUIA-DO-PROFESSOR.md, GUIA-DE-CONTEUDO.md, PLANO-DE-TESTES.md,
-                      COMO-PUBLICAR-NA-WEB.md (jogar no celular/tablet),
+                      COMO-PUBLICAR-NA-WEB.md (site para celular/tablet),
+                      COMO-TRABALHAR-COM-GITHUB.md e GUIA-GITHUB-PASSO-A-PASSO.md,
                       REGISTRO-DE-VERSOES.md
 
 CONTEÚDO DE EXEMPLO
-Tudo que tem "EXEMPLO" no texto ou "exemplo_" no nome do arquivo é provisório.
+Tudo que tem "EXEMPLO" no texto é provisório.
 
 CONFERÊNCIA DO CONTEÚDO
 Fica só no Editor de conteúdo (aba Conferência): confere ids repetidos, imagens que faltam,

@@ -13,28 +13,18 @@ web** (um site). O jogo não precisa de servidor especial: basta um serviço que
   Confirme que as autorizações de uso de imagem e de autoria cobrem a **publicação online**.
 - **Fontes:** desde a v2.28 o jogo usa só fontes livres (Londrina Solid e Sedgwick Ave Display, licença SIL OFL 1.1),
   que podem ser publicadas. Detalhes e links em `assets/fontes/LEIA-ME-FONTES.txt`.
-- **Publique a pasta dos alunos** (`Urbana_v2.28_alunos`): ela já vem sem o editor, sem `originais/`
-  e sem `copias_de_seguranca/`, e é bem mais leve. Se usar a pasta do professor, não publique
-  essas pastas.
+- **O que vai para a internet:** só a versão dos alunos (sem o editor, sem `originais/` e sem
+  `copias_de_seguranca/`). Ela é gerada sozinha a cada Push, veja abaixo.
 
-## Opção 1 — GitHub Pages (gratuito, endereço fixo)
+## Como o jogo é publicado (desde a v2.28)
 
-1. Crie uma conta em github.com (pode ser a da escola).
-2. Crie um **repositório** novo (ex.: `urbana`) e envie os arquivos da pasta do Urbana
-   (botão "Add file → Upload files"; arraste o conteúdo da pasta, não a pasta de fora).
-   Se o envio pelo navegador recusar arquivos grandes ou muitos de uma vez, envie em partes
-   (por exemplo, primeiro `assets/mapa/alta`, depois o resto).
-3. Em **Settings → Pages**, escolha a branch principal e a pasta `/ (root)` e salve.
-4. Em alguns minutos aparece o endereço, no formato `https://SEU-USUARIO.github.io/urbana/`.
+O jogo dos alunos fica em **https://joaoret3.github.io/Urbana-jogo/** e é publicado **automaticamente**:
+a cada **Push** no repositório Urbana (GitHub Desktop), o GitHub gera a versão dos alunos e envia para o
+repositório público Urbana-jogo; o site se atualiza em 1 a 3 minutos. Não é preciso enviar arquivos à mão.
+Passo a passo e solução de problemas: `COMO-TRABALHAR-COM-GITHUB.md` e `GUIA-GITHUB-PASSO-A-PASSO.md`.
 
-## Opção 2 — Netlify (arrastar e soltar)
-
-1. Entre em netlify.com e crie uma conta.
-2. Na área de sites, use a opção de **publicar arrastando uma pasta** e solte a pasta do Urbana.
-3. O site recebe um endereço `https://ALGUM-NOME.netlify.app` (dá para mudar o nome nas configurações).
-
-As regras e limites gratuitos desses serviços mudam com o tempo; confira na página deles.
-Um site ou servidor da própria escola/prefeitura também serve: é só copiar a pasta para lá.
+Se o site parecer não ter mudado, é o navegador mostrando a cópia antiga: aperte Ctrl+F5 (ou abra numa
+aba anônima).
 
 ## Como fica para os alunos
 
@@ -49,7 +39,7 @@ Um site ou servidor da própria escola/prefeitura também serve: é só copiar a
 ## Atualizar o conteúdo
 
 O **Editor de conteúdo** funciona só no computador (Chrome ou Edge). Fluxo:
-1. edite no computador, na pasta do Urbana, e salve;
-2. envie de novo os arquivos alterados para o site (no GitHub: "Upload files" por cima;
-   no Netlify: arraste a pasta de novo).
+1. no GitHub Desktop, **Fetch/Pull origin** (baixa a versão mais nova);
+2. edite no Editor de conteúdo e salve;
+3. no GitHub Desktop, **Commit** e **Push origin**. A publicação é automática.
 Os alunos veem a novidade ao recarregar a página. As partidas deles continuam valendo.

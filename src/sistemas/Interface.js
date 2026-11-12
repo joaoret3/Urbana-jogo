@@ -197,8 +197,6 @@ const Interface = {
 
   algumAberto() { return this.pilha.length > 0; },
 
-  fecharTodos() { [...this.pilha].reverse().forEach(j => j.fechar()); },
-
   // Remove tudo da camada de interface (usado ao trocar de cena)
   geracao: 0,
   limpar() { this.pilha = []; this.fila = []; this.geracao++; this.raiz.replaceChildren(); }

@@ -1,5 +1,19 @@
 # Urbana — registro de versões
 
+## 2.39 — 12/11/2026
+
+Limpeza (nada que o jogo usa foi removido; ids, mapa, partidas, originais/ e cópias de segurança intactos):
+- **Arquivos sem uso tirados de assets/** (vão menos arquivos para o site): `exemplo_grafite_001` a `003.jpg` (grafites de
+  exemplo que não existem mais), retrato e folha de sprites do `avatar_04` (personagem excluído no editor) e
+  `grafite_040.jpg`, que tinha ficado sobrando. Tudo continua no histórico do GitHub e os originais seguem em `originais/`.
+- **grafite_040:** o recorte que o professor fez (gravado em .jpg por um editor antigo, em cache) passou a ser a foto usada,
+  convertida para WebP; antes o jogo ainda mostrava a foto inteira.
+- **Estilos da barra antiga do jogador** (antes do anel de XP), do link antigo do editor no menu, da legenda "muro livre" e
+  uma dica da conferência que não aparecia mais: removidos do urbana.css (cerca de 2 KB).
+- **Código sem uso:** `Interface.fecharTodos`, `EditorMissoes.nomeTipo` e a cor dos muros no mini-mapa.
+- **Textos atualizados:** LEIA-ME.txt e docs/COMO-PUBLICAR-NA-WEB.md ainda falavam das duas pastas em .zip e do envio
+  manual; agora descrevem o GitHub e a publicação automática.
+
 ## 2.38 — 12/11/2026
 
 - **Versão do conteúdo editável:** no editor, em "Níveis, preços e recompensas" > Recompensas, novo campo "Versão do conteúdo
