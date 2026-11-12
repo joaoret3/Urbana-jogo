@@ -4,25 +4,6 @@ URBANA_DADOS["quizzes"] = {
   "_leia": "Perguntas de cada grafite. Cada pergunta tem 4 alternativas (A, B, C, D) e 'correta' é a LETRA certa. O quiz fica concluído quando todas as perguntas forem acertadas. As perguntas devem usar informações que estão na ficha. Todos abaixo são EXEMPLO.",
   "quizzes": [
     {
-      "id": "quiz_004",
-      "grafite_id": "grafite_004",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 004",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_005",
       "grafite_id": "grafite_005",
       "xp": 10,
@@ -99,25 +80,6 @@ URBANA_DADOS["quizzes"] = {
       ]
     },
     {
-      "id": "quiz_009",
-      "grafite_id": "grafite_009",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 009",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_010",
       "grafite_id": "grafite_010",
       "xp": 10,
@@ -175,28 +137,9 @@ URBANA_DADOS["quizzes"] = {
       ]
     },
     {
-      "id": "quiz_013",
-      "grafite_id": "grafite_013",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 013",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_014",
       "grafite_id": "grafite_014",
-      "xp": 10,
+      "xp": 20,
       "latas": 5,
       "perguntas": [
         {
@@ -291,7 +234,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_019",
       "grafite_id": "grafite_019",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -308,28 +251,9 @@ URBANA_DADOS["quizzes"] = {
       ]
     },
     {
-      "id": "quiz_020",
-      "grafite_id": "grafite_020",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 020",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_021",
       "grafite_id": "grafite_021",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -348,7 +272,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_022",
       "grafite_id": "grafite_022",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -367,7 +291,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_023",
       "grafite_id": "grafite_023",
-      "xp": 10,
+      "xp": 20,
       "latas": 5,
       "perguntas": [
         {
@@ -386,7 +310,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_024",
       "grafite_id": "grafite_024",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -403,28 +327,9 @@ URBANA_DADOS["quizzes"] = {
       ]
     },
     {
-      "id": "quiz_025",
-      "grafite_id": "grafite_025",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 025",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_026",
       "grafite_id": "grafite_026",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -441,28 +346,9 @@ URBANA_DADOS["quizzes"] = {
       ]
     },
     {
-      "id": "quiz_027",
-      "grafite_id": "grafite_027",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 027",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_028",
       "grafite_id": "grafite_028",
-      "xp": 10,
+      "xp": 20,
       "latas": 5,
       "perguntas": [
         {
@@ -481,7 +367,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_029",
       "grafite_id": "grafite_029",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -500,7 +386,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_030",
       "grafite_id": "grafite_030",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -517,28 +403,9 @@ URBANA_DADOS["quizzes"] = {
       ]
     },
     {
-      "id": "quiz_031",
-      "grafite_id": "grafite_031",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 031",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
       "id": "quiz_032",
       "grafite_id": "grafite_032",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -557,7 +424,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_033",
       "grafite_id": "grafite_033",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -576,7 +443,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_034",
       "grafite_id": "grafite_034",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -595,7 +462,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_035",
       "grafite_id": "grafite_035",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -614,26 +481,26 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_036",
       "grafite_id": "grafite_036",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 036",
+          "enunciado": "Na linguagem do hip-hop e também do grafite, o que siginifica \"CREW\"?",
           "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
+            "TAG",
+            "Grupo/Familia ",
+            "Nome de um bairro",
+            "Estilo de grafite"
           ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
+          "correta": "B",
+          "explicacao": ""
         }
       ]
     },
     {
       "id": "quiz_037",
       "grafite_id": "grafite_037",
-      "xp": 10,
+      "xp": 20,
       "latas": 5,
       "perguntas": [
         {
@@ -652,7 +519,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_038",
       "grafite_id": "grafite_038",
-      "xp": 10,
+      "xp": 20,
       "latas": 5,
       "perguntas": [
         {
@@ -671,7 +538,7 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_039",
       "grafite_id": "grafite_039",
-      "xp": 10,
+      "xp": 5,
       "latas": 5,
       "perguntas": [
         {
@@ -690,11 +557,11 @@ URBANA_DADOS["quizzes"] = {
     {
       "id": "quiz_040",
       "grafite_id": "grafite_040",
-      "xp": 10,
+      "xp": 20,
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 040",
+          "enunciado": "",
           "alternativas": [
             "Alternativa A",
             "Alternativa B",
@@ -702,7 +569,7 @@ URBANA_DADOS["quizzes"] = {
             "Alternativa D"
           ],
           "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
+          "explicacao": ""
         }
       ]
     }

@@ -22,7 +22,7 @@ URBANA_DADOS["avatares"] = {
       "nome": "Sol",
       "descricao": "",
       "retrato": "assets/avatares/avatar_02/retrato.webp",
-      "nivel_minimo": 1,
+      "nivel_minimo": 2,
       "sprite": {
         "arquivo": "assets/avatares/avatar_02/sprite.png",
         "largura_quadro": 192,
@@ -50,7 +50,7 @@ URBANA_DADOS["avatares"] = {
       "nome": "astronauta",
       "descricao": "",
       "retrato": "assets/avatares/avatar_05/retrato.webp",
-      "nivel_minimo": 1,
+      "nivel_minimo": 3,
       "sprite": {
         "arquivo": "assets/avatares/avatar_05/sprite.png",
         "largura_quadro": 192,
@@ -64,7 +64,7 @@ URBANA_DADOS["avatares"] = {
       "nome": "medica",
       "descricao": "",
       "retrato": "assets/avatares/avatar_06/retrato.webp",
-      "nivel_minimo": 1,
+      "nivel_minimo": 3,
       "sprite": {
         "arquivo": "assets/avatares/avatar_06/sprite.png",
         "largura_quadro": 192,
