@@ -8,13 +8,12 @@ URBANA_DADOS["artes"] = {
       "titulo": "Joao TAG",
       "autoria": "João",
       "imagem": "assets/artes/arte_007.webp",
-      "categoria": "basica",
+      "categoria": "intermediaria",
       "autorizacao": {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado",
-      "preco": 0
+      "status_publicacao": "publicado"
     },
     {
       "id": "arte_009",
@@ -88,7 +87,9 @@ URBANA_DADOS["artes"] = {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     },
     {
       "id": "arte_006",
@@ -107,14 +108,12 @@ URBANA_DADOS["artes"] = {
       "titulo": "Samy TAG",
       "autoria": "Samira",
       "imagem": "assets/artes/arte_008.webp",
-      "categoria": "basica",
+      "categoria": "intermediaria",
       "autorizacao": {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado",
-      "preco": 0,
-      "nivel_minimo": 1
+      "status_publicacao": "publicado"
     },
     {
       "id": "arte_010",
@@ -284,7 +283,9 @@ URBANA_DADOS["artes"] = {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     },
     {
       "id": "arte_024",
@@ -512,7 +513,9 @@ URBANA_DADOS["artes"] = {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     },
     {
       "id": "arte_043",
