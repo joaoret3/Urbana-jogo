@@ -57,7 +57,8 @@ const Salvamento = {
       fichas_lidas: [],             // ids dos grafites cuja ficha foi lida até o fim
       quizzes_concluidos: [],       // ids dos quizzes acertados por completo
       perguntas_acertadas: {},      // quiz_id → índices das perguntas já acertadas
-      itens_coletados: [],          // ids das latas do mapa já coletadas
+      itens_coletados: [],          // ids das latas do mapa JÁ coletadas alguma vez (só cresce: é o que as missões contam)
+      latas_vazias: [],             // v2.37: latas que estão coletadas agora (parte delas volta ao abrir a partida)
       artes_desbloqueadas: [],
       muros_pintados: {},           // muro_id → arte_id
       missoes_concluidas: [],
@@ -74,10 +75,11 @@ const Salvamento = {
     if (!p || typeof p !== 'object' || typeof p.id !== 'string' || typeof p.apelido !== 'string') return null;
     if (!p.jogador || typeof p.jogador !== 'object') return null;
     p = this.migrar(p);
+    if (!Array.isArray(p.latas_vazias)) p.latas_vazias = Array.isArray(p.itens_coletados) ? p.itens_coletados.slice() : [];   // partida antiga: tudo o que já pegou segue vazio
     const base = this.partidaNova(p.apelido, p.jogador.avatar_id);
     for (const k of Object.keys(base)) if (!(k in p)) p[k] = base[k];
     for (const k of Object.keys(base.jogador)) if (!(k in p.jogador)) p.jogador[k] = base.jogador[k];
-    const listas = ['murais_visitados', 'fichas_lidas', 'quizzes_concluidos', 'itens_coletados', 'artes_desbloqueadas',
+    const listas = ['murais_visitados', 'fichas_lidas', 'quizzes_concluidos', 'itens_coletados', 'latas_vazias', 'artes_desbloqueadas',
       'missoes_concluidas', 'avatares_desbloqueados', 'molduras_desbloqueadas'];
     for (const k of listas) if (!Array.isArray(p[k])) p[k] = [];
     for (const k of ['muros_pintados', 'perguntas_acertadas', 'personagens_encontrados']) if (!p[k] || typeof p[k] !== 'object' || Array.isArray(p[k])) p[k] = {};
@@ -198,6 +200,7 @@ const Salvamento = {
       if (p) this.gravar(p);
     }
     if (!p) return null;
+    Progresso.renascerLatas(p);                      // v2.37: parte das latas já coletadas volta ao abrir a partida
     this.atual = p;
     return { partida: p, recuperada };
   },

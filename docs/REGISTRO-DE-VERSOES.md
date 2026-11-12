@@ -1,5 +1,17 @@
 # Urbana — registro de versões
 
+## 2.37 — 12/11/2026
+
+- **Latas voltam ao abrir a partida:** ao abrir uma partida (Continuar ou Jogar na lista de partidas), uma parte sorteada
+  das latas já coletadas volta ao mapa: no mínimo 60% (a quantidade exata é sorteada entre 60% e 100%, de novo a cada
+  abertura). Dentro da mesma sessão, uma lata coletada só volta na próxima vez que a partida for aberta.
+- **Ajustável no editor:** em "Níveis, preços e recompensas" > Recompensas, campo "Latas que voltam ao abrir a partida
+  (mínimo, em %)" (`latas_renascem_percentual` em dados/jogo.js; 100 = todas voltam; 0 = só as sorteadas podem não voltar).
+- **Progresso preservado:** `itens_coletados` continua só crescendo e é o que as missões de "coletar latas" contam
+  (latas diferentes), então nenhuma missão perde progresso. A lista nova `latas_vazias` guarda as que estão sem lata agora.
+  Partidas antigas e partidas importadas são migradas sozinhas (tudo o que já foi coletado entra como "vazia" e passa pelo sorteio).
+  Cada lata que volta paga de novo a recompensa de lata coletada.
+
 ## 2.36 — 12/11/2026
 
 - **Molduras vazadas (solução B escolhida pelo professor):** cada moldura pode ter uma imagem PNG transparente com

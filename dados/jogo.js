@@ -10,6 +10,7 @@ URBANA_DADOS["jogo"] = {
     "distancia_muro": 130,
     "distancia_lata": 56
   },
+  "latas_renascem_percentual": 60,
   "recompensas": {
     "primeira_visita": {
       "xp": 2,

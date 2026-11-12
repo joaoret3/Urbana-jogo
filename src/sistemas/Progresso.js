@@ -160,10 +160,27 @@ const Progresso = {
     return rec;
   },
 
+  // v2.37: ao abrir uma partida, volta ao mapa uma parte sorteada das latas que estavam coletadas.
+  // No mínimo "latas_renascem_percentual" (dados/jogo.js, padrão 60%); a quantidade exata é sorteada entre esse
+  // mínimo e todas. Não mexe em itens_coletados, então o progresso das missões de latas não diminui.
+  renascerLatas(p) {
+    const existentes = new Set(((Conteudo.mapa && Conteudo.mapa.latas) || []).map(o => o.name));
+    p.latas_vazias = p.latas_vazias.filter(id => existentes.has(id));
+    const n = p.latas_vazias.length; if (!n) return 0;
+    const pct = Math.max(0, Math.min(100, Number((Conteudo.jogo() || {}).latas_renascem_percentual ?? 60)));
+    const minimo = Math.ceil(n * pct / 100), qtd = minimo + Math.floor(Math.random() * (n - minimo + 1));
+    const v = p.latas_vazias.slice();
+    for (let i = v.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [v[i], v[j]] = [v[j], v[i]]; }
+    const voltam = new Set(v.slice(0, qtd));
+    p.latas_vazias = p.latas_vazias.filter(id => !voltam.has(id));
+    return qtd;
+  },
+
   // Lata coletada no mapa
   coletarLata(itemId) {
-    const p = this.p(); if (!p || p.itens_coletados.includes(itemId)) return false;
-    p.itens_coletados.push(itemId);
+    const p = this.p(); if (!p || p.latas_vazias.includes(itemId)) return false;
+    p.latas_vazias.push(itemId);
+    if (!p.itens_coletados.includes(itemId)) p.itens_coletados.push(itemId);   // as missões contam latas diferentes, então o progresso nunca diminui
     this.ganhar({ latas: Conteudo.jogo().recompensas.lata_coletavel || 1 }, null);
     this.concluirAcao();
     return true;

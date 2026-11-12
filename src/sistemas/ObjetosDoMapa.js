@@ -35,7 +35,7 @@ const ObjetosDoMapa = {
 
     // ---------- LATAS COLETÁVEIS ----------
     Conteudo.mapa.latas.forEach(o => {
-      if (p.itens_coletados.includes(o.name)) return;          // já coletada: não aparece mais
+      if (p.latas_vazias.includes(o.name)) return;           // coletada e ainda não voltou: não aparece (v2.37: parte volta ao abrir a partida)
       const sprite = cena.add.image(o.x, o.y, 'lata').setOrigin(0.5, 0.95).setScale(0.23).setDepth(10 + o.y / 100000);
       if (mexer) cena.tweens.add({ targets: sprite, angle: { from: -8, to: 8 }, duration: 700, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
       cena.latas.push({ id: o.name, x: o.x, y: o.y, sprite });
