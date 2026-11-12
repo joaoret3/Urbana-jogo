@@ -12,6 +12,7 @@ const TelaPerfil = {
     const E = Interface.el.bind(Interface);
     const p = Salvamento.atual;
     const corpo = E('div', { class: 'perfil' });
+    const novas = (p.molduras_novas || []).slice();   // v2.45: molduras ganhas e ainda não vistas (marcadas com "NOVA")
     let janela;
 
     // Como liberar uma moldura (nível ou missão)
@@ -62,14 +63,15 @@ const TelaPerfil = {
             onclick: () => { janela.fechar(); op.aoTrocarAvatar(a.id); }
           }, E('img', { src: a.retrato, alt: '' }), E('span', {}, atual ? Interface.comIcone('ok', 'Em uso') : livre ? a.nome : Interface.comIcone('cadeado', `Nível ${a.nivel_minimo}`)));
         })),
-        E('h3', { class: 'ficha-subtitulo' }, 'Molduras'),
+        E('h3', { class: 'ficha-subtitulo', id: 'perfil-molduras' }, 'Molduras'),
         E('div', { class: 'perfil-opcoes' }, (Conteudo.dados.molduras.molduras || []).map(m => {
           const livre = p.molduras_desbloqueadas.includes(m.id), atual = m.id === j.moldura_id;
+          const nova = livre && !atual && novas.includes(m.id);          // v2.45: ganha há pouco e ainda não usada
           return E('button', {
-            type: 'button', class: 'perfil-opcao perfil-moldura' + (livre ? '' : ' bloqueado') + (atual ? ' ativo' : ''),
+            type: 'button', class: 'perfil-opcao perfil-moldura' + (livre ? '' : ' bloqueado') + (atual ? ' ativo' : '') + (nova ? ' nova' : ''),
             disabled: !livre || atual,
             onclick: () => { j.moldura_id = m.id; Salvamento.salvar(); HUD.atualizar(); desenhar(); }
-          }, m.fundo
+          }, nova ? E('span', { class: 'perfil-nova' }, 'NOVA') : null, m.fundo
             ? E('span', { class: 'amostra-moldura amostra-emblema' }, E('img', { src: m.fundo, alt: '' }))
             : m.imagem
             ? E('span', { class: 'amostra-moldura amostra-vazada', style: { borderColor: m.cor } }, Interface.molduraVazada(m))
@@ -82,6 +84,8 @@ const TelaPerfil = {
     janela = Interface.abrirPainel({
       titulo: 'Perfil',
       classe: 'painel-largo painel-perfil',
+      // v2.45: ao fechar o perfil, as molduras novas já foram vistas: o retrato para de chamar
+      aoFechar: () => { if (p.molduras_novas && p.molduras_novas.length) { p.molduras_novas = []; Salvamento.salvar(); } HUD.atualizar(); },
       conteudo: [corpo],
       rodape: [
         Interface.botao('Exportar partida', () => {
@@ -92,6 +96,10 @@ const TelaPerfil = {
       ]
     });
     desenhar();
+    if (novas.length) {   // leva a lista de molduras para a tela, para o jogador ver a nova
+      const alvo = corpo.querySelector('.perfil-moldura.nova') || corpo.querySelector('#perfil-molduras');
+      if (alvo && alvo.scrollIntoView) setTimeout(() => alvo.scrollIntoView({ block: 'center' }), 60);
+    }
     return janela;
   }
 };

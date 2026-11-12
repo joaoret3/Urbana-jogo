@@ -367,7 +367,10 @@ class CenaMapa extends Phaser.Scene {
     if (this.sombraJogador) this.sombraJogador.setPosition(this.jogador.x + 6, this.jogador.y + 2);
     if (!this._ultimo || t - this._ultimo > 250) { this._ultimo = t; this.atualizarPecas(); Detalhes.atualizar(this); }
     if (!this._ultimoMini || t - this._ultimoMini > 150) { this._ultimoMini = t; MiniMapa.atualizar(this); }
-    if (Interface.algumAberto() || this.pintando) { this.pararJogador(); this.animar(0, 0, 0); return; }   // janela aberta: jogador parado
+    if (Interface.algumAberto() || this.pintando) { this._livreDesde = null; this.pararJogador(); this.animar(0, 0, 0); return; }   // janela aberta: jogador parado
+    // v2.45: ganhou moldura? mostra a janela "Moldura nova!" assim que a tela estiver livre há um instante
+    if (this._livreDesde === null || this._livreDesde === undefined) this._livreDesde = t;
+    if (t - this._livreDesde > 600 && this.partida.molduras_janela && this.partida.molduras_janela.length && TelaMolduraNova.mostrarProxima()) { this.pararJogador(); return; }
 
     const k = this.teclas, v = window.URBANA.VELOCIDADE;
     let vx = (k.D.isDown || k.RIGHT.isDown) - (k.A.isDown || k.LEFT.isDown);

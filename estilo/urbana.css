@@ -1058,3 +1058,62 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 /* v2.44: custo em latas para pintar um muro */
 .muro-custo { text-align: center; margin: 6px 0 0; font-weight: 700; color: var(--amarelo); }
 .muro-custo.falta { color: var(--rosa); }
+
+/* ---------- v2.45: aviso de moldura nova ---------- */
+/* janela "Moldura nova!" */
+.painel-moldura-nova .painel-corpo, .painel-moldura-nova { text-align: center; }
+.moldura-nova-palco { position: relative; display: grid; place-items: center; height: 210px; margin: 4px 0 2px; }
+.moldura-nova-raios {
+  position: absolute; width: 250px; height: 250px; border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255, 225, 77, .22) 0 12deg, transparent 12deg 24deg);
+  -webkit-mask-image: radial-gradient(circle, #000 35%, transparent 70%); mask-image: radial-gradient(circle, #000 35%, transparent 70%);
+  animation: moldura-raios 24s linear infinite;
+}
+.moldura-nova-retrato { position: relative; width: 170px; height: 170px; animation: moldura-entra .5s cubic-bezier(.2, 1.4, .4, 1) both; }
+.moldura-nova-retrato.com-moldura { width: 130px; height: 130px; }
+.moldura-nova-retrato .retrato-redondo { width: 100%; height: 100%; border-width: 10px; }
+.moldura-nova-nome { margin: 0; font-size: 1.7rem; line-height: 1.1; }
+.moldura-nova-texto { margin: 4px auto 0; color: var(--texto-suave); max-width: 32ch; }
+@keyframes moldura-raios { to { transform: rotate(360deg); } }
+@keyframes moldura-entra { from { transform: scale(.4) rotate(-12deg); opacity: 0; } to { transform: none; opacity: 1; } }
+/* retrato do HUD chamando + balão */
+.hud-perfil.hud-anel.moldura-nova .hud-botao-perfil::after {
+  content: ""; position: absolute; top: -4px; right: -4px; bottom: -4px; left: -4px; border-radius: 50%;
+  border: 4px solid var(--amarelo); pointer-events: none; animation: moldura-pulso 1.4s ease-out infinite;
+}
+.hud-balao-moldura {
+  position: absolute; left: calc(100% + 14px); top: calc(var(--anel) * .5); transform: translateY(-50%);
+  display: grid; gap: 0; text-align: left; white-space: nowrap; cursor: pointer;
+  font-family: var(--fonte-texto); color: var(--tinta); background: var(--amarelo);
+  border: 3px solid var(--tinta); border-radius: 12px; padding: 5px 12px; box-shadow: 3px 3px 0 var(--tinta);
+  animation: moldura-balao 1.4s ease-in-out infinite;
+}
+.hud-balao-moldura strong { font-weight: 400; font-size: 1.05rem; line-height: 1.15; }
+.hud-balao-moldura span { font-size: .85rem; line-height: 1.15; }
+.hud-balao-moldura::before { content: ""; position: absolute; left: -11px; top: 50%; transform: translateY(-50%); border: 8px solid transparent; border-right-color: var(--tinta); border-left: 0; }
+.hud-balao-moldura:focus-visible { outline: 3px solid var(--ciano); outline-offset: 3px; }
+@keyframes moldura-pulso { from { transform: scale(1); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
+@keyframes moldura-balao { 50% { transform: translate(4px, -50%); } }
+@media (max-width: 700px), (max-height: 520px) {
+  .hud-balao-moldura { padding: 3px 9px; border-width: 2px; left: calc(100% + 11px); }
+  .hud-balao-moldura strong { font-size: .9rem; } .hud-balao-moldura span { font-size: .74rem; }
+  .moldura-nova-palco { height: 150px; } .moldura-nova-raios { width: 180px; height: 180px; }
+  .moldura-nova-retrato { width: 122px; height: 122px; } .moldura-nova-retrato.com-moldura { width: 96px; height: 96px; }
+  .moldura-nova-nome { font-size: 1.35rem; }
+}
+/* "NOVA" na lista de molduras do perfil */
+.perfil-moldura { position: relative; }
+.perfil-moldura.nova { border-color: var(--amarelo); box-shadow: 0 0 0 3px var(--amarelo); }
+.perfil-nova {
+  position: absolute; top: -10px; right: -8px; z-index: 2; font-family: 'Bungee', var(--fonte-texto); font-size: .7rem; line-height: 1;
+  color: #fff; background: var(--rosa); border: 2px solid var(--tinta); border-radius: 6px; padding: 3px 6px 2px; transform: rotate(6deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .moldura-nova-raios, .moldura-nova-retrato, .hud-balao-moldura, .hud-perfil.hud-anel.moldura-nova .hud-botao-perfil::after { animation: none; }
+}
+@media (max-height: 500px) and (orientation: landscape) {   /* celular deitado: janela "Moldura nova!" mais baixa */
+  .moldura-nova-palco { height: 104px; margin: 0; } .moldura-nova-raios { width: 130px; height: 130px; }
+  .moldura-nova-retrato { width: 96px; height: 96px; } .moldura-nova-retrato.com-moldura { width: 76px; height: 76px; }
+  .moldura-nova-retrato .retrato-redondo { border-width: 6px; }
+  .moldura-nova-nome { font-size: 1.15rem; } .moldura-nova-texto { font-size: .85rem; margin-top: 2px; max-width: 46ch; }
+}

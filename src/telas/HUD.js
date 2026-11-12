@@ -41,6 +41,9 @@ const HUD = {
     el.emblema = E('div', { class: 'hud-emblema', hidden: true });                                       // v2.43
     el.botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.anel, el.molduraVazada, el.emblema);
     el.nivel = E('span', { class: 'hud-nivel', 'aria-hidden': 'true' });
+    // v2.45: balão "Moldura nova!" ao lado do retrato (só aparece enquanto houver moldura nova não vista no perfil)
+    el.balaoMoldura = E('button', { class: 'hud-balao-moldura', type: 'button', hidden: true, onclick: op.aoAbrirPerfil },
+      E('strong', {}, 'Moldura nova!'), E('span', {}, 'Toque aqui para usar'));
     el.xpTexto = E('span', { class: 'sr-only' });
     el.apelido = E('span', { class: 'sr-only' });
     el.latas = E('span', { class: 'hud-latas-valor' });
@@ -50,7 +53,7 @@ const HUD = {
 
     const raiz = E('div', { class: 'hud' },
       E('section', { class: 'hud-bloco hud-perfil hud-anel', 'aria-label': 'Jogador' },
-        el.botaoPerfil, el.nivel, el.apelido, el.xpTexto
+        el.botaoPerfil, el.nivel, el.apelido, el.xpTexto, el.balaoMoldura
       ),
       // latas, Black Book e Menu numa linha; logo abaixo, a aba de Missões com a mesma largura
       E('section', { class: 'hud-bloco hud-direita', 'aria-label': 'Latas, menus e missões' },
@@ -85,6 +88,9 @@ const HUD = {
     if (avatar) el.retrato.src = avatar.retrato;
     el.moldura.style.setProperty('--moldura', moldura ? moldura.cor : 'var(--lima)');
     // v2.43: moldura emblema (arte atrás do personagem) troca o anel; o XP vai para a barrinha do selo
+    const temNova = !!(p.molduras_novas && p.molduras_novas.length);
+    el.balaoMoldura.hidden = !temNova;
+    el.botaoPerfil.parentElement.classList.toggle('moldura-nova', temNova);
     const emblema = Interface.temEmblema(moldura);
     if (emblema) {
       const chave = [avatar && avatar.retrato, moldura.id, moldura.fundo, moldura.imagem, JSON.stringify(moldura.encaixe || {})].join('|');

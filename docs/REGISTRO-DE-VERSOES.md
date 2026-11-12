@@ -1,5 +1,19 @@
 # Urbana — registro de versões
 
+## 2.45 — 12/11/2026
+
+Aviso de moldura nova (ideias M1 + M3 aprovadas pelo professor; no teste com os alunos eles não percebiam o desbloqueio):
+- **Janela "Moldura nova!":** ao ganhar uma moldura (por nível ou por missão), assim que a tela fica livre o jogo abre
+  uma janela com a moldura já no personagem do jogador, o motivo ("Você chegou ao nível 3!") e os botões
+  **Usar agora** (troca na hora) e **Depois**. Várias molduras ganhas de uma vez aparecem uma depois da outra.
+  Se o jogo fechar antes, a janela aparece na próxima vez que a partida abrir.
+- **Retrato chamando:** enquanto houver moldura nova não vista, o retrato pulsa e mostra o balão
+  "Moldura nova! Toque aqui para usar" (o balão também abre o perfil). Some quando o jogador usa a moldura ou
+  abre e fecha o perfil.
+- **Perfil:** a moldura nova vem marcada com "NOVA" e a lista de molduras é trazida para a tela.
+- Partidas antigas não são afetadas: só molduras ganhas a partir de agora avisam (`molduras_novas` e `molduras_janela`
+  na partida). A conta de teste não gera avisos.
+
 ## 2.44 — 12/11/2026
 
 - **Pintar muro livre gasta latas:** aplicar ou trocar a arte de um muro custa 3 latas (`custo_pintar_muro` em

@@ -59,6 +59,8 @@ const Salvamento = {
       perguntas_acertadas: {},      // quiz_id → índices das perguntas já acertadas
       itens_coletados: [],          // ids das latas do mapa JÁ coletadas alguma vez (só cresce: é o que as missões contam)
       latas_vazias: [],             // v2.37: latas que estão coletadas agora (parte delas volta ao abrir a partida)
+      molduras_novas: [],           // v2.45: molduras ganhas que o jogador ainda não viu no perfil (retrato chamando)
+      molduras_janela: [],          // v2.45: molduras ganhas que ainda falta mostrar na janela "Moldura nova!" ({ id, motivo })
       artes_desbloqueadas: [],
       muros_pintados: {},           // muro_id → arte_id
       missoes_concluidas: [],
@@ -80,7 +82,7 @@ const Salvamento = {
     for (const k of Object.keys(base)) if (!(k in p)) p[k] = base[k];
     for (const k of Object.keys(base.jogador)) if (!(k in p.jogador)) p.jogador[k] = base.jogador[k];
     const listas = ['murais_visitados', 'fichas_lidas', 'quizzes_concluidos', 'itens_coletados', 'latas_vazias', 'artes_desbloqueadas',
-      'missoes_concluidas', 'avatares_desbloqueados', 'molduras_desbloqueadas'];
+      'missoes_concluidas', 'avatares_desbloqueados', 'molduras_desbloqueadas', 'molduras_novas', 'molduras_janela'];
     for (const k of listas) if (!Array.isArray(p[k])) p[k] = [];
     for (const k of ['muros_pintados', 'perguntas_acertadas', 'personagens_encontrados']) if (!p[k] || typeof p[k] !== 'object' || Array.isArray(p[k])) p[k] = {};
     const j = p.jogador;

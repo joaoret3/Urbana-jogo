@@ -66,11 +66,24 @@ const Progresso = {
     const nivelAntes = this.nivelDoXp(p.jogador.xp);
     p.jogador.xp += xp;
     p.jogador.latas += latas;
-    if (rec.moldura && !p.molduras_desbloqueadas.includes(rec.moldura)) p.molduras_desbloqueadas.push(rec.moldura);
+    if (rec.moldura) this.ganharMoldura(rec.moldura, titulo ? `Recompensa: ${titulo}.` : '');
     if (titulo && (xp || latas || rec.moldura)) this.notificar({ tipo: 'recompensa', titulo, xp, latas, moldura: rec.moldura });
     const nivelDepois = this.nivelDoXp(p.jogador.xp);
     for (let n = nivelAntes + 1; n <= nivelDepois; n++) this.subirNivel(n);
     p.jogador.nivel = nivelDepois;
+  },
+
+  // v2.45: libera uma moldura e deixa marcado para o jogo avisar (janela "Moldura nova!" e retrato chamando).
+  // Devolve true se a moldura era nova para esta partida.
+  ganharMoldura(id, motivo) {
+    const p = this.p(); if (!p || !id || p.molduras_desbloqueadas.includes(id)) return false;
+    p.molduras_desbloqueadas.push(id);
+    if (!Conteudo.moldura(id)) return true;
+    if (!Array.isArray(p.molduras_novas)) p.molduras_novas = [];
+    if (!Array.isArray(p.molduras_janela)) p.molduras_janela = [];
+    if (!p.molduras_novas.includes(id)) p.molduras_novas.push(id);
+    p.molduras_janela.push({ id, motivo: motivo || '' });
+    return true;
   },
 
   // Desbloqueia automaticamente os itens do novo nível (RF-XP-006)
@@ -84,7 +97,7 @@ const Progresso = {
       const a = Conteudo.avatar(id); if (a) nomes.push('Avatar: ' + a.nome);
     });
     (d.molduras || []).forEach(id => {
-      if (!p.molduras_desbloqueadas.includes(id)) p.molduras_desbloqueadas.push(id);
+      this.ganharMoldura(id, `Você chegou ao nível ${n}!`);
       const m = Conteudo.moldura(id); if (m) nomes.push(m.nome);
     });
     const artes = Conteudo.artesPublicadas().filter(a => Conteudo.nivelArte(a) === n);
