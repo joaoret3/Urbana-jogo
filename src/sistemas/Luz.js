@@ -3,8 +3,8 @@
 // -----------------------------------------------------------------------------
 // A partida começa de dia. Depois de alguns minutos jogando (dados/jogo.js → "anoitecer"),
 // o bairro escurece aos poucos para o crepúsculo (roxo, bordas mais escuras, um resto de
-// laranja no alto) e os postes acendem. Fica de noite até sair do mapa; ao abrir de novo,
-// começa de dia.
+// laranja no alto) e os postes acendem. Desde a v2.41 o ciclo se repete: depois de alguns
+// minutos de noite amanhece aos poucos e o dia recomeça. Ao abrir o mapa de novo, começa de dia.
 //
 // Como é feito: 2 camadas fixas na tela, por cima do bairro e embaixo dos balões dos
 // personagens (uma escurece/tinge, a outra dá o brilho quente) + um brilho em cada poste.
@@ -26,8 +26,22 @@ const Luz = {
     return {
       ativo: a.ativo !== false,
       minutos: Math.max(0, Number(a.minutos_para_anoitecer ?? 5)),
-      transicao: Math.max(0.05, Number(a.minutos_transicao ?? 1))
+      transicao: Math.max(0.05, Number(a.minutos_transicao ?? 1)),
+      noite: Math.max(0, Number(a.minutos_de_noite ?? 3)),
+      repetir: a.repetir !== false
     };
+  },
+
+  // v2.41: ciclo dia → anoitecer → noite → amanhecer → dia... (0 = dia, 1 = noite)
+  // Sem "repetir", fica de noite depois de anoitecer (como na v2.40).
+  nivelNoTempo(minutos, c) {
+    if (!c.repetir) return Phaser.Math.Clamp((minutos - c.minutos) / c.transicao, 0, 1);
+    const ciclo = c.minutos + c.transicao + c.noite + c.transicao;
+    const m = minutos % ciclo;
+    if (m < c.minutos) return 0;                                        // dia
+    if (m < c.minutos + c.transicao) return (m - c.minutos) / c.transicao;   // anoitecendo
+    if (m < c.minutos + c.transicao + c.noite) return 1;                // noite
+    return 1 - (m - c.minutos - c.transicao - c.noite) / c.transicao;   // amanhecendo
   },
   ligada() { return this.config().ativo && Preferencias.obter('anoitecer') !== false; },
 
@@ -100,7 +114,7 @@ const Luz = {
     const c = this.config();
     if (this.ligada()) L.tempo += Math.min(delta || 0, 250);   // aba escondida ou travada não conta de uma vez
     const minutos = L.tempo / 60000;
-    const nivel = this.ligada() ? Phaser.Math.Clamp((minutos - c.minutos) / c.transicao, 0, 1) : 0;
+    const nivel = this.ligada() ? Phaser.Math.Clamp(this.nivelNoTempo(minutos, c), 0, 1) : 0;
     const cam = cena.cameras.main;
     if (cam.zoom !== L.zoom || cam.width !== L.w || cam.height !== L.h) this.ajustarTela(cena);
     if (Math.abs(nivel - L.nivel) < 0.002) return;

@@ -1,5 +1,16 @@
 # Urbana — registro de versões
 
+## 2.41 — 12/11/2026
+
+- **Correção urgente:** o commit "v22" enviou `dados/jogo.js` com marcas de conflito do GitHub Desktop
+  (`<<<<<<<`, `=======`, `>>>>>>>`), o que deixa o arquivo inválido. Conflito resolvido mantendo a escolha do professor
+  (latas que voltam: 50%) e o bloco do anoitecer.
+- **Trava na publicação:** a publicação automática agora para (sem mexer no site) se algum arquivo tiver marcas de conflito ou
+  se algum dados/*.js, src/*.js ou assets/mapa/*.js tiver erro de escrita. A mensagem aparece na aba Actions.
+- **Ciclo de dia e noite:** depois da noite, amanhece aos poucos e o ciclo recomeça (padrão: 5 min de dia, 1 min
+  escurecendo, 3 min de noite, 1 min clareando = ciclo de 10 min). No editor: "Minutos de noite" e "Repetir o ciclo"
+  (sem repetir, fica de noite como na 2.40).
+
 ## 2.40 — 12/11/2026
 
 - **Anoitecer durante o jogo (luz L3 escolhida pelo professor):** a partida começa de dia; depois de 5 minutos jogando
