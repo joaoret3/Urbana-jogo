@@ -61,6 +61,7 @@ class CenaMapa extends Phaser.Scene {
     cam.startFollow(this.jogador, true, 0.12, 0.12);
     cam.setZoom(cfg.ZOOM_INICIAL);
     cam.centerOn(this.jogador.x, this.jogador.y);
+    Luz.criar(this);                 // anoitecer depois de alguns minutos jogando (sistemas/Luz.js, v2.40)
 
     this.configurarControles();
 
@@ -357,8 +358,9 @@ class CenaMapa extends Phaser.Scene {
   // ---------------------------------------------------------------------------
   // A CADA QUADRO
   // ---------------------------------------------------------------------------
-  update(t) {
+  update(t, passo) {
     if (!this.jogador) return;
+    Luz.atualizar(this, passo);
     if (this.sombraJogador) this.sombraJogador.setPosition(this.jogador.x + 6, this.jogador.y + 2);
     if (!this._ultimo || t - this._ultimo > 250) { this._ultimo = t; this.atualizarPecas(); Detalhes.atualizar(this); }
     if (!this._ultimoMini || t - this._ultimoMini > 150) { this._ultimoMini = t; MiniMapa.atualizar(this); }

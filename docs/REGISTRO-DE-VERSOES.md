@@ -1,5 +1,17 @@
 # Urbana — registro de versões
 
+## 2.40 — 12/11/2026
+
+- **Anoitecer durante o jogo (luz L3 escolhida pelo professor):** a partida começa de dia; depois de 5 minutos jogando
+  o bairro escurece aos poucos (1 minuto) até o crepúsculo, com céu arroxeado, bordas mais escuras, um resto de laranja
+  no alto e os postes acesos (brilho na luminária, na ponta do braço do poste). Ao abrir o mapa de novo, começa de dia.
+  O tempo só conta com o jogo aberto e na tela.
+- A luz é uma camada por cima do bairro (src/sistemas/Luz.js): o mapa original não muda; HUD, fichas e quizzes não
+  escurecem. Acompanha o zoom e o tamanho da tela.
+- **Editor:** "Níveis, preços e recompensas" > Anoitecer: ligar/desligar para todos, minutos até anoitecer e minutos
+  da transição (dados/jogo.js → "anoitecer").
+- **Configurações:** "Anoitecer durante o jogo" (cada computador pode desligar; vale na hora).
+
 ## 2.39 — 12/11/2026
 
 Limpeza (nada que o jogo usa foi removido; ids, mapa, partidas, originais/ e cópias de segurança intactos):

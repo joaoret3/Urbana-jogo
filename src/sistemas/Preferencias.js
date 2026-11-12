@@ -14,7 +14,8 @@ const Preferencias = {
     volume_efeitos: 0.8,     // de 0 a 1
     qualidade: null,         // null = usa o padrão de src/config.js; ou 'alta' / 'leve'
     movimento_reduzido: null,// null = segue o sistema; true/false = escolha do jogador
-    controles_grandes: false // joystick e botão A maiores
+    controles_grandes: false,// joystick e botão A maiores
+    anoitecer: true          // v2.40: o bairro escurece depois de alguns minutos jogando
   },
 
   valores: null,

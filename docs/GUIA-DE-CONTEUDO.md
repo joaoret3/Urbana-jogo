@@ -176,3 +176,9 @@ Uma moldura pode ter, além da cor, uma **imagem vazada**: PNG quadrado com fund
 - No editor: aba **Níveis, preços e recompensas** > Molduras do retrato > "Imagem vazada (PNG transparente)".
   O editor reduz para 600 px e salva em `assets/molduras/<id>.webp`. "Tirar imagem" volta a ser só a cor.
 - Exemplo para testar: `originais/molduras/EXEMPLO_moldura_coroa.png`.
+
+## Anoitecer (desde a v2.40)
+
+A partida começa de dia e, depois de alguns minutos jogando, o bairro escurece até o crepúsculo e os postes acendem.
+No editor: **Níveis, preços e recompensas** > **Anoitecer** (ligar/desligar, minutos até anoitecer, minutos da
+transição). Cada computador também pode desligar em **Configurações** > "Anoitecer durante o jogo".

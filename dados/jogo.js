@@ -11,6 +11,12 @@ URBANA_DADOS["jogo"] = {
     "distancia_lata": 56
   },
   "latas_renascem_percentual": 60,
+  "anoitecer": {
+    "_leia": "Luz do bairro (v2.40): a partida começa de dia e, depois de 'minutos_para_anoitecer' minutos jogando, escurece aos poucos (durante 'minutos_transicao') até o crepúsculo, com os postes acesos. 'ativo': false desliga para todos.",
+    "ativo": true,
+    "minutos_para_anoitecer": 5,
+    "minutos_transicao": 1
+  },
   "recompensas": {
     "primeira_visita": {
       "xp": 2,

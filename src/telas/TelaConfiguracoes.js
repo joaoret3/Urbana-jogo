@@ -75,6 +75,8 @@ const TelaConfiguracoes = {
         () => Preferencias.menosMovimento(), (v) => Preferencias.definir('movimento_reduzido', v)),
       linhaInterruptor('Controles grandes', 'Joystick e botão A maiores, para telas de toque.',
         () => !!Preferencias.obter('controles_grandes'), (v) => Preferencias.definir('controles_grandes', v)),
+      linhaInterruptor('Anoitecer durante o jogo', 'Depois de alguns minutos jogando, o bairro escurece e os postes acendem.',
+        () => Preferencias.obter('anoitecer') !== false, (v) => Preferencias.definir('anoitecer', v)),
       E('h3', { class: 'config-secao' }, 'Qualidade do mapa'),
       E('div', { class: 'opcoes-grade', role: 'radiogroup', 'aria-label': 'Qualidade do mapa' },
         opcaoQualidade('alta', 'Alta', 'Mapa mais nítido. Para computadores e tablets mais novos.'),
