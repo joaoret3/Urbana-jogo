@@ -1,5 +1,21 @@
 # Urbana — registro de versões
 
+## 2.42 — 12/11/2026
+
+Tela preta no tablet da escola — causas encontradas e otimizações:
+- **Compatibilidade com navegadores antigos:** as versões 2.37 e 2.40 usaram um recurso novo de JavaScript (`??`) que
+  navegadores anteriores a 2020 não entendem; num tablet com Chrome desatualizado o jogo não iniciava (tela preta).
+  Trocado por código antigo equivalente. O jogo volta a funcionar no Chrome 64 (2018) em diante; a publicação passa a
+  barrar esse recurso. Os estilos que usavam `inset` (Chrome 87+) agora usam top/right/bottom/left.
+- **Aviso em vez de tela preta:** se o jogo não conseguir abrir (erro, falta de memória de vídeo ou mais de 45 s sem o
+  menu aparecer), aparece uma tela com o motivo, o navegador e a memória do aparelho, com o botão "Tentar de novo".
+- **WebGL:** se a placa de vídeo falhar ao iniciar, o jogo tenta de novo pelo modo canvas.
+- **Tablets e celulares usam a qualidade Leve automaticamente** (quem quiser escolhe Alta em Configurações) e guardam
+  menos peças do mapa na memória. Num tablet emulado (Galaxy Tab S4): imagens na memória 67 → 41 MB (peças do mapa
+  34 → 8 MB), download até jogar 9,0 → 8,4 MB.
+- Observação: entre 11h14 e 11h21 de 12/11 o site estava com `dados/jogo.js` quebrado (conflito do commit "v22",
+  corrigido na 2.41); um teste nesse intervalo também daria tela preta.
+
 ## 2.41 — 12/11/2026
 
 - **Correção urgente:** o commit "v22" enviou `dados/jogo.js` com marcas de conflito do GitHub Desktop

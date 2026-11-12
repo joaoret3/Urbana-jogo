@@ -17,10 +17,11 @@ function esperarFontes() {
   return Promise.race([Promise.all(fontes), new Promise(r => setTimeout(r, 1500))]);
 }
 
-if (window.Phaser) esperarFontes().then(() => {
+// v2.42: se o WebGL (placa de vídeo) falhar ao iniciar, tenta de novo pelo modo canvas.
+function criarJogo(tipo) {
   // window.jogo: o jogo do Phaser (usado pelo módulo de áudio)
   window.jogo = new Phaser.Game({
-    type: SEM_SERVIDOR ? Phaser.CANVAS : Phaser.AUTO,
+    type: tipo,
     loader: { imageLoadType: 'HTMLImageElement' },   // imagens carregadas sem pedir ao servidor
     audio: { disableWebAudio: SEM_SERVIDOR },
     parent: 'jogo',
@@ -29,4 +30,20 @@ if (window.Phaser) esperarFontes().then(() => {
     physics: { default: 'arcade', arcade: { debug: false } },
     scene: [CenaCarga, CenaMenu, CenaAvatar, CenaMapa]
   });
+  // se a placa de vídeo "cair" (pouca memória), avisa em vez de ficar com a tela preta
+  const tela = window.jogo.canvas;
+  if (tela) tela.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    if (window.URBANA_FALHA) window.URBANA_FALHA('O aparelho ficou sem memória de vídeo', 'Recarregue a página. Em Configurações, escolha a qualidade "Leve" e desligue o anoitecer.');
+  });
+}
+
+if (window.Phaser) esperarFontes().then(() => {
+  const tipo = SEM_SERVIDOR ? Phaser.CANVAS : Phaser.AUTO;
+  try { criarJogo(tipo); }
+  catch (e) {
+    console.warn('[Urbana] não abriu com WebGL, tentando pelo modo canvas:', e);
+    if (window.jogo && window.jogo.destroy) try { window.jogo.destroy(true); } catch (e2) { /* nada */ }
+    criarJogo(Phaser.CANVAS);
+  }
 });

@@ -327,7 +327,7 @@ class CenaMapa extends Phaser.Scene {
   // ---------------------------------------------------------------------------
   // carrega só as peças perto da câmera e descarrega as distantes (economiza memória)
   atualizarPecas() {
-    const cam = this.cameras.main, r = window.URBANA.RAIO_CARREGAMENTO;
+    const cam = this.cameras.main, r = Preferencias.aparelhoDeToque() ? Math.min(1.15, window.URBANA.RAIO_CARREGAMENTO) : window.URBANA.RAIO_CARREGAMENTO;   // v2.42: tablets guardam menos peças
     const v = cam.worldView, mx = v.width * (r - 1) / 2, my = v.height * (r - 1) / 2;
     const x0 = v.x - mx, y0 = v.y - my, x1 = v.right + mx, y1 = v.bottom + my;
     let pedidos = 0;

@@ -23,11 +23,12 @@ const Luz = {
 
   config() {
     const a = (Conteudo.jogo() || {}).anoitecer || {};
+    const num = (v, padrao) => (v === undefined || v === null || v === '' || isNaN(Number(v))) ? padrao : Number(v);   // (escrito assim, sem o atalho novo do JavaScript, para funcionar em tablets antigos)
     return {
       ativo: a.ativo !== false,
-      minutos: Math.max(0, Number(a.minutos_para_anoitecer ?? 5)),
-      transicao: Math.max(0.05, Number(a.minutos_transicao ?? 1)),
-      noite: Math.max(0, Number(a.minutos_de_noite ?? 3)),
+      minutos: Math.max(0, num(a.minutos_para_anoitecer, 5)),
+      transicao: Math.max(0.05, num(a.minutos_transicao, 1)),
+      noite: Math.max(0, num(a.minutos_de_noite, 3)),
       repetir: a.repetir !== false
     };
   },

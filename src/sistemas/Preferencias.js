@@ -54,13 +54,20 @@ const Preferencias = {
     document.body.classList.toggle('controles-grandes', !!this.obter('controles_grandes'));
   },
 
+  // Tablet ou celular (dedo como ponteiro principal)
+  aparelhoDeToque() {
+    return !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+  },
+
   // Qualidade do mapa em uso agora ('alta' ou 'leve')
   // Sem escolha do usuário: aparelhos com pouca memória (celulares e computadores fracos,
-  // quando o navegador informa) usam a qualidade 'leve' para não travar.
+  // quando o navegador informa) e, desde a v2.42, todo tablet e celular (tela de toque) usam a
+  // qualidade 'leve' para não travar. Quem quiser pode escolher 'Alta' em Configurações.
   qualidadeMapa() {
     const escolhida = this.obter('qualidade');
     if (escolhida) return escolhida;
     if (navigator.deviceMemory && navigator.deviceMemory <= 3) return 'leve';
+    if (this.aparelhoDeToque()) return 'leve';
     return window.URBANA.QUALIDADE;
   }
 };

@@ -167,7 +167,7 @@ const Progresso = {
     const existentes = new Set(((Conteudo.mapa && Conteudo.mapa.latas) || []).map(o => o.name));
     p.latas_vazias = p.latas_vazias.filter(id => existentes.has(id));
     const n = p.latas_vazias.length; if (!n) return 0;
-    const pct = Math.max(0, Math.min(100, Number((Conteudo.jogo() || {}).latas_renascem_percentual ?? 60)));
+    const pct = Math.max(0, Math.min(100, (() => { const v = (Conteudo.jogo() || {}).latas_renascem_percentual; return (v === undefined || v === null || v === '' || isNaN(Number(v))) ? 60 : Number(v); })()));
     const minimo = Math.ceil(n * pct / 100), qtd = minimo + Math.floor(Math.random() * (n - minimo + 1));
     const v = p.latas_vazias.slice();
     for (let i = v.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [v[i], v[j]] = [v[j], v[i]]; }

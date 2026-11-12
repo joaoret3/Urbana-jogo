@@ -44,12 +44,12 @@ html { font-synthesis: none; }   /* as fontes de grafite têm um peso só: sem n
 html, body { margin: 0; height: 100%; background: var(--noite); overflow: hidden; }
 body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
 #erro { display: none; color: #fff; padding: 24px; max-width: 60ch; font-size: 18px; }
-#jogo { position: fixed; inset: 0; }
+#jogo { position: fixed; top: 0; right: 0; bottom: 0; left: 0; }
 #jogo canvas { display: block; }
 
 /* Camada das telas HTML: cobre o jogo, mas só os elementos com
    pointer-events: auto recebem cliques (o resto passa para o mapa). */
-#ui { position: fixed; inset: 0; z-index: 10; pointer-events: none;
+#ui { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; pointer-events: none;
       padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
 #ui > * { pointer-events: auto; }
 
@@ -101,7 +101,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 
 /* ---------- JANELAS (PAINÉIS) ---------- */
 .fundo-painel {
-  position: absolute; inset: 0; display: grid; place-items: center; padding: 16px;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: grid; place-items: center; padding: 16px;
   background: rgba(10, 8, 14, .72); backdrop-filter: blur(2px);
   animation: aparecer .18s ease-out;
 }
@@ -137,9 +137,9 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 /* =============================================================================
    MENU PRINCIPAL
    ============================================================================= */
-.tela-menu { position: absolute; inset: 0; display: flex; flex-direction: column; overflow-y: auto; }
+.tela-menu { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; overflow-y: auto; }
 .menu-vinheta {
-  position: fixed; inset: 0; pointer-events: none;
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none;
   background:
     radial-gradient(ellipse at 50% 42%, rgba(23,20,29,.35) 0%, rgba(23,20,29,.82) 62%, rgba(23,20,29,.96) 100%),
     linear-gradient(180deg, rgba(123,59,234,.25), rgba(255,63,191,.12));
@@ -277,7 +277,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 /* =============================================================================
    SELEÇÃO DE AVATAR
    ============================================================================= */
-.tela-avatar { position: absolute; inset: 0; display: flex; flex-direction: column; overflow-y: auto; }
+.tela-avatar { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; overflow-y: auto; }
 .avatar-topo { position: relative; display: flex; align-items: center; gap: 16px; padding: 16px 20px 0; flex-wrap: wrap; }
 .avatar-titulo { font-size: clamp(1.6rem, 4.5vw, 2.6rem); flex: 1; }
 .avatar-apelido { background: var(--tinta); border-radius: 999px; padding: 6px 14px; font-weight: 700; border: 2px solid var(--rosa); }
@@ -328,7 +328,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
    HUD (durante a exploração)
    ============================================================================= */
 /* O HUD cobre a tela, mas só os blocos recebem cliques; o resto passa para o mapa */
-#ui > .hud { position: absolute; inset: 0; pointer-events: none; }
+#ui > .hud { position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; }
 .hud-bloco { position: absolute; pointer-events: auto; }
 
 .hud-perfil { top: 12px; left: 12px; }   /* aparência da barra do jogador (anel de XP): ver o bloco v2.35 no fim do arquivo */
@@ -372,7 +372,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
   position: relative; display: block; width: 100%; padding: 0; cursor: zoom-in; overflow: hidden;
   background: #2a2433; border: 3px solid var(--tinta); border-radius: 14px; box-shadow: 4px 4px 0 var(--tinta);
 }
-.minimapa-quadro img, .minimapa-tela { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.minimapa-quadro img, .minimapa-tela { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; display: block; }
 .minimapa-quadro img { object-fit: fill; opacity: .92; }
 .minimapa-quadro:hover { border-color: var(--lima); }
 .minimapa-esconder {
@@ -614,7 +614,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 .bb-arte-moldura img { width: 100%; height: 100%; object-fit: contain; }
 /* bloqueada: preto e branco + cadeado + preço (não depende só da cor) */
 .bb-arte.bloqueada img, .bb-ampliada.bloqueada img { filter: grayscale(1) contrast(.9) brightness(.85); }
-.bb-cadeado { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(35, 27, 44, .35); }
+.bb-cadeado { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: grid; place-items: center; background: rgba(35, 27, 44, .35); }
 .bb-arte-titulo { font-size: 1rem; }
 .bb-arte-autor { font-size: .85rem; color: #5a4f66; }
 .bb-etiqueta { font-weight: 900; font-size: .85rem; padding: 2px 8px; border-radius: 6px; width: fit-content; background: #2a2135; color: #fff; }
@@ -631,7 +631,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
    ============================================================================= */
 .muro-selo { margin: 0 0 10px; font-weight: 700; font-size: .9rem; color: var(--rosa); }
 .muro-previa { position: relative; width: min(560px, 100%); margin: 0 auto; border: 4px solid var(--tinta); border-radius: 8px; overflow: hidden; background: #d6cec2; }
-.muro-previa img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.muro-previa img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; }
 .muro-previa .muro-fundo { object-fit: cover; filter: brightness(.85); }
 .muro-previa img:not(.muro-fundo) { object-fit: contain; padding: 6px; }
 .muro-legenda { text-align: center; margin: 8px 0 0; }
@@ -874,7 +874,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 
 /* ---- Aviso "Vire o aparelho": celular/tablet com a tela em pé ---- */
 #aviso-girar {
-  display: none; position: fixed; inset: 0; z-index: 10000; background: var(--noite);
+  display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 10000; background: var(--noite);
   flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center;
   padding: 24px max(24px, env(safe-area-inset-right)) 24px max(24px, env(safe-area-inset-left));
 }
@@ -882,7 +882,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 #aviso-girar p { margin: 0; max-width: 28ch; font-size: 1.15rem; }
 #aviso-girar small { max-width: 34ch; opacity: .75; font-size: .85rem; }
 .girar-icone { position: relative; width: 120px; height: 120px; }
-.girar-icone svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.girar-icone svg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .girar-aparelho { stroke: var(--lima); animation: girar-aparelho 2.4s ease-in-out infinite; }
 .girar-aparelho rect { fill: var(--painel-2); }
 .girar-seta { stroke: var(--rosa); }
@@ -895,7 +895,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 
 /* ---------- História de abertura (v2.20) ---------- */
 .fundo-historia {
-  position: absolute; inset: 0; z-index: 40; background: #0b0810;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 40; background: #0b0810;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
   padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom));
 }

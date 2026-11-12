@@ -8,6 +8,42 @@
 <meta name="theme-color" content="#17141d">
 <title>Urbana · Bairro Goiânia</title>
 <link rel="icon" href="assets/ui/logo_urbana.webp">
+<script>
+/* v2.42: se o jogo não conseguir abrir, mostra o motivo em vez de uma tela preta (escrito do jeito mais
+   simples possível, para funcionar até em navegadores bem antigos). */
+(function () {
+  var mostrado = false;
+  function aviso(titulo, detalhe) {
+    if (mostrado) return; mostrado = true;
+    var ok = function () {
+      var d = document.createElement('div');
+      d.id = 'falha-abrir';
+      d.setAttribute('role', 'alert');
+      d.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:#17141d;color:#fbf7ff;font:16px/1.45 system-ui,sans-serif;padding:24px;overflow:auto';
+      d.innerHTML = '<h2 style="margin:0 0 10px;font-size:22px">' + titulo + '</h2>' +
+        '<p>Tente: recarregar a página; atualizar o navegador (Chrome) na loja de aplicativos; fechar outros aplicativos abertos.</p>' +
+        '<p>Se continuar, tire uma foto desta tela e envie para o professor.</p>' +
+        '<pre style="white-space:pre-wrap;background:#241d30;padding:12px;border-radius:8px;font-size:13px">' +
+        String(detalhe).replace(/</g, '&lt;') + '\n\nNavegador: ' + navigator.userAgent.replace(/</g, '&lt;') +
+        '\nTela: ' + screen.width + 'x' + screen.height + ' · Memória: ' + (navigator.deviceMemory || '?') + ' GB</pre>' +
+        '<button onclick="location.reload()" style="font:inherit;font-weight:700;padding:10px 18px;border-radius:10px;border:0;background:#9be21b;color:#0f0c14">Tentar de novo</button>';
+      document.body.appendChild(d);
+    };
+    if (document.body) ok(); else document.addEventListener('DOMContentLoaded', ok);
+  }
+  window.URBANA_FALHA = aviso;
+  window.addEventListener('error', function (e) {
+    if (document.querySelector && document.querySelector('.tela-menu, .hud')) return;   // já abriu: erro pequeno não trava o jogo
+    var alvo = e && e.target;
+    if (alvo && alvo !== window && (alvo.src || alvo.href)) return;                    // imagem/som que faltou: o jogo segue
+    aviso('O jogo não conseguiu abrir', (e && e.message ? e.message : 'erro') + (e && e.filename ? ' (' + e.filename.split('/').slice(-2).join('/') + ':' + e.lineno + ')' : ''));
+  }, true);
+  setTimeout(function () {
+    if (!document.querySelector('.tela-menu, .hud, #falha-abrir'))
+      aviso('O jogo está demorando para abrir', 'Passaram 45 segundos e o menu não apareceu. A internet pode estar lenta ou o aparelho sem memória livre.');
+  }, 45000);
+})();
+</script>
 <link rel="stylesheet" href="estilo/fontes.css">
 <link rel="stylesheet" href="estilo/urbana.css">
 </head>
