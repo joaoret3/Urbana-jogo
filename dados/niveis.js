@@ -37,6 +37,18 @@ URBANA_DADOS["niveis"] = {
           "moldura_ouro"
         ]
       }
+    },
+    {
+      "nivel": 4,
+      "xp": 200,
+      "desbloqueia": {
+        "avatares": [
+          "avatar_05"
+        ],
+        "molduras": [
+          "moldura_orgulho"
+        ]
+      }
     }
   ]
 };

@@ -2,7 +2,7 @@
 // O conteúdo entre as chaves { } segue o formato JSON.
 URBANA_DADOS["jogo"] = {
   "_leia": "Valores de balanceamento do jogo. Pode alterar os números sem mexer no código.",
-  "versao_conteudo": "0.1-EXEMPLO",
+  "versao_conteudo": "0.1-BETA",
   "max_partidas_por_computador": 6,
   "interacao": {
     "_leia": "Distâncias em pixels do mapa (o mapa inteiro tem 9392 x 10712).",
@@ -10,6 +10,7 @@ URBANA_DADOS["jogo"] = {
     "distancia_muro": 130,
     "distancia_lata": 56
   },
+<<<<<<< Updated upstream
   "latas_renascem_percentual": 60,
   "anoitecer": {
     "_leia": "Luz do bairro (v2.40): a partida começa de dia e, depois de 'minutos_para_anoitecer' minutos jogando, escurece aos poucos (durante 'minutos_transicao') até o crepúsculo, com os postes acesos. 'ativo': false desliga para todos.",
@@ -17,14 +18,17 @@ URBANA_DADOS["jogo"] = {
     "minutos_para_anoitecer": 5,
     "minutos_transicao": 1
   },
+=======
+  "latas_renascem_percentual": 50,
+>>>>>>> Stashed changes
   "recompensas": {
     "primeira_visita": {
       "xp": 2,
-      "latas": 1
+      "latas": 2
     },
     "quiz_padrao": {
       "xp": 10,
-      "latas": 5
+      "latas": 6
     },
     "lata_coletavel": 1
   },
@@ -43,16 +47,16 @@ URBANA_DADOS["jogo"] = {
     "_leia": "A categoria indica a etapa do jogo em que a arte aparece. Não é uma nota para o trabalho do estudante.",
     "basica": {
       "nome": "Arte básica",
-      "preco": 20,
+      "preco": 25,
       "nivel_minimo": 1
     },
     "intermediaria": {
       "nome": "Arte intermediária",
-      "preco": 50,
+      "preco": 45,
       "nivel_minimo": 2
     },
     "especial": {
-      "nome": "Arte especial",
+      "nome": "Arte rara",
       "preco": 80,
       "nivel_minimo": 3
     }
