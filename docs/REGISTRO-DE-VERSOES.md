@@ -1,5 +1,11 @@
 # Urbana — registro de versões
 
+## 2.38 — 12/11/2026
+
+- **Versão do conteúdo editável:** no editor, em "Níveis, preços e recompensas" > Recompensas, novo campo "Versão do conteúdo
+  (rodapé do menu)" (`versao_conteudo` em dados/jogo.js). Quando o conteúdo estiver pronto, troque "0.1-EXEMPLO" por "1.0",
+  por exemplo. Deixando o campo vazio, o rodapé do menu mostra só "Urbana v2.38", sem a parte do conteúdo.
+
 ## 2.37 — 12/11/2026
 
 - **Latas voltam ao abrir a partida:** ao abrir uma partida (Continuar ou Jogar na lista de partidas), uma parte sorteada

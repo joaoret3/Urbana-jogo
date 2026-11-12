@@ -47,7 +47,8 @@ class CenaMenu extends Phaser.Scene {
       ),
       E('footer', { class: 'menu-rodape' },
         E('span', {}, 'Escola Municipal Carolina Maria de Jesus · Bairro Goiânia · Belo Horizonte/MG'),
-        E('span', { class: 'menu-versao' }, `Urbana v${window.URBANA.VERSAO} · conteúdo ${Conteudo.jogo().versao_conteudo || '—'}`),
+        // v2.38: se a versão do conteúdo (dados/jogo.js) estiver vazia, só aparece a versão do jogo
+        E('span', { class: 'menu-versao' }, `Urbana v${window.URBANA.VERSAO}` + (Conteudo.jogo().versao_conteudo ? ` · conteúdo ${Conteudo.jogo().versao_conteudo}` : '')),
         // (o link para o Editor de conteúdo saiu do menu dos alunos na v2.0: o editor abre pelo editor.html)
       )
     );
