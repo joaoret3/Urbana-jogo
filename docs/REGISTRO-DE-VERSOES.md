@@ -1,5 +1,13 @@
 # Urbana — registro de versões
 
+## 2.44 — 12/11/2026
+
+- **Pintar muro livre gasta latas:** aplicar ou trocar a arte de um muro custa 3 latas (`custo_pintar_muro` em
+  dados/jogo.js; no editor: "Níveis, preços e recompensas" > Recompensas > "Pintar um muro livre: custo em latas"; 0 = grátis).
+  A tela "Pintar muro" mostra o custo e o saldo; se faltarem latas, o botão fica desligado e aparece
+  "Faltam N: pegue mais latas pelo bairro!". O botão passa a dizer "Aplicar arte (3 latas)" e o aviso de muro pintado
+  mostra "−3 latas". Muros já pintados continuam como estão.
+
 ## 2.43 — 12/11/2026
 
 - **Moldura emblema (estilo enviado pelo professor):** a arte da moldura fica ATRÁS do personagem, que aparece dentro do

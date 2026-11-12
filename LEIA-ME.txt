@@ -1,6 +1,6 @@
 URBANA · JOGO EDUCATIVO DO BAIRRO GOIÂNIA (PHASER 3)
 Escola Municipal Carolina Maria de Jesus · Belo Horizonte/MG
-Versão 2.43 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
+Versão 2.44 — jogo completo (menu, partidas, avatar, HUD, pins e fichas, quiz, XP e níveis,
 latas e missões, Black Book, muros virtuais, perfil, tutorial, sons, acessibilidade)
 + Editor de conteúdo para professores.
 Avatares, artes, fotos, textos e sons ainda são RASCUNHOS de exemplo, para trocar pelo material real.

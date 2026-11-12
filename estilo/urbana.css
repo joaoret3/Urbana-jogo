@@ -1054,3 +1054,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 .partida-emblema { width: 76px; height: 76px; }
 .amostra-moldura.amostra-emblema { border: 0; background: none; box-shadow: none; overflow: visible; }
 .amostra-moldura.amostra-emblema img { width: 130%; height: 130%; max-width: none; margin: -15%; display: block; }
+
+/* v2.44: custo em latas para pintar um muro */
+.muro-custo { text-align: center; margin: 6px 0 0; font-weight: 700; color: var(--amarelo); }
+.muro-custo.falta { color: var(--rosa); }

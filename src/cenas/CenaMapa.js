@@ -275,6 +275,8 @@ class CenaMapa extends Phaser.Scene {
   pintarMuro(muroId, arteId) {
     const muro = this.muros.find(m => m.id === muroId);
     if (!muro) return;
+    const faltam = Progresso.latasQueFaltamParaPintar();        // v2.44: pintar gasta latas
+    if (faltam > 0) { Interface.avisar(`Faltam ${faltam} ${faltam === 1 ? 'lata' : 'latas'} para pintar. Pegue mais latas pelo bairro!`, 'info'); return; }
     this.animarInteracao();
     Sons.tocar('spray');
     this.pintando = true;
@@ -283,7 +285,8 @@ class CenaMapa extends Phaser.Scene {
       this.pintando = false;
       if (Progresso.pintarMuro(muroId, arteId)) {
         const a = Conteudo.arte(arteId);
-        Interface.notificar({ tipo: 'recompensa', titulo: 'Muro pintado!', texto: `${a.titulo} · arte de ${a.autoria || '—'}` });
+        const custo = Progresso.custoPintarMuro();
+        Interface.notificar({ tipo: 'recompensa', titulo: 'Muro pintado!', texto: `${a.titulo} · arte de ${a.autoria || '—'}` + (custo ? ` · −${custo} ${custo === 1 ? 'lata' : 'latas'}` : '') });
         HUD.atualizar();
       }
     });

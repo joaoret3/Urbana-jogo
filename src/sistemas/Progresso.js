@@ -220,9 +220,22 @@ const Progresso = {
     return true;
   },
 
-  // Aplica (ou troca) a arte de um muro virtual. Não custa latas.
+  // v2.44: pintar (ou trocar a arte de) um muro gasta latas — "custo_pintar_muro" em dados/jogo.js (padrão 3; 0 = grátis)
+  custoPintarMuro() {
+    const v = (Conteudo.jogo() || {}).custo_pintar_muro;
+    return (v === undefined || v === null || v === '' || isNaN(Number(v))) ? 3 : Math.max(0, Math.round(Number(v)));
+  },
+  // Quantas latas faltam para pintar um muro (0 = dá para pintar)
+  latasQueFaltamParaPintar() {
+    const p = this.p(); if (!p) return 0;
+    return Math.max(0, this.custoPintarMuro() - p.jogador.latas);
+  },
+
+  // Aplica (ou troca) a arte de um muro virtual e gasta as latas do custo.
   pintarMuro(muroId, arteId) {
     const p = this.p(); if (!p || !this.arteDesbloqueada(arteId)) return false;
+    if (this.latasQueFaltamParaPintar() > 0) return false;
+    p.jogador.latas = Math.max(0, p.jogador.latas - this.custoPintarMuro());   // nunca negativo
     p.muros_pintados[muroId] = arteId;
     this.concluirAcao();
     return true;

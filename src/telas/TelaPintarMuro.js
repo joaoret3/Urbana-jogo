@@ -4,7 +4,8 @@
 // Aberta ao apertar A perto de um muro livre (camada "muros_livres" do Tiled).
 // Mostra o muro, a prévia da arte escolhida sobre ele, o título e a autoria.
 // Só aceita artes desbloqueadas; o botão "Abrir Black Book" permite
-// desbloquear outras ali mesmo. Aplicar ou trocar a arte não custa latas.
+// desbloquear outras ali mesmo. Desde a v2.44, aplicar ou trocar a arte gasta latas
+// (Progresso.custoPintarMuro, padrão 3), para incentivar a coleta pelo bairro.
 //
 //   TelaPintarMuro.abrir({ muroId, aoAplicar(arteId) })
 // =============================================================================
@@ -21,6 +22,8 @@ const TelaPintarMuro = {
       E('img', { class: 'muro-fundo', src: 'assets/ui/muro_livre.webp', alt: '' }), imgPrevia);
     const fundoPrevia = previa.querySelector('.muro-fundo');
     const legenda = E('p', { class: 'muro-legenda' });
+    const custo = Progresso.custoPintarMuro();
+    const avisoCusto = E('p', { class: 'muro-custo', role: 'status' });
     const lista = E('div', { class: 'muro-artes', role: 'listbox', 'aria-label': 'Artes desbloqueadas' });
     const aplicar = Interface.botao('Aplicar arte', () => {
       if (!escolhida || escolhida === atual) return;
@@ -44,8 +47,14 @@ const TelaPintarMuro = {
         ? E('span', {}, E('strong', {}, arte.titulo), ' · arte de ', E('strong', {}, arte.autoria || '—'),
             escolhida === atual ? ' (já está neste muro)' : '')
         : 'Muro sem arte. Escolha uma arte desbloqueada abaixo.');
-      aplicar.disabled = !arte || escolhida === atual;
-      aplicar.querySelector('.botao-texto').textContent = atual && escolhida !== atual ? 'Trocar arte' : 'Aplicar arte';
+      const faltam = Progresso.latasQueFaltamParaPintar(), saldo = Salvamento.atual.jogador.latas;
+      aplicar.disabled = !arte || escolhida === atual || faltam > 0;
+      aplicar.querySelector('.botao-texto').textContent = (atual && escolhida !== atual ? 'Trocar arte' : 'Aplicar arte') + (custo ? ` (${custo} ${custo === 1 ? 'lata' : 'latas'})` : '');
+      avisoCusto.hidden = !custo;
+      avisoCusto.classList.toggle('falta', faltam > 0);
+      avisoCusto.replaceChildren(Interface.comIcone('lata', faltam > 0
+        ? `Pintar gasta ${custo} ${custo === 1 ? 'lata' : 'latas'} e você tem ${saldo}. Faltam ${faltam}: pegue mais latas pelo bairro!`
+        : `Pintar gasta ${custo} ${custo === 1 ? 'lata' : 'latas'}. Você tem ${saldo}.`));
     };
 
     const janela = Interface.abrirPainel({
@@ -53,7 +62,7 @@ const TelaPintarMuro = {
       classe: 'painel-largo painel-muro',
       conteudo: [
         E('p', { class: 'muro-selo' }, Interface.comIcone('paleta', 'Muro virtual · personalização da sua partida (não é um grafite real catalogado)')),
-        previa, legenda,
+        previa, legenda, avisoCusto,
         E('h3', { class: 'ficha-subtitulo' }, 'Suas artes'),
         lista
       ],
