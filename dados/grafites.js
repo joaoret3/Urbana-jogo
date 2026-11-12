@@ -73,7 +73,7 @@ URBANA_DADOS["grafites"] = {
       "imagem": "assets/grafites/grafite_009.webp",
       "quiz_id": "quiz_009",
       "creditos_fotografia": "",
-      "status_publicacao": "rascunho"
+      "status_publicacao": "publicado"
     },
     {
       "id": "grafite_010",
