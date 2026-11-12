@@ -25,6 +25,7 @@ const TelaPartidas = {
         const avatar = Conteudo.avatar(r.avatar_id);
         const moldura = Conteudo.moldura(r.moldura_id);
         return E('li', { class: 'partida-cartao' },
+          Interface.temEmblema(moldura) ? E('div', { class: 'com-emblema partida-emblema' }, Interface.emblema(avatar && avatar.retrato, moldura)) :   // v2.43
           E('div', { class: 'com-moldura' + (moldura && moldura.imagem ? ' vazada' : '') },
             E('div', { class: 'retrato-redondo', style: { '--moldura': moldura ? moldura.cor : 'var(--lima)' } },
               avatar ? E('img', { src: avatar.retrato, alt: '' }) : null),

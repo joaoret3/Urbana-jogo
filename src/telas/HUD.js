@@ -38,7 +38,8 @@ const HUD = {
     el.moldura = E('div', { class: 'retrato-redondo hud-retrato' }, el.retrato);
     el.anel = E('div', { class: 'hud-xp-anel', role: 'progressbar', 'aria-label': 'Experiência (XP) até o próximo nível', 'aria-valuemin': '0', 'aria-valuemax': '100' }, el.moldura);
     el.molduraVazada = E('img', { class: 'moldura-vazada', alt: '', draggable: 'false', hidden: true });   // v2.36
-    el.botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.anel, el.molduraVazada);
+    el.emblema = E('div', { class: 'hud-emblema', hidden: true });                                       // v2.43
+    el.botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.anel, el.molduraVazada, el.emblema);
     el.nivel = E('span', { class: 'hud-nivel', 'aria-hidden': 'true' });
     el.xpTexto = E('span', { class: 'sr-only' });
     el.apelido = E('span', { class: 'sr-only' });
@@ -83,7 +84,16 @@ const HUD = {
     const info = Progresso.infoNivel(p.jogador.xp);
     if (avatar) el.retrato.src = avatar.retrato;
     el.moldura.style.setProperty('--moldura', moldura ? moldura.cor : 'var(--lima)');
-    const vazada = !!(moldura && moldura.imagem);
+    // v2.43: moldura emblema (arte atrás do personagem) troca o anel; o XP vai para a barrinha do selo
+    const emblema = Interface.temEmblema(moldura);
+    if (emblema) {
+      const chave = [avatar && avatar.retrato, moldura.id, moldura.fundo, moldura.imagem, JSON.stringify(moldura.encaixe || {})].join('|');
+      if (el.emblema.dataset.chave !== chave) { el.emblema.replaceChildren(Interface.emblema(avatar && avatar.retrato, moldura)); el.emblema.dataset.chave = chave; }
+    }
+    el.emblema.hidden = !emblema;
+    el.anel.hidden = emblema;
+    el.botaoPerfil.parentElement.classList.toggle('modo-emblema', emblema);
+    const vazada = !emblema && !!(moldura && moldura.imagem);
     if (vazada && el.molduraVazada.getAttribute('src') !== moldura.imagem) el.molduraVazada.src = moldura.imagem;
     el.molduraVazada.hidden = !vazada;
     el.botaoPerfil.parentElement.classList.toggle('vazada', vazada);
@@ -93,6 +103,7 @@ const HUD = {
     el.apelido.textContent = `${p.apelido}, nível ${info.nivel}. `;
     el.xpTexto.textContent = xpTexto;
     el.anel.style.setProperty('--xp', String(pct));
+    el.botaoPerfil.parentElement.style.setProperty('--xp', String(pct));   // barrinha de XP do selo (moldura emblema)
     el.anel.setAttribute('aria-valuenow', String(pct));
     el.anel.setAttribute('aria-valuetext', xpTexto);
     el.botaoPerfil.title = `${p.apelido} · nível ${info.nivel} · ${xpTexto}. Toque para abrir o perfil (P)`;

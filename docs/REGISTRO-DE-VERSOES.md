@@ -1,5 +1,19 @@
 # Urbana — registro de versões
 
+## 2.43 — 12/11/2026
+
+- **Moldura emblema (estilo enviado pelo professor):** a arte da moldura fica ATRÁS do personagem, que aparece dentro do
+  círculo da arte com a cabeça saindo por cima dele (campos novos `fundo` e `encaixe` em dados/molduras.js). Na barra do
+  jogador o emblema toma o lugar do anel de XP e o XP vai para uma barrinha dentro do selo do nível. Aparece também no
+  perfil (retrato grande e miniaturas) e na lista de partidas. Funciona com qualquer personagem, porque os retratos já
+  têm fundo transparente.
+- **Duas molduras novas** com as artes do professor: `moldura_latas` ("Latas e Estrelas") e `moldura_cmj` ("CMJ").
+  Ainda não são liberadas por nenhum nível nem missão. Os SVGs originais ficam em originais/molduras/.
+- **Editor:** em "Níveis, preços e recompensas" > Molduras, botão "Emblema (arte atrás do personagem)" (aceita PNG, WebP
+  e SVG; SVG é ampliado sem perder qualidade) e 4 controles com prévia ao vivo: centro (esquerda/direita), centro
+  (cima/baixo), tamanho do círculo (com um círculo tracejado para encaixar) e tamanho do personagem. "Tirar emblema"
+  volta ao normal.
+
 ## 2.42 — 12/11/2026
 
 Tela preta no tablet da escola — causas encontradas e otimizações:

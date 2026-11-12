@@ -158,6 +158,34 @@ const Interface = {
     return moldura && moldura.imagem ? this.el('img', { class: 'moldura-vazada', src: moldura.imagem, alt: '', draggable: 'false' }) : null;
   },
 
+  // v2.43: moldura EMBLEMA — a arte da moldura ("fundo") fica ATRÁS do personagem, que aparece dentro do
+  // círculo da arte e com a cabeça saindo por cima dele. "encaixe" diz onde está o círculo na arte
+  // (centro x/y e raio, em % do lado da imagem) e o tamanho do personagem (% do diâmetro do círculo).
+  ENCAIXE_PADRAO: { x: 50, y: 50, raio: 38, personagem: 105 },
+  encaixe(moldura) {
+    const e = (moldura && moldura.encaixe) || {}, p = this.ENCAIXE_PADRAO;
+    const n = (v, d) => (v === undefined || v === null || v === '' || isNaN(Number(v))) ? d : Number(v);
+    return { x: n(e.x, p.x), y: n(e.y, p.y), raio: Math.max(5, n(e.raio, p.raio)), personagem: Math.max(40, n(e.personagem, p.personagem)) };
+  },
+  temEmblema(moldura) { return !!(moldura && moldura.fundo); },
+  // retratoSrc: imagem do personagem (fundo transparente); urlDe: troca o caminho (o editor usa as imagens ainda não salvas)
+  emblema(retratoSrc, moldura, urlDe) {
+    const E = this.el.bind(this), e = this.encaixe(moldura), url = urlDe || (c => c);
+    const k = e.personagem / 100;                          // lado do personagem = k × diâmetro do círculo
+    const lado = 2 * e.raio * k;                           // em % do emblema
+    // máscara: o círculo (embaixo) + tudo acima do centro do círculo (a cabeça pode sair por cima)
+    const cy = 100 - 100 / (2 * k), r = 100 / (2 * k);
+    const mascara = `radial-gradient(ellipse ${r}% ${r}% at 50% ${cy}%, #000 99%, transparent 100%), linear-gradient(to bottom, #000 ${cy}%, transparent ${cy}%)`;
+    const personagem = E('div', { class: 'emblema-personagem', style: {
+      left: (e.x - lado / 2) + '%', top: (e.y + e.raio - lado) + '%', width: lado + '%', height: lado + '%',
+      webkitMaskImage: mascara, maskImage: mascara } },
+      retratoSrc ? E('img', { src: url(retratoSrc), alt: '', draggable: 'false' }) : null);
+    return E('div', { class: 'emblema' },
+      E('img', { class: 'emblema-fundo', src: url(moldura.fundo), alt: '', draggable: 'false' }),
+      personagem,
+      moldura.imagem ? E('img', { class: 'moldura-vazada', src: url(moldura.imagem), alt: '', draggable: 'false' }) : null);
+  },
+
   // Faixa de conquista no alto da tela (recompensa, nível, missão, descoberta).
   // Várias seguidas entram numa fila e aparecem uma de cada vez.
   //   n = { tipo, titulo, texto, xp, latas, moldura, itens: [] }

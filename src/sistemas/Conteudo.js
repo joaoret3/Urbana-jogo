@@ -123,7 +123,7 @@ const Conteudo = {
     };
     const idsAvatares = conferirIds(avatares, 'dados/avatares.js');
     const idsMolduras = conferirIds(molduras, 'dados/molduras.js');
-    molduras.forEach(m => { if (m.imagem) imagens.push([`dados/molduras.js → ${m.id}`, m.imagem]); });   // v2.36: moldura vazada
+    molduras.forEach(m => { if (m.imagem) imagens.push([`dados/molduras.js → ${m.id}`, m.imagem]); if (m.fundo) imagens.push([`dados/molduras.js → ${m.id} (emblema)`, m.fundo]); });   // v2.36 vazada, v2.43 emblema
     const idsGrafites = conferirIds(grafites, 'dados/grafites.js');
     const idsQuizzes = conferirIds(quizzes, 'dados/quizzes.js');
     conferirIds(artes, 'dados/artes.js');

@@ -182,3 +182,11 @@ Uma moldura pode ter, além da cor, uma **imagem vazada**: PNG quadrado com fund
 A partida começa de dia e, depois de alguns minutos jogando, o bairro escurece até o crepúsculo e os postes acendem.
 No editor: **Níveis, preços e recompensas** > **Anoitecer** (ligar/desligar, minutos até anoitecer, minutos da
 transição). Cada computador também pode desligar em **Configurações** > "Anoitecer durante o jogo".
+
+## Molduras emblema (desde a v2.43)
+
+Arte redonda (como um selo/adesivo) que fica **atrás** do personagem: ele aparece dentro do círculo, com a cabeça
+saindo por cima. No editor: **Níveis, preços e recompensas** > Molduras > **Emblema (arte atrás do personagem)**.
+Depois de enviar, ajuste os controles até o círculo tracejado ficar em cima do círculo da arte (por dentro da borda).
+Dicas: arte quadrada, fundo transparente fora do emblema, contorno preto grosso; enfeites (estrelas, coroa, pingos)
+podem sair do círculo. Para o jogador ganhar a moldura, ligue-a a um nível ou a uma missão.

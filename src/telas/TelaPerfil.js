@@ -33,6 +33,7 @@ const TelaPerfil = {
 
       corpo.replaceChildren(
         E('section', { class: 'perfil-topo' },
+          Interface.temEmblema(moldura) ? E('div', { class: 'com-emblema perfil-emblema' }, Interface.emblema(avatar && avatar.retrato, moldura)) :   // v2.43
           E('div', { class: 'com-moldura' + (moldura && moldura.imagem ? ' vazada' : '') },
             E('div', { class: 'retrato-redondo perfil-retrato', style: { '--moldura': moldura ? moldura.cor : 'var(--lima)' } },
               avatar ? E('img', { src: avatar.retrato, alt: '' }) : null),
@@ -68,7 +69,9 @@ const TelaPerfil = {
             type: 'button', class: 'perfil-opcao perfil-moldura' + (livre ? '' : ' bloqueado') + (atual ? ' ativo' : ''),
             disabled: !livre || atual,
             onclick: () => { j.moldura_id = m.id; Salvamento.salvar(); HUD.atualizar(); desenhar(); }
-          }, m.imagem
+          }, m.fundo
+            ? E('span', { class: 'amostra-moldura amostra-emblema' }, E('img', { src: m.fundo, alt: '' }))
+            : m.imagem
             ? E('span', { class: 'amostra-moldura amostra-vazada', style: { borderColor: m.cor } }, Interface.molduraVazada(m))
             : E('span', { class: 'amostra-moldura', style: { borderColor: m.cor } }),
             E('span', {}, atual ? Interface.comIcone('ok', m.nome) : livre ? m.nome : Interface.comIcone('cadeado', comoLiberar(m.id))));
