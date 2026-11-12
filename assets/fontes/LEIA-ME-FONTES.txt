@@ -7,6 +7,10 @@ LondrinaSolid-Regular.ttf ....... "Londrina Solid" © 2011 The Londrina Solid Au
 SedgwickAveDisplay-Regular.ttf .. "Sedgwick Ave Display" © 2017 The Sedgwick Ave Project Authors
                                   (https://github.com/googlefonts/sedgwickave).
                                   Licença SIL Open Font License 1.1. Usada nos TÍTULOS.
+Bungee-Regular.ttf .............. "Bungee" © 2023 The Bungee Project Authors
+                                  (https://github.com/djrrb/Bungee).
+                                  Licença SIL Open Font License 1.1 (OFL-Bungee.txt). Usada no selo de
+                                  nível da barra do jogador (desde a v2.35).
 Inter (Inter-*.woff) ............ licença OFL, ver LICENCA-Inter-OFL.txt.
                                   Usada só no Editor de conteúdo e como reserva para símbolos.
 

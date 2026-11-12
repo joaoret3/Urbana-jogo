@@ -33,25 +33,22 @@ const HUD = {
     const E = Interface.el.bind(Interface);
     const el = this.elementos = {};
 
+    // v2.35: barra do jogador em "anel de XP" — o XP é o anel em volta do retrato e o nível fica no selo
     el.retrato = E('img', { alt: '' });
     el.moldura = E('div', { class: 'retrato-redondo hud-retrato' }, el.retrato);
-    const botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.moldura);
-    el.nivel = E('span', { class: 'hud-nivel' });
-    el.barra = E('div', { class: 'hud-xp-preenchimento' });
-    el.xpTexto = E('span', { class: 'hud-xp-texto' });
-    el.apelido = E('span', { class: 'hud-apelido' });
+    el.anel = E('div', { class: 'hud-xp-anel', role: 'progressbar', 'aria-label': 'Experiência (XP) até o próximo nível', 'aria-valuemin': '0', 'aria-valuemax': '100' }, el.moldura);
+    el.botaoPerfil = E('button', { class: 'hud-botao-perfil', type: 'button', 'aria-label': 'Abrir perfil', title: 'Perfil (P)', onclick: op.aoAbrirPerfil }, el.anel);
+    el.nivel = E('span', { class: 'hud-nivel', 'aria-hidden': 'true' });
+    el.xpTexto = E('span', { class: 'sr-only' });
+    el.apelido = E('span', { class: 'sr-only' });
     el.latas = E('span', { class: 'hud-latas-valor' });
     el.botaoA = E('button', { class: 'hud-botao-a', type: 'button', 'aria-label': 'Ação', disabled: true, onclick: () => this.acionar() }, 'A');
     el.rotuloA = E('span', { class: 'hud-rotulo-a', 'aria-live': 'polite' });
     el.missoesConta = E('span', { class: 'hud-missoes-conta' });
 
     const raiz = E('div', { class: 'hud' },
-      E('section', { class: 'hud-bloco hud-perfil', 'aria-label': 'Jogador' },
-        botaoPerfil,
-        E('div', { class: 'hud-perfil-info' },
-          E('div', { class: 'hud-linha' }, el.nivel, el.apelido),
-          E('div', { class: 'hud-xp', role: 'progressbar', 'aria-label': 'Experiência (XP)' }, el.barra, el.xpTexto)
-        )
+      E('section', { class: 'hud-bloco hud-perfil hud-anel', 'aria-label': 'Jogador' },
+        el.botaoPerfil, el.nivel, el.apelido, el.xpTexto
       ),
       // latas, Black Book e Menu numa linha; logo abaixo, a aba de Missões com a mesma largura
       E('section', { class: 'hud-bloco hud-direita', 'aria-label': 'Latas, menus e missões' },
@@ -85,11 +82,15 @@ const HUD = {
     const info = Progresso.infoNivel(p.jogador.xp);
     if (avatar) el.retrato.src = avatar.retrato;
     el.moldura.style.setProperty('--moldura', moldura ? moldura.cor : 'var(--lima)');
-    el.nivel.textContent = 'Nv ' + info.nivel;
-    el.apelido.textContent = p.apelido;
-    el.barra.style.width = Math.round(info.fracao * 100) + '%';
-    el.xpTexto.textContent = info.xpProximo !== null ? `${info.xp} / ${info.xpProximo} XP` : `${info.xp} XP · nível máximo`;
-    el.barra.parentElement.setAttribute('aria-valuenow', String(Math.round(info.fracao * 100)));
+    const pct = Math.round(info.fracao * 100);
+    const xpTexto = info.xpProximo !== null ? `${info.xp} / ${info.xpProximo} XP · faltam ${info.xpProximo - info.xp} XP para o nível ${info.nivel + 1}` : `${info.xp} XP · nível máximo`;
+    el.nivel.textContent = 'NV ' + info.nivel;
+    el.apelido.textContent = `${p.apelido}, nível ${info.nivel}. `;
+    el.xpTexto.textContent = xpTexto;
+    el.anel.style.setProperty('--xp', String(pct));
+    el.anel.setAttribute('aria-valuenow', String(pct));
+    el.anel.setAttribute('aria-valuetext', xpTexto);
+    el.botaoPerfil.title = `${p.apelido} · nível ${info.nivel} · ${xpTexto}. Toque para abrir o perfil (P)`;
     el.latas.textContent = p.jogador.latas;
     // aba de missões: concluídas / disponíveis
     const missoes = Missoes.lista().filter(s => s.estado !== 'indisponivel');

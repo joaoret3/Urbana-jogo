@@ -996,3 +996,33 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 
 /* ---------- v2.34: mini-mapa sempre abaixo da barra do jogador (posição calculada pelo MiniMapa.posicionar) ---------- */
 .hud-minimapa.posicionado:not(.ampliado) { top: var(--topo-minimapa); }
+
+/* ---------- v2.35: barra do jogador em "anel de XP" (modelo B2 escolhido pelo professor) ----------
+   O anel em volta do retrato enche conforme o XP do nível; o selo amarelo (fonte Bungee) mostra o nível.
+   Tocar no retrato abre o perfil (com XP e apelido). As regras abaixo vencem as antigas da .hud-perfil. */
+@property --xp { syntax: '<number>'; inherits: true; initial-value: 0; }
+.hud-perfil.hud-anel {
+  --anel: 74px;
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  background: none; border: 0; box-shadow: none; padding: 0; border-radius: 0;
+}
+.hud-anel .hud-botao-perfil { display: block; border-radius: 50%; }
+.hud-anel .hud-botao-perfil:focus-visible { outline: 3px solid var(--ciano); outline-offset: 4px; }
+.hud-xp-anel {
+  width: var(--anel); height: var(--anel); border-radius: 50%; padding: calc(var(--anel) * .085);
+  background: conic-gradient(var(--lima) calc(var(--xp) * 1%), #3a3446 0);
+  box-shadow: 0 0 0 2px var(--tinta), 3px 3px 0 2px var(--tinta);
+  transition: --xp .8s cubic-bezier(.2,.9,.3,1);
+}
+.hud-anel .hud-retrato { width: 100%; height: 100%; border-width: 3px; box-shadow: 0 0 0 2px var(--tinta); }
+.hud-anel .hud-nivel {
+  position: relative; z-index: 1; margin-top: calc(var(--anel) * -.17);
+  font-family: 'Bungee', var(--fonte-texto); font-style: normal; font-weight: 400; -webkit-text-stroke: 0;
+  font-size: calc(var(--anel) * .155); line-height: 1; letter-spacing: .02em; white-space: nowrap;
+  color: var(--tinta); background: var(--amarelo); border: 2px solid var(--tinta); border-radius: 6px;
+  padding: .28em .45em .2em; transform: rotate(-4deg); box-shadow: 2px 2px 0 var(--tinta); pointer-events: none;
+}
+@media (max-width: 700px), (max-height: 520px) { .hud-perfil.hud-anel { --anel: 62px; padding: 0; } }
+@media (max-width: 520px) { .hud-perfil.hud-anel { --anel: 58px; padding: 0; } }
+@media (max-height: 500px) and (orientation: landscape) { .hud-perfil.hud-anel { --anel: 54px; padding: 0; } }
+@media (prefers-reduced-motion: reduce) { .hud-xp-anel { transition: none; } }

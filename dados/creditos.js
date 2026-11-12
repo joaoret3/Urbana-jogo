@@ -43,6 +43,6 @@ URBANA_DADOS["creditos"] = {
   ],
   "tecnologia": [
     "Phaser 3 (licença MIT)",
-    "Fontes Londrina Solid, Sedgwick Ave Display e Inter (licença SIL OFL 1.1)"
+    "Fontes Londrina Solid, Sedgwick Ave Display, Bungee e Inter (licença SIL OFL 1.1)"
   ]
 };

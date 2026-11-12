@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.35 — 12/11/2026
+
+- **Nova barra do jogador ("anel de XP", modelo B2 escolhido pelo professor):** o XP do nível virou um anel verde em volta
+  do retrato e o nível aparece num selo amarelo ("NV 2"). Bem menor que a barra antiga, sobretudo no celular.
+  Apelido e XP exatos aparecem ao passar o mouse e ao tocar no retrato (abre o perfil, como antes); leitores de tela
+  continuam recebendo apelido, nível e quanto falta para o próximo nível.
+- **Fonte Bungee** (SIL OFL 1.1, © The Bungee Project Authors) no selo de nível, no lugar da Sedgwick Ave Display, que era
+  difícil de ler pequena. Os títulos das janelas continuam com a Sedgwick Ave Display. Arquivo e licença em
+  `assets/fontes/` (Bungee-Regular.ttf, OFL-Bungee.txt); créditos atualizados.
+
 ## 2.34 — 12/11/2026
 
 - **Mini-mapa afastado da barra do jogador:** a posição do mini-mapa (e do botão "Mapa" quando ele está escondido) agora é
