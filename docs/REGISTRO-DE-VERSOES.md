@@ -1,5 +1,12 @@
 # Urbana — registro de versões
 
+## 2.33 — 12/11/2026
+
+- **Fotos dos grafites em WebP:** as 37 fotos (grafite_004 a 040) passaram de JPEG para WebP, reduzidas para 1280 px:
+  de cerca de 21 MB para 9,5 MB na pasta `assets/grafites/`. Ids dos grafites e quizzes não mudaram; só o caminho da imagem
+  (`.jpg` → `.webp`). As fotos grandes continuam em `originais/grafites/` (JPEG, só na pasta do professor).
+- **Editor:** fotos novas de grafite e recortes agora são salvos em WebP (1280 px).
+
 ## 2.32 — 11/11/2026
 
 - **37 grafites do bairro** (fotos enviadas pelo professor) cadastrados como rascunho: grafite_004 a grafite_040, cada um com

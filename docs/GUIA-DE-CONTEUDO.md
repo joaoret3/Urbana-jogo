@@ -66,7 +66,7 @@ O que tiver **EXEMPLO** no texto ou **`exemplo_`** no nome do arquivo é provis�
    - `id`: código único, ex. `grafite_004`;
    - `titulo`, `artista` (use `null` se a autoria não for identificada ou não for autorizada),
      `data_registro` (formato `AAAA-MM-DD`), `descricao` (texto histórico), `curiosidades`;
-   - `imagem`: caminho da foto, ex. `assets/grafites/grafite_004.jpg`;
+   - `imagem`: caminho da foto, ex. `assets/grafites/grafite_004.webp`;
    - `quiz_id`: id do quiz, ex. `quiz_004`;
    - `status_publicacao`: `rascunho` enquanto estiver em revisão; `publicado` para aparecer no jogo.
 3. **Quiz:** em `dados/quizzes.js`, crie o quiz com `grafite_id` igual ao id da ficha.

@@ -10,7 +10,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4357.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_004.jpg",
+      "imagem": "assets/grafites/grafite_004.webp",
       "quiz_id": "quiz_004",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -22,7 +22,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4358.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_005.jpg",
+      "imagem": "assets/grafites/grafite_005.webp",
       "quiz_id": "quiz_005",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -34,7 +34,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4360.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_006.jpg",
+      "imagem": "assets/grafites/grafite_006.webp",
       "quiz_id": "quiz_006",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -46,7 +46,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4362.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_007.jpg",
+      "imagem": "assets/grafites/grafite_007.webp",
       "quiz_id": "quiz_007",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -58,7 +58,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4363.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_008.jpg",
+      "imagem": "assets/grafites/grafite_008.webp",
       "quiz_id": "quiz_008",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -70,7 +70,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4364.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_009.jpg",
+      "imagem": "assets/grafites/grafite_009.webp",
       "quiz_id": "quiz_009",
       "creditos_fotografia": "",
       "status_publicacao": "rascunho"
@@ -82,7 +82,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4365.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_010.jpg",
+      "imagem": "assets/grafites/grafite_010.webp",
       "quiz_id": "quiz_010",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -94,7 +94,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4366.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_011.jpg",
+      "imagem": "assets/grafites/grafite_011.webp",
       "quiz_id": "quiz_011",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -106,7 +106,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4368.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_012.jpg",
+      "imagem": "assets/grafites/grafite_012.webp",
       "quiz_id": "quiz_012",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -118,7 +118,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4370.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_013.jpg",
+      "imagem": "assets/grafites/grafite_013.webp",
       "quiz_id": "quiz_013",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -130,7 +130,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4371.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_014.jpg",
+      "imagem": "assets/grafites/grafite_014.webp",
       "quiz_id": "quiz_014",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -142,7 +142,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4372.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_015.jpg",
+      "imagem": "assets/grafites/grafite_015.webp",
       "quiz_id": "quiz_015",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -154,7 +154,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4373.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_016.jpg",
+      "imagem": "assets/grafites/grafite_016.webp",
       "quiz_id": "quiz_016",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -166,7 +166,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4375.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_017.jpg",
+      "imagem": "assets/grafites/grafite_017.webp",
       "quiz_id": "quiz_017",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -178,7 +178,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4377.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_018.jpg",
+      "imagem": "assets/grafites/grafite_018.webp",
       "quiz_id": "quiz_018",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -190,7 +190,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4378.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_019.jpg",
+      "imagem": "assets/grafites/grafite_019.webp",
       "quiz_id": "quiz_019",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -202,7 +202,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4379.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_020.jpg",
+      "imagem": "assets/grafites/grafite_020.webp",
       "quiz_id": "quiz_020",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -214,7 +214,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4380.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_021.jpg",
+      "imagem": "assets/grafites/grafite_021.webp",
       "quiz_id": "quiz_021",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -226,7 +226,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4381.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_022.jpg",
+      "imagem": "assets/grafites/grafite_022.webp",
       "quiz_id": "quiz_022",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -238,7 +238,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4382.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_023.jpg",
+      "imagem": "assets/grafites/grafite_023.webp",
       "quiz_id": "quiz_023",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -250,7 +250,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4384.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_024.jpg",
+      "imagem": "assets/grafites/grafite_024.webp",
       "quiz_id": "quiz_024",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -262,7 +262,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4385.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_025.jpg",
+      "imagem": "assets/grafites/grafite_025.webp",
       "quiz_id": "quiz_025",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -274,7 +274,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4386.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_026.jpg",
+      "imagem": "assets/grafites/grafite_026.webp",
       "quiz_id": "quiz_026",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -286,7 +286,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4387.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_027.jpg",
+      "imagem": "assets/grafites/grafite_027.webp",
       "quiz_id": "quiz_027",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -298,7 +298,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4389.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_028.jpg",
+      "imagem": "assets/grafites/grafite_028.webp",
       "quiz_id": "quiz_028",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -310,7 +310,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4390.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_029.jpg",
+      "imagem": "assets/grafites/grafite_029.webp",
       "quiz_id": "quiz_029",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -322,7 +322,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4391.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_030.jpg",
+      "imagem": "assets/grafites/grafite_030.webp",
       "quiz_id": "quiz_030",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -334,7 +334,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4393.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_031.jpg",
+      "imagem": "assets/grafites/grafite_031.webp",
       "quiz_id": "quiz_031",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -346,7 +346,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4394.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_032.jpg",
+      "imagem": "assets/grafites/grafite_032.webp",
       "quiz_id": "quiz_032",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -358,7 +358,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4396.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_033.jpg",
+      "imagem": "assets/grafites/grafite_033.webp",
       "quiz_id": "quiz_033",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -370,7 +370,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4397.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_034.jpg",
+      "imagem": "assets/grafites/grafite_034.webp",
       "quiz_id": "quiz_034",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -382,7 +382,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4398.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_035.jpg",
+      "imagem": "assets/grafites/grafite_035.webp",
       "quiz_id": "quiz_035",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -394,7 +394,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4399.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_036.jpg",
+      "imagem": "assets/grafites/grafite_036.webp",
       "quiz_id": "quiz_036",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -406,7 +406,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4400.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_037.jpg",
+      "imagem": "assets/grafites/grafite_037.webp",
       "quiz_id": "quiz_037",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -418,7 +418,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4402.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_038.jpg",
+      "imagem": "assets/grafites/grafite_038.webp",
       "quiz_id": "quiz_038",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -430,7 +430,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4403.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_039.jpg",
+      "imagem": "assets/grafites/grafite_039.webp",
       "quiz_id": "quiz_039",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
@@ -442,7 +442,7 @@ URBANA_DADOS["grafites"] = {
       "data_registro": "2026-11-10",
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4404.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
-      "imagem": "assets/grafites/grafite_040.jpg",
+      "imagem": "assets/grafites/grafite_040.webp",
       "quiz_id": "quiz_040",
       "creditos_fotografia": "",
       "status_publicacao": "publicado"
