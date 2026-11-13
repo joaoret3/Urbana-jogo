@@ -1,5 +1,9 @@
 # Urbana — registro de versões
 
+## 2.47 — 13/11/2026
+
+- **Aviso "Moldura nova!" some ao escolher uma moldura:** no perfil, clicar em qualquer moldura apaga o aviso na hora (balão e pulso do retrato), sem esperar fechar o perfil. Ele também some se a moldura nova já estiver em uso.
+
 ## 2.46 — 13/11/2026
 
 - **Só as duas molduras novas ficam no jogo:** "Grafiteiro Estelar" (moldura_latas) e "Orgulho do bairro" (moldura_cmj).

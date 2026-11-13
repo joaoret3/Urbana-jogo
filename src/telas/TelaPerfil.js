@@ -70,7 +70,7 @@ const TelaPerfil = {
           return E('button', {
             type: 'button', class: 'perfil-opcao perfil-moldura' + (livre ? '' : ' bloqueado') + (atual ? ' ativo' : '') + (nova ? ' nova' : ''),
             disabled: !livre || atual,
-            onclick: () => { j.moldura_id = m.id; Salvamento.salvar(); HUD.atualizar(); desenhar(); }
+            onclick: () => { j.moldura_id = m.id; p.molduras_novas = []; p.molduras_janela = []; Salvamento.salvar(); HUD.atualizar(); desenhar(); }   // v2.47: escolher qualquer moldura apaga o aviso na hora
           }, nova ? E('span', { class: 'perfil-nova' }, 'NOVA') : null, m.fundo
             ? E('span', { class: 'amostra-moldura amostra-emblema' }, E('img', { src: m.fundo, alt: '' }))
             : m.imagem

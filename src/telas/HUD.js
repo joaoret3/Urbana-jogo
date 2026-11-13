@@ -88,7 +88,7 @@ const HUD = {
     if (avatar) el.retrato.src = avatar.retrato;
     el.moldura.style.setProperty('--moldura', moldura ? moldura.cor : 'var(--lima)');
     // v2.43: moldura emblema (arte atrás do personagem) troca o anel; o XP vai para a barrinha do selo
-    const temNova = !!(p.molduras_novas && p.molduras_novas.length);
+    const temNova = !!(p.molduras_novas && p.molduras_novas.some(id => id !== p.jogador.moldura_id && p.molduras_desbloqueadas.includes(id)));   // v2.47: some se já está usando ela
     el.balaoMoldura.hidden = !temNova;
     el.botaoPerfil.parentElement.classList.toggle('moldura-nova', temNova);
     const emblema = Interface.temEmblema(moldura);
