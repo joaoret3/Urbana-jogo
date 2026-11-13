@@ -1177,3 +1177,7 @@ body.controles-grandes { --bt: 64px; }
 .minimapa-mostrar { width: var(--bt); height: var(--bt); border-radius: 50%; background: var(--vidro); box-shadow: none; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
 .minimapa-mostrar small { display: none; }
 .minimapa-esconder { background: rgba(15, 12, 20, .8); border-color: var(--tinta); }
+
+/* ===== v2.50: elemento marcado como escondido (hidden) fica mesmo escondido =====
+   Sem esta regra, um "display" do CSS vencia o hidden: o balão "Moldura nova!" aparecia para todo mundo. */
+[hidden] { display: none !important; }

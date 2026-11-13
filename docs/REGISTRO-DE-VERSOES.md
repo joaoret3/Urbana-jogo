@@ -1,5 +1,9 @@
 # Urbana — registro de versões
 
+## 2.50 — 13/11/2026
+
+- **Correção: balão "Moldura nova!" aparecia sempre**, até para quem não tinha moldura nova. O jogo marcava o balão como escondido, mas o CSS o mantinha visível. Agora todo elemento marcado como escondido some de verdade (regra `[hidden]` em estilo/urbana.css).
+
 ## 2.49 — 13/11/2026
 
 Desenho "D2 só ícones" aprovado pelo professor, com os ícones L1 (livro) e G3 (engrenagem):
