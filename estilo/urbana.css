@@ -1181,3 +1181,11 @@ body.controles-grandes { --bt: 64px; }
 /* ===== v2.50: elemento marcado como escondido (hidden) fica mesmo escondido =====
    Sem esta regra, um "display" do CSS vencia o hidden: o balão "Moldura nova!" aparecia para todo mundo. */
 [hidden] { display: none !important; }
+
+/* ===== v2.51: contador de artes desbloqueadas no Black Book ===== */
+.bb-conta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: -4px 0 14px; padding: 6px 14px; border-radius: 999px;
+  background: rgba(15, 12, 20, .6); border: 2px solid var(--tinta); text-transform: uppercase; }
+.bb-conta-rotulo { font-size: .85rem; letter-spacing: .04em; color: var(--texto-suave); }
+.bb-conta-num { font-size: 1.3rem; line-height: 1; color: var(--ciano); }
+.bb-conta-barra { flex: 1 1 90px; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, .2); overflow: hidden; }
+.bb-conta-barra i { display: block; height: 100%; width: 0; background: var(--ciano); border-radius: inherit; transition: width .3s; }

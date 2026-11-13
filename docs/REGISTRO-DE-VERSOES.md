@@ -1,5 +1,9 @@
 # Urbana — registro de versões
 
+## 2.51 — 13/11/2026
+
+- **Black Book mostra quantas artes já foram desbloqueadas:** abaixo do texto de abertura aparece "ARTES DESBLOQUEADAS 5/49" (tags e figurinhas juntas) com uma barrinha de progresso. O número acompanha cada desbloqueio na hora e só conta artes publicadas e autorizadas.
+
 ## 2.50 — 13/11/2026
 
 - **Correção: balão "Moldura nova!" aparecia sempre**, até para quem não tinha moldura nova. O jogo marcava o balão como escondido, mas o CSS o mantinha visível. Agora todo elemento marcado como escondido some de verdade (regra `[hidden]` em estilo/urbana.css).

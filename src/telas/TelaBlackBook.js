@@ -16,6 +16,11 @@ const TelaBlackBook = {
     const p = Salvamento.atual;
     const saldo = E('span', { class: 'bb-saldo-valor' });
     const grade = E('div', { class: 'bb-grade' });
+    // v2.51: quantas artes o jogador já desbloqueou e quantas faltam, ex.: 1/10
+    const contaNum = E('strong', { class: 'bb-conta-num' });
+    const contaBarra = E('i', {});
+    const conta = E('div', { class: 'bb-conta', role: 'status' },
+      E('span', { class: 'bb-conta-rotulo' }, 'Artes desbloqueadas'), contaNum, E('span', { class: 'bb-conta-barra', 'aria-hidden': 'true' }, contaBarra));
 
     const desenhar = () => {
       saldo.textContent = p.jogador.latas;
@@ -26,6 +31,10 @@ const TelaBlackBook = {
         .sort((x, y) => Conteudo.nivelArte(x.a) - Conteudo.nivelArte(y.a)
           || Conteudo.precoArte(x.a) - Conteudo.precoArte(y.a) || x.i - y.i).map(x => x.a);
       const artes = todas.filter(a => Progresso.arteDesbloqueada(a.id)).concat(bloqueadas);
+      const nDesb = todas.filter(a => Progresso.arteDesbloqueada(a.id)).length;
+      contaNum.textContent = nDesb + '/' + todas.length;
+      contaBarra.style.width = (todas.length ? Math.round(nDesb / todas.length * 100) : 0) + '%';
+      conta.setAttribute('aria-label', `${nDesb} de ${todas.length} artes desbloqueadas, faltam ${todas.length - nDesb}`);
       grade.replaceChildren(...artes.map(a => {
         const livre = Progresso.arteDesbloqueada(a.id);
         const usos = Progresso.usosDaArte(a.id);
@@ -57,6 +66,7 @@ const TelaBlackBook = {
             : 'Artes criadas pelos estudantes. Desbloqueie com latas de spray e pinte os muros livres do bairro.'),
           E('div', { class: 'bb-saldo', title: 'Seu saldo' }, HUD.iconeLata(), saldo, E('span', { class: 'sr-only' }, ' latas'))
         ),
+        conta,
         grade
       ],
       rodape: [Interface.botao(op.modo === 'escolher' ? 'Cancelar' : 'Fechar', () => janela.fechar(), { icone: 'voltar' })],
