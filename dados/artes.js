@@ -575,7 +575,9 @@ URBANA_DADOS["artes"] = {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     },
     {
       "id": "arte_048",
@@ -587,7 +589,9 @@ URBANA_DADOS["artes"] = {
         "autorizado": true,
         "observacao": ""
       },
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     },
     {
       "id": "arte_049",
