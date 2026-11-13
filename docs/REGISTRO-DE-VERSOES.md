@@ -1,5 +1,12 @@
 # Urbana — registro de versões
 
+## 2.48 — 13/11/2026
+
+Canto das latas, Black Book, Menu e Missões:
+- O desenho da lata no contador passou a ser o mesmo das latas do mapa (assets/ui/lata.png).
+- Os textos (BLACK BOOK, MENU, MISSÕES) ficam em caixa alta.
+- Black Book, Menu e Missões ficaram translúcidos, iguais ao contador de latas.
+
 ## 2.47 — 13/11/2026
 
 - **Aviso "Moldura nova!" some ao escolher uma moldura:** no perfil, clicar em qualquer moldura apaga o aviso na hora (balão e pulso do retrato), sem esperar fechar o perfil. Ele também some se a moldura nova já estiver em uso.

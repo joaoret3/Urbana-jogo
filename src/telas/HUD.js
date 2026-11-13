@@ -17,16 +17,9 @@ const HUD = {
   elementos: null,
   acao: null,
 
-  // Ícone da lata de spray (desenho simples em SVG)
+  // Ícone da lata de spray: o mesmo desenho das latas do mapa (v2.48)
   iconeLata() {
-    const ns = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('viewBox', '0 0 24 32'); svg.setAttribute('class', 'icone-lata'); svg.setAttribute('aria-hidden', 'true');
-    svg.innerHTML = '<rect x="9" y="1" width="6" height="4" rx="1" fill="#0f0c14"/>' +
-      '<path d="M6 8c0-2 3-3 6-3s6 1 6 3v20c0 2-2 3-6 3s-6-1-6-3z" fill="#ff3fbf" stroke="#0f0c14" stroke-width="2"/>' +
-      '<rect x="6" y="13" width="12" height="7" fill="#ffe14d" stroke="#0f0c14" stroke-width="1.5"/>' +
-      '<circle cx="20.5" cy="3" r="1.4" fill="#22d3ee"/><circle cx="22.5" cy="6" r="1" fill="#9be21b"/>';
-    return svg;
+    return Interface.el('img', { class: 'icone-lata', src: 'assets/ui/lata.png', alt: '', draggable: 'false', 'aria-hidden': 'true' });
   },
 
   montar(op) {

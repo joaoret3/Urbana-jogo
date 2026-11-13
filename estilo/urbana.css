@@ -1117,3 +1117,11 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
   .moldura-nova-retrato .retrato-redondo { border-width: 6px; }
   .moldura-nova-nome { font-size: 1.15rem; } .moldura-nova-texto { font-size: .85rem; margin-top: 2px; max-width: 46ch; }
 }
+
+/* ===== v2.48: canto das latas, Black Book, Menu e Missões =====
+   A lata é o mesmo desenho do mapa; os textos ficam em caixa alta; os botões ficam translúcidos como o das latas. */
+.hud .hud-latas img.icone-lata { width: auto; object-fit: contain; }
+.hud-direita, .hud-direita button { text-transform: uppercase; }
+.hud-direita small, .hud-missoes-texto { letter-spacing: .03em; }
+.hud-icone, .hud-aba-missoes { background: rgba(15, 12, 20, .82); }
+.hud-icone:hover, .hud-aba-missoes:hover { background: rgba(123, 59, 234, .9); }
