@@ -2,8 +2,8 @@
 // HUD — informações e botões que ficam na tela durante a exploração (Tela 03)
 // -----------------------------------------------------------------------------
 //   canto superior esquerdo:  retrato do avatar (com moldura), nível e barra de XP
-//   canto superior direito:   latas de spray, botão do Black Book, botão de menu;
-//                             logo abaixo, a aba de Missões (com quantas já foram concluídas)
+//   canto superior direito:   latas de spray, Missões (estrela com quantas já foram concluídas),
+//                             Black Book (livro) e Menu (engrenagem), numa linha só de ícones
 //   canto inferior esquerdo:  joystick virtual
 //   canto inferior direito:   botão de ação "A" (fica destacado perto de algo)
 //
@@ -48,20 +48,18 @@ const HUD = {
       E('section', { class: 'hud-bloco hud-perfil hud-anel', 'aria-label': 'Jogador' },
         el.botaoPerfil, el.nivel, el.apelido, el.xpTexto, el.balaoMoldura
       ),
-      // latas, Black Book e Menu numa linha; logo abaixo, a aba de Missões com a mesma largura
-      E('section', { class: 'hud-bloco hud-direita', 'aria-label': 'Latas, menus e missões' },
+      // v2.49 (desenho D2): uma linha só, sem palavras — latas, Missões (estrela com o selo "feitas/total"), Black Book e Menu
+      E('section', { class: 'hud-bloco hud-direita', 'aria-label': 'Latas, missões e menus' },
         E('div', { class: 'hud-direita-linha' },
           E('div', { class: 'hud-latas', title: 'Latas de Spray' }, this.iconeLata(), el.latas,
             E('span', { class: 'sr-only' }, ' latas de spray')),
+          E('button', { class: 'hud-icone hud-aba-missoes', type: 'button', title: 'Missões (M)', onclick: op.aoAbrirMissoes },
+            Interface.icone('estrela', 'hud-icone-img'), el.missoesConta),
           E('button', { class: 'hud-icone', type: 'button', 'aria-label': 'Black Book', title: 'Black Book (B)', onclick: op.aoAbrirBlackBook },
-            Interface.icone('caderno', 'hud-icone-img'), E('small', {}, 'Black Book')),
+            Interface.icone('livro', 'hud-icone-img')),
           E('button', { class: 'hud-icone', type: 'button', 'aria-label': 'Menu', title: 'Menu (Esc)', onclick: op.aoAbrirMenu },
-            Interface.icone('menu', 'hud-icone-img'), E('small', {}, 'Menu'))
-        ),
-        E('button', { class: 'hud-aba-missoes', type: 'button', title: 'Missões (M)', onclick: op.aoAbrirMissoes },
-          Interface.icone('estrela', 'hud-missoes-icone'),
-          E('span', { class: 'hud-missoes-texto' }, 'Missões'),
-          el.missoesConta)
+            Interface.icone('engrenagem', 'hud-icone-img'))
+        )
       ),
       E('section', { class: 'hud-bloco hud-joystick' }, Joystick.montar()),
       E('section', { class: 'hud-bloco hud-acao' }, el.rotuloA, el.botaoA)

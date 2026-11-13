@@ -1125,3 +1125,55 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
 .hud-direita small, .hud-missoes-texto { letter-spacing: .03em; }
 .hud-icone, .hud-aba-missoes { background: rgba(15, 12, 20, .82); }
 .hud-icone:hover, .hud-aba-missoes:hover { background: rgba(123, 59, 234, .9); }
+
+/* ===== v2.49: desenho "D2 só ícones" no canto do HUD e o mesmo visual nos avisos =====
+   Visual: fundo escuro translúcido, contorno fino, cantos bem redondos, sem sombra dura.
+   --bt = tamanho das bolinhas do canto (muda com o tamanho da tela). */
+:root { --bt: 52px; --vidro: rgba(15, 12, 20, .6); }
+@media (max-width: 700px), (max-height: 520px) { :root { --bt: 44px; } }
+@media (max-height: 500px) and (orientation: landscape) { :root { --bt: 40px; } }
+body.controles-grandes { --bt: 64px; }
+.hud .hud-direita { gap: 0; }
+.hud .hud-direita-linha { gap: calc(var(--bt) * .17); align-items: center; }
+.hud .hud-latas, .hud .hud-direita .hud-icone {
+  background: var(--vidro); border: 3px solid var(--tinta); box-shadow: none; min-height: 0; height: var(--bt);
+  -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
+}
+.hud .hud-latas { padding: 0 calc(var(--bt) * .3) 0 calc(var(--bt) * .2); gap: calc(var(--bt) * .12); font-size: calc(var(--bt) * .45); border-radius: 999px; }
+.hud .hud-latas img.icone-lata { height: calc(var(--bt) * .62); width: auto; }
+.hud .hud-direita .hud-icone { position: relative; display: grid; place-items: center; width: var(--bt); min-height: 0; padding: 0; border-radius: 50%; font-size: calc(var(--bt) * .5); }
+.hud .hud-direita .hud-icone .hud-icone-img { font-size: 1em; }
+.hud .hud-direita .hud-icone:hover { background: rgba(123, 59, 234, .85); }
+.hud .hud-direita .hud-icone:active { transform: scale(.94); box-shadow: none; }
+.hud .hud-direita .hud-icone:focus-visible { outline: 3px solid var(--ciano); outline-offset: 2px; }
+.hud .hud-aba-missoes .hud-missoes-conta {
+  position: absolute; right: calc(var(--bt) * -.17); bottom: calc(var(--bt) * -.15);
+  background: var(--ciano); color: var(--tinta); border: 2px solid var(--tinta); border-radius: 999px;
+  padding: 1px calc(var(--bt) * .11); font-size: calc(var(--bt) * .26); line-height: 1.2; white-space: nowrap;
+}
+/* avisos de conquista: logo abaixo da linha de ícones */
+.conquista { top: calc(var(--bt) + 30px); background: var(--vidro); border-radius: 22px; }
+@media (max-width: 700px), (max-height: 520px) { .conquista { top: calc(var(--bt) + 22px); } }
+/* aviso rápido do rodapé */
+.aviso-rapido {
+  background: var(--vidro); border-width: 2px; border-color: rgba(155, 226, 27, .8); padding: 8px 18px; font-size: .95rem;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
+}
+.aviso-rapido.aviso-erro { border-color: rgba(255, 77, 94, .85); }
+/* texto em cima do botão A */
+.hud-rotulo-a {
+  background: var(--vidro); border: 2px solid var(--tinta); border-radius: 999px; padding: 5px 14px;
+  -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
+}
+/* balão "Moldura nova!" */
+.hud-balao-moldura {
+  background: var(--vidro); color: var(--texto); border: 2px solid rgba(255, 225, 77, .85); border-radius: 18px; box-shadow: none;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
+}
+.hud-balao-moldura strong { color: var(--amarelo); }
+.hud-balao-moldura::before { border-right-color: rgba(255, 225, 77, .85); }
+/* mini-mapa: mesmo contorno, sem sombra dura; botões redondos translúcidos */
+.minimapa-quadro { box-shadow: none; }
+.minimapa-mostrar { width: var(--bt); height: var(--bt); border-radius: 50%; background: var(--vidro); box-shadow: none; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
+.minimapa-mostrar small { display: none; }
+.minimapa-esconder { background: rgba(15, 12, 20, .8); border-color: var(--tinta); }

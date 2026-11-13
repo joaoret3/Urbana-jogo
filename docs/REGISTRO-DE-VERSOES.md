@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.49 — 13/11/2026
+
+Desenho "D2 só ícones" aprovado pelo professor, com os ícones L1 (livro) e G3 (engrenagem):
+- **Canto superior direito numa linha só, sem palavras:** latas, Missões (estrela com o selo "feitas/total"),
+  Black Book (livro fechado com marcador) e Menu (engrenagem de 6 dentes). Bolinhas translúcidas, contorno fino, sem sombra dura.
+  Ícones novos `livro` e `engrenagem` em src/sistemas/Icones.js. Atalhos (M, B, Esc) e leitores de tela continuam iguais.
+- **Avisos no mesmo visual:** aviso rápido do rodapé, avisos de conquista, texto em cima do botão A, balão "Moldura nova!"
+  e botões do mini-mapa ficaram translúcidos, arredondados e sem sombra dura. Os avisos de conquista sobem para logo abaixo da linha de ícones.
+- As janelas grandes (ficha, quiz, perfil, missões) não mudaram.
+
 ## 2.48 — 13/11/2026
 
 Canto das latas, Black Book, Menu e Missões:
