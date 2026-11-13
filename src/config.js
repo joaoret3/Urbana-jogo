@@ -7,7 +7,7 @@
 // no menu Configurações (a escolha fica salva no computador).
 // =============================================================================
 window.URBANA = {
-  VERSAO: '2.51',              // versão do jogo (aparece no rodapé do menu)
+  VERSAO: '2.52',              // versão do jogo (aparece no rodapé do menu)
   QUALIDADE: 'alta',          // padrão: 'alta' (mapa inteiro) ou 'leve' (metade da resolução, para computadores fracos)
   VELOCIDADE: 260,            // pixels por segundo do personagem
   ZOOM_INICIAL: 0.9,

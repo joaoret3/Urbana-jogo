@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.52 — 13/11/2026
+
+**Faróis e lanternas dos veículos à noite**, no mesmo ciclo dos postes:
+- Parte dos veículos estacionados (40% por padrão; o jogo escolhe quais, sempre os mesmos) acende à noite:
+  faróis amarelados na frente e lanternas vermelhas atrás. Acendem e apagam junto com os postes.
+- As posições das luzes foram marcadas nos 50 desenhos (10 modelos x 5 vistas) em `Carros.LUZES` (src/sistemas/Carros.js).
+- Leve: só as luzes perto da tela são desenhadas; no modo leve (tablets) cada luz é só o ponto, sem o halo.
+- Quem passa na frente do veículo tapa a luz (ela não aparece por cima do personagem nem dos personagens do bairro).
+- Editor > Progressão > Anoitecer: campo novo "Veículos com faróis acesos à noite (%)" (`anoitecer.carros_acesos_percentual` em dados/jogo.js; 0 desliga).
+
 ## 2.51 — 13/11/2026
 
 - **Black Book mostra quantas artes já foram desbloqueadas:** abaixo do texto de abertura aparece "ARTES DESBLOQUEADAS 5/49" (tags e figurinhas juntas) com uma barrinha de progresso. O número acompanha cada desbloqueio na hora e só conta artes publicadas e autorizadas.

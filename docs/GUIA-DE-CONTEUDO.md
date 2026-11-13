@@ -183,6 +183,10 @@ A partida começa de dia e, depois de alguns minutos jogando, o bairro escurece 
 No editor: **Níveis, preços e recompensas** > **Anoitecer** (ligar/desligar, minutos até anoitecer, minutos da
 transição). Cada computador também pode desligar em **Configurações** > "Anoitecer durante o jogo".
 
+Desde a v2.52, parte dos veículos estacionados acende faróis e lanternas à noite, junto com os postes. No mesmo lugar
+do editor, o campo **Veículos com faróis acesos à noite (%)** diz quantos acendem (0 = nenhum, 100 = todos). O jogo
+escolhe quais, e são sempre os mesmos.
+
 ## Molduras emblema (desde a v2.43)
 
 Arte redonda (como um selo/adesivo) que fica **atrás** do personagem: ele aparece dentro do círculo, com a cabeça

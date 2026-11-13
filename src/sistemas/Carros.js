@@ -48,6 +48,27 @@ const Carros = {
     { id: 'S',  nome: 'Baixo',         vista: 'frente',      espelhar: false },
     { id: 'SE', nome: 'Baixo direita', vista: 'diag_frente', espelhar: true }
   ],
+  // v2.52: onde ficam as luzes em cada desenho — ['F' farol | 'T' lanterna traseira, x, y], em fração da largura/altura
+  // da imagem (0,0 = canto de cima à esquerda). Usado pela Luz para acender os veículos à noite.
+  LUZES: {
+    carro_01: { frente: [['F', 0.224, 0.787], ['F', 0.777, 0.784]], costas: [['T', 0.161, 0.689], ['T', 0.84, 0.688]], lado: [['F', 0.946, 0.619], ['T', 0.049, 0.561]], diag_frente: [['F', 0.073, 0.69], ['F', 0.359, 0.797]], diag_costas: [['T', 0.063, 0.58], ['T', 0.361, 0.735]] },
+    carro_02: { frente: [['F', 0.233, 0.803], ['F', 0.767, 0.801]], costas: [['T', 0.227, 0.744], ['T', 0.774, 0.743]], lado: [['F', 0.963, 0.606], ['T', 0.03, 0.59]], diag_frente: [['F', 0.073, 0.717], ['F', 0.324, 0.819]], diag_costas: [['T', 0.076, 0.613], ['T', 0.277, 0.754]] },
+    carro_03: { frente: [['F', 0.264, 0.772], ['F', 0.735, 0.769]], costas: [['T', 0.133, 0.85], ['T', 0.863, 0.849]], lado: [['F', 0.937, 0.567], ['T', 0.03, 0.775]], diag_frente: [['F', 0.088, 0.743], ['F', 0.288, 0.821]], diag_costas: [['T', 0.035, 0.77], ['T', 0.286, 0.911]] },
+    carro_04: { frente: [['F', 0.224, 0.77], ['F', 0.771, 0.77]], costas: [['T', 0.135, 0.7], ['T', 0.871, 0.701]], lado: [['F', 0.948, 0.555], ['T', 0.039, 0.619]], diag_frente: [['F', 0.079, 0.657], ['F', 0.328, 0.775]], diag_costas: [['T', 0.049, 0.627], ['T', 0.366, 0.786]] },
+    carro_05: { frente: [['F', 0.239, 0.809], ['F', 0.766, 0.809]], costas: [['T', 0.108, 0.72], ['T', 0.893, 0.72]], lado: [['F', 0.957, 0.628], ['T', 0.06, 0.601]], diag_frente: [['F', 0.071, 0.704], ['F', 0.331, 0.806]], diag_costas: [['T', 0.05, 0.606], ['T', 0.348, 0.755]] },
+    carro_06: { frente: [['F', 0.283, 0.81], ['F', 0.729, 0.81]], costas: [['T', 0.136, 0.836], ['T', 0.858, 0.836]], lado: [['F', 0.963, 0.751], ['T', 0.024, 0.812]], diag_frente: [['F', 0.049, 0.746], ['F', 0.286, 0.822]], diag_costas: [['T', 0.038, 0.788], ['T', 0.272, 0.92]] },
+    carro_07: { frente: [['F', 0.204, 0.783], ['F', 0.797, 0.785]], costas: [['T', 0.141, 0.81], ['T', 0.854, 0.81]], lado: [['F', 0.954, 0.6], ['T', 0.03, 0.755]], diag_frente: [['F', 0.047, 0.701], ['F', 0.289, 0.8]], diag_costas: [['T', 0.049, 0.75], ['T', 0.304, 0.878]] },
+    carro_08: { frente: [['F', 0.206, 0.798], ['F', 0.803, 0.797]], costas: [['T', 0.124, 0.861], ['T', 0.869, 0.86]], lado: [['F', 0.963, 0.536], ['T', 0.03, 0.779]], diag_frente: [['F', 0.062, 0.732], ['F', 0.328, 0.812]], diag_costas: [['T', 0.047, 0.768], ['T', 0.309, 0.851]] },
+    carro_09: { frente: [['F', 0.195, 0.758], ['F', 0.795, 0.759]], costas: [['T', 0.12, 0.867], ['T', 0.872, 0.867]], lado: [['F', 0.969, 0.637], ['T', 0.042, 0.747]], diag_frente: [['F', 0.043, 0.693], ['F', 0.293, 0.789]], diag_costas: [['T', 0.039, 0.747], ['T', 0.287, 0.888]] },
+    carro_10: { frente: [['F', 0.202, 0.783], ['F', 0.786, 0.783]], costas: [['T', 0.151, 0.662], ['T', 0.847, 0.662]], lado: [['F', 0.925, 0.539], ['T', 0.05, 0.56]], diag_frente: [['F', 0.073, 0.667], ['F', 0.341, 0.781]], diag_costas: [['T', 0.055, 0.579], ['T', 0.351, 0.726]] }
+  },
+  // posições das luzes de um veículo no mapa: [{ tipo, x, y }]
+  luzes(o) {
+    const m = this.modelo(o.modelo), d = this.direcao(o), g = this.geometria(o);
+    return ((this.LUZES[m.id] || {})[d.vista] || []).map(l => ({
+      tipo: l[0], x: o.x + (l[1] - 0.5) * g.dw * (g.espelhar ? -1 : 1), y: o.y + (l[2] - g.oy) * g.dh, escala: g.dw / m.vistas[d.vista][0]
+    }));
+  },
   LARGURA_PADRAO: 130,        // carros; os caminhões têm "larguraPadrao" própria
   ACHATAMENTO: 0.7,           // o chão aparece "deitado" no desenho: distâncias na vertical parecem menores
 

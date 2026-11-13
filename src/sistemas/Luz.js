@@ -5,6 +5,7 @@
 // o bairro escurece aos poucos para o crepúsculo (roxo, bordas mais escuras, um resto de
 // laranja no alto) e os postes acendem. Desde a v2.41 o ciclo se repete: depois de alguns
 // minutos de noite amanhece aos poucos e o dia recomeça. Ao abrir o mapa de novo, começa de dia.
+// Desde a v2.52, parte dos veículos estacionados também acende (faróis e lanternas) junto com os postes.
 //
 // Como é feito: 2 camadas fixas na tela, por cima do bairro e embaixo dos balões dos
 // personagens (uma escurece/tinge, a outra dá o brilho quente) + um brilho em cada poste.
@@ -29,7 +30,8 @@ const Luz = {
       minutos: Math.max(0, num(a.minutos_para_anoitecer, 5)),
       transicao: Math.max(0.05, num(a.minutos_transicao, 1)),
       noite: Math.max(0, num(a.minutos_de_noite, 3)),
-      repetir: a.repetir !== false
+      repetir: a.repetir !== false,
+      carros: Phaser.Math.Clamp(num(a.carros_acesos_percentual, 40), 0, 100)   // v2.52: quantos veículos (em %) acendem à noite
     };
   },
 
@@ -72,6 +74,57 @@ const Luz = {
       g.addColorStop(0, 'rgba(255,200,110,0.95)'); g.addColorStop(0.25, 'rgba(255,160,70,0.5)'); g.addColorStop(1, 'rgba(255,120,40,0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
     });
+    // v2.52: luzes dos veículos (farol amarelado e lanterna vermelha), pequenas
+    const ponto = (k, cores) => criar(k, 64, 64, (ctx) => {
+      const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      cores.forEach((c, i) => g.addColorStop([0, 0.3, 1][i], c));
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
+    });
+    ponto('luz_farol', ['rgba(255,244,200,1)', 'rgba(255,214,120,0.55)', 'rgba(255,190,90,0)']);
+    ponto('luz_lanterna', ['rgba(255,120,90,1)', 'rgba(255,40,30,0.55)', 'rgba(255,20,20,0)']);
+  },
+
+  // v2.52: parte dos veículos estacionados fica com as luzes acesas à noite (o jogo escolhe quais, sempre os mesmos).
+  // Cada luz tem um ponto forte e, fora do modo leve, um halo em volta. Só as que estão perto da tela são desenhadas.
+  criarCarros(cena) {
+    const B = Phaser.BlendModes, L = cena.luz, c = this.config();
+    L.carros = [];
+    const leve = Preferencias.qualidadeMapa() === 'leve';
+    // número de 0 a 99,9 fixo por veículo (embaralha bem nomes parecidos, como carro_001 e carro_002)
+    const sorteio = txt => { let h = 2166136261; for (let i = 0; i < txt.length; i++) h = Math.imul(h ^ txt.charCodeAt(i), 16777619); h ^= h >>> 13; h = Math.imul(h, 0x5bd1e995); h ^= h >>> 15; return ((h >>> 0) % 1000) / 10; };
+    ((Conteudo.mapa && Conteudo.mapa.carros) || []).forEach(o => {
+      if (sorteio(String(o.name || o.id || o.x + ',' + o.y)) >= c.carros) return;
+      const frente = Carros.geometria(o).chao.y1;   // quem está abaixo disto é desenhado na frente do veículo
+      Carros.luzes(o).forEach(l => {
+        const k = l.tipo === 'F' ? 'luz_farol' : 'luz_lanterna', e = Math.max(0.25, l.escala);
+        const add = (tam, alfa) => {
+          const i = cena.add.image(l.x, l.y, k).setDisplaySize(tam * e, tam * e).setBlendMode(B.ADD).setDepth(this.PROFUNDIDADE + 2).setAlpha(0).setVisible(false);
+          L.carros.push({ i, alfa, raio: tam * e / 2, y0: frente });
+        };
+        if (!leve) add(l.tipo === 'F' ? 190 : 150, l.tipo === 'F' ? 0.7 : 0.8);   // halo
+        add(l.tipo === 'F' ? 70 : 60, 1);                                          // ponto de luz
+      });
+    });
+  },
+
+  // v2.52: a luz fica por cima da camada da noite, então apareceria em cima de quem passa na frente do veículo.
+  // Para isso não acontecer, a luz some aos poucos quando o jogador (ou um personagem do bairro) está na frente dela,
+  // como se o corpo tapasse a luz. Só confere as poucas luzes que estão na tela.
+  taparLuzesDosCarros(cena) {
+    const L = cena.luz, acesa = L.acesa || 0;
+    if (!acesa) return;
+    const gente = [cena.jogador].concat((cena.npcs || []).map(n => n.sprite || n)).filter(g => g && g.displayWidth);
+    for (let k = 0; k < L.carros.length; k++) {
+      const c = L.carros[k]; if (!c.i.visible) continue;
+      let tapa = 1;
+      for (let j = 0; j < gente.length; j++) {
+        const g = gente[j], pes = g.y + g.displayHeight * (1 - g.originY), topo = pes - g.displayHeight * 0.92;
+        if (g.y <= c.y0 || c.i.y < topo - c.raio || c.i.y > pes + c.raio * 0.3) continue;   // a pessoa está atrás do veículo, ou a luz fica acima/abaixo do corpo
+        const dx = Math.abs(g.x - c.i.x), meio = g.displayWidth * 0.3;
+        tapa = Math.min(tapa, Phaser.Math.Clamp((dx - meio) / (c.raio * 0.9), 0, 1));
+      }
+      if (tapa !== c.tapa) { c.tapa = tapa; c.i.setAlpha(acesa * c.alfa * tapa); }
+    }
   },
 
   criar(cena) {
@@ -98,6 +151,7 @@ const Luz = {
       const bloco = cena.blocosDetalhes && cena.blocosDetalhes.get(k);
       if (bloco) { bloco.postes.push(halo, nucleo); halo.setVisible(!!bloco.visivel); nucleo.setVisible(!!bloco.visivel); }
     });
+    this.criarCarros(cena);
     this.ajustarTela(cena);
   },
 
@@ -118,6 +172,14 @@ const Luz = {
     const nivel = this.ligada() ? Phaser.Math.Clamp(this.nivelNoTempo(minutos, c), 0, 1) : 0;
     const cam = cena.cameras.main;
     if (cam.zoom !== L.zoom || cam.width !== L.w || cam.height !== L.h) this.ajustarTela(cena);
+    // v2.52: a cada meio segundo, de noite, mostra só as luzes dos veículos perto da tela
+    L.relogio = (L.relogio || 0) + (delta || 0);
+    if (nivel > 0.5 && L.relogio > 500) {
+      L.relogio = 0;
+      const v = cam.worldView, m = 120;
+      L.carros.forEach(c => c.i.setVisible(c.i.x > v.x - m && c.i.x < v.right + m && c.i.y > v.y - m && c.i.y < v.bottom + m));
+    }
+    if (nivel > 0.5) this.taparLuzesDosCarros(cena);
     if (Math.abs(nivel - L.nivel) < 0.002) return;
     L.nivel = nivel;
     const ver = nivel > 0;
@@ -126,5 +188,8 @@ const Luz = {
     // os postes acendem na segunda metade da transição
     const acesa = Phaser.Math.Clamp(nivel * 2 - 1, 0, 1);
     L.postes.forEach((i, n) => i.setAlpha(n % 2 ? acesa : acesa * 0.85));
+    L.acesa = acesa;
+    L.carros.forEach(c => { c.i.setAlpha(acesa * c.alfa * (c.tapa === undefined ? 1 : c.tapa)); if (!acesa) c.i.setVisible(false); });
+    if (acesa) L.relogio = 9999;   // confere já quais estão perto da tela
   }
 };
