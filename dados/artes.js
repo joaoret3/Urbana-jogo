@@ -604,6 +604,18 @@ URBANA_DADOS["artes"] = {
         "observacao": ""
       },
       "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_050",
+      "titulo": "Duda TAG",
+      "autoria": "Eduarda",
+      "imagem": "assets/artes/arte_050.webp",
+      "categoria": "intermediaria",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
     }
   ]
 };
