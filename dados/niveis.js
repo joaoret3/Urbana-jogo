@@ -11,9 +11,7 @@ URBANA_DADOS["niveis"] = {
           "avatar_01",
           "avatar_03"
         ],
-        "molduras": [
-          "moldura_basica"
-        ]
+        "molduras": []
       }
     },
     {
@@ -23,9 +21,7 @@ URBANA_DADOS["niveis"] = {
         "avatares": [
           "avatar_02"
         ],
-        "molduras": [
-          "moldura_prata"
-        ]
+        "molduras": []
       }
     },
     {
@@ -33,9 +29,7 @@ URBANA_DADOS["niveis"] = {
       "xp": 100,
       "desbloqueia": {
         "avatares": [],
-        "molduras": [
-          "moldura_ouro"
-        ]
+        "molduras": []
       }
     },
     {
@@ -46,7 +40,6 @@ URBANA_DADOS["niveis"] = {
           "avatar_05"
         ],
         "molduras": [
-          "moldura_orgulho",
           "moldura_latas",
           "moldura_cmj"
         ]

@@ -75,7 +75,7 @@ URBANA_DADOS["missoes"] = {
       "tipo": "visitar_todos",
       "meta": 1,
       "recompensa": {
-        "moldura": "moldura_orgulho"
+        "moldura": "moldura_cmj"
       }
     },
     {

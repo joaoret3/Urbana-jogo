@@ -1,5 +1,12 @@
 # Urbana — registro de versões
 
+## 2.46 — 13/11/2026
+
+- **Só as duas molduras novas ficam no jogo:** "Grafiteiro Estelar" (moldura_latas) e "Orgulho do bairro" (moldura_cmj).
+  As molduras antigas (Básica, Prata, Ouro, Orgulho do Bairro de cor, "Nova moldura") saíram de dados/molduras.js e dos
+  níveis 1 a 3. As duas novas continuam sendo desbloqueadas no nível 4. A missão "Orgulho do Bairro" (missao_007) agora dá a moldura "Orgulho do bairro" (moldura_cmj).
+- Partidas antigas: moldura que não existe mais é retirada da partida; se o jogador estava usando uma delas, o retrato volta ao círculo simples até ele escolher outra. Nada mais do progresso muda.
+
 ## 2.45 — 12/11/2026
 
 Aviso de moldura nova (ideias M1 + M3 aprovadas pelo professor; no teste com os alunos eles não percebiam o desbloqueio):

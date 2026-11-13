@@ -92,6 +92,14 @@ const Salvamento = {
     if (!j.posicao || !isFinite(j.posicao.x) || !isFinite(j.posicao.y)) j.posicao = { ...base.jogador.posicao };
     // avatar que não existe mais no conteúdo → volta para o primeiro disponível
     if (!Conteudo.avatar(j.avatar_id)) j.avatar_id = base.avatares_desbloqueados[0] || (Conteudo.avatares()[0] || {}).id;
+    // v2.46: moldura que não existe mais no conteúdo sai da partida (a lista de molduras foi reduzida)
+    if (Conteudo.dados && Conteudo.dados.molduras) {
+      const existe = id => !!Conteudo.moldura(id);
+      p.molduras_desbloqueadas = p.molduras_desbloqueadas.filter(existe);
+      p.molduras_novas = p.molduras_novas.filter(existe);
+      p.molduras_janela = p.molduras_janela.filter(x => x && existe(x.id));
+      if (j.moldura_id && !existe(j.moldura_id)) j.moldura_id = null;
+    }
     return p;
   },
 

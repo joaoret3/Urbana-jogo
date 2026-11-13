@@ -4,31 +4,6 @@ URBANA_DADOS["molduras"] = {
   "_leia": "Molduras do retrato do jogador. 'cor' em formato #RRGGBB. Opcionais: 'imagem' = moldura vazada por cima do retrato (v2.36); 'fundo' = emblema, arte atrás do personagem, e 'encaixe' = onde fica o círculo na arte (x, y e raio em % do lado da imagem) e o tamanho do personagem (% do diâmetro) (v2.43).",
   "molduras": [
     {
-      "id": "moldura_basica",
-      "nome": "Moldura Básica",
-      "cor": "#ffffff"
-    },
-    {
-      "id": "moldura_prata",
-      "nome": "Moldura Prata",
-      "cor": "#c9d1dc"
-    },
-    {
-      "id": "moldura_ouro",
-      "nome": "Moldura Ouro",
-      "cor": "#ffc93c"
-    },
-    {
-      "id": "moldura_orgulho",
-      "nome": "Orgulho do Bairro",
-      "cor": "#ff3fbf"
-    },
-    {
-      "id": "moldura_01",
-      "nome": "Nova moldura",
-      "cor": "#22d3ee"
-    },
-    {
       "id": "moldura_latas",
       "nome": "Grafiteiro Estelar",
       "cor": "#ab3ff3",
