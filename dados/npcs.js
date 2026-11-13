@@ -19,6 +19,23 @@ URBANA_DADOS["npcs"] = {
         "quadros": 7,
         "quadros_por_segundo": 5
       }
+    },
+    {
+      "id": "npc_01",
+      "nome": "Dir. Priscilla",
+      "retrato": "assets/npcs/npc_01/retrato.webp",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_01/sprite.png",
+        "largura_quadro": 96,
+        "altura_quadro": 96,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      }
     }
   ]
 };

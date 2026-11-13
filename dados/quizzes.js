@@ -561,7 +561,7 @@ URBANA_DADOS["quizzes"] = {
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "",
+          "enunciado": "kkkkk",
           "alternativas": [
             "Alternativa A",
             "Alternativa B",

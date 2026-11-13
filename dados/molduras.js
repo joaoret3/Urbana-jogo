@@ -30,17 +30,27 @@ URBANA_DADOS["molduras"] = {
     },
     {
       "id": "moldura_latas",
-      "nome": "Latas e Estrelas",
-      "cor": "#a335ee",
+      "nome": "Grafiteiro Estelar",
+      "cor": "#ab3ff3",
       "fundo": "assets/molduras/moldura_latas_emblema.webp",
-      "encaixe": { "x": 49.8, "y": 54.3, "raio": 39, "personagem": 105 }
+      "encaixe": {
+        "x": 50.5,
+        "y": 54.3,
+        "raio": 39,
+        "personagem": 105
+      }
     },
     {
       "id": "moldura_cmj",
-      "nome": "CMJ",
+      "nome": "Orgulho do bairro",
       "cor": "#ffc400",
       "fundo": "assets/molduras/moldura_cmj_emblema.webp",
-      "encaixe": { "x": 49.5, "y": 42.2, "raio": 36, "personagem": 105 }
+      "encaixe": {
+        "x": 49.5,
+        "y": 42.2,
+        "raio": 36,
+        "personagem": 105
+      }
     }
   ]
 };

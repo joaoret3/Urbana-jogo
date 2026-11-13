@@ -528,6 +528,78 @@ URBANA_DADOS["artes"] = {
         "observacao": ""
       },
       "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_044",
+      "titulo": "Gabi TAG",
+      "autoria": "Isis",
+      "imagem": "assets/artes/arte_044.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_045",
+      "titulo": "Lah TAG",
+      "autoria": "",
+      "imagem": "assets/artes/arte_045.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_046",
+      "titulo": "Lala laranja TAG",
+      "autoria": "Lara",
+      "imagem": "assets/artes/arte_046.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_047",
+      "titulo": "O Sorriso da Lata STICKER",
+      "autoria": "Thiago",
+      "imagem": "assets/artes/arte_047.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_048",
+      "titulo": "Ghost STICKER",
+      "autoria": "Eloa",
+      "imagem": "assets/artes/arte_048.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_049",
+      "titulo": "Risko TAG",
+      "autoria": "Risko",
+      "imagem": "assets/artes/arte_049.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
     }
   ]
 };

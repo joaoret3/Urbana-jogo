@@ -46,7 +46,9 @@ URBANA_DADOS["niveis"] = {
           "avatar_05"
         ],
         "molduras": [
-          "moldura_orgulho"
+          "moldura_orgulho",
+          "moldura_latas",
+          "moldura_cmj"
         ]
       }
     }

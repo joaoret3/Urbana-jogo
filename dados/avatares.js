@@ -60,11 +60,25 @@ URBANA_DADOS["avatares"] = {
       }
     },
     {
+      "id": "avatar_04",
+      "nome": "sem nome",
+      "descricao": "",
+      "retrato": "assets/avatares/avatar_04/retrato.webp",
+      "nivel_minimo": 1,
+      "sprite": {
+        "arquivo": "assets/avatares/avatar_04/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "quadros_caminhada": 4,
+        "quadros_por_segundo": 8
+      }
+    },
+    {
       "id": "avatar_06",
-      "nome": "medica",
+      "nome": "sem nome 1",
       "descricao": "",
       "retrato": "assets/avatares/avatar_06/retrato.webp",
-      "nivel_minimo": 3,
+      "nivel_minimo": 1,
       "sprite": {
         "arquivo": "assets/avatares/avatar_06/sprite.png",
         "largura_quadro": 192,

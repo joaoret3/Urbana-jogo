@@ -89,6 +89,18 @@ URBANA_DADOS["missoes"] = {
         "xp": 15,
         "latas": 10
       }
+    },
+    {
+      "id": "missao_009",
+      "titulo": "pri",
+      "descricao": "",
+      "tipo": "visitar_murais",
+      "meta": 1,
+      "recompensa": {
+        "xp": 5,
+        "latas": 3
+      },
+      "personagem": "npc_01"
     }
   ]
 };
