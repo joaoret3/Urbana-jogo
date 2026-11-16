@@ -41,10 +41,10 @@ URBANA_DADOS["npcs"] = {
       "id": "npc_02",
       "nome": "João Rafael",
       "retrato": "",
-      "fala_chamada": "Ei! Vem cá!",
-      "fala_inicial": "",
+      "fala_chamada": "Chega ai!",
+      "fala_inicial": "Vou te dar minha tag de presente, par você espalhar pelo bairro, mas antes, você vai ter que concluir esse desafio:",
       "fala_andamento": "",
-      "fala_concluida": "",
+      "fala_concluida": "Parabéns, parceiro!",
       "sprite": {
         "arquivo": "assets/npcs/npc_02/sprite.png",
         "largura_quadro": 192,
