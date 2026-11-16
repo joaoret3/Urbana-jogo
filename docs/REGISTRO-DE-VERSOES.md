@@ -1,5 +1,21 @@
 # Urbana — registro de versões
 
+## 2.54 — 16/11/2026
+
+**Mini-jogos nas missões** (pensados para as missões dos personagens do bairro):
+- Tipo novo de missão: **"Vencer um mini-jogo (desafio)"** (`"tipo": "mini_jogo"`, com `"mini_jogo": { "jogo", "dificuldade" }`).
+  O aluno joga numa janela por cima do mapa; vencer conclui a missão. Pode tentar quantas vezes quiser e, depois de
+  vencer, jogar de novo por diversão (sem ganhar outra vez).
+- Cinco mini-jogos (src/telas/MiniJogos.js), cada um com 3 dificuldades: Quebra-cabeça do grafite, Memória das latas,
+  Siga o spray, Pinte o muro e Mistura de cores.
+- **Arte-prêmio:** a recompensa de qualquer missão pode ter uma arte do Black Book (`recompensa.arte`). Essa arte deixa de
+  ser vendida: no Black Book aparece trancada como "Prêmio de desafio", com o aviso de qual desafio vencer. Quem já tinha
+  a arte continua com ela.
+- Onde o aluno joga: com personagem, o botão "Jogar" aparece na conversa com ele; sem personagem, na tela de Missões.
+- Editor > Missões: tipo novo, escolha do mini-jogo e da dificuldade, e campo "Arte do Black Book (prêmio exclusivo)".
+- Partida: campo novo `minijogos_vencidos` (partidas antigas ganham a lista vazia).
+- Nenhuma missão de mini-jogo foi criada nos dados: fica para quando o personagem estiver pronto.
+
 ## 2.53 — 16/11/2026
 
 - Ícones novos no resto do jogo: "Configurações" (menu de pausa) usa a engrenagem; "Abrir Black Book" (janela de pintar muro), "Black Book" (menu inicial) e a aba Black Book do editor usam o livro com marcador.

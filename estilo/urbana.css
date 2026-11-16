@@ -1189,3 +1189,63 @@ body.controles-grandes { --bt: 64px; }
 .bb-conta-num { font-size: 1.3rem; line-height: 1; color: var(--ciano); }
 .bb-conta-barra { flex: 1 1 90px; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, .2); overflow: hidden; }
 .bb-conta-barra i { display: block; height: 100%; width: 0; background: var(--ciano); border-radius: inherit; transition: width .3s; }
+
+/* ===== v2.54: mini-jogos das missões (src/telas/MiniJogos.js) ===== */
+.painel-minijogo { width: min(640px, 100%); }
+.mj-como { margin: 0 0 6px; color: var(--texto-suave); font-size: .95rem; }
+.mj-placar { margin: 0 0 8px; min-height: 1.5em; font-family: var(--fonte-titulo, inherit); font-size: 1.1rem; color: var(--amarelo); }
+.mj-caixa { width: 100%; min-width: 200px; margin: 0 auto; max-width: calc((100vh - 290px) * var(--mj-r, 1.4)); }
+.mj-area { position: relative; width: 100%; height: 0; padding-bottom: 70%; border-radius: 14px; overflow: hidden; background: #3b3447; border: 3px solid var(--tinta);
+  -webkit-user-select: none; user-select: none; touch-action: none; }
+.mj-area > * { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.mj-lata { display: block; } .mj-lata svg { display: block; width: 100%; height: auto; }
+/* telas de fim */
+.mj-fim { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 12px; text-align: center; background: rgba(15, 12, 20, .88); z-index: 5; }
+.mj-fim strong { font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.1; color: var(--lima); }
+.mj-fim.mj-derrota strong { color: var(--amarelo); }
+.mj-fim img { max-width: 60%; max-height: 45%; object-fit: contain; }
+.mj-fim-botoes { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+/* quebra-cabeça */
+.mj-pecas { display: grid; gap: 2px; background: var(--tinta); }
+.mj-peca { border: 0; padding: 0; margin: 0; background-color: #3b3447; background-repeat: no-repeat; cursor: pointer; min-width: 0; min-height: 0; }
+.mj-peca.sel { outline: 4px solid var(--amarelo); outline-offset: -4px; }
+.mj-peca.certa { cursor: default; box-shadow: inset 0 0 0 2px rgba(155, 226, 27, .75); }
+.mj-peca:focus-visible { outline: 4px solid var(--ciano); outline-offset: -4px; }
+/* memória */
+.mj-cartas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; box-sizing: border-box; }
+.mj-carta { border: 3px solid var(--tinta); border-radius: 10px; background: var(--roxo); color: #fff; font: inherit; font-size: 1.5rem; padding: 0; min-width: 0; min-height: 0;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; overflow: hidden; }
+.mj-carta.aberta, .mj-carta.feita { background: #2f2640; }
+.mj-carta.feita { border-color: var(--lima); cursor: default; }
+.mj-carta .mj-lata { height: 78%; } .mj-carta .mj-lata svg { height: 100%; width: auto; }
+.mj-carta img { max-width: 88%; max-height: 88%; object-fit: contain; }
+.mj-carta:focus-visible, .mj-lata-bt:focus-visible { outline: 3px solid var(--ciano); outline-offset: 2px; }
+/* sequência e cores */
+.mj-latas { display: flex; align-items: center; justify-content: center; gap: 4%; padding: 4%; box-sizing: border-box; }
+.mj-lata-bt { background: none; border: 0; padding: 0; width: 16%; color: var(--texto); font: inherit; cursor: pointer; transition: transform .1s, filter .1s; }
+.mj-sequencia .mj-lata-bt { filter: brightness(.55); }
+.mj-lata-bt.acesa, .mj-lata-bt.escolhida { filter: brightness(1.25) drop-shadow(0 0 10px #fff); transform: scale(1.12); }
+.mj-lata-nome { display: block; font-size: .85rem; text-align: center; margin-top: 2px; }
+.mj-cores .mj-latas { top: 22%; height: 78%; } .mj-cores .mj-lata-bt { width: 13%; }
+.mj-alvo { height: 26%; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: clamp(1.1rem, 3.4vw, 1.5rem); white-space: nowrap; }
+.mj-alvo i { width: 1.9em; height: 1.9em; border-radius: 50%; border: 3px solid var(--tinta); display: block; flex: none; }
+/* pintar */
+.mj-pintar-fundo { background: linear-gradient(135deg, #d8793f, #7d3f5c); }
+.mj-pintar-arte { object-fit: fill; pointer-events: none; }
+.mj-pintar-muro { cursor: crosshair; touch-action: none; }
+/* botão Jogar na missão e etiqueta de prêmio no Black Book */
+.missao-jogar { margin-top: 10px; }
+.bb-etiqueta.premio { background: var(--amarelo); color: var(--tinta); }
+@media (prefers-reduced-motion: reduce) { .mj-lata-bt { transition: none; } }
+@media (max-height: 500px) and (orientation: landscape) {
+  /* celular deitado: o placar vai para o lado e o tabuleiro usa toda a altura que sobra */
+  .painel-minijogo { width: min(760px, 100%); }
+  .painel-minijogo .painel-topo { padding-top: 8px; padding-bottom: 2px; }
+  .painel-minijogo .painel-topo .titulo-grafite { font-size: 1.3rem; }
+  .painel-minijogo .painel-corpo { display: grid; grid-template-columns: minmax(110px, 26%) 1fr; align-items: center; gap: 10px; padding-bottom: 6px; }
+  .painel-minijogo .mj-como { display: none; }
+  .painel-minijogo .mj-placar { margin: 0; font-size: 1rem; }
+  .painel-minijogo .painel-rodape { padding-top: 6px; padding-bottom: 8px; }
+  .mj-caixa { max-width: calc((100vh - 150px) * var(--mj-r, 1.4)); }
+  .mj-lata-nome { font-size: .62rem; }
+}

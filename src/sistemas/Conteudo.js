@@ -19,7 +19,15 @@ const Conteudo = {
   avisos: [],
   alcancavel: null,    // grade com as áreas que o jogador consegue alcançar a partir da escola
 
-  TIPOS_MISSAO: ['visitar_murais', 'ler_fichas', 'concluir_quizzes', 'pintar_muros', 'coletar_latas', 'visitar_todos'],
+  TIPOS_MISSAO: ['visitar_murais', 'ler_fichas', 'concluir_quizzes', 'pintar_muros', 'coletar_latas', 'visitar_todos', 'mini_jogo'],
+  // v2.54: mini-jogos que uma missão pode pedir (src/telas/MiniJogos.js) e as dificuldades
+  MINI_JOGOS: ['quebra_cabeca', 'memoria', 'sequencia', 'pintar', 'cores'],
+  DIFICULDADES: ['facil', 'normal', 'dificil'],
+  // A missão que dá esta arte como prêmio (ou undefined). Arte com missão não é vendida no Black Book: só se ganha na missão.
+  missaoDaArte(arteId) {
+    const lista = (this.dados.missoes && this.dados.missoes.missoes) || [];
+    return lista.find(m => m.recompensa && m.recompensa.arte === arteId);
+  },
   STATUS_PUBLICACAO: ['publicado', 'rascunho'],
   LETRAS: ['A', 'B', 'C', 'D'],
 
@@ -225,6 +233,13 @@ const Conteudo = {
       if (!(Number.isInteger(m.meta) && m.meta >= 1)) this.erro(onde, '"meta" deve ser um número inteiro (1 ou mais).');
       const r = m.recompensa || {};
       if (r.moldura && !idsMolduras.has(r.moldura)) this.erro(onde, `A moldura "${r.moldura}" não existe em molduras.js.`);
+      if (r.arte && !this.arte(r.arte)) this.erro(onde, `A arte-prêmio "${r.arte}" não existe em artes.js.`);
+      if (m.tipo === 'mini_jogo') {
+        const mj = m.mini_jogo || {};
+        if (!this.MINI_JOGOS.includes(mj.jogo)) this.erro(onde, `Mini-jogo "${mj.jogo}" desconhecido. Use: ${this.MINI_JOGOS.join(', ')}.`);
+        if (mj.dificuldade && !this.DIFICULDADES.includes(mj.dificuldade)) this.erro(onde, `Dificuldade "${mj.dificuldade}" desconhecida. Use: ${this.DIFICULDADES.join(', ')}.`);
+        if (!r.arte && (mj.jogo === 'quebra_cabeca' || mj.jogo === 'pintar')) this.aviso(onde, 'Este mini-jogo mostra uma arte, mas a missão não tem arte-prêmio: o jogo usa a primeira arte publicada.');
+      }
       if (this.TIPOS_MISSAO.includes(m.tipo) && !this.missaoPossivel(m)) {
         this.aviso(onde, `Ficará desativada: pede ${m.meta}, mas o jogo ainda não tem conteúdo suficiente.`);
       }
@@ -417,7 +432,8 @@ const Conteudo = {
       concluir_quizzes: nQuizzes,
       pintar_muros: this.mapa ? this.mapa.muros.length : 0,
       coletar_latas: this.mapa ? this.mapa.latas.length : 0,
-      visitar_todos: nGrafites > 0 ? 1 : 0
+      visitar_todos: nGrafites > 0 ? 1 : 0,
+      mini_jogo: 1
     };
     return disponivel[tipo] || 0;
   }

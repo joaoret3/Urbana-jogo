@@ -67,6 +67,10 @@ const Progresso = {
     p.jogador.xp += xp;
     p.jogador.latas += latas;
     if (rec.moldura) this.ganharMoldura(rec.moldura, titulo ? `Recompensa: ${titulo}.` : '');
+    if (rec.arte && Conteudo.arte(rec.arte) && !p.artes_desbloqueadas.includes(rec.arte)) {   // v2.54: arte-prêmio de missão
+      p.artes_desbloqueadas.push(rec.arte);
+      this.notificar({ tipo: 'recompensa', titulo: 'Arte desbloqueada!', texto: `"${Conteudo.arte(rec.arte).titulo}" está no seu Black Book.` });
+    }
     if (titulo && (xp || latas || rec.moldura)) this.notificar({ tipo: 'recompensa', titulo, xp, latas, moldura: rec.moldura });
     const nivelDepois = this.nivelDoXp(p.jogador.xp);
     for (let n = nivelAntes + 1; n <= nivelDepois; n++) this.subirNivel(n);
@@ -206,16 +210,34 @@ const Progresso = {
   arteDesbloqueada(arteId) {
     const p = this.p(); if (!p) return false;
     if (p.artes_desbloqueadas.includes(arteId)) return true;
+    if (Conteudo.missaoDaArte(arteId)) return false;   // v2.54: prêmio de missão, só se ganha na missão
     const arte = Conteudo.arte(arteId);
     return !!arte && this.arteGratis(arte) && this.nivelDoXp(p.jogador.xp) >= Conteudo.nivelArte(arte);
   },
   arteGratis(arte) { return Number(Conteudo.precoArte(arte)) === 0; },
+  // v2.54: como se ganha uma arte que é prêmio de missão (texto do Black Book)
+  textoPremio(missao) {
+    const npc = missao.personagem && Conteudo.npc(missao.personagem);
+    const acao = missao.tipo === 'mini_jogo' ? 'Vença o desafio' : 'Conclua a missão';
+    return npc ? `${acao} de ${npc.nome || 'um personagem do bairro'} para ganhar esta arte.` : `${acao} "${missao.titulo}" para ganhar esta arte.`;
+  },
+  // v2.54: o jogador venceu o mini-jogo da missão (a recompensa sai pelo Missoes.verificar). Devolve true na 1ª vitória.
+  vencerMiniJogo(missaoId) {
+    const p = this.p(); if (!p) return false;
+    if (!Array.isArray(p.minijogos_vencidos)) p.minijogos_vencidos = [];
+    if (p.minijogos_vencidos.includes(missaoId)) return false;
+    p.minijogos_vencidos.push(missaoId);
+    this.concluirAcao();
+    return true;
+  },
 
   // Pode comprar? Devolve { pode, motivo }
   podeDesbloquear(arte) {
     const p = this.p();
     if (!p) return { pode: false, motivo: 'Sem partida aberta.' };
     if (this.arteDesbloqueada(arte.id)) return { pode: false, motivo: 'Já desbloqueada.' };
+    const missao = Conteudo.missaoDaArte(arte.id);
+    if (missao) return { pode: false, motivo: this.textoPremio(missao) };
     const nivel = this.nivelDoXp(p.jogador.xp), precisa = Conteudo.nivelArte(arte), preco = Conteudo.precoArte(arte);
     if (nivel < precisa) return { pode: false, motivo: `Precisa do nível ${precisa} (você está no nível ${nivel}).` };
     if (p.jogador.latas < preco) return { pode: false, motivo: `Faltam ${preco - p.jogador.latas} latas (você tem ${p.jogador.latas}).` };

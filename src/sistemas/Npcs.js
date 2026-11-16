@@ -105,6 +105,7 @@ const Npcs = {
     if (e === 'novo' || e === 'sem_missao') return npc.fala_chamada || 'Oi!';
     if (e === 'andamento') {
       const s = Missoes.doPersonagem(n.id).map(m => Missoes.situacao(m)).find(x => x.estado === 'andamento');
+      if (s && s.missao.tipo === 'mini_jogo') return 'Topa o desafio? Fala comigo!';   // v2.54
       return s ? `${s.missao.titulo}: ${s.feito}/${s.meta}` : (npc.fala_chamada || 'Oi!');
     }
     const f = (npc.fala_concluida || 'Valeu!').replace(/^EXEMPLO\s*[–-]\s*/, '');
@@ -172,7 +173,11 @@ const Npcs = {
             E('div', { class: 'barra', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(s.meta), 'aria-valuenow': String(s.feito) },
               E('div', { class: 'barra-preenchimento', style: { width: Math.round(100 * s.feito / s.meta) + '%' } })),
             E('span', { class: 'missao-conta' }, `${s.feito} / ${s.meta}`)),
-          E('p', { class: 'missao-recompensa' }, 'Recompensa: ', E('strong', {}, Missoes.textoRecompensa(s.missao.recompensa))))))
+          E('p', { class: 'missao-recompensa' }, 'Recompensa: ', E('strong', {}, Missoes.textoRecompensa(s.missao.recompensa))),
+          // v2.54: missão de mini-jogo — o desafio abre por cima desta conversa; ao sair dele, a conversa fecha
+          s.missao.tipo === 'mini_jogo' && s.estado !== 'trancada' ? E('div', { class: 'missao-jogar' },
+            Interface.botao(s.estado === 'concluida' ? 'Jogar de novo' : 'Jogar: ' + MiniJogos.nome(MiniJogos.config(s.missao).jogo),
+              () => MiniJogos.abrir(s.missao, { aoFechar: () => janela.fechar() }), { tipo: s.estado === 'concluida' ? '' : 'principal', icone: 'play' })) : null)))
       ],
       rodape: [Interface.botao(primeira ? 'Bora!' : 'Voltar ao jogo', () => janela.fechar(), { tipo: 'principal', icone: 'play' })]
     });

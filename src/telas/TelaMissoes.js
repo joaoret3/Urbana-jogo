@@ -32,7 +32,11 @@ const TelaMissoes = {
               E('div', { class: 'barra-preenchimento', style: { width: Math.round(100 * s.feito / s.meta) + '%' } })),
             E('span', { class: 'missao-conta' }, `${s.feito} / ${s.meta}`)
           ),
-      E('p', { class: 'missao-recompensa' }, 'Recompensa: ', E('strong', {}, Missoes.textoRecompensa(s.missao.recompensa)))
+      E('p', { class: 'missao-recompensa' }, 'Recompensa: ', E('strong', {}, Missoes.textoRecompensa(s.missao.recompensa))),
+      // v2.54: missão de mini-jogo já liberada: dá para jogar daqui (ao sair do desafio, a lista fecha para se atualizar)
+      s.missao.tipo === 'mini_jogo' && (s.estado === 'andamento' || s.estado === 'concluida') ? E('div', { class: 'missao-jogar' },
+        Interface.botao(s.estado === 'concluida' ? 'Jogar de novo' : 'Jogar: ' + MiniJogos.nome(MiniJogos.config(s.missao).jogo),
+          () => MiniJogos.abrir(s.missao, { aoFechar: () => janela.fechar() }), { tipo: s.estado === 'concluida' ? '' : 'principal', icone: 'play' })) : null
     ));
     const feitas = lista.filter(s => s.estado === 'concluida').length;
     let janela;

@@ -9,6 +9,8 @@
 // Missões com "personagem" (quests, v2.29): ficam trancadas até o jogador conversar
 // com o personagem no mapa e só contam o que for feito DEPOIS da conversa
 // (se o jogo não tiver mais conteúdo suficiente, conta o que faltar para ser possível).
+// Missões do tipo "mini_jogo" (v2.54): concluídas quando o jogador vence o mini-jogo (src/telas/MiniJogos.js).
+// A recompensa pode ter "arte": uma arte do Black Book que só se ganha nesta missão.
 // =============================================================================
 const Missoes = {
   todas() { return (Conteudo.dados.missoes && Conteudo.dados.missoes.missoes) || []; },
@@ -38,6 +40,10 @@ const Missoes = {
 
   // Progresso de uma missão (nas de personagem, só o que foi feito depois da conversa)
   feito(m) {
+    if (m.tipo === 'mini_jogo') {   // v2.54: vale a vitória no mini-jogo desta missão
+      const pp = Salvamento.atual;
+      return pp && this.liberada(m) && (pp.minijogos_vencidos || []).includes(m.id) ? 1 : 0;
+    }
     const total = this.contar(m.tipo);
     if (!m.personagem || m.tipo === 'visitar_todos') return total;
     const p = Salvamento.atual, enc = p && p.personagens_encontrados[m.personagem];
@@ -91,6 +97,7 @@ const Missoes = {
     if (r.xp) partes.push(`+${r.xp} XP`);
     if (r.latas) partes.push(`+${r.latas} latas`);
     if (r.moldura) { const m = Conteudo.moldura(r.moldura); partes.push(m ? m.nome : r.moldura); }
+    if (r.arte) { const a = Conteudo.arte(r.arte); partes.push('Arte "' + (a ? a.titulo : r.arte) + '"'); }
     return partes.join(' · ') || '—';
   }
 };

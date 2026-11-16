@@ -38,9 +38,10 @@ const TelaBlackBook = {
       grade.replaceChildren(...artes.map(a => {
         const livre = Progresso.arteDesbloqueada(a.id);
         const usos = Progresso.usosDaArte(a.id);
+        const premio = !livre && Conteudo.missaoDaArte(a.id);   // v2.54: arte que só se ganha numa missão
         return E('button', {
           type: 'button', class: 'bb-arte' + (livre ? '' : ' bloqueada'),
-          'aria-label': `${a.titulo}, ${a.autoria || ''}` + (livre ? ', desbloqueada' : `, bloqueada, custa ${Conteudo.precoArte(a)} latas`),
+          'aria-label': `${a.titulo}, ${a.autoria || ''}` + (livre ? ', desbloqueada' : premio ? ', bloqueada, prêmio de um desafio' : `, bloqueada, custa ${Conteudo.precoArte(a)} latas`),
           onclick: () => this.detalhe(a, op, desenhar)
         },
           E('span', { class: 'bb-arte-moldura' }, E('img', { src: a.imagem, alt: '', loading: 'lazy' }),
@@ -49,6 +50,7 @@ const TelaBlackBook = {
           E('span', { class: 'bb-arte-autor' }, a.autoria || 'Autoria autorizada não informada'),
           livre
             ? E('span', { class: 'bb-etiqueta ok' }, Interface.comIcone('ok', usos ? `Em ${usos} muro${usos > 1 ? 's' : ''}` : 'Desbloqueada'))
+            : premio ? E('span', { class: 'bb-etiqueta premio' }, Interface.comIcone('estrela', 'Prêmio de desafio'))
             : E('span', { class: 'bb-etiqueta' }, Interface.comIcone('cadeado', `${Progresso.arteGratis(a) ? 'Grátis' : Conteudo.precoArte(a) + ' latas'} · Nv ${Conteudo.nivelArte(a)}`))
         );
       }));
@@ -89,18 +91,20 @@ const TelaBlackBook = {
       const preco = Conteudo.precoArte(a), cat = Conteudo.categoriaArte(a);
       const pode = Progresso.podeDesbloquear(a);
       const usos = Progresso.usosDaArte(a.id);
+      const premio = !livre && Conteudo.missaoDaArte(a.id);
       corpo.replaceChildren(...[
         E('figure', { class: 'bb-ampliada' + (livre ? '' : ' bloqueada') }, E('img', { src: a.imagem, alt: 'Arte ' + a.titulo })),
         E('dl', { class: 'ficha-dados' },
           E('dt', {}, 'Autoria'), E('dd', {}, a.autoria || '—'),
           E('dt', {}, 'Categoria'), E('dd', {}, cat.nome || a.categoria),
-          E('dt', {}, livre ? 'Situação' : 'Custo'), E('dd', {}, livre ? (usos ? `Desbloqueada · em ${usos} muro(s)` : 'Desbloqueada') : `${Progresso.arteGratis(a) ? 'Grátis' : preco + ' latas'} · a partir do nível ${Conteudo.nivelArte(a)}`)
+          E('dt', {}, livre ? 'Situação' : premio ? 'Como ganhar' : 'Custo'), E('dd', {}, livre ? (usos ? `Desbloqueada · em ${usos} muro(s)` : 'Desbloqueada') : premio ? 'Prêmio de desafio (não é vendida)' : `${Progresso.arteGratis(a) ? 'Grátis' : preco + ' latas'} · a partir do nível ${Conteudo.nivelArte(a)}`)
         ),
         !livre && !pode.pode ? E('p', { class: 'bb-motivo' }, Interface.comIcone('alerta', pode.motivo)) : null
       ].filter(Boolean));   // (replaceChildren escreveria a palavra "null" no lugar de um item vazio)
       const botoes = [Interface.botao('Voltar', () => janela.fechar(), { icone: 'voltar' })];
       // arte grátis bloqueada só pelo nível: libera sozinha quando o jogador chegar ao nível
-      if (!livre && !Progresso.arteGratis(a)) {
+      if (premio) { /* sem botão de compra: só se ganha na missão */ }
+      else if (!livre && !Progresso.arteGratis(a)) {
         botoes.push(Interface.botao(`Desbloquear por ${preco} latas`, async () => {
           const sim = await Interface.confirmar({
             titulo: 'Desbloquear arte?',

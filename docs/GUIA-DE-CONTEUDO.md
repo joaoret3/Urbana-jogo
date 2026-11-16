@@ -177,6 +177,22 @@ Uma moldura pode ter, além da cor, uma **imagem vazada**: PNG quadrado com fund
   O editor reduz para 600 px e salva em `assets/molduras/<id>.webp`. "Tirar imagem" volta a ser só a cor.
 - Exemplo para testar: `originais/molduras/EXEMPLO_moldura_coroa.png`.
 
+## Mini-jogos nas missões (desde a v2.54)
+
+Uma missão pode ser um **desafio**: o aluno vence um mini-jogo para concluir. Serve principalmente para as missões dos
+personagens do bairro.
+
+No editor, em **Missões** > **Nova missão**:
+1. Em **O que o aluno faz**, escolha **Vencer um mini-jogo (desafio)**.
+2. Escolha o **Mini-jogo** (quebra-cabeça, memória, siga o spray, pinte o muro ou mistura de cores) e a **Dificuldade**.
+3. Em **Personagem que dá a missão**, escolha o personagem. O botão "Jogar" aparece na conversa com ele.
+   (Sem personagem, o aluno joga pela tela de Missões.)
+4. Em **Recompensa**, no campo **Arte do Black Book (prêmio exclusivo)**, escolha a arte que o aluno ganha.
+
+A arte escolhida como prêmio **deixa de ser vendida** no Black Book: aparece trancada como "Prêmio de desafio" e só é
+liberada quando o aluno vence. Quem já tinha a arte continua com ela. O quebra-cabeça e o "pinte o muro" usam a própria
+arte-prêmio como imagem.
+
 ## Anoitecer (desde a v2.40)
 
 A partida começa de dia e, depois de alguns minutos jogando, o bairro escurece até o crepúsculo e os postes acendem.
