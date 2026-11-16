@@ -1,5 +1,9 @@
 # Urbana — registro de versões
 
+## 2.53 — 16/11/2026
+
+- Ícones novos no resto do jogo: "Configurações" (menu de pausa) usa a engrenagem; "Abrir Black Book" (janela de pintar muro), "Black Book" (menu inicial) e a aba Black Book do editor usam o livro com marcador.
+
 ## 2.52 — 13/11/2026
 
 **Faróis e lanternas dos veículos à noite**, no mesmo ciclo dos postes:

@@ -74,7 +74,7 @@ const TelaPintarMuro = {
             aoEscolher: (id) => { escolhida = id; bb.fechar(); },
             aoFechar: desenhar
           });
-        }, { icone: 'caderno' }),
+        }, { icone: 'livro' }),
         aplicar
       ]
     });

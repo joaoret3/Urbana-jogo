@@ -30,7 +30,7 @@ class CenaMenu extends Phaser.Scene {
         icone: 'refazer', desabilitado: !temPartida, detalhe: temPartida ? null : 'Nenhuma partida salva'
       }),
       Interface.botao('Meu Black Book', () => this.abrirBlackBook(), {
-        icone: 'caderno', desabilitado: !temPartida, detalhe: temPartida ? null : 'Comece uma partida primeiro'
+        icone: 'livro', desabilitado: !temPartida, detalhe: temPartida ? null : 'Comece uma partida primeiro'
       }),
       E('div', { class: 'menu-linha' },
         Interface.botao('Créditos', () => TelaCreditos.abrir(), { icone: 'estrela' }),

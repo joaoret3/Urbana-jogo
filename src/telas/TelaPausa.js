@@ -13,7 +13,7 @@ const TelaPausa = {
       Interface.botao('Perfil', () => { janela.fechar(); op.aoAbrirPerfil(); }, { icone: 'pessoa', detalhe: 'Trocar avatar e moldura' }),
       Interface.botao('Missões', () => TelaMissoes.abrir(), { icone: 'estrela', detalhe: 'Tecla M' }),
       Interface.botao('Como jogar', () => TelaTutorial.abrir(), { icone: 'ajuda' }),
-      Interface.botao('Configurações', () => TelaConfiguracoes.abrir(), { icone: 'som' }),
+      Interface.botao('Configurações', () => TelaConfiguracoes.abrir(), { icone: 'engrenagem' }),
       Interface.botao('Exportar partida', () => {
         Salvamento.salvar();
         if (Salvamento.exportar(p.id)) Interface.avisar('Arquivo da partida baixado. Guarde-o como cópia de segurança.');
