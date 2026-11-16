@@ -101,6 +101,23 @@ URBANA_DADOS["missoes"] = {
         "latas": 3
       },
       "personagem": "npc_01"
+    },
+    {
+      "id": "missao_010",
+      "titulo": "João: Mini-Jogo",
+      "descricao": "",
+      "tipo": "mini_jogo",
+      "meta": 1,
+      "recompensa": {
+        "xp": 10,
+        "latas": 3,
+        "arte": "arte_016"
+      },
+      "personagem": "npc_02",
+      "mini_jogo": {
+        "jogo": "quebra_cabeca",
+        "dificuldade": "dificil"
+      }
     }
   ]
 };
