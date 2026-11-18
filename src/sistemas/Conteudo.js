@@ -170,7 +170,8 @@ const Conteudo = {
     const pinsMapa = new Map((this.mapa ? this.mapa.grafites : []).map(o => [o.name, o]));
     grafites.forEach(g => {
       const onde = `dados/grafites.js → ${g.id}`;
-      ['titulo', 'descricao', 'imagem', 'quiz_id', 'data_registro'].forEach(c => { if (!g[c]) this.erro(onde, `Falta o campo "${c}".`); });
+      ['titulo', 'descricao', 'imagem', 'data_registro'].forEach(c => { if (!g[c]) this.erro(onde, `Falta o campo "${c}".`); });
+      if (g.tem_quiz !== false && !g.quiz_id) this.erro(onde, 'Falta o quiz (ligue "Este grafite tem quiz" no editor ou desligue o quiz).');
       if (g.imagem) imagens.push([onde, g.imagem]);
       if (g.data_registro && !/^\d{4}-\d{2}-\d{2}$/.test(g.data_registro)) this.erro(onde, '"data_registro" deve estar no formato AAAA-MM-DD (ex.: 2026-09-15).');
       if (!this.STATUS_PUBLICACAO.includes(g.status_publicacao)) this.erro(onde, '"status_publicacao" deve ser "publicado" ou "rascunho".');
@@ -405,6 +406,8 @@ const Conteudo = {
   },
   grafite(id) { return (this.dados.grafites.grafites || []).find(g => g.id === id); },
   quiz(id) { return (this.dados.quizzes.quizzes || []).find(q => q.id === id); },
+  // Quiz de um grafite (null quando o grafite está com "tem_quiz": false)
+  quizDoGrafite(g) { return g && g.tem_quiz !== false ? this.quiz(g.quiz_id) : null; },
   arte(id) { return (this.dados.artes.artes || []).find(a => a.id === id); },
   avatar(id) { return (this.dados.avatares.avatares || []).find(a => a.id === id); },
   moldura(id) { return (this.dados.molduras.molduras || []).find(m => m.id === id); },
@@ -425,7 +428,7 @@ const Conteudo = {
   // Quanto conteúdo o jogo tem para cada tipo de missão
   quantoExiste(tipo) {
     const nGrafites = this.grafitesPublicados().length;
-    const nQuizzes = this.grafitesPublicados().filter(g => this.quiz(g.quiz_id)).length;
+    const nQuizzes = this.grafitesPublicados().filter(g => this.quizDoGrafite(g)).length;
     const disponivel = {
       visitar_murais: nGrafites,
       ler_fichas: nGrafites,

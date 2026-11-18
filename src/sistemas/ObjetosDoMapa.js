@@ -65,7 +65,7 @@ const ObjetosDoMapa = {
 
   estadoPin(g) {
     const p = Salvamento.atual;
-    if (p.quizzes_concluidos.includes(g.quiz_id)) return 'concluido';
+    if (g.tem_quiz !== false && p.quizzes_concluidos.includes(g.quiz_id)) return 'concluido';
     if (p.murais_visitados.includes(g.id)) return 'visitado';
     return 'nao_visitado';
   },

@@ -27,7 +27,7 @@ const TelaPerfil = {
       const j = p.jogador, info = Progresso.infoNivel(j.xp);
       const avatar = Conteudo.avatar(j.avatar_id), moldura = Conteudo.moldura(j.moldura_id);
       const grafites = Conteudo.grafitesPublicados();
-      const quizzes = grafites.filter(g => Conteudo.quiz(g.quiz_id)).length;
+      const quizzes = grafites.filter(g => Conteudo.quizDoGrafite(g)).length;
       const muros = Conteudo.mapa.muros.length;
       const missoes = Missoes.lista().filter(s => s.estado !== 'indisponivel').length;
       const estat = (rotulo, valor) => E('div', { class: 'perfil-estat' }, E('strong', {}, valor), E('span', {}, rotulo));

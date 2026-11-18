@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.55 — 18/11/2026
+
+**Quiz opcional por grafite:**
+- No editor, na ficha do grafite, o campo **"Este grafite tem quiz"** liga ou desliga o quiz. Novos grafites começam ligados.
+  Desligado, o grafite aparece no jogo sem o botão de quiz e não conta nas missões de quiz. As perguntas ficam guardadas
+  (`tem_quiz: false` em `dados/grafites.js`) e voltam ao ligar de novo.
+- Os 25 quizzes que ainda eram EXEMPLO foram removidos de `dados/quizzes.js`; os grafites deles ficaram sem quiz
+  (`quiz_id: ""`, `tem_quiz: false`). Os quizzes já escritos (quiz_035 a quiz_039) foram mantidos.
+- A validação aceita grafite sem quiz quando `tem_quiz` é false.
+
 ## 2.54 — 16/11/2026
 
 **Mini-jogos nas missões** (pensados para as missões dos personagens do bairro):

@@ -55,6 +55,7 @@ const TelaFicha = {
 
     // ---------- FICHA COMPLETA ----------
     const estado = E('div', { class: 'ficha-estado' });
+    const temQuiz = !!Conteudo.quizDoGrafite(g);   // grafite sem quiz: não mostra o botão nem o chip
     const botaoQuiz = Interface.botao('Fazer Quiz', () => {
       TelaQuiz.abrir({ quizId: g.quiz_id, grafite: g, aoFechar: atualizarEstado });
     }, { tipo: 'principal', icone: 'ajuda' });
@@ -63,10 +64,12 @@ const TelaFicha = {
       const concluido = p.quizzes_concluidos.includes(g.quiz_id);
       estado.replaceChildren(
         E('span', { class: 'chip ' + (visitado ? 'chip-ok' : '') }, visitado ? Interface.comIcone('ok', 'Visitado') : 'Não visitado'),
-        E('span', { class: 'chip ' + (concluido ? 'chip-ok' : 'chip-pendente') }, concluido ? Interface.comIcone('estrela', 'Quiz concluído') : 'Quiz não realizado')
+        ...(temQuiz ? [E('span', { class: 'chip ' + (concluido ? 'chip-ok' : 'chip-pendente') }, concluido ? Interface.comIcone('estrela', 'Quiz concluído') : 'Quiz não realizado')] : [])
       );
-      botaoQuiz.querySelector('.botao-texto').textContent = concluido ? 'Rever o quiz' : 'Fazer Quiz';
-      botaoQuiz.disabled = !Conteudo.quiz(g.quiz_id);
+      if (temQuiz) {
+        botaoQuiz.querySelector('.botao-texto').textContent = concluido ? 'Rever o quiz' : 'Fazer Quiz';
+        botaoQuiz.disabled = !Conteudo.quiz(g.quiz_id);
+      }
     };
 
     const fimDoTexto = E('div', { class: 'ficha-fim', 'aria-hidden': 'true' });
@@ -83,7 +86,7 @@ const TelaFicha = {
       ],
       rodape: [
         Interface.botao('Fechar', () => janela.fechar(), { icone: 'fechar' }),
-        botaoQuiz
+        ...(temQuiz ? [botaoQuiz] : [])
       ],
       aoFechar: () => observador && observador.disconnect()
     });

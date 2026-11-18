@@ -68,6 +68,7 @@ O que tiver **EXEMPLO** no texto ou **`exemplo_`** no nome do arquivo é provis�
      `data_registro` (formato `AAAA-MM-DD`), `descricao` (texto histórico), `curiosidades`;
    - `imagem`: caminho da foto, ex. `assets/grafites/grafite_004.webp`;
    - `quiz_id`: id do quiz, ex. `quiz_004`;
+   - `tem_quiz`: `false` para o grafite aparecer **sem quiz** (sem botão de quiz e sem contar nas missões de quiz). O quiz continua guardado; a partir da v2.55 isso se faz no editor, no campo "Este grafite tem quiz".
    - `status_publicacao`: `rascunho` enquanto estiver em revisão; `publicado` para aparecer no jogo.
 3. **Quiz:** em `dados/quizzes.js`, crie o quiz com `grafite_id` igual ao id da ficha.
    Cada pergunta tem 4 alternativas, e `correta` é a **letra** certa (A, B, C ou D).

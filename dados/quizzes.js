@@ -1,464 +1,46 @@
 // Arquivo de conteúdo do Urbana. Pode ser alterado pelo Editor de conteúdo (editor.html).
 // O conteúdo entre as chaves { } segue o formato JSON.
 URBANA_DADOS["quizzes"] = {
-  "_leia": "Perguntas de cada grafite. Cada pergunta tem 4 alternativas (A, B, C, D) e 'correta' é a LETRA certa. O quiz fica concluído quando todas as perguntas forem acertadas. As perguntas devem usar informações que estão na ficha. Todos abaixo são EXEMPLO.",
+  "_leia": "Perguntas de cada grafite. Cada pergunta tem 4 alternativas (A, B, C, D) e 'correta' é a LETRA certa. O quiz fica concluído quando todas as perguntas forem acertadas. As perguntas devem usar informações que estão na ficha. Um grafite com 'tem_quiz' false (em grafites.js) não mostra o quiz no jogo, mas o quiz fica guardado aqui.",
+  "_leia_ids": "ids_retirados: ids de quizzes que já existiram. O editor não usa esses ids de novo, para não misturar com o progresso salvo dos alunos.",
+  "ids_retirados": [
+    "quiz_001",
+    "quiz_002",
+    "quiz_003",
+    "quiz_004",
+    "quiz_005",
+    "quiz_006",
+    "quiz_007",
+    "quiz_008",
+    "quiz_009",
+    "quiz_010",
+    "quiz_011",
+    "quiz_012",
+    "quiz_013",
+    "quiz_014",
+    "quiz_015",
+    "quiz_016",
+    "quiz_017",
+    "quiz_018",
+    "quiz_019",
+    "quiz_020",
+    "quiz_021",
+    "quiz_022",
+    "quiz_023",
+    "quiz_024",
+    "quiz_025",
+    "quiz_026",
+    "quiz_027",
+    "quiz_028",
+    "quiz_029",
+    "quiz_030",
+    "quiz_031",
+    "quiz_032",
+    "quiz_033",
+    "quiz_034",
+    "quiz_040"
+  ],
   "quizzes": [
-    {
-      "id": "quiz_005",
-      "grafite_id": "grafite_005",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 005",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_006",
-      "grafite_id": "grafite_006",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 006",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_007",
-      "grafite_id": "grafite_007",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 007",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_008",
-      "grafite_id": "grafite_008",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 008",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_010",
-      "grafite_id": "grafite_010",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 010",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_011",
-      "grafite_id": "grafite_011",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 011",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_012",
-      "grafite_id": "grafite_012",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 012",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_014",
-      "grafite_id": "grafite_014",
-      "xp": 20,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 014",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_015",
-      "grafite_id": "grafite_015",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 015",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_016",
-      "grafite_id": "grafite_016",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 016",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_017",
-      "grafite_id": "grafite_017",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 017",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_018",
-      "grafite_id": "grafite_018",
-      "xp": 10,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 018",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_019",
-      "grafite_id": "grafite_019",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 019",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_021",
-      "grafite_id": "grafite_021",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 021",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_022",
-      "grafite_id": "grafite_022",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 022",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_023",
-      "grafite_id": "grafite_023",
-      "xp": 20,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 023",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_024",
-      "grafite_id": "grafite_024",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 024",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_026",
-      "grafite_id": "grafite_026",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 026",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_028",
-      "grafite_id": "grafite_028",
-      "xp": 20,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 028",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_029",
-      "grafite_id": "grafite_029",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 029",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_030",
-      "grafite_id": "grafite_030",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 030",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_032",
-      "grafite_id": "grafite_032",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 032",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_033",
-      "grafite_id": "grafite_033",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 033",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_034",
-      "grafite_id": "grafite_034",
-      "xp": 5,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 034",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
     {
       "id": "quiz_035",
       "grafite_id": "grafite_035",
@@ -551,25 +133,6 @@ URBANA_DADOS["quizzes"] = {
           ],
           "correta": "B",
           "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
-        }
-      ]
-    },
-    {
-      "id": "quiz_040",
-      "grafite_id": "grafite_040",
-      "xp": 20,
-      "latas": 5,
-      "perguntas": [
-        {
-          "enunciado": "kkkkk",
-          "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
-          ],
-          "correta": "A",
-          "explicacao": ""
         }
       ]
     }

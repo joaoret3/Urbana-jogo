@@ -11,9 +11,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4358.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_005.webp",
-      "quiz_id": "quiz_005",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_006",
@@ -23,9 +24,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4360.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_006.webp",
-      "quiz_id": "quiz_006",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_007",
@@ -35,9 +37,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4362.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_007.webp",
-      "quiz_id": "quiz_007",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_008",
@@ -47,9 +50,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4363.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_008.webp",
-      "quiz_id": "quiz_008",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_010",
@@ -59,9 +63,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4365.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_010.webp",
-      "quiz_id": "quiz_010",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_011",
@@ -71,9 +76,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4366.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_011.webp",
-      "quiz_id": "quiz_011",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_012",
@@ -83,9 +89,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4368.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_012.webp",
-      "quiz_id": "quiz_012",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_014",
@@ -95,9 +102,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite bomb: Aqui o grafiteito \"Goma\" deixa sua marca com esta caveirinha preguiçosa, sinal de que o cara esteve na região.",
       "curiosidades": "ABRA A LATA: Goma já foi um artista urbano com suas obras presente numa exposição em Belo Horizonte",
       "imagem": "assets/grafites/grafite_014.webp",
-      "quiz_id": "quiz_014",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_015",
@@ -107,9 +115,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4372.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_015.webp",
-      "quiz_id": "quiz_015",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_016",
@@ -119,9 +128,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4373.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_016.webp",
-      "quiz_id": "quiz_016",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_017",
@@ -131,9 +141,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4375.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_017.webp",
-      "quiz_id": "quiz_017",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_018",
@@ -143,9 +154,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "TEXTO DE EXEMPLO. Foto original: IMG_4377.JPG. Escreva aqui a história deste grafite.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_018.webp",
-      "quiz_id": "quiz_018",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_019",
@@ -155,9 +167,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite wildstyle: Olhe ele aí de novo, \"Gaspa\" retorna cobrindo mais um muro no bairro, desta vez trazendo efeitos de brilho, dimensões, setas enormes e arte. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_019.webp",
-      "quiz_id": "quiz_019",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_021",
@@ -167,9 +180,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite bomb: Mais uma marca é encontrada no bairro Goiania, o que é uma parede cheia de pixos quando esse cara tem uma lata na mão? ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_021.webp",
-      "quiz_id": "quiz_021",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_022",
@@ -179,9 +193,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite bomb: Mais um bombardeio na região galera! Desta vez Jack usa sua arte e cria um passáro para substituir uma das letras. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_022.webp",
-      "quiz_id": "quiz_022",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_023",
@@ -191,9 +206,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite bomb: Um bombardeio que utilizou bem da técnica de dois tons e contorno em destaque. ",
       "curiosidades": "ABRA A LATA: Bombs costumam ser intervenções proibidas e que necessitam de pouco tempo e material, para serem feitas, muitas vezes associadas ao vandalismo. ",
       "imagem": "assets/grafites/grafite_023.webp",
-      "quiz_id": "quiz_023",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_024",
@@ -203,9 +219,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite bomb: Duas cores, muito brilho. A crew de \"PMIKS\" parece gostar da ideia de fazer \"trampos\" com as mesmas cores.",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_024.webp",
-      "quiz_id": "quiz_024",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_026",
@@ -215,9 +232,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite throw-up: Um trabalho muito legal que aplica-se a técnica de dimensão em uma cora alternativa, fugindo do tradicionalismo de dimensões pintadas de preto. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_026.webp",
-      "quiz_id": "quiz_026",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_028",
@@ -227,9 +245,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite freestyle: Neste grafite, temos a  ilustração de um persongem, como uma entidade extra-terrestre, a proposta aqui é combinar sua forma de arte ilustrativa, com a de um mural temático. ",
       "curiosidades": "ABRA A LATA: Freestyle é um estilo de grafite que consiste em uma maior liberdade na hora de grafitar, não obrigatoriamente utilizando letras. ",
       "imagem": "assets/grafites/grafite_028.webp",
-      "quiz_id": "quiz_028",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_029",
@@ -239,9 +258,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite throw-up: Participação presente no bairro Goiania, onde sua Crew realizou uma intervenção em equipe. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_029.webp",
-      "quiz_id": "quiz_029",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_030",
@@ -251,9 +271,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite throw-up: Participação presente no bairro Goiania, onde sua Crew realizou uma intervenção em equipe. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_030.webp",
-      "quiz_id": "quiz_030",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_032",
@@ -263,9 +284,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite throw-up: Uma intervenção participando da produção de um mural. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_032.webp",
-      "quiz_id": "quiz_032",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_033",
@@ -275,9 +297,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite mural: Participação em um mural, na região do bairro Goiania, uma intervenção feita por sua Crew. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_033.webp",
-      "quiz_id": "quiz_033",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_034",
@@ -287,9 +310,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Estilo de grafite throw-up: Distorções e letras desproporcionais, fazem parte do acervo artístico de \"TOWCH\", sempre abusando de combinações, cores e linhas. ",
       "curiosidades": "",
       "imagem": "assets/grafites/grafite_034.webp",
-      "quiz_id": "quiz_034",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     },
     {
       "id": "grafite_035",
@@ -359,9 +383,10 @@ URBANA_DADOS["grafites"] = {
       "descricao": "Grafite informativo: Um recado deixado para a comunidade local, conscientizando a população de evitar o despejo de lixo no ponto.",
       "curiosidades": "ABRA A LATA: (Nayara Gessica Moreira). É uma importante grafiteria de Belo Horizonte.",
       "imagem": "assets/grafites/grafite_040.webp",
-      "quiz_id": "quiz_040",
+      "quiz_id": "",
       "creditos_fotografia": "",
-      "status_publicacao": "publicado"
+      "status_publicacao": "publicado",
+      "tem_quiz": false
     }
   ]
 };
