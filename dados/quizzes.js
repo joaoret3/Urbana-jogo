@@ -466,14 +466,14 @@ URBANA_DADOS["quizzes"] = {
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 035",
+          "enunciado": "Quais são os quatro elementos tradicionalmente associados à cultura Hip-Hop?",
           "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
+            "Teatro, cinema, fotografia e escultura.",
+            "Rap (MC), DJ, Breaking e Graffite.",
+            "Futebol, basquete, skate e surf.",
+            "Desenho, pintura, música clássica e dança de salão."
           ],
-          "correta": "A",
+          "correta": "B",
           "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
         }
       ]
@@ -504,14 +504,14 @@ URBANA_DADOS["quizzes"] = {
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 037",
+          "enunciado": "O que significa fazer um Graffite em Freestyle?",
           "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
+            "Seguir obrigatoriamente um modelo pronto.",
+            "Pintar somente utilizando uma cor.",
+            "Criar livremente, explorando ideias, letras e formas espontaneamente.",
+            "Utilizar apenas letras pequenas."
           ],
-          "correta": "A",
+          "correta": "C",
           "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
         }
       ]
@@ -523,14 +523,14 @@ URBANA_DADOS["quizzes"] = {
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 038",
+          "enunciado": "O que é um Throw-up (Throwie) no Graffite?",
           "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
+            "Uma técnica de pintura que utiliza apenas degradê.",
+            "Um estilo de letras geralmente rápido, com formas arredondadas e preenchimento simples.",
+            "Uma pintura realista de paisagens.",
+            "Uma técnica de colagem de fotografias."
           ],
-          "correta": "A",
+          "correta": "B",
           "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
         }
       ]
@@ -542,14 +542,14 @@ URBANA_DADOS["quizzes"] = {
       "latas": 5,
       "perguntas": [
         {
-          "enunciado": "EXEMPLO – Pergunta sobre o grafite 039",
+          "enunciado": "Qual característica é mais comum no estilo Wildstyle?",
           "alternativas": [
-            "Alternativa A",
-            "Alternativa B",
-            "Alternativa C",
-            "Alternativa D"
+            "Letras simples, sem contornos ou conexões.",
+            "Letras elaboradas, entrelaçadas e com formas complexas.",
+            "Pinturas feitas exclusivamente com desenhos de animais.",
+            "Letras escritas sem nenhum efeito visual."
           ],
-          "correta": "A",
+          "correta": "B",
           "explicacao": "EXEMPLO – Explique a resposta usando a ficha."
         }
       ]
