@@ -103,7 +103,7 @@ URBANA_DADOS["npcs"] = {
     {
       "id": "npc_05",
       "nome": "Bruno York",
-      "retrato": "",
+      "retrato": "assets/npcs/npc_05/retrato.webp",
       "fala_chamada": "Chega aí!",
       "fala_inicial": "",
       "fala_andamento": "",
