@@ -44,6 +44,10 @@ const Missoes = {
       const pp = Salvamento.atual;
       return pp && this.liberada(m) && (pp.minijogos_vencidos || []).includes(m.id) ? 1 : 0;
     }
+    if (m.tipo === 'coletar_letras') {   // v2.58: letras pegas no mapa
+      const pp = Salvamento.atual, est = pp && pp.letras_missoes[m.id];
+      return est && this.liberada(m) ? Math.min(m.meta, est.pegas.length) : 0;
+    }
     const total = this.contar(m.tipo);
     if (!m.personagem || m.tipo === 'visitar_todos') return total;
     const p = Salvamento.atual, enc = p && p.personagens_encontrados[m.personagem];
@@ -61,6 +65,17 @@ const Missoes = {
     Salvamento.salvar();
     this.verificar();
     return true;
+  },
+
+  // v2.58: as letras da tag, marcando as que já foram pegas (para as telas de missão)
+  elementoLetras(s) {
+    const m = s.missao;
+    if (m.tipo !== 'coletar_letras' || s.estado === 'trancada' || s.estado === 'indisponivel') return null;
+    const p = Salvamento.atual, est = p && p.letras_missoes[m.id];
+    const pegas = s.estado === 'concluida' ? null : (est ? est.pegas : []);
+    const E = Interface.el.bind(Interface);
+    return E('div', { class: 'missao-letras', 'aria-label': `Letras: ${s.feito} de ${s.meta} encontradas` },
+      Conteudo.letrasDe(m).map((l, i) => E('b', { class: !pegas || pegas.includes(i) ? 'pega' : 'falta' }, l)));
   },
 
   doPersonagem(npcId) { return this.todas().filter(m => m.personagem === npcId); },

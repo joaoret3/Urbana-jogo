@@ -41,6 +41,9 @@ const ObjetosDoMapa = {
       cena.latas.push({ id: o.name, x: o.x, y: o.y, sprite });
     });
 
+    // ---------- LETRAS DAS MISSÕES "coletar_letras" (v2.58) ----------
+    this.criarLetras(cena);
+
     // ---------- LATA DOURADA (v2.56) ----------
     // Uma por abertura do jogo, num ponto de lata sorteado. A escolha não é salva:
     // ao abrir o jogo de novo, outra lata dourada aparece em outro lugar.
@@ -125,7 +128,8 @@ const ObjetosDoMapa = {
     const pontos = Conteudo.mapa.latas;
     if (!this.premioDourada() || !pontos.length) return;
     if (!this.dourada || this.dourada.partida !== p.id) {
-      const livres = pontos.filter(o => !p.latas_vazias.includes(o.name));
+      const ocupados = this.pontosDeLetras(p);
+      const livres = pontos.filter(o => !p.latas_vazias.includes(o.name) && !ocupados.has(o.name));
       const lista = livres.length ? livres : pontos;
       const o = lista[Math.floor(Math.random() * lista.length)];
       this.dourada = { partida: p.id, id: o.name, x: o.x, y: o.y, coletada: false, avisada: false };
@@ -145,6 +149,94 @@ const ObjetosDoMapa = {
     cena.lataDourada = { id: d.id, x: d.x, y: d.y, sprite, brilho };
   },
 
+  // ---------------------------------------------------------------------------
+  // LETRAS DA TAG (v2.58)
+  // ---------------------------------------------------------------------------
+  // Missões de letras que estão valendo agora (liberadas pela conversa e não concluídas)
+  missoesDeLetras(p) {
+    return Missoes.todas().filter(m => m.tipo === 'coletar_letras' && Conteudo.missaoPossivel(m) &&
+      Missoes.liberada(m) && !p.missoes_concluidas.includes(m.id));
+  },
+
+  // Pontos de lata ocupados por letras ainda não pegas
+  pontosDeLetras(p) {
+    const ids = new Set();
+    Object.keys(p.letras_missoes || {}).forEach(mid => {
+      if (p.missoes_concluidas.includes(mid)) return;
+      const est = p.letras_missoes[mid];
+      (est.pontos || []).forEach((pt, i) => { if (!est.pegas.includes(i)) ids.add(pt.id); });
+    });
+    return ids;
+  },
+
+  // Sorteia (uma vez) os pontos das letras, espalhados pelo bairro. Fica salvo até a missão acabar.
+  sortearLetras(p, m) {
+    const letras = Conteudo.letrasDe(m), est = p.letras_missoes[m.id];
+    if (est && est.pontos && est.pontos.length === letras.length) return est;
+    const usados = this.pontosDeLetras(p);
+    if (this.dourada && !this.dourada.coletada) usados.add(this.dourada.id);
+    const todos = Conteudo.mapa.latas.filter(o => !usados.has(o.name));
+    for (let i = todos.length - 1; i > 0; i--) { const k = Math.floor(Math.random() * (i + 1)); const t = todos[i]; todos[i] = todos[k]; todos[k] = t; }
+    const escolhidos = [];
+    [900, 500, 250, 0].forEach(minimo => {
+      todos.forEach(o => {
+        if (escolhidos.length >= letras.length || escolhidos.includes(o)) return;
+        if (escolhidos.every(e => Math.hypot(e.x - o.x, e.y - o.y) >= minimo)) escolhidos.push(o);
+      });
+    });
+    const novo = { pontos: escolhidos.map((o, i) => ({ letra: letras[i], id: o.name, x: Math.round(o.x), y: Math.round(o.y) })), pegas: [] };
+    p.letras_missoes[m.id] = novo;
+    Salvamento.salvar();
+    return novo;
+  },
+
+  // Desenha as letras que faltam pegar (chamado ao criar o mapa e depois de conversar com um personagem)
+  criarLetras(cena) {
+    (cena.letras || []).forEach(l => { cena.tweens.killTweensOf(l.caixa); l.caixa.destroy(); });
+    cena.letras = [];
+    const p = Salvamento.atual; if (!p) return;
+    const mexer = !Efeitos.menosMovimento();
+    this.missoesDeLetras(p).forEach(m => {
+      const est = this.sortearLetras(p, m);
+      est.pontos.forEach((pt, i) => {
+        if (est.pegas.includes(i)) return;
+        // a lata comum daquele ponto dá lugar à letra
+        const j = cena.latas.findIndex(l => l.id === pt.id);
+        if (j >= 0) { cena.tweens.killTweensOf(cena.latas[j].sprite); cena.latas[j].sprite.destroy(); cena.latas.splice(j, 1); }
+        cena.letras.push({ missao: m, indice: i, letra: pt.letra, x: pt.x, y: pt.y, caixa: this.desenharLetra(cena, pt, mexer) });
+      });
+    });
+  },
+
+  // Estilo "tag de spray" (L1): letra branca, contorno preto, sombra rosa e um escorrido de tinta
+  desenharLetra(cena, pt, mexer) {
+    const caixa = cena.add.container(pt.x, pt.y).setDepth(10 + pt.y / 100000);
+    const sombra = cena.add.ellipse(0, 0, 70, 20, 0x0f0c14, 0.3);
+    const corpo = cena.add.container(0, 0);
+    const pingo = cena.add.graphics();
+    pingo.fillStyle(0xff3c8e, 1).fillRoundedRect(3, -74, 11, 32, { tl: 0, tr: 0, bl: 5, br: 5 }).fillCircle(8.5, -42, 7.5);
+    const texto = cena.add.text(0, -18, pt.letra, { fontFamily: '"Sedgwick Ave Display", "Londrina Solid", cursive', fontSize: '116px',
+      color: '#ffffff', stroke: '#111111', strokeThickness: 13,
+      shadow: { offsetX: 4, offsetY: 5, color: '#ff3c8e', fill: true, stroke: true, blur: 0 } }).setOrigin(0.5, 1);
+    corpo.add([pingo, texto]);
+    caixa.add([sombra, corpo]);
+    if (mexer) cena.tweens.add({ targets: corpo, y: -10, duration: 800, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+    return caixa;
+  },
+
+  coletarLetra(cena, l) {
+    if (!Progresso.pegarLetra(l.missao.id, l.indice)) return;
+    const s = Missoes.situacao(l.missao);
+    Efeitos.estouro(cena, l.x, l.y - 50);
+    Efeitos.textoSubindo(cena, l.x, l.y - 110, l.letra);
+    Sons.tocar('lata');
+    HUD.atualizar();
+    if (!Salvamento.atual.missoes_concluidas.includes(l.missao.id)) {
+      Interface.notificar({ tipo: 'missao', titulo: `Letra ${l.letra} encontrada!`, texto: `${l.missao.titulo}: ${s.feito}/${s.meta}` });
+    }
+    if (cena.npcs) Npcs.atualizarSinais(cena);
+  },
+
   // Aviso de que a lata dourada está no mapa (uma vez por abertura do jogo)
   avisarDourada() {
     const d = this.dourada;
@@ -159,6 +251,16 @@ const ObjetosDoMapa = {
   // A cada quadro: coleta latas, acha o objeto mais próximo e configura o botão A
   atualizar(cena) {
     const j = cena.jogador, inter = Conteudo.jogo().interacao || {};
+    // letras das missões: coleta ao passar por cima (v2.58)
+    if (cena.letras) for (let i = cena.letras.length - 1; i >= 0; i--) {
+      const l = cena.letras[i];
+      if (Math.hypot(l.x - j.x, l.y - j.y) <= (inter.distancia_lata || 56) + 10) {
+        cena.letras.splice(i, 1);
+        this.coletarLetra(cena, l);
+        cena.tweens.killTweensOf(l.caixa.list[1]);
+        cena.tweens.add({ targets: l.caixa, y: l.y - 80, alpha: 0, scale: 1.3, duration: 350, onComplete: () => l.caixa.destroy() });
+      }
+    }
     // lata dourada: coleta ao passar por cima
     const ld = cena.lataDourada;
     if (ld && Math.hypot(ld.x - j.x, ld.y - j.y) <= (inter.distancia_lata || 56)) {

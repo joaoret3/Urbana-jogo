@@ -214,6 +214,15 @@ const Progresso = {
     return latas;
   },
 
+  // v2.58: letra de uma missão "coletar_letras" pega no mapa
+  pegarLetra(missaoId, indice) {
+    const p = this.p(), est = p && p.letras_missoes[missaoId];
+    if (!est || est.pegas.includes(indice)) return false;
+    est.pegas.push(indice);
+    this.concluirAcao();
+    return true;
+  },
+
   // ---------------------------------------------------------------------------
   // BLACK BOOK E MUROS
   // ---------------------------------------------------------------------------

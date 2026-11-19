@@ -19,7 +19,7 @@ const Conteudo = {
   avisos: [],
   alcancavel: null,    // grade com as áreas que o jogador consegue alcançar a partir da escola
 
-  TIPOS_MISSAO: ['visitar_murais', 'ler_fichas', 'concluir_quizzes', 'pintar_muros', 'coletar_latas', 'visitar_todos', 'mini_jogo'],
+  TIPOS_MISSAO: ['visitar_murais', 'ler_fichas', 'concluir_quizzes', 'pintar_muros', 'coletar_latas', 'visitar_todos', 'mini_jogo', 'coletar_letras'],
   // v2.54: mini-jogos que uma missão pode pedir (src/telas/MiniJogos.js) e as dificuldades
   MINI_JOGOS: ['quebra_cabeca', 'memoria', 'sequencia', 'pintar', 'cores'],
   DIFICULDADES: ['facil', 'normal', 'dificil'],
@@ -241,6 +241,12 @@ const Conteudo = {
         if (mj.dificuldade && !this.DIFICULDADES.includes(mj.dificuldade)) this.erro(onde, `Dificuldade "${mj.dificuldade}" desconhecida. Use: ${this.DIFICULDADES.join(', ')}.`);
         if (!r.arte && (mj.jogo === 'quebra_cabeca' || mj.jogo === 'pintar')) this.aviso(onde, 'Este mini-jogo mostra uma arte, mas a missão não tem arte-prêmio: o jogo usa a primeira arte publicada.');
       }
+      if (m.tipo === 'coletar_letras') {   // v2.58
+        const ls = this.letrasDe(m);
+        if (!ls.length || ls.length > 10) this.erro(onde, 'Escreva de 1 a 10 letras em "letras" (ex.: "RET").');
+        else if (m.meta !== ls.length) this.erro(onde, `"meta" deve ser igual ao número de letras (${ls.length}).`);
+        if (!m.personagem) this.aviso(onde, 'Sem personagem, as letras aparecem desde o início do jogo.');
+      }
       if (this.TIPOS_MISSAO.includes(m.tipo) && !this.missaoPossivel(m)) {
         this.aviso(onde, `Ficará desativada: pede ${m.meta}, mas o jogo ainda não tem conteúdo suficiente.`);
       }
@@ -406,6 +412,8 @@ const Conteudo = {
   },
   grafite(id) { return (this.dados.grafites.grafites || []).find(g => g.id === id); },
   quiz(id) { return (this.dados.quizzes.quizzes || []).find(q => q.id === id); },
+  // v2.58: letras de uma missão "coletar_letras" (sem espaços), ex.: "RET" → ['R', 'E', 'T']
+  letrasDe(m) { return Array.from(String((m && m.letras) || '').replace(/\s+/g, '')); },
   // Quiz de um grafite (null quando o grafite está com "tem_quiz": false)
   quizDoGrafite(g) { return g && g.tem_quiz !== false ? this.quiz(g.quiz_id) : null; },
   arte(id) { return (this.dados.artes.artes || []).find(a => a.id === id); },
@@ -436,7 +444,8 @@ const Conteudo = {
       pintar_muros: this.mapa ? this.mapa.muros.length : 0,
       coletar_latas: this.mapa ? this.mapa.latas.length : 0,
       visitar_todos: nGrafites > 0 ? 1 : 0,
-      mini_jogo: 1
+      mini_jogo: 1,
+      coletar_letras: this.mapa ? this.mapa.latas.length : 0   // as letras são sorteadas entre os pontos de lata
     };
     return disponivel[tipo] || 0;
   }

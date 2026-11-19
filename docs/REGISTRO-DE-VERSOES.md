@@ -1,5 +1,19 @@
 # Urbana — registro de versões
 
+## 2.58 — 19/11/2026
+
+**Missão "Coletar as letras da tag":**
+- Tipo novo de missão (`"tipo": "coletar_letras"`, `"letras": "RET"`, `"meta"` = número de letras). No editor:
+  Missões > "O que o aluno faz" > "Coletar as letras da tag pelo mapa", e o campo "Letras da tag" (até 10).
+- As letras só aparecem no mapa depois que o aluno conversa com o personagem da missão. São sorteadas entre os pontos de lata,
+  espalhadas pelo bairro, e ficam salvas no mesmo lugar até ele pegar todas (cada aluno recebe lugares diferentes).
+  A lata comum daquele ponto (e a lata dourada) não aparecem por cima.
+- Visual L1 (tag de spray): letra branca com contorno preto, sombra rosa e um escorrido de tinta, balançando devagar.
+- Cada letra pega mostra um aviso ("Letra R encontrada! 1/3"). Na tela de Missões e na conversa com o personagem aparecem
+  as letras, marcando as já encontradas. Ao pegar a última, a missão termina e dá a recompensa — inclusive a arte-prêmio
+  exclusiva do Black Book (como a Ret TAG).
+- Partidas salvas ganham o campo `letras_missoes` (vazio).
+
 ## 2.57 — 19/11/2026
 
 **Personagens que andam pelo bairro:**

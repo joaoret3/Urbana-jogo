@@ -256,6 +256,7 @@ const Npcs = {
   conversar(cena, n) {
     cena.pararJogador();
     const primeira = Missoes.encontrar(n.id);
+    if (primeira) ObjetosDoMapa.criarLetras(cena);   // v2.58: letras de missões deste personagem aparecem agora
     if (primeira) {
       Sons.tocar('descoberta');
       Efeitos.estouro(cena, n.x, n.y - 80, 24);
@@ -277,6 +278,7 @@ const Npcs = {
           E('div', { class: 'missao-topo' }, E('h3', {}, s.missao.titulo),
             E('span', { class: 'missao-selo' }, s.estado === 'concluida' ? Interface.comIcone('ok', rotulo.concluida) : Interface.comIcone('play', rotulo.andamento))),
           E('p', { class: 'missao-descricao' }, s.missao.descricao),
+          Missoes.elementoLetras(s),
           E('div', { class: 'missao-progresso' },
             E('div', { class: 'barra', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(s.meta), 'aria-valuenow': String(s.feito) },
               E('div', { class: 'barra-preenchimento', style: { width: Math.round(100 * s.feito / s.meta) + '%' } })),
