@@ -120,6 +120,20 @@ URBANA_DADOS["missoes"] = {
         "jogo": "quebra_cabeca",
         "dificuldade": "dificil"
       }
+    },
+    {
+      "id": "missao_011",
+      "titulo": "",
+      "descricao": "",
+      "tipo": "coletar_letras",
+      "meta": 4,
+      "recompensa": {
+        "xp": 5,
+        "latas": 3,
+        "arte": "arte_052"
+      },
+      "personagem": "npc_05",
+      "letras": "YORK"
     }
   ]
 };
