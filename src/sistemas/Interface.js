@@ -208,12 +208,12 @@ const Interface = {
     if (chips.length) linhas.push(E('div', { class: 'chips' }, chips));
     if (n.itens && n.itens.length) linhas.push(E('ul', { class: 'conquista-itens' }, n.itens.map(i => E('li', {}, 'Desbloqueado: ' + i))));
     const caixa = E('div', { class: 'conquista conquista-' + n.tipo, role: 'status', 'aria-live': 'polite' },
-      this.icone(icones[n.tipo] || 'estrela', 'conquista-icone'),
+      n.imagem ? E('span', { class: 'conquista-icone conquista-imagem' }, E('img', { src: n.imagem, alt: '' })) : this.icone(icones[n.tipo] || 'estrela', 'conquista-icone'),
       E('div', { class: 'conquista-corpo' }, E('strong', {}, n.titulo || ''), linhas));
     // fica por cima de tudo (inclusive das janelas)
     caixa.style.pointerEvents = 'none';
     this.raiz.append(caixa);
-    const tempo = n.tipo === 'nivel' ? 4200 : 2600;
+    const tempo = n.tempo || (n.tipo === 'nivel' ? 4200 : 2600);
     setTimeout(() => caixa.classList.add('saindo'), tempo);
     const geracao = this.geracao;
     setTimeout(() => {

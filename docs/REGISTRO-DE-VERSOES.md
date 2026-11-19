@@ -1,5 +1,17 @@
 # Urbana — registro de versões
 
+## 2.56 — 19/11/2026
+
+**Lata dourada:**
+- A cada vez que o jogo é aberto, uma **lata dourada** aparece num ponto de lata sorteado (no lugar da lata comum daquele
+  ponto). Quem pega ganha **20 latas** (Editor > Progressão: "Lata dourada: latas"; 0 desliga). Depois de pega, só volta
+  na próxima vez que o jogo for aberto, em outro lugar. A escolha do ponto não é salva.
+- Ao entrar no mapa (depois do tutorial e das janelas abertas), um aviso mostra "Lata dourada no mapa!" com a imagem da lata.
+  Ao pegar, aparece "Você achou a lata dourada!" com as latas ganhas. A lata dourada conta nas missões de coletar latas.
+- Arte: assets/ui/lata_dourada.png (original em originais/ui/). Os avisos aceitam imagem própria e tempo na tela.
+- (v2.55) `dados/quizzes.js` guarda em `ids_retirados` os ids de quizzes que já existiram; o editor não usa esses ids de
+  novo, para um quiz novo não herdar o progresso salvo de um quiz antigo.
+
 ## 2.55 — 18/11/2026
 
 **Quiz opcional por grafite:**

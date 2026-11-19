@@ -54,6 +54,8 @@ class CenaMapa extends Phaser.Scene {
 
     Efeitos.prepararTexturas(this);
     ObjetosDoMapa.criar(this);       // pins, latas e muros (sistemas/ObjetosDoMapa.js)
+    // v2.56: aviso da lata dourada, depois que o tutorial e as outras janelas fecharem
+    if (this.lataDourada) this.time.delayedCall(1500, () => this.aguardarJanelas(() => ObjetosDoMapa.avisarDourada()));
     Detalhes.criar(this);            // postes e fiação (sistemas/Detalhes.js)
     this.criarJogador();
 

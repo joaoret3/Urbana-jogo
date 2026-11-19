@@ -41,6 +41,11 @@ const ObjetosDoMapa = {
       cena.latas.push({ id: o.name, x: o.x, y: o.y, sprite });
     });
 
+    // ---------- LATA DOURADA (v2.56) ----------
+    // Uma por abertura do jogo, num ponto de lata sorteado. A escolha não é salva:
+    // ao abrir o jogo de novo, outra lata dourada aparece em outro lugar.
+    this.criarDourada(cena, p, mexer);
+
     // ---------- MUROS VIRTUAIS ----------
     Conteudo.mapa.muros.forEach(o => {
       if (!o.name || !(o.width > 0 && o.height > 0)) return;
@@ -106,9 +111,71 @@ const ObjetosDoMapa = {
     return Math.hypot(lx - cx, ly - cy);
   },
 
+  // Latas que a lata dourada dá (0 desliga a lata dourada)
+  premioDourada() {
+    const r = Conteudo.jogo().recompensas || {};
+    const v = Number('lata_dourada' in r ? r.lata_dourada : 20);
+    return v > 0 ? Math.floor(v) : 0;
+  },
+
+  dourada: null,   // { partida, id, x, y, coletada, avisada } — só nesta abertura do jogo
+
+  criarDourada(cena, p, mexer) {
+    cena.lataDourada = null;
+    const pontos = Conteudo.mapa.latas;
+    if (!this.premioDourada() || !pontos.length) return;
+    if (!this.dourada || this.dourada.partida !== p.id) {
+      const livres = pontos.filter(o => !p.latas_vazias.includes(o.name));
+      const lista = livres.length ? livres : pontos;
+      const o = lista[Math.floor(Math.random() * lista.length)];
+      this.dourada = { partida: p.id, id: o.name, x: o.x, y: o.y, coletada: false, avisada: false };
+    }
+    const d = this.dourada;
+    if (d.coletada) return;
+    // a lata comum daquele ponto dá lugar à dourada
+    const i = cena.latas.findIndex(l => l.id === d.id);
+    if (i >= 0) { cena.latas[i].sprite.destroy(); cena.latas.splice(i, 1); }
+    const brilho = cena.add.ellipse(d.x, d.y - 40, 110, 130, 0xffd84a, 0.28)
+      .setBlendMode(Phaser.BlendModes.ADD).setDepth(10 + d.y / 100000);
+    const sprite = cena.add.image(d.x, d.y, 'lata_dourada').setOrigin(0.5, 0.95).setScale(0.3).setDepth(10 + d.y / 100000 + 0.000001);
+    if (mexer) {
+      cena.tweens.add({ targets: sprite, angle: { from: -8, to: 8 }, duration: 700, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+      cena.tweens.add({ targets: brilho, alpha: { from: 0.12, to: 0.4 }, scale: { from: 0.85, to: 1.1 }, duration: 900, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+    }
+    cena.lataDourada = { id: d.id, x: d.x, y: d.y, sprite, brilho };
+  },
+
+  // Aviso de que a lata dourada está no mapa (uma vez por abertura do jogo)
+  avisarDourada() {
+    const d = this.dourada;
+    if (!d || d.coletada || d.avisada) return;
+    d.avisada = true;
+    const n = this.premioDourada();
+    Interface.notificar({ tipo: 'dourada', imagem: 'assets/ui/lata_dourada.png', tempo: 5200,
+      titulo: 'Lata dourada no mapa!',
+      texto: `Uma lata dourada apareceu em algum lugar do bairro. Encontre e ganhe ${n} ${n === 1 ? 'lata' : 'latas'}!` });
+  },
+
   // A cada quadro: coleta latas, acha o objeto mais próximo e configura o botão A
   atualizar(cena) {
     const j = cena.jogador, inter = Conteudo.jogo().interacao || {};
+    // lata dourada: coleta ao passar por cima
+    const ld = cena.lataDourada;
+    if (ld && Math.hypot(ld.x - j.x, ld.y - j.y) <= (inter.distancia_lata || 56)) {
+      cena.lataDourada = null;
+      if (this.dourada) this.dourada.coletada = true;
+      const n = Progresso.coletarLataDourada(ld.id, this.premioDourada());
+      if (n) {
+        Efeitos.estouro(cena, ld.x, ld.y - 30);
+        Efeitos.textoSubindo(cena, ld.x, ld.y - 60, '+' + n);
+        Sons.tocar('lata');
+        HUD.atualizar();
+        Interface.notificar({ tipo: 'dourada', imagem: 'assets/ui/lata_dourada.png', titulo: 'Você achou a lata dourada!', latas: n });
+      }
+      cena.tweens.killTweensOf(ld.sprite); cena.tweens.killTweensOf(ld.brilho);
+      ld.brilho.destroy();
+      cena.tweens.add({ targets: ld.sprite, y: ld.y - 70, alpha: 0, scale: 0.45, duration: 400, onComplete: () => ld.sprite.destroy() });
+    }
     // latas: coleta automática ao passar por cima
     for (let i = cena.latas.length - 1; i >= 0; i--) {
       const l = cena.latas[i];

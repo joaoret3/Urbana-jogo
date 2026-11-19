@@ -203,6 +203,17 @@ const Progresso = {
     return true;
   },
 
+  // Lata dourada (v2.56): dá mais latas; o ponto fica vazio como o de uma lata comum.
+  // A notificação é feita pelo mapa. Devolve quantas latas deu.
+  coletarLataDourada(itemId, latas) {
+    const p = this.p(); if (!p || !(latas > 0)) return 0;
+    if (!p.latas_vazias.includes(itemId)) p.latas_vazias.push(itemId);
+    if (!p.itens_coletados.includes(itemId)) p.itens_coletados.push(itemId);
+    this.ganhar({ latas }, null);
+    this.concluirAcao();
+    return latas;
+  },
+
   // ---------------------------------------------------------------------------
   // BLACK BOOK E MUROS
   // ---------------------------------------------------------------------------

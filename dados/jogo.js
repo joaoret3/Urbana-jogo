@@ -30,7 +30,8 @@ URBANA_DADOS["jogo"] = {
       "xp": 10,
       "latas": 6
     },
-    "lata_coletavel": 1
+    "lata_coletavel": 1,
+    "lata_dourada": 20
   },
   "musica": "assets/audio/musica_lofi.mp3",
   "sons": {
