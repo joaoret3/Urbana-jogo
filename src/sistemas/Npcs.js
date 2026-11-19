@@ -9,10 +9,17 @@
 //  - De perto: abre um balão com uma fala curta e o botão A vira "Conversar com <nome>".
 //  - Na 1ª conversa as missões do personagem são liberadas (Missoes.encontrar) e só contam
 //    o que o jogador fizer dali em diante.
+//  - v2.57: com "andar": { "ativo": true, "raio": 300 } o personagem passeia perto do seu
+//    ponto no mapa (sem atravessar a colisão, carros ou outros personagens) e para quando o
+//    jogador chega perto ou há janela aberta. Para ficar leve no tablet, só andam os que
+//    estão perto da câmera, no máximo ANDANDO_MAX ao mesmo tempo.
 // =============================================================================
 const Npcs = {
   DISTANCIA_BALAO: 230,     // a partir daqui o balão aparece
   DISTANCIA_CONVERSA: 115,  // a partir daqui dá para conversar (botão A)
+  VELOCIDADE_ANDAR: 85,     // pixels por segundo de quem passeia (o jogador anda a 260)
+  ANDANDO_MAX: 6,           // quantos podem andar ao mesmo tempo
+  DISTANCIA_ATIVO: 1400,    // longe da câmera, o personagem fica parado (economiza processamento)
 
   chave(n) { return 'npc_' + n.id; },
 
@@ -47,7 +54,7 @@ const Npcs = {
           frames: cena.anims.generateFrameNumbers(k, { start: linha * colunas, end: linha * colunas + quadros - 1 }) });
       }
       const prop = 96 / aq, escala = cfg.AVATAR_ESCALA * prop;   // quadros maiores que 96 px ficam do mesmo tamanho
-      cena.add.ellipse(o.x, o.y, lq * 0.42 * escala, aq * 0.12 * escala, 0x0f0c14, 0.32).setDepth(9);
+      const sombra = cena.add.ellipse(o.x, o.y, lq * 0.42 * escala, aq * 0.12 * escala, 0x0f0c14, 0.32).setDepth(9);
       const sprite = cena.add.sprite(o.x, o.y, k, linha * colunas).setOrigin(0.5, 0.9).setScale(escala).setDepth(10 + o.y / 100000);
       sprite.anims.play(anim);
       // não dá para atravessar o personagem (só os pés bloqueiam, como no jogador)
@@ -64,7 +71,20 @@ const Npcs = {
       const nome = cena.add.text(0, 0, npc.nome || '', { fontFamily: '"Londrina Solid", Inter, sans-serif', fontSize: '18px',
         color: '#ffffff', backgroundColor: '#7b3bea', padding: { x: 8, y: 2 } }).setOrigin(0.5, 1);
       balao.add([fundo, texto, nome]);
-      cena.npcs.push({ id: npc.id, npc, x: o.x, y: o.y, sprite, sinal, balao, fundo, texto, nome, textoAtual: null });
+      const n = { id: npc.id, npc, x: o.x, y: o.y, sprite, sinal, balao, fundo, texto, nome, textoAtual: null,
+        sombra, pe, topoDy: topo - o.y };
+      const andar = npc.andar || {};
+      if (andar.ativo && colunas > 1) {
+        // animações de andar: linhas 1 baixo, 2 esquerda, 3 direita, 4 cima; coluna 1 = parado, as outras = passos
+        ['baixo', 'esquerda', 'direita', 'cima'].forEach((dir, l) => {
+          const ka = k + '_andar_' + dir;
+          if (!cena.anims.exists(ka)) cena.anims.create({ key: ka, frameRate: 9, repeat: -1,
+            frames: cena.anims.generateFrameNumbers(k, { start: l * colunas + 1, end: l * colunas + colunas - 1 }) });
+        });
+        n.andar = { k, colunas, casa: { x: o.x, y: o.y }, raio: Math.max(60, Math.min(1200, Number(andar.raio) || 300)),
+          estado: 'parado', ate: cena.time.now + 1000 + Math.random() * 3000, alvo: null, dir: 'baixo' };
+      }
+      cena.npcs.push(n);
     });
     this.atualizarSinais(cena);
   },
@@ -75,7 +95,7 @@ const Npcs = {
     const g = cena.add.graphics();
     const t = cena.add.text(0, 1, '!', { fontFamily: '"Londrina Solid", Inter, sans-serif', fontSize: '26px', color: '#1d1530' }).setOrigin(0.5);
     c.add([g, t]); c.g = g; c.t = t;
-    cena.tweens.add({ targets: c, y: y - 8, duration: 650, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+    cena.tweens.add({ targets: [g, t], y: '-=8', duration: 650, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
     return c;
   },
 
@@ -116,6 +136,7 @@ const Npcs = {
   // e devolve o personagem mais próximo dentro da distância de conversa (ou null)
   atualizar(cena) {
     const j = cena.jogador; if (!j || !cena.npcs) return null;
+    this.andarTodos(cena, j);
     let alvo = null, menor = Infinity;
     cena.npcs.forEach(n => {
       const d = Math.hypot(n.x - j.x, n.y - j.y);
@@ -129,6 +150,93 @@ const Npcs = {
       if (d <= this.DISTANCIA_CONVERSA && d < menor) { menor = d; alvo = n; }
     });
     return alvo;
+  },
+
+  // ---------------------------------------------------------------------------
+  // PASSEIO (v2.57)
+  // ---------------------------------------------------------------------------
+  andarTodos(cena, j) {
+    const dt = Math.min(100, cena.game.loop.delta || 16), agora = cena.time.now;
+    const cam = cena.cameras.main, cx = cam.midPoint.x, cy = cam.midPoint.y;
+    const parar = Interface.algumAberto();
+    let andando = 0;
+    cena.npcs.forEach(n => {
+      const a = n.andar; if (!a) return;
+      if (Math.hypot(n.x - cx, n.y - cy) > this.DISTANCIA_ATIVO) { if (a.estado === 'andando') this.ficarParado(n, agora); return; }
+      const perto = Math.hypot(n.x - j.x, n.y - j.y) <= this.DISTANCIA_BALAO;
+      if (perto || parar) {
+        // espera o jogador: para e olha para ele
+        if (a.estado === 'andando' || perto) {
+          const dx = j.x - n.x, dy = j.y - n.y;
+          a.dir = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'esquerda' : 'direita') : (dy < 0 ? 'cima' : 'baixo');
+          this.ficarParado(n, agora + 1500);
+        }
+        return;
+      }
+      if (a.estado === 'parado') {
+        if (agora < a.ate || andando >= this.ANDANDO_MAX) return;
+        const alvo = this.escolherAlvo(cena, n);
+        if (!alvo) { a.ate = agora + 1500; return; }
+        a.alvo = alvo; a.estado = 'andando';
+        const dx = alvo.x - n.x, dy = alvo.y - n.y;
+        a.dir = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'esquerda' : 'direita') : (dy < 0 ? 'cima' : 'baixo');
+        n.sprite.anims.play(a.k + '_andar_' + a.dir, true);
+      }
+      if (a.estado !== 'andando') return;
+      andando++;
+      const dx = a.alvo.x - n.x, dy = a.alvo.y - n.y, d = Math.hypot(dx, dy);
+      const passo = this.VELOCIDADE_ANDAR * dt / 1000;
+      if (d <= passo) { this.mover(n, a.alvo.x, a.alvo.y); this.ficarParado(n, agora + 1200 + Math.random() * 2800); return; }
+      const nx = n.x + dx / d * passo, ny = n.y + dy / d * passo;
+      if (!this.livre(cena, n, nx, ny) || Math.hypot(nx - j.x, ny - j.y) < 70) { this.ficarParado(n, agora + 1200); return; }
+      this.mover(n, nx, ny);
+    });
+  },
+
+  ficarParado(n, ate) {
+    const a = n.andar;
+    a.estado = 'parado'; a.ate = ate; a.alvo = null;
+    const linha = ['baixo', 'esquerda', 'direita', 'cima'].indexOf(a.dir);
+    n.sprite.anims.stop();
+    n.sprite.setFrame(Math.max(0, linha) * a.colunas);
+  },
+
+  // Ponto sorteado perto da "casa" do personagem, com o caminho em linha reta livre
+  escolherAlvo(cena, n) {
+    const a = n.andar;
+    for (let t = 0; t < 12; t++) {
+      const ang = Math.random() * Math.PI * 2, dist = 60 + Math.random() * a.raio;
+      const x = a.casa.x + Math.cos(ang) * dist, y = a.casa.y + Math.sin(ang) * dist * 0.75;
+      if (Math.hypot(x - n.x, y - n.y) < 50) continue;
+      if (this.caminhoLivre(cena, n, n.x, n.y, x, y)) return { x, y };
+    }
+    return null;
+  },
+
+  caminhoLivre(cena, n, x0, y0, x1, y1) {
+    const d = Math.hypot(x1 - x0, y1 - y0), passos = Math.max(1, Math.ceil(d / 16));
+    for (let i = 1; i <= passos; i++) {
+      if (!this.livre(cena, n, x0 + (x1 - x0) * i / passos, y0 + (y1 - y0) * i / passos)) return false;
+    }
+    return true;
+  },
+
+  // Os pés cabem neste ponto? (colisão do mapa + carros e outros personagens)
+  livre(cena, n, x, y) {
+    if (Conteudo.bloqueado(x - 14, y) || Conteudo.bloqueado(x + 14, y) || Conteudo.bloqueado(x, y - 6)) return false;
+    const corpos = cena.physics.overlapRect(x - 14, y - 10, 28, 14, false, true);
+    for (let i = 0; i < corpos.length; i++) if (corpos[i] !== n.pe.body) return false;
+    return true;
+  },
+
+  mover(n, x, y) {
+    const dx = x - n.x, dy = y - n.y;
+    n.x = x; n.y = y;
+    n.sprite.setPosition(x, y).setDepth(10 + y / 100000);
+    n.sombra.setPosition(x, y);
+    n.pe.setPosition(n.pe.x + dx, n.pe.y + dy); n.pe.body.updateFromGameObject();
+    n.sinal.setPosition(x, y + n.topoDy - 18);
+    n.balao.setPosition(x, y + n.topoDy - 14);
   },
 
   desenharBalao(n, t) {

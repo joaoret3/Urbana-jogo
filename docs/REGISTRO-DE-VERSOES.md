@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.57 — 19/11/2026
+
+**Personagens que andam pelo bairro:**
+- No editor (Personagens), o quadro **"Andar pelo bairro"** liga o passeio de cada personagem. Todos começam parados;
+  só anda quem for ligado. Em `dados/npcs.js`: `"andar": { "ativo": true, "raio": 300 }`.
+- O personagem passeia perto do ponto onde foi colocado no mapa (até a "distância do passeio"), sem atravessar a colisão,
+  carros ou outros personagens. Para quando o aluno chega perto (olhando para ele) ou quando há uma janela aberta.
+- Usa as linhas de andar da folha de sprites (1 baixo, 2 esquerda, 3 direita, 4 cima; coluna 1 parado, as outras passos).
+- Para ficar leve: só andam os que estão perto da câmera e no máximo 6 ao mesmo tempo.
+
 ## 2.56 — 19/11/2026
 
 **Lata dourada:**
