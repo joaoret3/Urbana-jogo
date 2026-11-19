@@ -211,7 +211,7 @@ const ObjetosDoMapa = {
   // Estilo "tag de spray" (L1): letra branca, contorno preto, sombra rosa e um escorrido de tinta
   desenharLetra(cena, pt, mexer) {
     const caixa = cena.add.container(pt.x, pt.y).setDepth(10 + pt.y / 100000);
-    const sombra = cena.add.ellipse(0, 0, 70, 20, 0x0f0c14, 0.3);
+    const sombra = cena.add.ellipse(0, 0, 50, 15, 0x0f0c14, 0.3);
     const corpo = cena.add.container(0, 0);
     const pingo = cena.add.graphics();
     pingo.fillStyle(0xff3c8e, 1).fillRoundedRect(3, -74, 11, 32, { tl: 0, tr: 0, bl: 5, br: 5 }).fillCircle(8.5, -42, 7.5);
@@ -219,8 +219,10 @@ const ObjetosDoMapa = {
       color: '#ffffff', stroke: '#111111', strokeThickness: 13,
       shadow: { offsetX: 4, offsetY: 5, color: '#ff3c8e', fill: true, stroke: true, blur: 0 } }).setOrigin(0.5, 1);
     corpo.add([pingo, texto]);
+    // mesmo tamanho da lata (≈ 89 px de altura, letra + escorrido), apoiada no chão
+    corpo.setScale(0.64).setY(22);
     caixa.add([sombra, corpo]);
-    if (mexer) cena.tweens.add({ targets: corpo, y: -10, duration: 800, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+    if (mexer) cena.tweens.add({ targets: corpo, y: 14, duration: 800, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
     return caixa;
   },
 

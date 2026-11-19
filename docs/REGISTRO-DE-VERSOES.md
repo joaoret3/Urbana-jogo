@@ -1,5 +1,10 @@
 # Urbana — registro de versões
 
+## 2.59 — 19/11/2026
+
+- As letras da missão "Coletar as letras da tag" ficaram do mesmo tamanho da lata (≈ 89 px de altura com o escorrido),
+  apoiadas no chão.
+
 ## 2.58 — 19/11/2026
 
 **Missão "Coletar as letras da tag":**
