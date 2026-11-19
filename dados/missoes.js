@@ -28,7 +28,7 @@ URBANA_DADOS["missoes"] = {
     {
       "id": "missao_003",
       "titulo": "Conhecendo a História",
-      "descricao": "Leia cinco fichas educativas.",
+      "descricao": "Leia cinco fichas de grafite.",
       "tipo": "ler_fichas",
       "meta": 5,
       "recompensa": {
@@ -54,7 +54,8 @@ URBANA_DADOS["missoes"] = {
       "tipo": "pintar_muros",
       "meta": 1,
       "recompensa": {
-        "xp": 10
+        "xp": 10,
+        "latas": 3
       }
     },
     {
@@ -75,15 +76,16 @@ URBANA_DADOS["missoes"] = {
       "tipo": "visitar_todos",
       "meta": 1,
       "recompensa": {
-        "moldura": "moldura_cmj"
+        "xp": 30,
+        "latas": 20
       }
     },
     {
       "id": "missao_008",
-      "titulo": "EXEMPLO – Muros da Alexandra",
+      "titulo": "Muros da alexandra. ",
       "descricao": "A Alexandra quer ver o bairro mais colorido: pinte dois muros livres.",
       "tipo": "pintar_muros",
-      "meta": 2,
+      "meta": 3,
       "personagem": "npc_alexandra",
       "recompensa": {
         "xp": 15,
@@ -92,7 +94,7 @@ URBANA_DADOS["missoes"] = {
     },
     {
       "id": "missao_009",
-      "titulo": "pri",
+      "titulo": "MISSAO DO GATO ",
       "descricao": "",
       "tipo": "visitar_murais",
       "meta": 1,

@@ -22,12 +22,12 @@ URBANA_DADOS["npcs"] = {
     },
     {
       "id": "npc_01",
-      "nome": "Dir. Priscilla",
+      "nome": "Vice Priscilla",
       "retrato": "assets/npcs/npc_01/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
-      "fala_inicial": "",
-      "fala_andamento": "",
-      "fala_concluida": "",
+      "fala_inicial": "Alguém pegou meu biscoito... Acho que foi aquele gatinho de novo. Ache ele pra mim!",
+      "fala_andamento": "Gatinhoo...",
+      "fala_concluida": "Muito obrigada! Agora esse gatinho não foge mais!",
       "sprite": {
         "arquivo": "assets/npcs/npc_01/sprite.png",
         "largura_quadro": 96,
@@ -57,7 +57,7 @@ URBANA_DADOS["npcs"] = {
     {
       "id": "npc_03",
       "nome": "",
-      "retrato": "",
+      "retrato": "assets/npcs/npc_03/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
       "fala_inicial": "",
       "fala_andamento": "",
@@ -67,7 +67,24 @@ URBANA_DADOS["npcs"] = {
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
-        "quadros": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      }
+    },
+    {
+      "id": "npc_04",
+      "nome": "",
+      "retrato": "",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "",
+        "largura_quadro": 96,
+        "altura_quadro": 96,
+        "linha_parado": 1,
+        "quadros": 7,
         "quadros_por_segundo": 5
       }
     }

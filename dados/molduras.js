@@ -9,7 +9,7 @@ URBANA_DADOS["molduras"] = {
       "cor": "#ab3ff3",
       "fundo": "assets/molduras/moldura_latas_emblema.webp",
       "encaixe": {
-        "x": 50.5,
+        "x": 50,
         "y": 54.3,
         "raio": 39,
         "personagem": 105

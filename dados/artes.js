@@ -618,6 +618,54 @@ URBANA_DADOS["artes"] = {
         "observacao": ""
       },
       "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_051",
+      "titulo": "Manu TAG",
+      "autoria": "Manuela",
+      "imagem": "assets/artes/arte_051.webp",
+      "categoria": "intermediaria",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_052",
+      "titulo": "York missão",
+      "autoria": "Bruno",
+      "imagem": "assets/artes/arte_052.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_053",
+      "titulo": "Davi TAG",
+      "autoria": "Davi",
+      "imagem": "assets/artes/arte_053.webp",
+      "categoria": "intermediaria",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_054",
+      "titulo": "Kns TAG",
+      "autoria": "Kayo",
+      "imagem": "assets/artes/arte_054.webp",
+      "categoria": "intermediaria",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
     }
   ]
 };
