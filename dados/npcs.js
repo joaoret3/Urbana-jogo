@@ -53,6 +53,23 @@ URBANA_DADOS["npcs"] = {
         "quadros": 7,
         "quadros_por_segundo": 5
       }
+    },
+    {
+      "id": "npc_03",
+      "nome": "",
+      "retrato": "",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_03/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 1,
+        "quadros_por_segundo": 5
+      }
     }
   ]
 };
