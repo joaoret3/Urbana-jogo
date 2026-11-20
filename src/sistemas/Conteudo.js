@@ -19,7 +19,7 @@ const Conteudo = {
   avisos: [],
   alcancavel: null,    // grade com as áreas que o jogador consegue alcançar a partir da escola
 
-  TIPOS_MISSAO: ['visitar_murais', 'ler_fichas', 'concluir_quizzes', 'pintar_muros', 'coletar_latas', 'visitar_todos', 'mini_jogo', 'coletar_letras'],
+  TIPOS_MISSAO: ['visitar_murais', 'ler_fichas', 'concluir_quizzes', 'pintar_muros', 'coletar_latas', 'visitar_todos', 'mini_jogo', 'coletar_letras', 'achar_e_voltar'],
   // v2.54: mini-jogos que uma missão pode pedir (src/telas/MiniJogos.js) e as dificuldades
   MINI_JOGOS: ['quebra_cabeca', 'memoria', 'sequencia', 'pintar', 'cores'],
   DIFICULDADES: ['facil', 'normal', 'dificil'],
@@ -241,6 +241,7 @@ const Conteudo = {
         if (mj.dificuldade && !this.DIFICULDADES.includes(mj.dificuldade)) this.erro(onde, `Dificuldade "${mj.dificuldade}" desconhecida. Use: ${this.DIFICULDADES.join(', ')}.`);
         if (!r.arte && (mj.jogo === 'quebra_cabeca' || mj.jogo === 'pintar')) this.aviso(onde, 'Este mini-jogo mostra uma arte, mas a missão não tem arte-prêmio: o jogo usa a primeira arte publicada.');
       }
+      if (m.tipo === 'achar_e_voltar' && !m.personagem) this.erro(onde, 'Missão de achar e voltar precisa de um personagem (é para ele que o aluno volta).');   // v2.60
       if (m.tipo === 'coletar_letras') {   // v2.58
         const ls = this.letrasDe(m);
         if (!ls.length || ls.length > 10) this.erro(onde, 'Escreva de 1 a 10 letras em "letras" (ex.: "RET").');
@@ -445,7 +446,8 @@ const Conteudo = {
       coletar_latas: this.mapa ? this.mapa.latas.length : 0,
       visitar_todos: nGrafites > 0 ? 1 : 0,
       mini_jogo: 1,
-      coletar_letras: this.mapa ? this.mapa.latas.length : 0   // as letras são sorteadas entre os pontos de lata
+      coletar_letras: this.mapa ? this.mapa.latas.length : 0,   // as letras são sorteadas entre os pontos de lata
+      achar_e_voltar: this.mapa && this.mapa.latas.length ? 1 : 0   // v2.60: o esconderijo é um ponto de lata
     };
     return disponivel[tipo] || 0;
   }

@@ -44,6 +44,10 @@ const Missoes = {
       const pp = Salvamento.atual;
       return pp && this.liberada(m) && (pp.minijogos_vencidos || []).includes(m.id) ? 1 : 0;
     }
+    if (m.tipo === 'achar_e_voltar') {   // v2.60: só conta quando o achado é entregue ao personagem
+      const pa = Salvamento.atual, ea = pa && pa.achados[m.id];
+      return ea && ea.entregue && this.liberada(m) ? 1 : 0;
+    }
     if (m.tipo === 'coletar_letras') {   // v2.58: letras pegas no mapa
       const pp = Salvamento.atual, est = pp && pp.letras_missoes[m.id];
       return est && this.liberada(m) ? Math.min(m.meta, est.pegas.length) : 0;

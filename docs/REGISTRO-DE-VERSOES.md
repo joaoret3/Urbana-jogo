@@ -1,5 +1,21 @@
 # Urbana — registro de versões
 
+## 2.60 — 20/11/2026
+
+**Missão "Achar algo escondido e voltar ao personagem" — o gatinho da Vice Priscilla:**
+- Tipo novo de missão (`"tipo": "achar_e_voltar"`, com `"achado": { nome, imagem, mensagem, fala_entrega, foge, segue, pegadas }`).
+  Novo arquivo: src/sistemas/Achados.js. No editor: Missões > "Achar algo escondido e voltar ao personagem".
+- A missão provisória `missao_009` ("MISSAO DO GATO", da Vice Priscilla) virou "O gatinho do biscoito" (mesmo id):
+  +10 XP e +15 latas. Quem já tinha concluído a missão provisória não vê o gatinho.
+- Depois da conversa, o gatinho (G1 com o biscoito, assets/missoes/gato_laranjinha.png) se esconde num ponto de lata
+  sorteado, longe da personagem, salvo para aquele aluno. A personagem dá uma dica da direção ("nordeste, para cima e à
+  direita") e da distância. Pegadas no chão levam ao esconderijo; perto dele aparece o balão "miau!" com miado
+  (assets/audio/miau.wav). Na primeira aproximação ele foge para outro esconderijo.
+- Botão A "Pegar o gatinho": aviso "Gatinho encontrado!" com "Volte até Vice Priscilla para receber sua recompensa".
+  O gatinho passa a seguir o aluno (também depois de fechar e abrir o jogo); a personagem mostra "!" verde e
+  "Achou meu gatinho? Fala comigo!". Na conversa, ela agradece, a missão termina e o gatinho fica sentado ao lado dela.
+- Partidas salvas ganham o campo `achados` (vazio).
+
 ## 2.59 — 19/11/2026
 
 - As letras da missão "Coletar as letras da tag" ficaram do mesmo tamanho da lata (≈ 89 px de altura com o escorrido),

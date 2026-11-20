@@ -44,6 +44,9 @@ const ObjetosDoMapa = {
     // ---------- LETRAS DAS MISSÕES "coletar_letras" (v2.58) ----------
     this.criarLetras(cena);
 
+    // ---------- ACHADOS: missões "achar e voltar", ex.: o gatinho (v2.60, sistemas/Achados.js) ----------
+    Achados.criar(cena);
+
     // ---------- LATA DOURADA (v2.56) ----------
     // Uma por abertura do jogo, num ponto de lata sorteado. A escolha não é salva:
     // ao abrir o jogo de novo, outra lata dourada aparece em outro lugar.
@@ -129,6 +132,7 @@ const ObjetosDoMapa = {
     if (!this.premioDourada() || !pontos.length) return;
     if (!this.dourada || this.dourada.partida !== p.id) {
       const ocupados = this.pontosDeLetras(p);
+      Achados.pontosOcupados(p).forEach(id => ocupados.add(id));
       const livres = pontos.filter(o => !p.latas_vazias.includes(o.name) && !ocupados.has(o.name));
       const lista = livres.length ? livres : pontos;
       const o = lista[Math.floor(Math.random() * lista.length)];
@@ -175,6 +179,7 @@ const ObjetosDoMapa = {
     if (est && est.pontos && est.pontos.length === letras.length) return est;
     const usados = this.pontosDeLetras(p);
     if (this.dourada && !this.dourada.coletada) usados.add(this.dourada.id);
+    Achados.pontosOcupados(p).forEach(id => usados.add(id));
     const todos = Conteudo.mapa.latas.filter(o => !usados.has(o.name));
     for (let i = todos.length - 1; i > 0; i--) { const k = Math.floor(Math.random() * (i + 1)); const t = todos[i]; todos[i] = todos[k]; todos[k] = t; }
     const escolhidos = [];
@@ -309,6 +314,8 @@ const ObjetosDoMapa = {
 
     // personagens que dão missões (Npcs.js): ao lado de um deles, conversar tem prioridade
     const npc = Npcs.atualizar(cena);
+    const achado = Achados.atualizar(cena);   // v2.60: gatinho escondido ao alcance
+    if (achado) alvo = { tipo: 'achado', obj: achado };
     if (npc) alvo = { tipo: 'npc', obj: npc };
 
     // destaque visual de proximidade (RF-MAP-014)
@@ -320,7 +327,9 @@ const ObjetosDoMapa = {
     cena.muros.forEach(m => m.contorno.setVisible(!!alvo && alvo.obj === m));
 
     if (!alvo) { HUD.definirAcao(null); return; }
-    if (alvo.tipo === 'npc') {
+    if (alvo.tipo === 'achado') {
+      HUD.definirAcao('Pegar o ' + alvo.obj.cfg.nome, () => Achados.encontrar(cena, alvo.obj));
+    } else if (alvo.tipo === 'npc') {
       HUD.definirAcao('Conversar com ' + (alvo.obj.npc.nome || 'personagem'), () => Npcs.conversar(cena, alvo.obj));
     } else if (alvo.tipo === 'pin') {
       HUD.definirAcao('Ver grafite: ' + alvo.obj.grafite.titulo, () => cena.abrirFicha(alvo.obj.id, true));

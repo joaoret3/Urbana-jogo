@@ -33,6 +33,7 @@ class CenaCarga extends Phaser.Scene {
     this.load.image('pin_concluido', 'assets/ui/pins/pin_concluido.png');
     this.load.image('lata', 'assets/ui/lata.png');
     this.load.image('lata_dourada', 'assets/ui/lata_dourada.png');   // v2.56
+    Achados.carregar(this);   // v2.60: imagens das missões "achar e voltar" (ex.: gatinho)
     this.load.image('muro_livre', 'assets/ui/muro_livre.webp');
     this.load.image('muro_base', 'assets/ui/muro_base.webp');
     Carros.texturas().forEach(t => this.load.image(t.chave, t.arquivo));   // veículos, 5 vistas cada (v2.28)

@@ -1263,3 +1263,13 @@ body.controles-grandes { --bt: 64px; }
 }
 .missao-letras b.pega { background: #ffffff; color: #111; border: 2px solid #111; box-shadow: 2px 3px 0 #ff3c8e; }
 .missao-letras b.falta { border: 2px dashed currentColor; opacity: .55; }
+
+/* ===== v2.60: missão "achar e voltar" (gatinho) ===== */
+.painel-achado { text-align: center; }
+.achado-imagem { display: block; width: 120px; height: auto; margin: 4px auto 8px; filter: drop-shadow(0 6px 4px rgba(0, 0, 0, .35)); }
+.achado-texto { margin: 4px 0; line-height: 1.45; }
+.achado-volte { margin: 6px 0; font-weight: 700; color: #ffe14d; }
+.achado-rec { margin: 8px 0 0; opacity: .9; }
+.missao-etapa { margin: 4px 0; font-weight: 700; }
+.missao-etapa.feita { color: #9be21b; }
+.missao-dica { margin: 4px 0 6px; font-style: italic; opacity: .9; }

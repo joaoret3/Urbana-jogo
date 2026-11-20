@@ -24,6 +24,7 @@ const TelaMissoes = {
       s.missao.personagem ? E('p', { class: 'missao-personagem' }, Interface.comIcone('pessoa', 'Missão de ' + nomeNpc(s.missao))) : null,
       s.estado === 'trancada' ? null : E('p', { class: 'missao-descricao' }, s.missao.descricao),
       Missoes.elementoLetras(s),
+      Achados.elementoEtapa(s, false),
       s.estado === 'indisponivel'
         ? E('p', { class: 'missao-nota' }, 'Ainda não há conteúdo suficiente no jogo para esta missão.')
         : s.estado === 'trancada'

@@ -94,15 +94,24 @@ URBANA_DADOS["missoes"] = {
     },
     {
       "id": "missao_009",
-      "titulo": "MISSAO DO GATO ",
-      "descricao": "",
-      "tipo": "visitar_murais",
+      "titulo": "O gatinho do biscoito",
+      "descricao": "Um gatinho laranja passou correndo e levou meu biscoito! Me ajuda a achar ele? Ele adora se esconder pelo bairro.",
+      "tipo": "achar_e_voltar",
       "meta": 1,
+      "personagem": "npc_01",
       "recompensa": {
-        "xp": 5,
-        "latas": 3
+        "xp": 10,
+        "latas": 15
       },
-      "personagem": "npc_01"
+      "achado": {
+        "nome": "gatinho",
+        "imagem": "assets/missoes/gato_laranjinha.png",
+        "mensagem": "Achou! Ele estava com o biscoito da Vice Priscilla.",
+        "fala_entrega": "Você achou meu gatinho! E ainda trouxe meu biscoito. Valeu demais, toma sua recompensa!",
+        "foge": true,
+        "segue": true,
+        "pegadas": true
+      }
     },
     {
       "id": "missao_010",

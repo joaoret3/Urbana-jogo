@@ -42,7 +42,8 @@ URBANA_DADOS["jogo"] = {
     "erro": "assets/audio/erro.mp3",
     "nivel": "assets/audio/nivel.mp3",
     "descoberta": "assets/audio/descoberta.mp3",
-    "missao": "assets/audio/missao.mp3"
+    "missao": "assets/audio/missao.mp3",
+    "miau": "assets/audio/miau.wav"
   },
   "categorias_arte": {
     "_leia": "A categoria indica a etapa do jogo em que a arte aparece. Não é uma nota para o trabalho do estudante.",

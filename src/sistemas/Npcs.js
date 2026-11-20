@@ -111,11 +111,12 @@ const Npcs = {
   atualizarSinais(cena) {
     (cena.npcs || []).forEach(n => {
       const e = this.estado(n.id), s = n.sinal;
+      const volta = e === 'andamento' && Achados.aguardando(n.id);   // v2.60: achado esperando entrega
       s.setVisible(e === 'novo' || e === 'andamento');
       s.g.clear();
-      s.g.fillStyle(e === 'novo' ? 0xffe14d : 0x9be7ff, 1).lineStyle(3, 0x1d1530, 1);
+      s.g.fillStyle(e === 'novo' ? 0xffe14d : volta ? 0x9be21b : 0x9be7ff, 1).lineStyle(3, 0x1d1530, 1);
       s.g.fillCircle(0, 0, 16).strokeCircle(0, 0, 16);
-      s.t.setText(e === 'novo' ? '!' : '…');
+      s.t.setText(e === 'novo' || volta ? '!' : '…');
     });
   },
 
@@ -126,6 +127,10 @@ const Npcs = {
     if (e === 'andamento') {
       const s = Missoes.doPersonagem(n.id).map(m => Missoes.situacao(m)).find(x => x.estado === 'andamento');
       if (s && s.missao.tipo === 'mini_jogo') return 'Topa o desafio? Fala comigo!';   // v2.54
+      if (s && s.missao.tipo === 'achar_e_voltar') {   // v2.60
+        const nome = Achados.cfg(s.missao).nome;
+        return Achados.aguardando(n.id) ? `Achou meu ${nome}? Fala comigo!` : `Cadê meu ${nome}? Me ajuda!`;
+      }
       return s ? `${s.missao.titulo}: ${s.feito}/${s.meta}` : (npc.fala_chamada || 'Oi!');
     }
     const f = (npc.fala_concluida || 'Valeu!').replace(/^EXEMPLO\s*[–-]\s*/, '');
@@ -257,12 +262,14 @@ const Npcs = {
     cena.pararJogador();
     const primeira = Missoes.encontrar(n.id);
     if (primeira) ObjetosDoMapa.criarLetras(cena);   // v2.58: letras de missões deste personagem aparecem agora
+    if (primeira) Achados.criar(cena);               // v2.60: o gatinho se esconde agora
+    const agradece = primeira ? null : Achados.entregar(cena, n);   // v2.60: trouxe o gatinho → conclui a missão
     if (primeira) {
       Sons.tocar('descoberta');
       Efeitos.estouro(cena, n.x, n.y - 80, 24);
     }
     const E = Interface.el.bind(Interface), npc = n.npc, e = this.estado(n.id);
-    const fala = primeira ? (npc.fala_inicial || npc.fala_chamada) : e === 'concluido' ? npc.fala_concluida : (npc.fala_andamento || npc.fala_inicial);
+    const fala = agradece || (primeira ? (npc.fala_inicial || npc.fala_chamada) : e === 'concluido' ? npc.fala_concluida : (npc.fala_andamento || npc.fala_inicial));
     const missoes = Missoes.doPersonagem(n.id).map(m => Missoes.situacao(m)).filter(s => s.estado !== 'indisponivel');
     const rotulo = { andamento: 'Em andamento', concluida: 'Concluída', trancada: '' };
     let janela;
@@ -279,6 +286,7 @@ const Npcs = {
             E('span', { class: 'missao-selo' }, s.estado === 'concluida' ? Interface.comIcone('ok', rotulo.concluida) : Interface.comIcone('play', rotulo.andamento))),
           E('p', { class: 'missao-descricao' }, s.missao.descricao),
           Missoes.elementoLetras(s),
+          Achados.elementoEtapa(s, true),
           E('div', { class: 'missao-progresso' },
             E('div', { class: 'barra', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(s.meta), 'aria-valuenow': String(s.feito) },
               E('div', { class: 'barra-preenchimento', style: { width: Math.round(100 * s.feito / s.meta) + '%' } })),
