@@ -666,6 +666,32 @@ URBANA_DADOS["artes"] = {
         "observacao": ""
       },
       "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_055",
+      "titulo": "Diana TAG",
+      "autoria": "Diana",
+      "imagem": "assets/artes/arte_055.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_056",
+      "titulo": "Maçã STICKER",
+      "autoria": "Elloa ",
+      "imagem": "assets/artes/arte_056.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     }
   ]
 };

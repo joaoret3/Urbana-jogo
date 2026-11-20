@@ -39,6 +39,10 @@ URBANA_DADOS["npcs"] = {
         "linha_parado": 1,
         "quadros": 1,
         "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": false,
+        "raio": 300
       }
     },
     {
@@ -56,6 +60,10 @@ URBANA_DADOS["npcs"] = {
         "linha_parado": 1,
         "quadros": 7,
         "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": false,
+        "raio": 300
       }
     },
     {
@@ -82,7 +90,7 @@ URBANA_DADOS["npcs"] = {
     {
       "id": "npc_04",
       "nome": "",
-      "retrato": "",
+      "retrato": "assets/npcs/npc_04/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
       "fala_inicial": "",
       "fala_andamento": "",
@@ -115,6 +123,27 @@ URBANA_DADOS["npcs"] = {
         "linha_parado": 1,
         "quadros": 1,
         "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": false,
+        "raio": 300
+      }
+    },
+    {
+      "id": "npc_06",
+      "nome": "Geraldo",
+      "retrato": "assets/npcs/npc_06/retrato.webp",
+      "fala_chamada": "Ô turminha! ",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_06/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 1,
+        "quadros_por_segundo": 1
       },
       "andar": {
         "ativo": false,

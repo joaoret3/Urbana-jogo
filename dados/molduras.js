@@ -26,6 +26,42 @@ URBANA_DADOS["molduras"] = {
         "raio": 36,
         "personagem": 105
       }
+    },
+    {
+      "id": "moldura_01",
+      "nome": "Nova moldura",
+      "cor": "#0fd3f5",
+      "fundo": "assets/molduras/moldura_01_emblema.webp",
+      "encaixe": {
+        "x": 47.5,
+        "y": 47,
+        "raio": 35.5,
+        "personagem": 105
+      }
+    },
+    {
+      "id": "moldura_02",
+      "nome": "Nova moldura",
+      "cor": "#22d3ee",
+      "fundo": "assets/molduras/moldura_02_emblema.webp",
+      "encaixe": {
+        "x": 49.5,
+        "y": 50.5,
+        "raio": 34.5,
+        "personagem": 95
+      }
+    },
+    {
+      "id": "moldura_03",
+      "nome": "Nova moldura",
+      "cor": "#22d3ee",
+      "fundo": "assets/molduras/moldura_03_emblema.webp",
+      "encaixe": {
+        "x": 50,
+        "y": 58,
+        "raio": 38,
+        "personagem": 97
+      }
     }
   ]
 };
