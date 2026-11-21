@@ -8,7 +8,7 @@
 /* ---------- FONTES (arquivos originais em assets/fontes) ----------
    As fontes ficam em estilo/fontes.css (embutidas, para funcionar sem servidor).
    --fonte-texto  = Londrina Solid (todos os textos)
-   --fonte-titulo = Sedgwick Ave Display (títulos)
+   --fonte-titulo = Londrina Solid (títulos; até a v2.61 era Sedgwick Ave Display)
    A Inter fica como reserva para letras e símbolos que essas fontes não têm. Os ícones são SVG (src/sistemas/Icones.js). */
 
 /* ---------- CORES E MEDIDAS ---------- */
@@ -32,7 +32,7 @@
   --erro: #ff4d5e;
 
   --fonte-texto: 'Londrina Solid', 'Inter', system-ui, sans-serif;
-  --fonte-titulo: 'Sedgwick Ave Display', 'Londrina Solid', 'Inter', system-ui, sans-serif;
+  --fonte-titulo: 'Londrina Solid', 'Inter', system-ui, sans-serif;   /* v2.62: opção T6 */
 
   --raio: 14px;
   --sombra-adesivo: 5px 5px 0 var(--tinta);   /* sombra "de adesivo" dos botões */
@@ -57,8 +57,8 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 
 /* ---------- TÍTULO ESTILO GRAFITE ---------- */
 .titulo-grafite {
-  font-family: var(--fonte-titulo); font-style: italic; font-weight: 900;
-  text-transform: uppercase; letter-spacing: .01em; line-height: 1.05;
+  font-family: var(--fonte-titulo); font-style: normal; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .02em; line-height: 1.05;
   color: var(--amarelo);
   -webkit-text-stroke: 1.5px var(--tinta); paint-order: stroke fill;
   text-shadow: 3px 3px 0 var(--rosa), 6px 6px 0 var(--tinta);
@@ -431,7 +431,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
 .hud-acao { right: 28px; bottom: 28px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .hud-botao-a {
   width: 96px; height: 96px; border-radius: 50%; cursor: pointer;
-  font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 2.6rem; color: var(--tinta);
+  font-family: var(--fonte-titulo); font-style: normal; font-weight: 900; font-size: 2.6rem; color: var(--tinta);
   background: var(--lima); border: 4px solid var(--tinta); box-shadow: 5px 5px 0 var(--tinta);
 }
 .hud-botao-a[disabled] { background: #4b4458; color: #8f879b; box-shadow: 3px 3px 0 var(--tinta); cursor: default; opacity: .8; }
@@ -484,7 +484,7 @@ body { font-family: var(--fonte-texto); color: var(--texto); font-size: 18px; li
   transition: opacity .4s, transform .4s;
 }
 .conquista.saindo { opacity: 0; transform: translateX(30px); }
-.conquista strong { font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 1.3rem; text-transform: uppercase; }
+.conquista strong { font-family: var(--fonte-titulo); font-style: normal; font-weight: 900; font-size: 1.3rem; text-transform: uppercase; }
 .conquista p { margin: 2px 0 0; }
 .conquista-icone {
   flex: none; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
@@ -878,7 +878,7 @@ body.menos-movimento *, body.menos-movimento *::before, body.menos-movimento *::
   flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center;
   padding: 24px max(24px, env(safe-area-inset-right)) 24px max(24px, env(safe-area-inset-left));
 }
-#aviso-girar h2 { margin: 0; font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 2rem; text-transform: uppercase; color: var(--amarelo); }
+#aviso-girar h2 { margin: 0; font-family: var(--fonte-titulo); font-style: normal; font-weight: 900; font-size: 2rem; text-transform: uppercase; color: var(--amarelo); }
 #aviso-girar p { margin: 0; max-width: 28ch; font-size: 1.15rem; }
 #aviso-girar small { max-width: 34ch; opacity: .75; font-size: .85rem; }
 .girar-icone { position: relative; width: 120px; height: 120px; }

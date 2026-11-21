@@ -1,5 +1,12 @@
 # Urbana — registro de versões
 
+## 2.62 — 20/11/2026
+
+- **Fonte dos títulos (opção T6):** títulos de janelas, avisos e telas passam a usar **Londrina Solid** (a mesma dos
+  botões, já embutida no jogo), em pé, com o mesmo amarelo, contorno e sombra rosa. Antes: Sedgwick Ave Display, em
+  itálico. A Sedgwick continua só nas letras da missão da tag (estilo de pichação). Só mudou estilo/urbana.css
+  (`--fonte-titulo`); nenhum arquivo de fonte novo.
+
 ## 2.61 — 20/11/2026
 
 - **Parede invisível na frente da escola (corrigida):** veículos desenhados na diagonal (NE, NW, SE, SW) usavam um
