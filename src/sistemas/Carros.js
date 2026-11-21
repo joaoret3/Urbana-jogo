@@ -106,6 +106,26 @@ const Carros = {
     };
   },
 
+  // Caixas de colisão de um veículo. De lado, de frente ou de costas: o retângulo "base".
+  // Na diagonal: 4 caixas ao longo do comprimento, seguindo a inclinação do desenho
+  // (NE e SW sobem para a direita "/", NW e SE descem para a direita "\").
+  caixas(o, g) {
+    const d = this.direcao(o);
+    if (d.vista !== 'diag_frente' && d.vista !== 'diag_costas') return [g.base];
+    const m = this.modelo(o.modelo), w = this.largura(o), k = this.ACHATAMENTO;
+    const L = w * 0.94, C = w * m.corpo, ext = m.alto * w * 0.35;   // só um pouco da altura: dá para passar por trás
+    const sobe = d.id === 'NE' || d.id === 'SW';
+    const bw = (L + C) * 0.72, bh = bw * k;          // o mesmo retângulo de antes...
+    const n = 4, lado = C * 0.95, alt = Math.max(lado * k, w * 0.14);
+    const caixas = [];
+    for (let i = 0; i < n; i++) {                    // ...coberto só na diagonal, de canto a canto
+      const f = i / (n - 1) - 0.5;
+      const cx = o.x + f * (bw - lado), cy = o.y + (sobe ? -1 : 1) * f * (bh - alt);
+      caixas.push({ x0: cx - lado / 2, x1: cx + lado / 2, y0: cy - alt / 2 - ext, y1: cy + alt / 2 });
+    }
+    return caixas;
+  },
+
   criar(cena) {
     cena.carros = [];
     ((Conteudo.mapa && Conteudo.mapa.carros) || []).forEach(o => {
@@ -113,10 +133,14 @@ const Carros = {
       if (!cena.textures.exists(g.textura)) return;
       const img = cena.add.image(o.x, o.y, g.textura).setOrigin(0.5, g.oy).setDisplaySize(g.dw, g.dh)
         .setFlipX(g.espelhar).setDepth(10 + g.chao.y1 / 100000);
-      const b = g.base, zona = cena.add.zone((b.x0 + b.x1) / 2, (b.y0 + b.y1) / 2, b.x1 - b.x0, b.y1 - b.y0);
-      cena.physics.add.existing(zona, true);
-      if (cena.jogador) cena.physics.add.collider(cena.jogador, zona);
-      cena.carros.push({ id: o.name, img, zona, zonas: [zona] });
+      // v2.61: na diagonal, uma fileira de caixas ao longo do corpo (um retângulo só bloqueava os cantos vazios)
+      const zonas = this.caixas(o, g).map(b => {
+        const zona = cena.add.zone((b.x0 + b.x1) / 2, (b.y0 + b.y1) / 2, b.x1 - b.x0, b.y1 - b.y0);
+        cena.physics.add.existing(zona, true);
+        if (cena.jogador) cena.physics.add.collider(cena.jogador, zona);
+        return zona;
+      });
+      cena.carros.push({ id: o.name, img, zona: zonas[0], zonas });
     });
   }
 };

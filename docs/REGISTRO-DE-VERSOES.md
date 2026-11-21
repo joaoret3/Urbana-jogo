@@ -1,5 +1,13 @@
 # Urbana — registro de versões
 
+## 2.61 — 20/11/2026
+
+- **Parede invisível na frente da escola (corrigida):** veículos desenhados na diagonal (NE, NW, SE, SW) usavam um
+  retângulo de colisão do tamanho da diagonal inteira, que bloqueava os cantos vazios (ex.: o caminhão-baú na calçada da
+  escola). Agora usam 4 caixas menores ao longo do corpo do veículo e só um pouco da altura do baú, então dá para passar
+  por trás dele. Veículos de lado, de frente ou de costas não mudaram. (src/sistemas/Carros.js, `Carros.caixas`)
+- **Lata dourada sem o brilho em volta.** Ela continua balançando.
+
 ## 2.60 — 20/11/2026
 
 **Missão "Achar algo escondido e voltar ao personagem" — o gatinho da Vice Priscilla:**

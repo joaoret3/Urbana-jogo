@@ -143,14 +143,11 @@ const ObjetosDoMapa = {
     // a lata comum daquele ponto dá lugar à dourada
     const i = cena.latas.findIndex(l => l.id === d.id);
     if (i >= 0) { cena.latas[i].sprite.destroy(); cena.latas.splice(i, 1); }
-    const brilho = cena.add.ellipse(d.x, d.y - 40, 110, 130, 0xffd84a, 0.28)
-      .setBlendMode(Phaser.BlendModes.ADD).setDepth(10 + d.y / 100000);
     const sprite = cena.add.image(d.x, d.y, 'lata_dourada').setOrigin(0.5, 0.95).setScale(0.3).setDepth(10 + d.y / 100000 + 0.000001);
     if (mexer) {
       cena.tweens.add({ targets: sprite, angle: { from: -8, to: 8 }, duration: 700, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
-      cena.tweens.add({ targets: brilho, alpha: { from: 0.12, to: 0.4 }, scale: { from: 0.85, to: 1.1 }, duration: 900, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
     }
-    cena.lataDourada = { id: d.id, x: d.x, y: d.y, sprite, brilho };
+    cena.lataDourada = { id: d.id, x: d.x, y: d.y, sprite };   // v2.61: sem o brilho em volta
   },
 
   // ---------------------------------------------------------------------------
@@ -281,8 +278,7 @@ const ObjetosDoMapa = {
         HUD.atualizar();
         Interface.notificar({ tipo: 'dourada', imagem: 'assets/ui/lata_dourada.png', titulo: 'Você achou a lata dourada!', latas: n });
       }
-      cena.tweens.killTweensOf(ld.sprite); cena.tweens.killTweensOf(ld.brilho);
-      ld.brilho.destroy();
+      cena.tweens.killTweensOf(ld.sprite);
       cena.tweens.add({ targets: ld.sprite, y: ld.y - 70, alpha: 0, scale: 0.45, duration: 400, onComplete: () => ld.sprite.destroy() });
     }
     // latas: coleta automática ao passar por cima
