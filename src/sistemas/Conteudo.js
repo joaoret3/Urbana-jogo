@@ -263,6 +263,7 @@ const Conteudo = {
       else imagens.push([onde, s.arquivo]);
       if (n.retrato) imagens.push([onde, n.retrato]);
       if (!(Number(s.largura_quadro) > 0 && Number(s.altura_quadro) > 0)) this.erro(onde, 'Tamanho do quadro inválido.');
+      if (n.andar && n.andar.ativo && ((this.dados.missoes || {}).missoes || []).some(m => m.personagem === n.id)) this.aviso(onde, 'Este personagem anda pelo bairro, então não conversa: as missões dele não aparecem no jogo.');   // v2.63
       if (this.mapa && !this.mapa.npcs.some(o => o.name === n.id)) this.aviso(onde, 'Ainda não foi colocado no mapa (Editor > Mapa > Colocar personagem): suas missões não aparecem.');
     });
 

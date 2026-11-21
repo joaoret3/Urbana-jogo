@@ -1,5 +1,14 @@
 # Urbana — registro de versões
 
+## 2.63 — 20/11/2026
+
+- **Personagens que andam pelo bairro viram figurantes:** com "Este personagem anda pelo bairro" ligado, o personagem
+  não mostra balão nem sinal, não tem botão de conversa e não espera o jogador (só desvia dele). Missões ligadas a ele
+  não aparecem; o editor avisa.
+- **Missão de letras concluída:** ao pegar a última letra abre a janela "Missão concluída!" com as letras da tag, a arte
+  liberada no Black Book (imagem, título e autoria cadastrados), a recompensa e o botão "Ver no Black Book".
+- O aviso de cada letra usa "Letras da tag" quando a missão está sem título.
+
 ## 2.62 — 20/11/2026
 
 - **Fonte dos títulos (opção T6):** títulos de janelas, avisos e telas passam a usar **Londrina Solid** (a mesma dos

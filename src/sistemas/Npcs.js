@@ -108,8 +108,12 @@ const Npcs = {
     return ms.every(m => p.missoes_concluidas.includes(m.id)) ? 'concluido' : 'andamento';
   },
 
+  // v2.63: quem anda pelo bairro é só figurante — sem conversa, balão nem sinal
+  semConversa(n) { return !!(n.npc && n.npc.andar && n.npc.andar.ativo); },
+
   atualizarSinais(cena) {
     (cena.npcs || []).forEach(n => {
+      if (this.semConversa(n)) { n.sinal.setVisible(false); return; }
       const e = this.estado(n.id), s = n.sinal;
       const volta = e === 'andamento' && Achados.aguardando(n.id);   // v2.60: achado esperando entrega
       s.setVisible(e === 'novo' || e === 'andamento');
@@ -144,6 +148,7 @@ const Npcs = {
     this.andarTodos(cena, j);
     let alvo = null, menor = Infinity;
     cena.npcs.forEach(n => {
+      if (this.semConversa(n)) { n.balao.setVisible(false); n.sinal.setVisible(false); return; }
       const d = Math.hypot(n.x - j.x, n.y - j.y);
       const ver = d <= this.DISTANCIA_BALAO;
       if (ver) {
@@ -168,7 +173,8 @@ const Npcs = {
     cena.npcs.forEach(n => {
       const a = n.andar; if (!a) return;
       if (Math.hypot(n.x - cx, n.y - cy) > this.DISTANCIA_ATIVO) { if (a.estado === 'andando') this.ficarParado(n, agora); return; }
-      const perto = Math.hypot(n.x - j.x, n.y - j.y) <= this.DISTANCIA_BALAO;
+      // figurante (sem conversa) não espera o jogador: só desvia dele (v2.63)
+      const perto = !this.semConversa(n) && Math.hypot(n.x - j.x, n.y - j.y) <= this.DISTANCIA_BALAO;
       if (perto || parar) {
         // espera o jogador: para e olha para ele
         if (a.estado === 'andando' || perto) {

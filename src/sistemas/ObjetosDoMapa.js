@@ -236,9 +236,39 @@ const ObjetosDoMapa = {
     Sons.tocar('lata');
     HUD.atualizar();
     if (!Salvamento.atual.missoes_concluidas.includes(l.missao.id)) {
-      Interface.notificar({ tipo: 'missao', titulo: `Letra ${l.letra} encontrada!`, texto: `${l.missao.titulo}: ${s.feito}/${s.meta}` });
+      Interface.notificar({ tipo: 'missao', titulo: `Letra ${l.letra} encontrada!`, texto: `${l.missao.titulo || 'Letras da tag'}: ${s.feito}/${s.meta}` });
+    } else {
+      cena.pararJogador();
+      cena.time.delayedCall(450, () => this.janelaLetrasConcluida(l.missao));   // v2.63
     }
     if (cena.npcs) Npcs.atualizarSinais(cena);
+  },
+
+  // v2.63: janela ao pegar a última letra — as letras da tag e a arte que foi liberada
+  janelaLetrasConcluida(m) {
+    const E = Interface.el.bind(Interface);
+    const npc = Conteudo.npc(m.personagem) || {}, r = m.recompensa || {};
+    const arte = r.arte && Conteudo.arte(r.arte);
+    const outras = Object.assign({}, r); delete outras.arte;
+    let janela;
+    janela = Interface.abrirPainel({
+      titulo: 'Missão concluída!',
+      classe: 'painel-letras-fim',
+      conteudo: [
+        E('div', { class: 'missao-letras letras-fim' }, Conteudo.letrasDe(m).map(l => E('b', { class: 'pega' }, l))),
+        E('p', { class: 'letras-fim-texto' }, npc.nome ? `Você juntou todas as letras da tag de ${npc.nome}!` : 'Você juntou todas as letras da tag!'),
+        arte ? E('div', { class: 'letras-fim-arte' },
+          E('p', { class: 'letras-fim-rotulo' }, 'Arte desbloqueada no seu Black Book'),
+          E('img', { src: arte.imagem, alt: arte.titulo || 'Arte desbloqueada' }),
+          E('p', { class: 'letras-fim-titulo' }, arte.titulo || ''),
+          arte.autoria ? E('p', { class: 'letras-fim-autoria' }, 'por ' + arte.autoria) : null) : null,
+        Object.keys(outras).length ? E('p', { class: 'achado-rec' }, 'Recompensa: ', E('strong', {}, Missoes.textoRecompensa(outras))) : null
+      ],
+      rodape: [
+        arte ? Interface.botao('Ver no Black Book', () => { janela.fechar(); TelaBlackBook.abrir({ modo: 'ver' }); }, { icone: 'livro' }) : null,
+        Interface.botao('Voltar ao jogo', () => janela.fechar(), { tipo: 'principal', icone: 'play' })
+      ].filter(Boolean)
+    });
   },
 
   // Aviso de que a lata dourada está no mapa (uma vez por abertura do jogo)

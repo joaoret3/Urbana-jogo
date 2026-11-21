@@ -1273,3 +1273,13 @@ body.controles-grandes { --bt: 64px; }
 .missao-etapa { margin: 4px 0; font-weight: 700; }
 .missao-etapa.feita { color: #9be21b; }
 .missao-dica { margin: 4px 0 6px; font-style: italic; opacity: .9; }
+
+/* ===== v2.63: janela de missão de letras concluída ===== */
+.painel-letras-fim { text-align: center; }
+.letras-fim { justify-content: center; margin: 4px 0 8px; }
+.letras-fim-texto { margin: 4px 0 10px; font-weight: 700; }
+.letras-fim-arte { display: grid; justify-items: center; gap: 4px; padding: 12px; border-radius: 14px; background: rgba(255, 255, 255, .06); }
+.letras-fim-arte img { max-width: min(260px, 70vw); max-height: 34vh; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 6px 6px rgba(0, 0, 0, .4)); }
+.letras-fim-rotulo { margin: 0; font-weight: 700; color: var(--amarelo); }
+.letras-fim-titulo { margin: 2px 0 0; font-family: var(--fonte-titulo); font-weight: 900; font-size: 1.3rem; text-transform: uppercase; }
+.letras-fim-autoria { margin: 0; opacity: .85; }
