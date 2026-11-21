@@ -29,9 +29,9 @@ URBANA_DADOS["npcs"] = {
       "nome": "Vice Priscilla",
       "retrato": "assets/npcs/npc_01/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
-      "fala_inicial": "Alguém pegou meu biscoito... Acho que foi aquele gatinho de novo. Ache ele pra mim!",
-      "fala_andamento": "Gatinhoo...",
-      "fala_concluida": "Muito obrigada! Agora esse gatinho não foge mais!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "as",
       "sprite": {
         "arquivo": "assets/npcs/npc_01/sprite.png",
         "largura_quadro": 96,
@@ -146,7 +146,7 @@ URBANA_DADOS["npcs"] = {
         "quadros_por_segundo": 1
       },
       "andar": {
-        "ativo": false,
+        "ativo": true,
         "raio": 300
       }
     }

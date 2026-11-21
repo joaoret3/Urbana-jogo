@@ -95,7 +95,7 @@ URBANA_DADOS["missoes"] = {
     {
       "id": "missao_009",
       "titulo": "O gatinho do biscoito",
-      "descricao": "Um gatinho laranja passou correndo e levou meu biscoito! Me ajuda a achar ele? Ele adora se esconder pelo bairro.",
+      "descricao": "Um gatinho levou meu biscoito! Me ajuda a achar ele?",
       "tipo": "achar_e_voltar",
       "meta": 1,
       "personagem": "npc_01",
