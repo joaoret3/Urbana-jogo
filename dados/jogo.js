@@ -15,9 +15,9 @@ URBANA_DADOS["jogo"] = {
   "anoitecer": {
     "_leia": "Luz do bairro (v2.40): a partida começa de dia e, depois de 'minutos_para_anoitecer' minutos jogando, escurece aos poucos (durante 'minutos_transicao') até o crepúsculo, com os postes acesos. Depois de 'minutos_de_noite' amanhece (também durante 'minutos_transicao') e o ciclo recomeça; com 'repetir': false fica de noite. 'ativo': false desliga para todos. 'carros_acesos_percentual' (v2.52): quantos por cento dos veículos estacionados ficam com faróis e lanternas acesos à noite (0 = nenhum).",
     "ativo": true,
-    "minutos_para_anoitecer": 5,
+    "minutos_para_anoitecer": 3,
     "minutos_transicao": 1,
-    "minutos_de_noite": 3,
+    "minutos_de_noite": 6,
     "repetir": true,
     "carros_acesos_percentual": 40
   },
