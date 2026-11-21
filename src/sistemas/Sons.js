@@ -2,7 +2,7 @@
 // SONS — música de fundo e efeitos sonoros
 // -----------------------------------------------------------------------------
 // Os arquivos ficam em assets/audio e a lista está em dados/jogo.js:
-//   "musica": "assets/audio/musica_lofi.mp3",
+//   "musica": "assets/audio/musica_boombap.mp3",
 //   "sons": { "lata": "...", "spray": "...", "acerto": "...", ... }
 // Para trocar um som, substitua o arquivo (ou o caminho no jogo.js).
 // Liga/desliga e volume ficam em Configurações (sistemas/Preferencias.js).

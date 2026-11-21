@@ -33,7 +33,7 @@ URBANA_DADOS["jogo"] = {
     "lata_coletavel": 1,
     "lata_dourada": 20
   },
-  "musica": "assets/audio/musica_lofi.mp3",
+  "musica": "assets/audio/musica_boombap.mp3",
   "sons": {
     "_leia": "Efeitos sonoros. Troque os arquivos em assets/audio (mp3) por sons originais ou com licença de uso.",
     "lata": "assets/audio/lata.mp3",

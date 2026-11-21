@@ -1,5 +1,11 @@
 # Urbana — registro de versões
 
+## 2.65 — 21/11/2026
+
+- **Música nova:** "Boom bap leve" (opção M2, 90 BPM, piano e baixo andando), composta para o jogo, sem trechos de outras
+  músicas. assets/audio/musica_boombap.mp3 (≈ 21 s em loop, mesmo volume da anterior). A música antiga foi guardada em
+  originais/audio/musica_lofi_antiga.mp3 (não vai para a versão dos alunos). Para trocar: "musica" em dados/jogo.js.
+
 ## 2.64 — 21/11/2026
 
 **Recompensas por nível passam a valer (correção):**
