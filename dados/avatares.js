@@ -8,7 +8,7 @@ URBANA_DADOS["avatares"] = {
       "nome": "Luana",
       "descricao": "",
       "retrato": "assets/avatares/avatar_01/retrato.webp",
-      "nivel_minimo": 1,
+      "nivel_minimo": 2,
       "sprite": {
         "arquivo": "assets/avatares/avatar_01/sprite.png",
         "largura_quadro": 192,
@@ -64,7 +64,7 @@ URBANA_DADOS["avatares"] = {
       "nome": "sem nome",
       "descricao": "",
       "retrato": "assets/avatares/avatar_04/retrato.webp",
-      "nivel_minimo": 1,
+      "nivel_minimo": 4,
       "sprite": {
         "arquivo": "assets/avatares/avatar_04/sprite.png",
         "largura_quadro": 192,
@@ -78,7 +78,7 @@ URBANA_DADOS["avatares"] = {
       "nome": "sem nome 1",
       "descricao": "",
       "retrato": "assets/avatares/avatar_06/retrato.webp",
-      "nivel_minimo": 1,
+      "nivel_minimo": 4,
       "sprite": {
         "arquivo": "assets/avatares/avatar_06/sprite.png",
         "largura_quadro": 192,

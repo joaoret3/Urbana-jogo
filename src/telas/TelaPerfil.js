@@ -59,9 +59,9 @@ const TelaPerfil = {
           const livre = Progresso.avatarDisponivel(p, a), atual = a.id === j.avatar_id;
           return E('button', {
             type: 'button', class: 'perfil-opcao' + (livre ? '' : ' bloqueado') + (atual ? ' ativo' : ''),
-            disabled: !livre || atual, 'aria-label': a.nome + (atual ? ' (em uso)' : livre ? '' : ` (bloqueado, nível ${a.nivel_minimo})`),
+            disabled: !livre || atual, 'aria-label': a.nome + (atual ? ' (em uso)' : livre ? '' : ` (bloqueado, nível ${Conteudo.nivelAvatar(a)})`),
             onclick: () => { janela.fechar(); op.aoTrocarAvatar(a.id); }
-          }, E('img', { src: a.retrato, alt: '' }), E('span', {}, atual ? Interface.comIcone('ok', 'Em uso') : livre ? a.nome : Interface.comIcone('cadeado', `Nível ${a.nivel_minimo}`)));
+          }, E('img', { src: a.retrato, alt: '' }), E('span', {}, atual ? Interface.comIcone('ok', 'Em uso') : livre ? a.nome : Interface.comIcone('cadeado', `Nível ${Conteudo.nivelAvatar(a)}`)));
         })),
         E('h3', { class: 'ficha-subtitulo', id: 'perfil-molduras' }, 'Molduras'),
         E('div', { class: 'perfil-opcoes' }, (Conteudo.dados.molduras.molduras || []).map(m => {

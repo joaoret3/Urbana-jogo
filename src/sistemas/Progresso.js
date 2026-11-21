@@ -42,14 +42,14 @@ const Progresso = {
     if (!avatar) return false;
     if (partida && partida.avatares_desbloqueados.includes(avatar.id)) return true;
     const nivel = partida ? this.nivelDoXp(partida.jogador.xp) : 1;
-    return nivel >= (avatar.nivel_minimo || 1);
+    return nivel >= Conteudo.nivelAvatar(avatar);   // v2.64: o nível vem das Recompensas por nível
   },
 
   // Personagens na ordem de exibição: primeiro os disponíveis, depois os bloqueados;
   // em cada grupo, pela sequência de níveis (nível 1, 2, 3...). Empate: ordem do cadastro.
   avataresOrdenados(partida) {
     return Conteudo.avatares()
-      .map((a, i) => ({ a, i, livre: this.avatarDisponivel(partida, a) ? 0 : 1, nivel: a.nivel_minimo || 1 }))
+      .map((a, i) => ({ a, i, livre: this.avatarDisponivel(partida, a) ? 0 : 1, nivel: Conteudo.nivelAvatar(a) }))
       .sort((x, y) => x.livre - y.livre || x.nivel - y.nivel || x.i - y.i)
       .map(x => x.a);
   },
@@ -107,6 +107,27 @@ const Progresso = {
     const artes = Conteudo.artesPublicadas().filter(a => Conteudo.nivelArte(a) === n);
     if (artes.length) nomes.push(`${artes.length} arte(s) liberada(s) para compra no Black Book`);
     this.notificar({ tipo: 'nivel', titulo: `Nível ${n}!`, itens: nomes });
+  },
+
+  // v2.64: ao abrir uma partida, entrega o que os níveis já alcançados liberam e ela ainda não tem
+  // (ex.: o professor colocou uma moldura no nível 3 depois que o jogador já tinha passado dele).
+  // Molduras entram como "novas" (o jogo mostra a janela "Moldura nova!").
+  sincronizarNiveis(p) {
+    if (!p || !p.jogador) return;
+    const nivel = this.nivelDoXp(p.jogador.xp);
+    Conteudo.niveis().forEach(n => {
+      if (n.nivel > nivel) return;
+      const d = n.desbloqueia || {};
+      (d.avatares || []).forEach(id => { if (Conteudo.avatar(id) && !p.avatares_desbloqueados.includes(id)) p.avatares_desbloqueados.push(id); });
+      (d.molduras || []).forEach(id => {
+        if (!Conteudo.moldura(id) || p.molduras_desbloqueadas.includes(id)) return;
+        p.molduras_desbloqueadas.push(id);
+        if (!Array.isArray(p.molduras_novas)) p.molduras_novas = [];
+        if (!Array.isArray(p.molduras_janela)) p.molduras_janela = [];
+        if (!p.molduras_novas.includes(id)) p.molduras_novas.push(id);
+        p.molduras_janela.push({ id, motivo: `Recompensa do nível ${n.nivel}` });
+      });
+    });
   },
 
   // Conta de teste (só se URBANA.CONTA_TESTE for true): apelido "teste" começa no nível máximo,

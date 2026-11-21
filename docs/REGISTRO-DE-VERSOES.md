@@ -1,5 +1,19 @@
 # Urbana — registro de versões
 
+## 2.64 — 21/11/2026
+
+**Recompensas por nível passam a valer (correção):**
+- O nível que libera cada avatar agora vem de Editor > Progressão > **Recompensas por nível** (dados/niveis.js). Antes o
+  jogo também obedecia o "Liberado a partir do" do cadastro do avatar (`nivel_minimo` em avatares.js), e os dois podiam
+  discordar (ex.: avatares marcados no nível 4 com `nivel_minimo` 1 ficavam livres desde o início). O cadeado mostra o
+  nível certo. `Conteudo.nivelAvatar(a)`.
+- Os dois campos do editor agora andam juntos: marcar um avatar num nível o tira dos outros níveis e atualiza o cadastro
+  dele; mudar "Liberado a partir do" no personagem muda as Recompensas por nível.
+- avatares.js alinhado ao que estava em niveis.js: Luana → nível 2; os dois "sem nome" → nível 4.
+- **Partidas já salvas:** ao abrir, recebem o que os níveis já alcançados liberam e ainda não tinham (ex.: molduras
+  colocadas no nível 3 depois que o jogador passou dele), com o aviso de moldura nova. `Progresso.sincronizarNiveis`.
+  Nada é retirado de ninguém.
+
 ## 2.63 — 20/11/2026
 
 - **Personagens que andam pelo bairro viram figurantes:** com "Este personagem anda pelo bairro" ligado, o personagem

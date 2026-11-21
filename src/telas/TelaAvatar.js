@@ -30,11 +30,11 @@ const TelaAvatar = {
     const miniaturas = E('div', { class: 'avatar-miniaturas', role: 'listbox', 'aria-label': 'Personagens' },
       avatares.map((a, i) => E('button', {
         type: 'button', class: 'avatar-mini', role: 'option', 'data-i': String(i),
-        'aria-label': a.nome + (disponivel(a) ? '' : ` (bloqueado, nível ${a.nivel_minimo})`),
+        'aria-label': a.nome + (disponivel(a) ? '' : ` (bloqueado, nível ${Conteudo.nivelAvatar(a)})`),
         onclick: () => { indice = i; atualizar(); }
       },
         E('img', { src: a.retrato, alt: '' }),
-        disponivel(a) ? null : E('span', { class: 'cadeado' }, Interface.comIcone('cadeado', 'Nv ' + a.nivel_minimo))
+        disponivel(a) ? null : E('span', { class: 'cadeado' }, Interface.comIcone('cadeado', 'Nv ' + Conteudo.nivelAvatar(a)))
       ))
     );
 
@@ -45,7 +45,7 @@ const TelaAvatar = {
       imgGrande.classList.toggle('bloqueado', !ok);
       nome.textContent = a.nome;
       descricao.textContent = a.descricao || '';
-      estado.replaceChildren(ok ? Interface.comIcone('ok', 'Disponível') : Interface.comIcone('cadeado', `Bloqueado — libera no nível ${a.nivel_minimo}`));
+      estado.replaceChildren(ok ? Interface.comIcone('ok', 'Disponível') : Interface.comIcone('cadeado', `Bloqueado — libera no nível ${Conteudo.nivelAvatar(a)}`));
       estado.className = 'avatar-estado ' + (ok ? 'ok' : 'trancado');
       botaoSelecionar.disabled = !ok;
       botaoSelecionar.querySelector('.botao-texto').textContent = ok ? (op.textoBotao || 'Selecionar') : 'Bloqueado';

@@ -214,6 +214,7 @@ const Salvamento = {
     }
     if (!p) return null;
     Progresso.renascerLatas(p);                      // v2.37: parte das latas já coletadas volta ao abrir a partida
+    Progresso.sincronizarNiveis(p);                  // v2.64: recompensas de nível adicionadas depois chegam a quem já passou do nível
     this.atual = p;
     return { partida: p, recuperada };
   },

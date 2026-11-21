@@ -164,7 +164,7 @@ const Conteudo = {
         if (!(Number.isInteger(s.quadros_caminhada) && s.quadros_caminhada >= 1)) this.erro(onde, '"quadros_caminhada" deve ser um número inteiro (1 ou mais).');
       }
     });
-    if (!avatares.some(a => a.nivel_minimo === 1)) this.erro('dados/avatares.js', 'É preciso pelo menos um avatar com nivel_minimo 1 (disponível desde o início).');
+    if (!avatares.some(a => this.nivelAvatar(a) === 1)) this.erro('dados/avatares.js', 'É preciso pelo menos um avatar liberado no nível 1 (disponível desde o início).');
 
     // Grafites (fichas)
     const pinsMapa = new Map((this.mapa ? this.mapa.grafites : []).map(o => [o.name, o]));
@@ -430,6 +430,13 @@ const Conteudo = {
   categoriaArte(a) { return ((this.dados.jogo || {}).categorias_arte || {})[a.categoria] || {}; },
   precoArte(a) { return ('preco' in a) ? a.preco : this.categoriaArte(a).preco; },
   nivelArte(a) { return ('nivel_minimo' in a) ? a.nivel_minimo : this.categoriaArte(a).nivel_minimo; },
+  // v2.64: nível que libera um avatar. Quem manda é Progressão > Recompensas por nível (niveis.js);
+  // o "nivel_minimo" do avatar só vale se ele não estiver em nenhum nível.
+  nivelAvatar(a) {
+    if (!a) return 1;
+    const n = this.niveis().find(x => ((x.desbloqueia || {}).avatares || []).includes(a.id));
+    return n ? n.nivel : (a.nivel_minimo || 1);
+  },
 
   // Uma missão só vale se o jogo tiver conteúdo suficiente para completá-la
   missaoPossivel(m) {
