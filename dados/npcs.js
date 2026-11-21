@@ -49,7 +49,7 @@ URBANA_DADOS["npcs"] = {
       "id": "npc_02",
       "nome": "João Rafael",
       "retrato": "assets/npcs/npc_02/retrato.webp",
-      "fala_chamada": "Chega ai!",
+      "fala_chamada": "Chega ai mano!",
       "fala_inicial": "Vou te dar minha tag de presente, par você espalhar pelo bairro, mas antes, você vai ter que concluir esse desafio:",
       "fala_andamento": "",
       "fala_concluida": "Parabéns, parceiro!",
