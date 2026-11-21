@@ -48,7 +48,7 @@ URBANA_DADOS["npcs"] = {
     {
       "id": "npc_02",
       "nome": "João Rafael",
-      "retrato": "",
+      "retrato": "assets/npcs/npc_02/retrato.webp",
       "fala_chamada": "Chega ai!",
       "fala_inicial": "Vou te dar minha tag de presente, par você espalhar pelo bairro, mas antes, você vai ter que concluir esse desafio:",
       "fala_andamento": "",
@@ -58,8 +58,8 @@ URBANA_DADOS["npcs"] = {
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
-        "quadros": 7,
-        "quadros_por_segundo": 5
+        "quadros": 1,
+        "quadros_por_segundo": 1
       },
       "andar": {
         "ativo": false,

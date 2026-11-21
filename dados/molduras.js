@@ -29,7 +29,7 @@ URBANA_DADOS["molduras"] = {
     },
     {
       "id": "moldura_01",
-      "nome": "Nova moldura",
+      "nome": "Grafiteiro experiente",
       "cor": "#0fd3f5",
       "fundo": "assets/molduras/moldura_01_emblema.webp",
       "encaixe": {
@@ -41,7 +41,7 @@ URBANA_DADOS["molduras"] = {
     },
     {
       "id": "moldura_02",
-      "nome": "Nova moldura",
+      "nome": "Rápido como um raio",
       "cor": "#22d3ee",
       "fundo": "assets/molduras/moldura_02_emblema.webp",
       "encaixe": {
@@ -53,7 +53,7 @@ URBANA_DADOS["molduras"] = {
     },
     {
       "id": "moldura_03",
-      "nome": "Nova moldura",
+      "nome": "Resistência",
       "cor": "#22d3ee",
       "fundo": "assets/molduras/moldura_03_emblema.webp",
       "encaixe": {

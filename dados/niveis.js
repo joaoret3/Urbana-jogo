@@ -28,7 +28,11 @@ URBANA_DADOS["niveis"] = {
       "xp": 100,
       "desbloqueia": {
         "avatares": [],
-        "molduras": []
+        "molduras": [
+          "moldura_01",
+          "moldura_03",
+          "moldura_02"
+        ]
       }
     },
     {
