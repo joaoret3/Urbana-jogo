@@ -29,7 +29,7 @@ URBANA_DADOS["npcs"] = {
       "nome": "Vice Priscilla",
       "retrato": "assets/npcs/npc_01/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
-      "fala_inicial": "",
+      "fala_inicial": "Me ajude!!",
       "fala_andamento": "",
       "fala_concluida": "",
       "sprite": {

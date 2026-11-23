@@ -721,7 +721,7 @@ URBANA_DADOS["artes"] = {
     },
     {
       "id": "arte_059",
-      "titulo": "ONE bomb TAG",
+      "titulo": "ONE Bomb TAG",
       "autoria": "ONE",
       "imagem": "assets/artes/arte_059.webp",
       "categoria": "basica",
