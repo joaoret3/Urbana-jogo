@@ -37,7 +37,7 @@ No menu, botão **Som** (ou **Menu → Configurações** durante o jogo):
 
 ## O que o aluno faz no jogo
 
-1. Anda pelo bairro a partir da escola (teclado, joystick ou clique).
+1. Anda pelo bairro a partir da escola (teclado no computador; joystick no celular e no tablet).
 2. Encontra os **pins** dos grafites reais, lê a ficha e responde ao **quiz**.
 3. Ganha **XP** (sobe de nível) e **latas de spray** (moeda do jogo, sem dinheiro real).
 4. Desbloqueia artes da turma no **Black Book** e pinta os **muros livres**.

@@ -1,5 +1,17 @@
 # Urbana — registro de versões
 
+## 2.68 — 23/11/2026
+
+**Movimentação:**
+- **Joystick solto (celular e tablet):** tocando em qualquer lugar da metade esquerda do mapa, o joystick aparece embaixo
+  do dedo; ao soltar, volta ao lugar de descanso, que ficou mais alto na tela (em celulares bem baixos deitados, ao lado
+  do mini-mapa). Ficou maior nas telas pequenas (120 a 136 px). Tocar em cima dele continua funcionando.
+- **Computador:** o joystick não aparece; anda-se com WASD ou as setas.
+- **Tocar/clicar no chão não faz mais o personagem andar até lá.** Tocar num pin abre a ficha e num muro abre a
+  pintura, como antes. O botão "Ir até lá" da prévia de um grafite continua levando o personagem.
+- Tutorial, LEIA-ME e guia do professor atualizados com a nova forma de andar.
+- Novo teste: ferramentas/testes/controles.js.
+
 ## 2.67 — 23/11/2026
 
 - **Veículos depois do menu:** as 50 imagens de veículos (≈ 1,3 MB) não são mais baixadas antes do menu. Elas começam a

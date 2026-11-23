@@ -8,7 +8,7 @@ URBANA_DADOS["tutorial"] = {
     {
       "icone": "andar",
       "titulo": "Ande pelo bairro",
-      "texto": "Use WASD ou as setas do teclado, o joystick no canto da tela, ou clique no lugar para onde quer ir."
+      "texto": "No computador, use WASD ou as setas do teclado. No celular ou tablet, toque e arraste no lado esquerdo da tela: o joystick aparece embaixo do seu dedo."
     },
     {
       "icone": "pin",

@@ -27,7 +27,7 @@ COMO ABRIR O JOGO (sem internet, sem instalar nada)
   Atenção: as partidas salvas num modo não aparecem no outro; use Exportar/Importar.
 
 CONTROLES NO MAPA
-WASD, setas, joystick (canto inferior esquerdo) ou clique/toque para andar;
+WASD ou setas no computador; no celular/tablet, joystick (aparece onde o dedo tocar, no lado esquerdo);
 E / Espaço / Enter = botão A; B = Black Book; M = missões; P = perfil; N = amplia o mini-mapa; Esc = pausa;
 roda do mouse = zoom; C mostra/esconde a colisão (ajuda para quem edita o mapa).
 
