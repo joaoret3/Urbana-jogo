@@ -12,7 +12,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "EXEMPLO – E aí, já pintou os muros? Tô esperando!",
       "fala_concluida": "EXEMPLO – Ficou lindo! Valeu demais pela ajuda!",
       "sprite": {
-        "arquivo": "assets/npcs/npc_alexandra/sprite.png",
+        "arquivo": "assets/npcs/npc_alexandra/sprite.webp",
         "largura_quadro": 96,
         "altura_quadro": 96,
         "linha_parado": 1,
@@ -33,7 +33,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "as",
       "sprite": {
-        "arquivo": "assets/npcs/npc_01/sprite.png",
+        "arquivo": "assets/npcs/npc_01/sprite.webp",
         "largura_quadro": 96,
         "altura_quadro": 96,
         "linha_parado": 1,
@@ -54,7 +54,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "Parabéns, parceiro!",
       "sprite": {
-        "arquivo": "assets/npcs/npc_02/sprite.png",
+        "arquivo": "assets/npcs/npc_02/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 5,
@@ -75,7 +75,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "",
       "sprite": {
-        "arquivo": "assets/npcs/npc_03/sprite.png",
+        "arquivo": "assets/npcs/npc_03/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
@@ -96,7 +96,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "",
       "sprite": {
-        "arquivo": "assets/npcs/npc_04/sprite.png",
+        "arquivo": "assets/npcs/npc_04/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
@@ -117,7 +117,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "",
       "sprite": {
-        "arquivo": "assets/npcs/npc_05/sprite.png",
+        "arquivo": "assets/npcs/npc_05/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
@@ -138,7 +138,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "",
       "sprite": {
-        "arquivo": "assets/npcs/npc_06/sprite.png",
+        "arquivo": "assets/npcs/npc_06/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,

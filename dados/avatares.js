@@ -10,7 +10,7 @@ URBANA_DADOS["avatares"] = {
       "retrato": "assets/avatares/avatar_01/retrato.webp",
       "nivel_minimo": 2,
       "sprite": {
-        "arquivo": "assets/avatares/avatar_01/sprite.png",
+        "arquivo": "assets/avatares/avatar_01/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "quadros_caminhada": 6,
@@ -24,7 +24,7 @@ URBANA_DADOS["avatares"] = {
       "retrato": "assets/avatares/avatar_02/retrato.webp",
       "nivel_minimo": 2,
       "sprite": {
-        "arquivo": "assets/avatares/avatar_02/sprite.png",
+        "arquivo": "assets/avatares/avatar_02/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "quadros_caminhada": 6,
@@ -38,7 +38,7 @@ URBANA_DADOS["avatares"] = {
       "retrato": "assets/avatares/avatar_03/retrato.webp",
       "nivel_minimo": 1,
       "sprite": {
-        "arquivo": "assets/avatares/avatar_03/sprite.png",
+        "arquivo": "assets/avatares/avatar_03/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "quadros_caminhada": 6,
@@ -52,7 +52,7 @@ URBANA_DADOS["avatares"] = {
       "retrato": "assets/avatares/avatar_05/retrato.webp",
       "nivel_minimo": 3,
       "sprite": {
-        "arquivo": "assets/avatares/avatar_05/sprite.png",
+        "arquivo": "assets/avatares/avatar_05/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "quadros_caminhada": 4,
@@ -66,7 +66,7 @@ URBANA_DADOS["avatares"] = {
       "retrato": "assets/avatares/avatar_04/retrato.webp",
       "nivel_minimo": 4,
       "sprite": {
-        "arquivo": "assets/avatares/avatar_04/sprite.png",
+        "arquivo": "assets/avatares/avatar_04/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "quadros_caminhada": 4,
@@ -80,7 +80,7 @@ URBANA_DADOS["avatares"] = {
       "retrato": "assets/avatares/avatar_06/retrato.webp",
       "nivel_minimo": 4,
       "sprite": {
-        "arquivo": "assets/avatares/avatar_06/sprite.png",
+        "arquivo": "assets/avatares/avatar_06/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "quadros_caminhada": 4,

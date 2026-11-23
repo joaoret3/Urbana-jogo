@@ -39,13 +39,15 @@ preços, tutorial e créditos, e posicionar pins, latas, muros, faixas de pedest
 ONDE FICA CADA COISA
 index.html            página do jogo
 editor.html           Editor de conteúdo (professores)
-estilo/               aparência (urbana.css = jogo, editor.css = editor, fontes.css = fontes)
+estilo/               aparência (urbana.css = jogo, editor.css = editor, fontes.css = fontes do jogo,
+                      fontes-editor.css = fontes só do editor)
 src/config.js         ajustes técnicos (versão, qualidade padrão do mapa, velocidade, zoom)
 src/cenas/            cenas do Phaser: CenaCarga, CenaMenu, CenaAvatar, CenaMapa
 src/sistemas/         regras: Icones (desenhos SVG de todos os ícones; o jogo não usa emojis), Orientacao (celular sempre deitado), Conteudo (lê e confere os dados), Salvamento, Progresso, Missoes,
                       ObjetosDoMapa (pins, latas, muros), Efeitos, Sons, Joystick, Preferencias...
 src/telas/            janelas do jogo: HUD, ficha, quiz, Black Book, pintar muro, missões, perfil...
 src/editor/           partes do Editor de conteúdo
+                      (na versão dos alunos, os arquivos de src/ vêm juntos e compactados em src/jogo.min.js)
 dados/                TODO O CONTEÚDO DO JOGO (grafites, quizzes, artes, avatares, missões, níveis,
                       créditos, tutorial). São arquivos .js com conteúdo em formato JSON.
 assets/mapa/          mapa em peças WebP (alta/ e leve/), mapa.json (Tiled) e mapa.js (o mesmo
@@ -59,6 +61,7 @@ assets/ui/            logo, pins, lata, muros e outros elementos de interface
 assets/audio/         música e efeitos sonoros (mp3; lista em dados/jogo.js)
 assets/fontes/        fontes usadas pelo jogo (já embutidas em estilo/fontes.css); veja LEIA-ME-FONTES.txt
 copias_de_seguranca/  criada pelo editor: cópia dos arquivos antes de cada gravação
+ferramentas/          gerar_versao_alunos.sh (gera e confere a versão dos alunos) e testes/ (testes automáticos)
 originais/            arquivos originais em tamanho cheio (mapa em JPG, artes e retratos em PNG,
                       fontes, materiais de exemplo). O jogo NÃO usa esta pasta; veja originais/LEIA-ME.txt
 docs/                 GUIA-DO-PROFESSOR.md, GUIA-DE-CONTEUDO.md, PLANO-DE-TESTES.md,

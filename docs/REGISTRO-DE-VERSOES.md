@@ -1,5 +1,38 @@
 # Urbana — registro de versões
 
+## 2.66 — 23/11/2026 — auditoria técnica
+
+Auditoria completa (diagnóstico, limpeza, correções, otimização, testes). Nenhuma regra do jogo, visual ou conteúdo mudou.
+Ponto de restauração: tag `antes-da-auditoria-v2.65` no GitHub.
+
+**Correções**
+- Navegador bloqueando o salvamento (modo privado restrito, dados do site bloqueados): o jogo travava ao criar a
+  partida. Agora dá para jogar só na memória, com o aviso "O jogo não está salvando". `Salvamento.listar/excluir`
+  protegidos; `Salvamento.semArmazenamento`.
+- Pegadas do gatinho: às vezes o esconderijo ficava sem pegadas (só 10 direções sorteadas). Agora testa 16 direções em
+  volta; os 131 esconderijos possíveis têm pegadas.
+- Pintar muro: uma nova pintura é ignorada enquanto a animação do spray da anterior roda (evita cobrança dupla).
+- Conferência do conteúdo: não acusa mais erro em quiz desligado (guardado de propósito) nem falta de nome em
+  personagem figurante (que anda pelo bairro).
+
+**Limpeza**
+- 9 fotos de grafites excluídos no editor (sem ficha nem pin) foram para originais/nao_usados/grafites_excluidos/.
+- CSS sem uso do HUD antigo (`.hud-missoes-icone`, `.hud-missoes-texto`) removido.
+- Fontes Inter e Inter Display, usadas só pelo editor, saíram de estilo/fontes.css para estilo/fontes-editor.css
+  (o jogo deixa de carregar 288 KB de fontes antes do menu).
+
+**Otimização**
+- Folhas de sprites dos personagens e avatares (13 arquivos) em WebP sem perda: 13,2 MB → 8,8 MB, pixels idênticos.
+  Os PNG originais estão em originais/sprites_png/. (Folhas novas enviadas pelo editor continuam em PNG.)
+- Versão dos alunos: os 42 scripts do jogo juntos e compactados em src/jogo.min.js (310 KB → 168 KB) e urbana.css
+  compactado (84 KB → 64 KB), com esbuild, no padrão ES2018 (não cria "??" nem "?."). O código do projeto continua
+  legível. Se o esbuild não estiver disponível, a versão sai sem compactar.
+- Versão dos alunos: 47 MB / 335 arquivos → 40 MB / 286 arquivos; dados baixados até o mapa 15,3 MB → 12,2 MB;
+  pedidos 170 → 126.
+
+**Testes**
+- Nova pasta ferramentas/testes/ (fora da versão dos alunos) com 19 testes automáticos e o script rodar.sh.
+
 ## 2.65 — 21/11/2026
 
 - **Música nova:** "Boom bap leve" (opção M2, 90 BPM, piano e baixo andando), composta para o jogo, sem trechos de outras
