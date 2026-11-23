@@ -1,5 +1,11 @@
 # Urbana — registro de versões
 
+## 2.70 — 23/11/2026
+
+- **Molduras padronizadas:** as 5 molduras-emblema foram redimensionadas para que o círculo onde fica o personagem tenha
+  o mesmo tamanho em todas (35% do lado da imagem), com a arte centralizada; o personagem aparece do mesmo tamanho
+  (102% do círculo) em todas. Imagens anteriores guardadas em `originais/molduras/antes_v2.70/`. Ids sem mudança.
+
 ## 2.69 — 23/11/2026
 
 - Joystick mais transparente enquanto está sendo usado (45% de opacidade; em descanso continua 80%), para ver o mapa por baixo.

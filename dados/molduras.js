@@ -10,9 +10,9 @@ URBANA_DADOS["molduras"] = {
       "fundo": "assets/molduras/moldura_latas_emblema.webp",
       "encaixe": {
         "x": 50,
-        "y": 54.3,
-        "raio": 39,
-        "personagem": 105
+        "y": 53.6,
+        "raio": 35,
+        "personagem": 102
       }
     },
     {
@@ -21,10 +21,10 @@ URBANA_DADOS["molduras"] = {
       "cor": "#ffc400",
       "fundo": "assets/molduras/moldura_cmj_emblema.webp",
       "encaixe": {
-        "x": 49.5,
-        "y": 42.2,
-        "raio": 36,
-        "personagem": 105
+        "x": 50,
+        "y": 42.4,
+        "raio": 35,
+        "personagem": 102
       }
     },
     {
@@ -33,10 +33,10 @@ URBANA_DADOS["molduras"] = {
       "cor": "#0fd3f5",
       "fundo": "assets/molduras/moldura_01_emblema.webp",
       "encaixe": {
-        "x": 47.5,
-        "y": 47,
-        "raio": 35.5,
-        "personagem": 105
+        "x": 49.2,
+        "y": 46.5,
+        "raio": 35,
+        "personagem": 102
       }
     },
     {
@@ -45,10 +45,10 @@ URBANA_DADOS["molduras"] = {
       "cor": "#22d3ee",
       "fundo": "assets/molduras/moldura_02_emblema.webp",
       "encaixe": {
-        "x": 49.5,
-        "y": 50.5,
-        "raio": 34.5,
-        "personagem": 95
+        "x": 49.7,
+        "y": 51.2,
+        "raio": 35,
+        "personagem": 102
       }
     },
     {
@@ -57,10 +57,10 @@ URBANA_DADOS["molduras"] = {
       "cor": "#22d3ee",
       "fundo": "assets/molduras/moldura_03_emblema.webp",
       "encaixe": {
-        "x": 50,
-        "y": 58,
-        "raio": 38,
-        "personagem": 97
+        "x": 50.4,
+        "y": 57.1,
+        "raio": 35,
+        "personagem": 102
       }
     }
   ]
