@@ -692,6 +692,60 @@ URBANA_DADOS["artes"] = {
       "status_publicacao": "publicado",
       "preco": 0,
       "nivel_minimo": 1
+    },
+    {
+      "id": "arte_057",
+      "titulo": "Ret roxo TAG",
+      "autoria": "Bruno",
+      "imagem": "assets/artes/arte_057.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_058",
+      "titulo": "ONE Space TAG",
+      "autoria": "ONE",
+      "imagem": "assets/artes/arte_058.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
+    },
+    {
+      "id": "arte_059",
+      "titulo": "ONE bomb TAG",
+      "autoria": "ONE",
+      "imagem": "assets/artes/arte_059.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
+    },
+    {
+      "id": "arte_060",
+      "titulo": "ONE Jungle TAG",
+      "autoria": "ONE",
+      "imagem": "assets/artes/arte_060.webp",
+      "categoria": "basica",
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": ""
+      },
+      "status_publicacao": "publicado",
+      "preco": 0,
+      "nivel_minimo": 1
     }
   ]
 };

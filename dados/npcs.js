@@ -8,9 +8,9 @@ URBANA_DADOS["npcs"] = {
       "nome": "Dir. Alexandra",
       "retrato": "assets/npcs/npc_alexandra/retrato.webp",
       "fala_chamada": "Ei! Vem cá!",
-      "fala_inicial": "EXEMPLO – Oi! Eu sou a Alexandra. Tem tanto muro cinza aqui no bairro... Me ajuda a deixar tudo mais colorido?",
-      "fala_andamento": "EXEMPLO – E aí, já pintou os muros? Tô esperando!",
-      "fala_concluida": "EXEMPLO – Ficou lindo! Valeu demais pela ajuda!",
+      "fala_inicial": "Oi! Eu sou a Alexandra. Tem tanto muro cinza aqui no bairro... Me ajuda a deixar tudo mais colorido?",
+      "fala_andamento": "E aí, já pintou os muros? Tô esperando!",
+      "fala_concluida": "Ficou lindo! Valeu demais pela ajuda!",
       "sprite": {
         "arquivo": "assets/npcs/npc_alexandra/sprite.webp",
         "largura_quadro": 96,
