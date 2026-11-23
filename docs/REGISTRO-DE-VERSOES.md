@@ -1,5 +1,9 @@
 # Urbana — registro de versões
 
+## 2.69 — 23/11/2026
+
+- Joystick mais transparente enquanto está sendo usado (45% de opacidade; em descanso continua 80%), para ver o mapa por baixo.
+
 ## 2.68 — 23/11/2026
 
 **Movimentação:**
