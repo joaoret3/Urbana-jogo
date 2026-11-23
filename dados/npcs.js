@@ -57,9 +57,9 @@ URBANA_DADOS["npcs"] = {
         "arquivo": "assets/npcs/npc_02/sprite.png",
         "largura_quadro": 192,
         "altura_quadro": 192,
-        "linha_parado": 1,
+        "linha_parado": 5,
         "quadros": 1,
-        "quadros_por_segundo": 1
+        "quadros_por_segundo": 5
       },
       "andar": {
         "ativo": false,
