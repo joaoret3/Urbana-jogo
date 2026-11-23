@@ -1,5 +1,16 @@
 # Urbana — registro de versões
 
+## 2.67 — 23/11/2026
+
+- **Veículos depois do menu:** as 50 imagens de veículos (≈ 1,3 MB) não são mais baixadas antes do menu. Elas começam a
+  baixar em segundo plano quando o fundo do menu termina; se o aluno entrar no mapa antes, o mapa espera só as que
+  faltam. (`Carros.carregarEmSegundoPlano` / `Carros.carregarFaltando`). As peças do mapa já eram baixadas depois do
+  menu (fundo) e, no mapa, só as perto do personagem.
+- **Cópias de segurança limitadas:** ao salvar, o editor mantém só as 30 cópias mais recentes em copias_de_seguranca
+  (`Editor.COPIAS_MANTIDAS`, `Pasta.limparCopias`). As 81 cópias anteriores a 19/11/2026 foram apagadas (continuam
+  no histórico do GitHub).
+- Novo teste: ferramentas/testes/carros.js.
+
 ## 2.66 — 23/11/2026 — auditoria técnica
 
 Auditoria completa (diagnóstico, limpeza, correções, otimização, testes). Nenhuma regra do jogo, visual ou conteúdo mudou.
