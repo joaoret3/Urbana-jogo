@@ -132,7 +132,7 @@ URBANA_DADOS["missoes"] = {
     },
     {
       "id": "missao_011",
-      "titulo": "",
+      "titulo": "Caçador de tesouro",
       "descricao": "",
       "tipo": "coletar_letras",
       "meta": 4,

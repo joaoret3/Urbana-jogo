@@ -31,7 +31,7 @@ URBANA_DADOS["npcs"] = {
       "fala_chamada": "Ei! Vem cá!",
       "fala_inicial": "",
       "fala_andamento": "",
-      "fala_concluida": "as",
+      "fala_concluida": "",
       "sprite": {
         "arquivo": "assets/npcs/npc_01/sprite.webp",
         "largura_quadro": 96,
@@ -50,9 +50,9 @@ URBANA_DADOS["npcs"] = {
       "nome": "João Rafael",
       "retrato": "assets/npcs/npc_02/retrato.webp",
       "fala_chamada": "Chega ai mano!",
-      "fala_inicial": "Vou te dar minha tag de presente, par você espalhar pelo bairro, mas antes, você vai ter que concluir esse desafio:",
+      "fala_inicial": "Vou te dar minha tag de presente, mas antes, você vai ter que concluir esse desafio:",
       "fala_andamento": "",
-      "fala_concluida": "Parabéns, parceiro!",
+      "fala_concluida": "Parabéns, parceiro(a)!",
       "sprite": {
         "arquivo": "assets/npcs/npc_02/sprite.webp",
         "largura_quadro": 192,
@@ -147,7 +147,7 @@ URBANA_DADOS["npcs"] = {
       },
       "andar": {
         "ativo": true,
-        "raio": 300
+        "raio": 603
       }
     }
   ]
