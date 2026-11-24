@@ -1,5 +1,13 @@
 # Urbana — registro de versões
 
+## 2.74 — 24/11/2026
+
+- **Conteúdo recuperado:** o salvamento do editor de 24/11 (09:29) foi feito numa pasta que ainda não tinha o Pull das
+  alterações de 23/11 e, ao gravar, apagou as artes "Ret roxo TAG" (arte_057), "ONE Space TAG" (arte_058),
+  "ONE Bomb TAG" (arte_059) e "ONE Jungle TAG" (arte_060), devolveu o "EXEMPLO –" às falas da Dir. Alexandra e apagou a
+  fala "Me ajude!!" da Vice Priscilla. Tudo isso voltou. As mudanças feitas naquele salvamento foram mantidas
+  (categoria do "Radioative STICKER", preços, passeio do Geraldo e mapa).
+
 ## 2.73 — 24/11/2026
 
 - Aviso da lata dourada no iPhone: a imagem da lata saía para fora do aviso. Agora tem tamanho fixo e fica dentro do
