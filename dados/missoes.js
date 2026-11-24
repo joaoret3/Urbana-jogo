@@ -105,7 +105,13 @@ URBANA_DADOS["missoes"] = {
       },
       "achado": {
         "nome": "gatinho",
-        "imagem": "assets/missoes/gato_laranjinha.png",
+        "imagem": "assets/missoes/gato_parado.webp",
+        "correndo": {
+          "arquivo": "assets/missoes/gato_correndo.webp",
+          "largura_quadro": 147,
+          "altura_quadro": 160,
+          "quadros": 4
+        },
         "mensagem": "Achou! Ele estava com o biscoito da Vice Priscilla.",
         "fala_entrega": "Você achou meu gatinho! E ainda trouxe meu biscoito. Valeu demais, toma sua recompensa!",
         "foge": true,

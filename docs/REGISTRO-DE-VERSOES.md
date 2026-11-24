@@ -1,5 +1,13 @@
 # Urbana — registro de versões
 
+## 2.75 — 24/11/2026
+
+- **Novo gatinho da missão da Vice Priscilla:** imagens enviadas pelo professor. Parado (escondido, nas janelas, nos
+  avisos e sentado ao lado da Vice Priscilla) usa o gato sentado de frente; quando foge e quando segue o aluno, ele
+  corre com uma animação de 4 quadros, virando para o lado em que anda. Arquivos: `assets/missoes/gato_parado.webp` e
+  `assets/missoes/gato_correndo.webp` (originais em SVG em `originais/missoes/`).
+- Editor (Missões → missão "Achar e voltar"): campos novos para a "Imagem correndo" (folha de quadros).
+
 ## 2.74 — 24/11/2026
 
 - **Conteúdo recuperado:** o salvamento do editor de 24/11 (09:29) foi feito numa pasta que ainda não tinha o Pull das
