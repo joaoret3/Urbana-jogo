@@ -148,6 +148,9 @@ URBANA_DADOS["npcs"] = {
       "andar": {
         "ativo": true,
         "raio": 900
+      },
+      "presente": {
+        "moldura": "moldura_03"
       }
     }
   ]

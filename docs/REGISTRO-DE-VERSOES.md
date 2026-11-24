@@ -1,5 +1,18 @@
 # Urbana — registro de versões
 
+## 2.72 — 24/11/2026
+
+- **Nova janela "Você subiu de nível!" (opção N1):** em vez da faixa com a lista e de uma janela "Moldura nova!" para
+  cada moldura, aparece uma janela só, com o selo do nível e um cartão para cada recompensa (avatar ou moldura). As
+  molduras aparecem já no retrato do jogador, com o botão "Usar" no cartão; as artes liberadas ficam numa linha embaixo;
+  "Continuar" fecha tudo. Se subir dois níveis de uma vez, aparece uma janela para cada nível. Nível sem recompensas
+  continua só com a faixa curta. Molduras ganhas por missão continuam com a janela "Moldura nova!".
+- **Geraldo dá a moldura "Resistência":** ele continua andando pelo bairro; quando o jogador chega perto, ele para e
+  mostra a fala ("Ô turminha!"), com um "!" enquanto o presente não foi entregue. Na 1ª conversa o jogador ganha a moldura
+  (depois aparece a janela "Moldura nova!"); nas próximas ele só conversa. No editor (Personagens do bairro → Andar pelo
+  bairro) há o campo novo "Presente ao conversar (moldura)", que serve para qualquer personagem que anda.
+- As janelas agora ficam por cima do selo "NV" do retrato (antes ele aparecia por cima da janela).
+
 ## 2.71 — 24/11/2026
 
 **Testes no celular:**
