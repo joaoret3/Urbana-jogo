@@ -1,5 +1,10 @@
 # Urbana — registro de versões
 
+## 2.73 — 24/11/2026
+
+- Aviso da lata dourada no iPhone: a imagem da lata saía para fora do aviso. Agora tem tamanho fixo e fica dentro do
+  quadradinho (vale para todos os avisos com imagem, como o do gatinho).
+
 ## 2.72 — 24/11/2026
 
 - **Nova janela "Você subiu de nível!" (opção N1):** em vez da faixa com a lista e de uma janela "Moldura nova!" para
