@@ -1,5 +1,14 @@
 # Urbana — registro de versões
 
+## 2.71 — 24/11/2026
+
+**Testes no celular:**
+- Tocar no jogo não seleciona mais textos nem abre o menu "Copiar / Buscar / Traduzir" (campos de digitar continuam
+  normais). Dois toques e pinça não dão mais zoom na tela.
+- O Safari do iPhone deitado aumentava sozinho o tamanho das letras, deixando as janelas grandes e cortadas. Desligado.
+- Conversa com personagens mais compacta no celular deitado: cabe na tela, com o botão "Jogar" visível, sem rolar.
+- Avisos com imagem (gatinho, lata dourada): a imagem fica dentro do quadradinho e não passa por cima do texto.
+
 ## 2.70 — 23/11/2026
 
 - **Molduras padronizadas:** as 5 molduras-emblema foram redimensionadas para que o círculo onde fica o personagem tenha
