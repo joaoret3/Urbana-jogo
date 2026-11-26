@@ -1,5 +1,20 @@
 # Urbana — registro de versões
 
+## 2.77 — 26/11/2026
+
+- **VANDALO, o desafiante:** 9 cópias dele andam pelo bairro, em lugares sorteados cada vez que o jogo é aberto, bem
+  espalhadas. São 3 com "Mistura de cores", 3 com "Siga o spray" e 3 com "Memória das latas"; as 3 do mesmo jogo têm
+  Fácil, Normal e Difícil, e a dificuldade de cada uma muda a cada abertura do jogo. Ao chegar perto ele chama ("Ei! Vem
+  cá!"), com "!" enquanto o desafio não foi vencido; na conversa aparecem o mini-jogo, a dificuldade e o prêmio.
+  Cada vitória dá +15 XP e +5 latas, uma vez por cópia a cada abertura do jogo (fechou e abriu, libera de novo).
+- A "Missão Vandalo" (missao_012, mini-jogo "Mistura de cores") virou essa configuração do personagem: o prêmio dela
+  (15 XP e 5 latas) foi para o VANDALO. O id missao_012 fica reservado e não será usado por outra missão.
+- Editor (Personagens do bairro): seção nova "Desafiante (mini-jogos pelo mapa)" — ligar/desligar, quantas cópias,
+  quais mini-jogos e o prêmio (XP e latas) por vitória.
+- Folha de sprites do VANDALO convertida para WebP sem perda (1,4 MB → 0,9 MB).
+- Testes `niveis`, `andar` e `geraldo` passam a ler o conteúdo configurado (personagens, níveis e quem anda), em vez de
+  nomes e valores fixos — assim continuam valendo quando o conteúdo muda pelo editor.
+
 ## 2.76 — 26/11/2026
 
 - **Latas de presente por nível:** no editor, aba "Níveis, preços e recompensas", cada nível (a partir do 2) tem o campo

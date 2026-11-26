@@ -246,7 +246,7 @@ URBANA_DADOS["npcs"] = {
       "fala_andamento": "",
       "fala_concluida": "",
       "sprite": {
-        "arquivo": "assets/npcs/npc_11/sprite.png",
+        "arquivo": "assets/npcs/npc_11/sprite.webp",
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
@@ -256,6 +256,18 @@ URBANA_DADOS["npcs"] = {
       "andar": {
         "ativo": true,
         "raio": 900
+      },
+      "desafiante": {
+        "quantidade": 9,
+        "jogos": [
+          "cores",
+          "sequencia",
+          "memoria"
+        ],
+        "recompensa": {
+          "xp": 15,
+          "latas": 5
+        }
       }
     }
   ]

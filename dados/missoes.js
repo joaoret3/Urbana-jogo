@@ -2,6 +2,9 @@
 // O conteúdo entre as chaves { } segue o formato JSON.
 URBANA_DADOS["missoes"] = {
   "_leia": "Missões. 'tipo' pode ser: visitar_murais, ler_fichas, concluir_quizzes, pintar_muros, coletar_latas, visitar_todos, mini_jogo (com 'mini_jogo': { jogo, dificuldade }) ou coletar_letras (com 'letras': \"RET\" e meta = número de letras). 'meta' é quantas vezes. Uma missão que pede mais do que existe no jogo fica desativada sozinha. Recompensa pode ter xp, latas e moldura. 'personagem' (opcional) = id de um personagem de dados/npcs.js: a missão só aparece e só começa a contar depois que o jogador conversa com esse personagem no mapa.",
+  "ids_retirados": [
+    "missao_012"
+  ],
   "missoes": [
     {
       "id": "missao_001",
@@ -149,22 +152,6 @@ URBANA_DADOS["missoes"] = {
       },
       "personagem": "npc_05",
       "letras": "YORK"
-    },
-    {
-      "id": "missao_012",
-      "titulo": "Missão Vandalo",
-      "descricao": "",
-      "tipo": "mini_jogo",
-      "meta": 1,
-      "recompensa": {
-        "xp": 15,
-        "latas": 5
-      },
-      "personagem": "npc_11",
-      "mini_jogo": {
-        "jogo": "cores",
-        "dificuldade": "dificil"
-      }
     }
   ]
 };
