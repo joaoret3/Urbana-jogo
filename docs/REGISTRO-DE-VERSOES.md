@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.79 — 26/11/2026
+
+- **Vitória contra o VANDALO:** a tela "Você venceu!" mostrava a arte de outro aluno (a 1ª arte do Black Book), sem
+  relação com o desafio. Agora mostra a lata e o prêmio ("+15 XP · +5 latas"); na revanche, sem imagem.
+- **Editor não desfaz mais um Pull:** o salvamento de 26/11 (14:31) foi feito com o editor aberto desde antes do Pull da
+  v2.77 e trouxe de volta a "Missão Vandalo" (missao_012) — por isso o VANDALO deixou de ser só desafiante. Corrigido
+  (missao_012 retirada de novo; as metas e prêmios que você mudou nas missões ficaram). E agora, ao salvar, o editor
+  confere se cada arquivo mudou na pasta depois que ele foi aberto; se mudou, junta as duas versões (o que chegou pelo
+  Pull + o que você mudou no editor) em vez de gravar por cima, e avisa na mensagem "Salvo!".
+
 ## 2.78 — 26/11/2026
 
 - **Black Book como caderno (opção B1):** cada arte é uma folha pautada, com margem vermelha e furos da espiral. O nível
