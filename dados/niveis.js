@@ -15,7 +15,7 @@ URBANA_DADOS["niveis"] = {
     },
     {
       "nivel": 2,
-      "xp": 50,
+      "xp": 100,
       "desbloqueia": {
         "avatares": [
           "avatar_02",
@@ -26,7 +26,7 @@ URBANA_DADOS["niveis"] = {
     },
     {
       "nivel": 3,
-      "xp": 100,
+      "xp": 200,
       "desbloqueia": {
         "avatares": [
           "avatar_05"
@@ -40,7 +40,7 @@ URBANA_DADOS["niveis"] = {
     },
     {
       "nivel": 4,
-      "xp": 200,
+      "xp": 300,
       "desbloqueia": {
         "avatares": [
           "avatar_04",

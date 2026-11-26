@@ -152,6 +152,90 @@ URBANA_DADOS["npcs"] = {
       "presente": {
         "moldura": "moldura_03"
       }
+    },
+    {
+      "id": "npc_07",
+      "nome": "RISKO",
+      "retrato": "assets/npcs/npc_07/retrato.webp",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_07/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": true,
+        "raio": 900
+      }
+    },
+    {
+      "id": "npc_08",
+      "nome": "SOUZA",
+      "retrato": "assets/npcs/npc_08/retrato.webp",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_08/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": true,
+        "raio": 900
+      }
+    },
+    {
+      "id": "npc_09",
+      "nome": "BRASILEIRA",
+      "retrato": "assets/npcs/npc_09/retrato.webp",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_09/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": true,
+        "raio": 900
+      }
+    },
+    {
+      "id": "npc_10",
+      "nome": "NPC",
+      "retrato": "assets/npcs/npc_10/retrato.webp",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_10/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": false,
+        "raio": 300
+      }
     }
   ]
 };

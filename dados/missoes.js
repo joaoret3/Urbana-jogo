@@ -22,7 +22,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 3,
       "recompensa": {
         "xp": 10,
-        "latas": 5
+        "latas": 10
       }
     },
     {
@@ -33,7 +33,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 5,
       "recompensa": {
         "xp": 10,
-        "latas": 5
+        "latas": 6
       }
     },
     {
@@ -65,8 +65,8 @@ URBANA_DADOS["missoes"] = {
       "tipo": "coletar_latas",
       "meta": 5,
       "recompensa": {
-        "xp": 5,
-        "latas": 2
+        "xp": 10,
+        "latas": 6
       }
     },
     {
@@ -76,7 +76,7 @@ URBANA_DADOS["missoes"] = {
       "tipo": "visitar_todos",
       "meta": 1,
       "recompensa": {
-        "xp": 30,
+        "xp": 50,
         "latas": 20
       }
     },
