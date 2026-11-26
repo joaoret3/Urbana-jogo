@@ -236,6 +236,27 @@ URBANA_DADOS["npcs"] = {
         "ativo": true,
         "raio": 900
       }
+    },
+    {
+      "id": "npc_11",
+      "nome": "VANDALO",
+      "retrato": "assets/npcs/npc_11/retrato.webp",
+      "fala_chamada": "Ei! Vem cá!",
+      "fala_inicial": "",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_11/sprite.png",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": true,
+        "raio": 900
+      }
     }
   ]
 };

@@ -149,6 +149,22 @@ URBANA_DADOS["missoes"] = {
       },
       "personagem": "npc_05",
       "letras": "YORK"
+    },
+    {
+      "id": "missao_012",
+      "titulo": "Missão Vandalo",
+      "descricao": "",
+      "tipo": "mini_jogo",
+      "meta": 1,
+      "recompensa": {
+        "xp": 15,
+        "latas": 5
+      },
+      "personagem": "npc_11",
+      "mini_jogo": {
+        "jogo": "cores",
+        "dificuldade": "dificil"
+      }
     }
   ]
 };
