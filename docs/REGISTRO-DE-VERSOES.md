@@ -1,5 +1,12 @@
 # Urbana — registro de versões
 
+## 2.78 — 26/11/2026
+
+- **Black Book como caderno (opção B1):** cada arte é uma folha pautada, com margem vermelha e furos da espiral. O nível
+  aparece numa fita colorida colada no alto da folha (nível 1 verde, 2 azul, 3 rosa, 4 ou mais dourado). Título e
+  autoria ("por …") escritos à mão na folha; embaixo, a categoria e o preço (com a lata) ou "É sua"/"Prêmio".
+  A arte bloqueada fica clarinha, como rascunho, com cadeado. A visualização ampliada usa a mesma folha.
+
 ## 2.77 — 26/11/2026
 
 - **VANDALO, o desafiante:** 9 cópias dele andam pelo bairro, em lugares sorteados cada vez que o jogo é aberto, bem
