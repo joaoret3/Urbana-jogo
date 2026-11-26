@@ -29,7 +29,8 @@ URBANA_DADOS["niveis"] = {
       "desbloqueia": {
         "avatares": [],
         "molduras": []
-      }
+      },
+      "latas": 20
     },
     {
       "nivel": 4,
@@ -60,7 +61,8 @@ URBANA_DADOS["niveis"] = {
           "avatar_04"
         ],
         "molduras": []
-      }
+      },
+      "latas": 30
     },
     {
       "nivel": 7,
@@ -89,7 +91,8 @@ URBANA_DADOS["niveis"] = {
       "desbloqueia": {
         "avatares": [],
         "molduras": []
-      }
+      },
+      "latas": 40
     },
     {
       "nivel": 10,

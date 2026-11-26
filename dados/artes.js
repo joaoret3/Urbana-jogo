@@ -350,7 +350,7 @@ URBANA_DADOS["artes"] = {
     {
       "id": "arte_029",
       "titulo": "Lacoste TAG",
-      "autoria": "Não sei",
+      "autoria": "Bernard",
       "imagem": "assets/artes/arte_029.webp",
       "categoria": "basica",
       "autorizacao": {
@@ -534,18 +534,6 @@ URBANA_DADOS["artes"] = {
       "titulo": "Gabi TAG",
       "autoria": "Isis",
       "imagem": "assets/artes/arte_044.webp",
-      "categoria": "basica",
-      "autorizacao": {
-        "autorizado": true,
-        "observacao": ""
-      },
-      "status_publicacao": "publicado"
-    },
-    {
-      "id": "arte_045",
-      "titulo": "Lah TAG",
-      "autoria": "",
-      "imagem": "assets/artes/arte_045.webp",
       "categoria": "basica",
       "autorizacao": {
         "autorizado": true,
