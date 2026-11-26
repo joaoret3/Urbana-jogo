@@ -692,7 +692,7 @@ URBANA_DADOS["artes"] = {
       "titulo": "Ret roxo TAG",
       "autoria": "Bruno",
       "imagem": "assets/artes/arte_057.webp",
-      "categoria": "basica",
+      "categoria": "especial",
       "autorizacao": {
         "autorizado": true,
         "observacao": ""

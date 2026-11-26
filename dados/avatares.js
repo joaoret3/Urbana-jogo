@@ -5,10 +5,10 @@ URBANA_DADOS["avatares"] = {
   "avatares": [
     {
       "id": "avatar_01",
-      "nome": "Luana",
+      "nome": "LARA ",
       "descricao": "",
       "retrato": "assets/avatares/avatar_01/retrato.webp",
-      "nivel_minimo": 2,
+      "nivel_minimo": 8,
       "sprite": {
         "arquivo": "assets/avatares/avatar_01/sprite.webp",
         "largura_quadro": 192,
@@ -19,10 +19,10 @@ URBANA_DADOS["avatares"] = {
     },
     {
       "id": "avatar_02",
-      "nome": "Sol",
+      "nome": "BEATRIZ",
       "descricao": "",
       "retrato": "assets/avatares/avatar_02/retrato.webp",
-      "nivel_minimo": 2,
+      "nivel_minimo": 4,
       "sprite": {
         "arquivo": "assets/avatares/avatar_02/sprite.webp",
         "largura_quadro": 192,
@@ -47,10 +47,10 @@ URBANA_DADOS["avatares"] = {
     },
     {
       "id": "avatar_05",
-      "nome": "astronauta",
+      "nome": "THEO",
       "descricao": "",
       "retrato": "assets/avatares/avatar_05/retrato.webp",
-      "nivel_minimo": 3,
+      "nivel_minimo": 8,
       "sprite": {
         "arquivo": "assets/avatares/avatar_05/sprite.webp",
         "largura_quadro": 192,
@@ -61,10 +61,10 @@ URBANA_DADOS["avatares"] = {
     },
     {
       "id": "avatar_04",
-      "nome": "sem nome",
+      "nome": "MAIA",
       "descricao": "",
       "retrato": "assets/avatares/avatar_04/retrato.webp",
-      "nivel_minimo": 4,
+      "nivel_minimo": 6,
       "sprite": {
         "arquivo": "assets/avatares/avatar_04/sprite.webp",
         "largura_quadro": 192,
@@ -75,7 +75,7 @@ URBANA_DADOS["avatares"] = {
     },
     {
       "id": "avatar_06",
-      "nome": "sem nome 1",
+      "nome": "JOÃO",
       "descricao": "",
       "retrato": "assets/avatares/avatar_06/retrato.webp",
       "nivel_minimo": 4,

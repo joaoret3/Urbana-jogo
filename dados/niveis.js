@@ -17,25 +17,18 @@ URBANA_DADOS["niveis"] = {
       "nivel": 2,
       "xp": 100,
       "desbloqueia": {
-        "avatares": [
-          "avatar_02",
-          "avatar_01"
-        ],
-        "molduras": []
+        "avatares": [],
+        "molduras": [
+          "moldura_01"
+        ]
       }
     },
     {
       "nivel": 3,
       "xp": 200,
       "desbloqueia": {
-        "avatares": [
-          "avatar_05"
-        ],
-        "molduras": [
-          "moldura_01",
-          "moldura_03",
-          "moldura_02"
-        ]
+        "avatares": [],
+        "molduras": []
       }
     },
     {
@@ -43,11 +36,67 @@ URBANA_DADOS["niveis"] = {
       "xp": 300,
       "desbloqueia": {
         "avatares": [
-          "avatar_04",
-          "avatar_06"
+          "avatar_06",
+          "avatar_02"
         ],
+        "molduras": []
+      }
+    },
+    {
+      "nivel": 5,
+      "xp": 400,
+      "desbloqueia": {
+        "avatares": [],
         "molduras": [
-          "moldura_latas",
+          "moldura_02"
+        ]
+      }
+    },
+    {
+      "nivel": 6,
+      "xp": 500,
+      "desbloqueia": {
+        "avatares": [
+          "avatar_04"
+        ],
+        "molduras": []
+      }
+    },
+    {
+      "nivel": 7,
+      "xp": 600,
+      "desbloqueia": {
+        "avatares": [],
+        "molduras": [
+          "moldura_latas"
+        ]
+      }
+    },
+    {
+      "nivel": 8,
+      "xp": 700,
+      "desbloqueia": {
+        "avatares": [
+          "avatar_05",
+          "avatar_01"
+        ],
+        "molduras": []
+      }
+    },
+    {
+      "nivel": 9,
+      "xp": 800,
+      "desbloqueia": {
+        "avatares": [],
+        "molduras": []
+      }
+    },
+    {
+      "nivel": 10,
+      "xp": 900,
+      "desbloqueia": {
+        "avatares": [],
+        "molduras": [
           "moldura_cmj"
         ]
       }

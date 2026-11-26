@@ -233,8 +233,8 @@ URBANA_DADOS["npcs"] = {
         "quadros_por_segundo": 5
       },
       "andar": {
-        "ativo": false,
-        "raio": 300
+        "ativo": true,
+        "raio": 900
       }
     }
   ]

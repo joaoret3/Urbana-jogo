@@ -23,8 +23,8 @@ URBANA_DADOS["jogo"] = {
   },
   "recompensas": {
     "primeira_visita": {
-      "xp": 2,
-      "latas": 2
+      "xp": 5,
+      "latas": 3
     },
     "quiz_padrao": {
       "xp": 10,
@@ -54,12 +54,12 @@ URBANA_DADOS["jogo"] = {
     },
     "intermediaria": {
       "nome": "Arte intermediária",
-      "preco": 45,
+      "preco": 50,
       "nivel_minimo": 2
     },
     "especial": {
       "nome": "Arte rara",
-      "preco": 80,
+      "preco": 75,
       "nivel_minimo": 3
     }
   }
