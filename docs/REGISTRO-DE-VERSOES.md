@@ -1,5 +1,13 @@
 # Urbana — registro de versões
 
+## 2.76 — 26/11/2026
+
+- **Latas de presente por nível:** no editor, aba "Níveis, preços e recompensas", cada nível (a partir do 2) tem o campo
+  "Latas de presente ao chegar neste nível". Ao subir para esse nível o aluno ganha as latas, que aparecem como um cartão
+  "+N latas" na janela "Você subiu de nível!". Cada aluno recebe uma vez só por nível. Quem já tinha passado do nível
+  recebe ao abrir o jogo, com a janela "Recompensa do nível N".
+- Teste `niveis` passa a usar o XP configurado de cada nível (antes tinha valores fixos).
+
 ## 2.75 — 24/11/2026
 
 - **Novo gatinho da missão da Vice Priscilla:** imagens enviadas pelo professor. Parado (escondido, nas janelas, nos
