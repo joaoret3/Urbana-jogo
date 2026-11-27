@@ -269,6 +269,60 @@ URBANA_DADOS["npcs"] = {
           "moedas": 5
         }
       }
+    },
+    {
+      "id": "npc_12",
+      "nome": "Vendedor Norte",
+      "retrato": "assets/npcs/npc_12/retrato.webp",
+      "fala_chamada": "Latas aqui!",
+      "fala_inicial": "Precisa de tinta? Tenho latas aqui na mochila!",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_12/sprite.webp",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": true,
+        "raio": 600
+      },
+      "vendedor": {
+        "itens": [
+          "latas_1",
+          "latas_10"
+        ]
+      }
+    },
+    {
+      "id": "npc_13",
+      "nome": "Vendedor Sul",
+      "retrato": "assets/npcs/npc_12/retrato.webp",
+      "fala_chamada": "Latas aqui!",
+      "fala_inicial": "Precisa de tinta? Tenho latas aqui na mochila!",
+      "fala_andamento": "",
+      "fala_concluida": "",
+      "sprite": {
+        "arquivo": "assets/npcs/npc_12/sprite.webp",
+        "largura_quadro": 192,
+        "altura_quadro": 192,
+        "linha_parado": 1,
+        "quadros": 7,
+        "quadros_por_segundo": 5
+      },
+      "andar": {
+        "ativo": true,
+        "raio": 600
+      },
+      "vendedor": {
+        "itens": [
+          "latas_1",
+          "latas_10"
+        ]
+      }
     }
   ]
 };

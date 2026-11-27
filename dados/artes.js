@@ -728,6 +728,74 @@ URBANA_DADOS["artes"] = {
       "status_publicacao": "publicado",
       "preco": 0,
       "nivel_minimo": 1
+    },
+    {
+      "id": "arte_061",
+      "titulo": "Foco Força Fé",
+      "autoria": "",
+      "imagem": "assets/artes/arte_061.webp",
+      "categoria": "basica",
+      "preco": 0,
+      "nivel_minimo": 1,
+      "loja": {
+        "preco": 30
+      },
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": "Grafite da Van do Spray (enviado pelo professor em 27/11)."
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_062",
+      "titulo": "Art da Rua",
+      "autoria": "",
+      "imagem": "assets/artes/arte_062.webp",
+      "categoria": "basica",
+      "preco": 0,
+      "nivel_minimo": 1,
+      "loja": {
+        "preco": 30
+      },
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": "Grafite da Van do Spray (enviado pelo professor em 27/11)."
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_063",
+      "titulo": "Força da Quebrada",
+      "autoria": "",
+      "imagem": "assets/artes/arte_063.webp",
+      "categoria": "basica",
+      "preco": 0,
+      "nivel_minimo": 1,
+      "loja": {
+        "preco": 30
+      },
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": "Grafite da Van do Spray (enviado pelo professor em 27/11)."
+      },
+      "status_publicacao": "publicado"
+    },
+    {
+      "id": "arte_064",
+      "titulo": "Respeito",
+      "autoria": "",
+      "imagem": "assets/artes/arte_064.webp",
+      "categoria": "basica",
+      "preco": 0,
+      "nivel_minimo": 1,
+      "loja": {
+        "preco": 30
+      },
+      "autorizacao": {
+        "autorizado": true,
+        "observacao": "Grafite da Van do Spray (enviado pelo professor em 27/11)."
+      },
+      "status_publicacao": "publicado"
     }
   ]
 };

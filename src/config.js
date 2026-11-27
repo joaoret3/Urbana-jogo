@@ -7,7 +7,7 @@
 // no menu Configurações (a escolha fica salva no computador).
 // =============================================================================
 window.URBANA = {
-  VERSAO: '2.80',              // versão do jogo (aparece no rodapé do menu)
+  VERSAO: '2.81',              // versão do jogo (aparece no rodapé do menu)
   QUALIDADE: 'alta',          // padrão: 'alta' (mapa inteiro) ou 'leve' (metade da resolução, para computadores fracos)
   VELOCIDADE: 260,            // pixels por segundo do personagem
   ZOOM_INICIAL: 0.9,
@@ -23,7 +23,7 @@ window.URBANA = {
 
   // Pastas e arquivos de conteúdo (a escola altera os arquivos, não este código)
   PASTA_DADOS: 'dados/',
-  ARQUIVOS_DADOS: ['jogo', 'niveis', 'avatares', 'molduras', 'grafites', 'quizzes', 'artes', 'missoes', 'npcs', 'creditos', 'tutorial'],
+  ARQUIVOS_DADOS: ['jogo', 'niveis', 'avatares', 'molduras', 'grafites', 'quizzes', 'artes', 'missoes', 'npcs', 'creditos', 'tutorial', 'loja'],
 
   // Prefixo das chaves gravadas no navegador (localStorage)
   PREFIXO_ARMAZENAMENTO: 'urbana_'

@@ -1,5 +1,18 @@
 # Urbana — registro de versões
 
+## 2.81 — 27/11/2026
+
+- **Van do Spray:** fica na calçada amarela ao lado da escola, perto da curva e do poste. Perto dela, o botão A abre a
+  loja. Ela vende latas por moedas: 1 lata = 2, 10 = 18, 25 = 40 e a caixa com 50 = 75 (a caixa só a partir do nível 3).
+- **Grafites da loja:** "Foco Força Fé", "Art da Rua", "Força da Quebrada" e "Respeito", 30 moedas cada. Só se compram
+  na van (não saem por nível nem por missão). No Black Book aparecem por último, com a fita dourada "LOJA".
+- **Vendedor Norte e Vendedor Sul:** andam pelo norte e pelo sul do bairro e vendem 1 e 10 latas (mesmo preço da van).
+  Ao conversar, mostram a lata. Dá para mudar o lugar deles no editor (Mapa).
+- **Molduras e roupas na loja:** o jogo já está pronto para vender molduras (20 moedas) e roupas dos personagens
+  (100 moedas); as abas aparecem quando as imagens forem cadastradas. O perfil terá "Roupas de …" para vestir/tirar.
+- **Editor:** nova aba "Loja (Van do Spray)" (posição da van, pacotes de latas, o que está à venda e preços) e, em
+  Personagens do bairro, a caixa "Este personagem vende latas".
+
 ## 2.80 — 27/11/2026
 
 - **Moedas:** as latas comuns do mapa viraram moedas (moeda dourada girando). Missões, quizzes, primeira visita,
