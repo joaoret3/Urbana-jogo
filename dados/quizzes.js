@@ -45,7 +45,6 @@ URBANA_DADOS["quizzes"] = {
       "id": "quiz_035",
       "grafite_id": "grafite_035",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Quais são os quatro elementos tradicionalmente associados à cultura Hip-Hop?",
@@ -58,13 +57,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_036",
       "grafite_id": "grafite_036",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Na linguagem do hip-hop e também do grafite, o que siginifica \"CREW\"?",
@@ -77,13 +76,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_037",
       "grafite_id": "grafite_037",
       "xp": 20,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O que significa fazer um Graffite em Freestyle?",
@@ -96,13 +95,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "C",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_038",
       "grafite_id": "grafite_038",
       "xp": 20,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O que é um Throw-up (Throwie) no Graffite?",
@@ -115,13 +114,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_039",
       "grafite_id": "grafite_039",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Qual característica é mais comum no estilo Wildstyle?",
@@ -134,13 +133,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_041",
       "grafite_id": "grafite_034",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "No estilo de colorido SLIME, qual efeito visual é comumente explorado?",
@@ -153,13 +152,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "A",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_042",
       "grafite_id": "grafite_033",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O que é o colorido Tom sobre Tom?",
@@ -172,13 +171,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "C",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_043",
       "grafite_id": "grafite_032",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Por que o artista utiliza diferentes técnicas de colorido no Graffite?",
@@ -191,13 +190,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "C",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_044",
       "grafite_id": "grafite_030",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O que é uma TAG dentro do Graffite?",
@@ -210,13 +209,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "A",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_045",
       "grafite_id": "grafite_029",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Ao criar letras para um Graffite, por que é importante pensar no formato e no espaço entre elas?",
@@ -229,13 +228,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "C",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_046",
       "grafite_id": "grafite_028",
       "xp": 20,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O que pode fazer um Graffite transmitir sensação de movimento?",
@@ -248,13 +247,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "A",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_047",
       "grafite_id": "grafite_026",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Ao criar um Graffite com várias cores, o que é importante considerar para que elas funcionem bem juntas?",
@@ -267,13 +266,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_048",
       "grafite_id": "grafite_024",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O que caracteriza o Bomb (Bombing) dentro da cultura do Graffite?",
@@ -286,13 +285,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_049",
       "grafite_id": "grafite_023",
       "xp": 20,
-      "latas": 10,
       "perguntas": [
         {
           "enunciado": "De que maneira o Graffite pode representar o bairro ou a comunidade onde é produzido?",
@@ -305,13 +304,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "C",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 10
     },
     {
       "id": "quiz_050",
       "grafite_id": "grafite_022",
       "xp": 10,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O Graffite é uma linguagem artística dentro da cultura Hip-Hop. Na sua opinião, como ele pode transformar um espaço e transmitir uma mensagem para as pessoas que passam por ele?",
@@ -324,13 +323,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_051",
       "grafite_id": "grafite_021",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Como o Graffite se relaciona com o elemento DJ?",
@@ -343,13 +342,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_052",
       "grafite_id": "grafite_019",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "Qual é a principal contribuição do Graffite para a cultura Hip-Hop?",
@@ -362,13 +361,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_053",
       "grafite_id": "grafite_014",
       "xp": 10,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "",
@@ -381,13 +380,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "A",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_054",
       "grafite_id": "grafite_007",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O colorido em Onda utiliza qual característica visual como principal referência?",
@@ -400,13 +399,13 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     },
     {
       "id": "quiz_055",
       "grafite_id": "grafite_006",
       "xp": 5,
-      "latas": 5,
       "perguntas": [
         {
           "enunciado": "O colorido em Onda utiliza qual característica visual como principal referência?",
@@ -419,7 +418,8 @@ URBANA_DADOS["quizzes"] = {
           "correta": "B",
           "explicacao": ""
         }
-      ]
+      ],
+      "moedas": 5
     }
   ]
 };

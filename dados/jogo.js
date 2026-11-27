@@ -24,14 +24,15 @@ URBANA_DADOS["jogo"] = {
   "recompensas": {
     "primeira_visita": {
       "xp": 5,
-      "latas": 3
+      "moedas": 3
     },
     "quiz_padrao": {
       "xp": 10,
-      "latas": 6
+      "moedas": 6
     },
-    "lata_coletavel": 1,
-    "lata_dourada": 20
+    "lata_dourada": 20,
+    "moeda_coletavel": 1,
+    "_leia": "Prêmios do jogo (v2.80): 'moedas' e 'xp' de cada ação; 'moeda_coletavel' = moedas por moeda pega no mapa; 'lata_dourada' = LATAS da lata dourada (ela continua dando latas)."
   },
   "musica": "assets/audio/musica_boombap.mp3",
   "sons": {

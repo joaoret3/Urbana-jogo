@@ -30,7 +30,7 @@ URBANA_DADOS["niveis"] = {
         "avatares": [],
         "molduras": []
       },
-      "latas": 20
+      "moedas": 20
     },
     {
       "nivel": 4,
@@ -62,7 +62,7 @@ URBANA_DADOS["niveis"] = {
         ],
         "molduras": []
       },
-      "latas": 30
+      "moedas": 30
     },
     {
       "nivel": 7,
@@ -92,7 +92,7 @@ URBANA_DADOS["niveis"] = {
         "avatares": [],
         "molduras": []
       },
-      "latas": 40
+      "moedas": 40
     },
     {
       "nivel": 10,

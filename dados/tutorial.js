@@ -16,9 +16,14 @@ URBANA_DADOS["tutorial"] = {
       "texto": "Os pins marcam grafites reais. Chegue perto e aperte A (ou a tecla E) para ler a ficha e fazer o quiz."
     },
     {
+      "icone": "estrela",
+      "titulo": "Junte moedas",
+      "texto": "Passe por cima das moedas espalhadas pelo bairro e acerte quizzes e missões para ganhar moedas e XP."
+    },
+    {
       "icone": "lata",
-      "titulo": "Junte latas de spray",
-      "texto": "Passe por cima das latas espalhadas pelo bairro e acerte quizzes para ganhar latas e XP."
+      "titulo": "Compre latas de spray",
+      "texto": "Na van ao lado da escola, ou com o Vendedor Norte e o Vendedor Sul, troque moedas por latas. A lata dourada que aparece no bairro dá 20 latas de uma vez."
     },
     {
       "icone": "caderno",

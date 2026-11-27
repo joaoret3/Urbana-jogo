@@ -266,7 +266,7 @@ URBANA_DADOS["npcs"] = {
         ],
         "recompensa": {
           "xp": 15,
-          "latas": 5
+          "moedas": 5
         }
       }
     }

@@ -14,7 +14,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 1,
       "recompensa": {
         "xp": 5,
-        "latas": 3
+        "moedas": 3
       }
     },
     {
@@ -25,7 +25,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 5,
       "recompensa": {
         "xp": 10,
-        "latas": 10
+        "moedas": 10
       }
     },
     {
@@ -36,7 +36,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 5,
       "recompensa": {
         "xp": 10,
-        "latas": 6
+        "moedas": 6
       }
     },
     {
@@ -47,7 +47,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 5,
       "recompensa": {
         "xp": 15,
-        "latas": 10
+        "moedas": 10
       }
     },
     {
@@ -58,7 +58,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 1,
       "recompensa": {
         "xp": 10,
-        "latas": 3
+        "moedas": 3
       }
     },
     {
@@ -69,7 +69,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 10,
       "recompensa": {
         "xp": 10,
-        "latas": 6
+        "moedas": 6
       }
     },
     {
@@ -80,7 +80,7 @@ URBANA_DADOS["missoes"] = {
       "meta": 1,
       "recompensa": {
         "xp": 50,
-        "latas": 20
+        "moedas": 20
       }
     },
     {
@@ -92,7 +92,7 @@ URBANA_DADOS["missoes"] = {
       "personagem": "npc_alexandra",
       "recompensa": {
         "xp": 15,
-        "latas": 10
+        "moedas": 10
       }
     },
     {
@@ -104,7 +104,7 @@ URBANA_DADOS["missoes"] = {
       "personagem": "npc_01",
       "recompensa": {
         "xp": 10,
-        "latas": 15
+        "moedas": 15
       },
       "achado": {
         "nome": "gatinho",
@@ -130,8 +130,8 @@ URBANA_DADOS["missoes"] = {
       "meta": 1,
       "recompensa": {
         "xp": 10,
-        "latas": 3,
-        "arte": "arte_016"
+        "arte": "arte_016",
+        "moedas": 3
       },
       "personagem": "npc_02",
       "mini_jogo": {
@@ -147,8 +147,8 @@ URBANA_DADOS["missoes"] = {
       "meta": 4,
       "recompensa": {
         "xp": 10,
-        "latas": 3,
-        "arte": "arte_052"
+        "arte": "arte_052",
+        "moedas": 3
       },
       "personagem": "npc_05",
       "letras": "YORK"

@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.80 — 27/11/2026
+
+- **Moedas:** as latas comuns do mapa viraram moedas (moeda dourada girando). Missões, quizzes, primeira visita,
+  VANDALO e presentes de nível passam a dar moedas, com os mesmos números de antes. A lata dourada continua igual
+  (+20 latas). Black Book e pintura de muros continuam custando latas. Partida nova começa com 0 moedas e 0 latas.
+  HUD, perfil, lista de partidas, janelas de prêmio e editor mostram "moedas".
+- **Minijogos:** a arte "Joao TAG" não aparece mais em nenhum minijogo. Desafio sem arte-prêmio (VANDALO) não usa
+  arte nenhuma — o jogo da memória fica só com pares de latas.
+- **RISKO:** agora dá para conversar com ele (personagem que anda e tem "fala ao interagir" conversa).
+
 ## 2.79 — 26/11/2026
 
 - **Vitória contra o VANDALO:** a tela "Você venceu!" mostrava a arte de outro aluno (a 1ª arte do Black Book), sem
