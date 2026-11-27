@@ -1,5 +1,15 @@
 # Urbana — registro de versões
 
+## 2.82 — 27/11/2026
+
+- **Molduras da loja:** "Mundo Colorido", "Bola de Fogo" e "Foguete" (20 moedas cada), no mesmo tamanho das outras
+  e com o personagem encaixado no círculo. Só se compram na Van do Spray.
+- **Roupas da loja:** uma roupa nova para cada personagem (Theo de vermelho, Beatriz de branco e amarelo, One de azul,
+  Lara de rosa, Maia de vermelho, João de preto), 100 moedas cada. Ao comprar a roupa do personagem que está usando,
+  dá para vestir na hora; no Perfil aparece "Roupas de …" para trocar entre a original e a nova.
+- **Correção:** VANDALO e os vendedores andavam de costas (as folhas deles têm a direita na linha 2 e a esquerda na 3).
+  Novo campo no editor (Personagens do bairro → "Andando de costas? Trocar esquerda e direita").
+
 ## 2.81 — 27/11/2026
 
 - **Van do Spray:** fica na calçada amarela ao lado da escola, perto da curva e do poste. Perto dela, o botão A abre a

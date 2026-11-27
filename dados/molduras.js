@@ -62,6 +62,51 @@ URBANA_DADOS["molduras"] = {
         "raio": 35,
         "personagem": 102
       }
+    },
+    {
+      "id": "moldura_loja_01",
+      "nome": "Mundo Colorido",
+      "cor": "#ff3fbf",
+      "fundo": "assets/molduras/moldura_loja_01_emblema.webp",
+      "encaixe": {
+        "x": 43.7,
+        "y": 55.4,
+        "raio": 33.6,
+        "personagem": 102
+      },
+      "loja": {
+        "preco": 20
+      }
+    },
+    {
+      "id": "moldura_loja_02",
+      "nome": "Bola de Fogo",
+      "cor": "#ff7a1a",
+      "fundo": "assets/molduras/moldura_loja_02_emblema.webp",
+      "encaixe": {
+        "x": 39.9,
+        "y": 60.0,
+        "raio": 34.1,
+        "personagem": 102
+      },
+      "loja": {
+        "preco": 20
+      }
+    },
+    {
+      "id": "moldura_loja_03",
+      "nome": "Foguete",
+      "cor": "#22d3ee",
+      "fundo": "assets/molduras/moldura_loja_03_emblema.webp",
+      "encaixe": {
+        "x": 50.1,
+        "y": 45.7,
+        "raio": 30.0,
+        "personagem": 102
+      },
+      "loja": {
+        "preco": 20
+      }
     }
   ]
 };
