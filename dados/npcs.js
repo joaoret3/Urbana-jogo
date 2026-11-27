@@ -252,7 +252,7 @@ URBANA_DADOS["npcs"] = {
         "linha_parado": 1,
         "quadros": 7,
         "quadros_por_segundo": 5,
-        "trocar_lados": true
+        "espelhar_esquerda": true
       },
       "andar": {
         "ativo": true,
@@ -286,7 +286,7 @@ URBANA_DADOS["npcs"] = {
         "linha_parado": 1,
         "quadros": 7,
         "quadros_por_segundo": 5,
-        "trocar_lados": true
+        "espelhar_esquerda": true
       },
       "andar": {
         "ativo": true,
@@ -314,7 +314,7 @@ URBANA_DADOS["npcs"] = {
         "linha_parado": 1,
         "quadros": 7,
         "quadros_por_segundo": 5,
-        "trocar_lados": true
+        "espelhar_esquerda": true
       },
       "andar": {
         "ativo": true,

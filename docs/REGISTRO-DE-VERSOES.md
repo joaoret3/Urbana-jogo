@@ -1,5 +1,16 @@
 # Urbana — registro de versões
 
+## 2.83 — 27/11/2026
+
+- **Pintar muro dá XP:** cada grafite pintado num muro livre dá +10 XP (editor: Níveis, preços e recompensas →
+  "Pintar um muro livre: XP ganho").
+- **Van no editor:** aparece no Mapa e pode ser arrastada, girada (graus) e espelhada; a aba Loja tem o botão
+  "Ver e mover a van no mapa".
+- **Retrato das roupas:** a aba Loja tem "Trocar retrato" em cada roupa.
+- **Aba Loja:** a lista de grafites mostra só os quatro da van (e as molduras, só as três da van).
+- **Correção:** VANDALO e vendedores ainda andavam de costas para a esquerda: as duas linhas de lado da folha deles
+  olham para a direita. Agora, para a esquerda, o jogo usa a linha 3 espelhada.
+
 ## 2.82 — 27/11/2026
 
 - **Molduras da loja:** "Mundo Colorido", "Bola de Fogo" e "Foguete" (20 moedas cada), no mesmo tamanho das outras
