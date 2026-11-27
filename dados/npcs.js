@@ -166,11 +166,11 @@ URBANA_DADOS["npcs"] = {
         "largura_quadro": 192,
         "altura_quadro": 192,
         "linha_parado": 1,
-        "quadros": 7,
+        "quadros": 1,
         "quadros_por_segundo": 5
       },
       "andar": {
-        "ativo": true,
+        "ativo": false,
         "raio": 900
       }
     },

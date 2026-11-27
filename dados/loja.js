@@ -5,9 +5,10 @@ URBANA_DADOS["loja"] = {
   "van": {
     "nome": "Van do Spray",
     "imagem": "assets/loja/van.webp",
-    "x": 5205,
-    "y": 4600,
-    "largura": 300
+    "x": 5261,
+    "y": 4645,
+    "largura": 300,
+    "giro": -22
   },
   "latas": [
     {
@@ -46,7 +47,7 @@ URBANA_DADOS["loja"] = {
       "avatar": "avatar_05",
       "nome": "Theo RED",
       "preco": 100,
-      "retrato": "assets/avatares/avatar_05/roupa_loja_retrato.webp",
+      "retrato": "assets/avatares/avatar_05/roupa_loja_retrato_mwzhx0zd.webp",
       "sprite": {
         "arquivo": "assets/avatares/avatar_05/roupa_loja_sprite.webp"
       }
@@ -56,7 +57,7 @@ URBANA_DADOS["loja"] = {
       "avatar": "avatar_02",
       "nome": "Beatriz CASUAL",
       "preco": 100,
-      "retrato": "assets/avatares/avatar_02/roupa_loja_retrato.webp",
+      "retrato": "assets/avatares/avatar_02/roupa_loja_retrato_mwzhx5py.webp",
       "sprite": {
         "arquivo": "assets/avatares/avatar_02/roupa_loja_sprite.webp"
       }
@@ -66,7 +67,7 @@ URBANA_DADOS["loja"] = {
       "avatar": "avatar_03",
       "nome": "One BLUE",
       "preco": 100,
-      "retrato": "assets/avatares/avatar_03/roupa_loja_retrato.webp",
+      "retrato": "assets/avatares/avatar_03/roupa_loja_retrato_mwzhx7l2.webp",
       "sprite": {
         "arquivo": "assets/avatares/avatar_03/roupa_loja_sprite.webp"
       }
@@ -76,7 +77,7 @@ URBANA_DADOS["loja"] = {
       "avatar": "avatar_01",
       "nome": "Lara PINK",
       "preco": 100,
-      "retrato": "assets/avatares/avatar_01/roupa_loja_retrato.webp",
+      "retrato": "assets/avatares/avatar_01/roupa_loja_retrato_mwzhx99b.webp",
       "sprite": {
         "arquivo": "assets/avatares/avatar_01/roupa_loja_sprite.webp"
       }
@@ -86,7 +87,7 @@ URBANA_DADOS["loja"] = {
       "avatar": "avatar_04",
       "nome": "Maia BASQUETE",
       "preco": 100,
-      "retrato": "assets/avatares/avatar_04/roupa_loja_retrato.webp",
+      "retrato": "assets/avatares/avatar_04/roupa_loja_retrato_mwzhxaqo.webp",
       "sprite": {
         "arquivo": "assets/avatares/avatar_04/roupa_loja_sprite.webp"
       }
@@ -96,7 +97,7 @@ URBANA_DADOS["loja"] = {
       "avatar": "avatar_06",
       "nome": "João JAPÃO ",
       "preco": 100,
-      "retrato": "assets/avatares/avatar_06/roupa_loja_retrato.webp",
+      "retrato": "assets/avatares/avatar_06/roupa_loja_retrato_mwzhxdet.webp",
       "sprite": {
         "arquivo": "assets/avatares/avatar_06/roupa_loja_sprite.webp"
       }
